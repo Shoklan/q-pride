@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-09-28">
+<meta name="description" content="First We’ll Clean the Jobs.">
+
+<title>q-pride - Which Cycle Frontier Jobs Are Worth Doing? - Part One.</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">q-pride</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Which Cycle Frontier Jobs Are Worth Doing? - Part One.</h1>
+                  <div>
+        <div class="description">
+          First We’ll Clean the Jobs.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">game</div>
+                <div class="quarto-category">python</div>
+                <div class="quarto-category">data</div>
+                <div class="quarto-category">science</div>
+                <div class="quarto-category">exploration</div>
+                <div class="quarto-category">cycle</div>
+                <div class="quarto-category">frontier</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 28, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#scraping-and-cleaning-cycle-data" id="toc-scraping-and-cleaning-cycle-data" class="nav-link active" data-scroll-target="#scraping-and-cleaning-cycle-data">Scraping and Cleaning Cycle Data</a></li>
+  <li><a href="#fixing-the-job-rewards" id="toc-fixing-the-job-rewards" class="nav-link" data-scroll-target="#fixing-the-job-rewards">Fixing the Job Rewards</a></li>
+  <li><a href="#function-to-build-job-rewards" id="toc-function-to-build-job-rewards" class="nav-link" data-scroll-target="#function-to-build-job-rewards">Function to build Job Rewards</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>This post series was inspired by the <em>Korolev</em> Job <strong>And Two Smoking Barrels</strong> where upon accepting the quest I realized how terrible the rewards were in comparison. For those that don’t play the game a little background will be necessary. <strong>The Cycle: Frontier</strong> is an <em>Evacuation Shooter</em> game and there are three main Corporations - or Organizations, if you prefer - who act as quest and reward givers in the game. There are two kinds of these: <strong>Campaign</strong> and <strong>Jobs</strong>. Whereas the <em>campaign quests</em> will push you along to different areas of the world, instead the <em>Jobs</em> function as a way to collect scrips and excuse to send players to the planet.</p>
+<p>There are three kinds of quests: 1. <strong>Collect Stuff</strong>. 2. <strong>Deposit Stuff</strong>. 3. <strong>Kill Stuff</strong>: <em>including players</em>.</p>
+<p>For <em>Deposit Jobs</em>, you carry the requested items to a <strong>Dead Drop</strong> and then deposit the items in question. For this one, it requires you deposit a gun you purchase from the shop. Now, you could <em>find</em> this weapon or loot it from other people but those are not garunteed at all. The Kmark - which is cash, basically - reward is $19,000 and the gun it wants you to deposit is $22,000 so there is no reason to take this job unless you already have this gun. Anyways, lets get to the fun part.</p>
+<section id="scraping-and-cleaning-cycle-data" class="level2">
+<h2 class="anchored" data-anchor-id="scraping-and-cleaning-cycle-data">Scraping and Cleaning Cycle Data</h2>
+<p>So, we’ll start with the normal imports for doing data in Python.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests <span class="im">as</span> r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Thankfully, there is an official wiki for the game which is maintained by both the Developers and the Community together. We’re going to pull the data from there as that <em>should</em> be the most up to date data. Like most online data scraping, there is some try-fail loops to getting what you’re after from the webpage. Since there are three organizations, there are three tables with jobs we’d like to pull from the website. After some trial and error I found that using <code>match="Name"</code> was perfect for pulling the tables out of the webpage.</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://thecyclefrontier.wiki/wiki/Jobs"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>site <span class="op">=</span> pd.read_html(url, match<span class="op">=</span><span class="st">"Name"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    converters <span class="op">=</span> {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Name"</span>: <span class="bu">str</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Description"</span>: <span class="bu">str</span>, </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Unlocked"</span>: <span class="bu">int</span>, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Tasks"</span>: <span class="bu">str</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Rewards"</span>: <span class="bu">str</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You may notice the addition of <code>converters</code> argument above which is a really useful feature I didn’t know previously; basically, if you know the column names coming in then you can tell Pandas what data type you want so you don’t have to convert later. So, what does the data look like?</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>site[<span class="dv">0</span>].head(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Unlock Level</th>
+      <th>Difficulty</th>
+      <th>Tasks</th>
+      <th>Rewards</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>New Mining Tools</td>
+      <td>We are producing new Mining Tools for new Pros...</td>
+      <td>4.0</td>
+      <td>Easy</td>
+      <td>Collect: 2 Hydraulic Piston 10 Hardened Metals</td>
+      <td>3800  K-Marks  1  Korolev Scrip  15  Korolev R...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3800</td>
+      <td>K-Marks</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Korolev Scrip</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>Korolev Reputation</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Explosive Excavation</td>
+      <td>One of our mines collapsed with valuable equip...</td>
+      <td>7.0</td>
+      <td>Medium</td>
+      <td>Collect: 4 Derelict Explosives</td>
+      <td>11000  K-Marks  8  Korolev Scrip  52  Korolev ...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>11000</td>
+      <td>K-Marks</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8</td>
+      <td>Korolev Scrip</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>52</td>
+      <td>Korolev Reputation</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>That is not really what we were hoping would come in. Checking the actual site, this is caused by a table which exists inside one of the row cells. But - like in the previous post - this can still be used after some work. So, lets get to work!</p>
+</section>
+<section id="fixing-the-job-rewards" class="level2">
+<h2 class="anchored" data-anchor-id="fixing-the-job-rewards">Fixing the Job Rewards</h2>
+<p>We dont need most of the columns for what we’re going to be accomplishing so we’re going to pull them out. I’m going to do a copy as pandas sometimes doesn’t play so nicely with updates. What I’ve found is that since Pandas uses pointers underneath, sometimes when doing updates to slices I don’t always get what I expect. So, we’ll splice and copy to only get the data we care about in its own independent dataframe.</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>rewardsSubset <span class="op">=</span> site[<span class="dv">0</span>][[<span class="st">"Name"</span>, <span class="st">"Description"</span>, <span class="st">"Difficulty"</span>]].copy()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>rewardsSubset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Difficulty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>New Mining Tools</td>
+      <td>We are producing new Mining Tools for new Pros...</td>
+      <td>Easy</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3800</td>
+      <td>K-Marks</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Korolev Scrip</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>Korolev Reputation</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Explosive Excavation</td>
+      <td>One of our mines collapsed with valuable equip...</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>470</td>
+      <td>Korolev Reputation</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>No Expiry Date</td>
+      <td>There you are, finally! There's been an accide...</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>6300</td>
+      <td>K-Marks</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>9</td>
+      <td>Korolev Scrip</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>62</td>
+      <td>Korolev Reputation</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>188 rows × 3 columns</p>
+</div>
+</div>
+</div>
+<p>These column names are not useful so we’re going to correct those so they make sense with the project. We’re going to call the final column <code>Job</code> which will make more sense as the work gets done.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rewardsSubset.columns <span class="op">=</span> [<span class="st">"Units"</span>, <span class="st">"Rewards"</span>, <span class="st">"Job"</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rewardsSubset.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Units</th>
+      <th>Rewards</th>
+      <th>Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>New Mining Tools</td>
+      <td>We are producing new Mining Tools for new Pros...</td>
+      <td>Easy</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3800</td>
+      <td>K-Marks</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Korolev Scrip</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>Korolev Reputation</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Explosive Excavation</td>
+      <td>One of our mines collapsed with valuable equip...</td>
+      <td>Medium</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>So, looking at above we can see that we have extra data in the <code>Job Column</code> which is no longer appropriate. We’re going to simply fill that column with a null value: <code>np.NaN</code></p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rewardsSubset.Job <span class="op">=</span> np.NaN</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>rewardsSubset.head(<span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Units</th>
+      <th>Rewards</th>
+      <th>Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>New Mining Tools</td>
+      <td>We are producing new Mining Tools for new Pros...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3800</td>
+      <td>K-Marks</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Korolev Scrip</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>Korolev Reputation</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Explosive Excavation</td>
+      <td>One of our mines collapsed with valuable equip...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>11000</td>
+      <td>K-Marks</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8</td>
+      <td>Korolev Scrip</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>52</td>
+      <td>Korolev Reputation</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Mining Bot</td>
+      <td>Our engineers have designed an autonomous mini...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6900</td>
+      <td>K-Marks</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>9</td>
+      <td>Korolev Scrip</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>62</td>
+      <td>Korolev Reputation</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>So, now for the hard part: getting the <em>Job Title</em> into the <code>Job Column</code>. Looking at the data above, we can see that the <em>Job Title</em> is always stored in a multiple of four. We can confirm this by simply dividing the total number of columns by <code>4</code> just to be sure.</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This should be divisible by 4 since they rewards for jobs are always in this format now.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(rewardsSubset) <span class="op">/</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>47.0</code></pre>
+</div>
+</div>
+<p>And, we have a perfect divide! Good! This is since each Job always hands out Kmarks, a matching Corp Scrip and Corp Reputation. So, what we need to do now is pull the <em>Job Title</em> from the <code>Units</code> column and insert it into the next three columns under <code>Job</code>. To do this, we’re going to build a range of values which are multiples of <code>4</code> starting at <code>0</code> and up to the total amount of jobs. We don’t want to hard code this since the count of jobs should be expected to change over time.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>topIndex <span class="op">=</span> <span class="bu">len</span>(rewardsSubset) <span class="op">/</span> <span class="dv">4</span> <span class="op">-</span> <span class="dv">3</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>index <span class="op">=</span> <span class="bu">range</span>( <span class="dv">0</span>, <span class="dv">44</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next we’ll want a <em>numpy array</em> of the offsets. We don’t want to use a list because then it will add the values to a python list instead of creating a set of indexes. In effect, we’re trying to take advantage of <strong>Broadcasting</strong> in numpy. We’ll do an illustration of this quick.</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>listMistake <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>broadcastCorrect <span class="op">=</span> np.array(listMistake)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>[index[<span class="dv">1</span>]] <span class="op">+</span> listMistake, index[<span class="dv">1</span>] <span class="op">+</span> broadcastCorrect</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>([4, 1, 2, 3], array([5, 6, 7]))</code></pre>
+</div>
+</div>
+<p>Above you can see <code>[4, 1, 2, 3]</code> is definitely not what we’re after. So, after setting up the proper offset lets make sure we’re getting what we want. I often sanity check my initial design since experience as taught me you can still trip even after the initial testing works. So, lets do that now.</p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>offset <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this is how we'll iterate; proof it works.</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> index[:<span class="dv">3</span>]:</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    aJob <span class="op">=</span> rewardsSubset.iloc[i, <span class="dv">0</span>]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>aJob<span class="sc">}</span><span class="ss"> is at index </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>New Mining Tools is at index 0
+Explosive Excavation is at index 4
+Mining Bot is at index 8</code></pre>
+</div>
+</div>
+<p>And, there we go! We’re getting exactly what we wanted and expected. This is also a good initial test for the loop which we’re going to tuck into a function at the end of all this. So, now to test the logic of swapping the values from the <code>Unit Column</code> to the <code>Job Column</code>.</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do the thing:</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>aJob <span class="op">=</span> rewardsSubset.iloc[index[<span class="dv">0</span>], <span class="dv">0</span>]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>indexes <span class="op">=</span> index[<span class="dv">0</span>] <span class="op">+</span> offset</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>rewardsSubset.iloc[ indexes, <span class="dv">2</span> ] <span class="op">=</span> aJob</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>rewardsSubset.head(<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Units</th>
+      <th>Rewards</th>
+      <th>Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>New Mining Tools</td>
+      <td>We are producing new Mining Tools for new Pros...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3800</td>
+      <td>K-Marks</td>
+      <td>New Mining Tools</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Korolev Scrip</td>
+      <td>New Mining Tools</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>Korolev Reputation</td>
+      <td>New Mining Tools</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Explosive Excavation</td>
+      <td>One of our mines collapsed with valuable equip...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>11000</td>
+      <td>K-Marks</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8</td>
+      <td>Korolev Scrip</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>52</td>
+      <td>Korolev Reputation</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Mining Bot</td>
+      <td>Our engineers have designed an autonomous mini...</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> index:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    aJob <span class="op">=</span> rewardsSubset.iloc[i, <span class="dv">0</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    indexes <span class="op">=</span> i <span class="op">+</span> offset</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    rewardsSubset.iloc[ indexes, <span class="dv">2</span> ] <span class="op">=</span> aJob</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>rewardsSubset.head(<span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Units</th>
+      <th>Rewards</th>
+      <th>Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>New Mining Tools</td>
+      <td>We are producing new Mining Tools for new Pros...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3800</td>
+      <td>K-Marks</td>
+      <td>New Mining Tools</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Korolev Scrip</td>
+      <td>New Mining Tools</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>Korolev Reputation</td>
+      <td>New Mining Tools</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Explosive Excavation</td>
+      <td>One of our mines collapsed with valuable equip...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>11000</td>
+      <td>K-Marks</td>
+      <td>Explosive Excavation</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8</td>
+      <td>Korolev Scrip</td>
+      <td>Explosive Excavation</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>52</td>
+      <td>Korolev Reputation</td>
+      <td>Explosive Excavation</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Mining Bot</td>
+      <td>Our engineers have designed an autonomous mini...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6900</td>
+      <td>K-Marks</td>
+      <td>Mining Bot</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>9</td>
+      <td>Korolev Scrip</td>
+      <td>Mining Bot</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>62</td>
+      <td>Korolev Reputation</td>
+      <td>Mining Bot</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Perfect! Now all we have to do is cut the <code>Units Columns</code> where the <em>Job Title</em> still remains. Luckily, the <code>np.NaN</code> has remained so we can collect the indexes for <code>Job</code> where that values exists. And, then simply get rid of them.</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kill the NA's</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>cutNA <span class="op">=</span> rewardsSubset.Job.isna()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>rewardsSubset[ <span class="op">~</span>cutNA ].head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Units</th>
+      <th>Rewards</th>
+      <th>Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>3800</td>
+      <td>K-Marks</td>
+      <td>New Mining Tools</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Korolev Scrip</td>
+      <td>New Mining Tools</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>Korolev Reputation</td>
+      <td>New Mining Tools</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>11000</td>
+      <td>K-Marks</td>
+      <td>Explosive Excavation</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8</td>
+      <td>Korolev Scrip</td>
+      <td>Explosive Excavation</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>52</td>
+      <td>Korolev Reputation</td>
+      <td>Explosive Excavation</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6900</td>
+      <td>K-Marks</td>
+      <td>Mining Bot</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>9</td>
+      <td>Korolev Scrip</td>
+      <td>Mining Bot</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>62</td>
+      <td>Korolev Reputation</td>
+      <td>Mining Bot</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>7600</td>
+      <td>K-Marks</td>
+      <td>None of your Business</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>10</td>
+      <td>Korolev Scrip</td>
+      <td>None of your Business</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>90</td>
+      <td>Korolev Reputation</td>
+      <td>None of your Business</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>10000</td>
+      <td>K-Marks</td>
+      <td>Insufficient Processing Power</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>11</td>
+      <td>Korolev Scrip</td>
+      <td>Insufficient Processing Power</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>110</td>
+      <td>Korolev Reputation</td>
+      <td>Insufficient Processing Power</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="function-to-build-job-rewards" class="level2">
+<h2 class="anchored" data-anchor-id="function-to-build-job-rewards">Function to build Job Rewards</h2>
+<p>Now that we have all this we can push it into a function and run it against all the different Corporation tables.</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buildJobsRewards(data):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Function to take job rewards data and return a cleaned version</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    rewardsSubset <span class="op">=</span> data[[<span class="st">"Name"</span>, <span class="st">"Description"</span>, <span class="st">"Difficulty"</span>]].copy()</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    rewardsSubset.columns <span class="op">=</span> [<span class="st">"Units"</span>, <span class="st">"Rewards"</span>, <span class="st">"Job"</span>]</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    index <span class="op">=</span> <span class="bu">range</span>( <span class="dv">0</span>, <span class="bu">len</span>(rewardsSubset) <span class="op">-</span> <span class="dv">4</span>, <span class="dv">4</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    offset <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    rewardsSubset.Job <span class="op">=</span> np.NaN</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> index:</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        aJob <span class="op">=</span> rewardsSubset.iloc[i, <span class="dv">0</span>]</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        indexes <span class="op">=</span> i <span class="op">+</span> offset</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>        rewardsSubset.iloc[ indexes, <span class="dv">2</span> ] <span class="op">=</span> aJob</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    cutNA <span class="op">=</span> rewardsSubset.Job.isna()</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    rewardsSubset <span class="op">=</span> rewardsSubset[ <span class="op">~</span>cutNA ]</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>    rewardsSubset <span class="op">=</span> rewardsSubset.assign(</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>        Units <span class="op">=</span> rewardsSubset[<span class="st">'Units'</span>].astype(<span class="bu">int</span>)</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rewardsSubset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And, the final test!</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>KorolevRewards <span class="op">=</span> buildJobsRewards( site[<span class="dv">0</span>] )</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>icaRewards <span class="op">=</span> buildJobsRewards( site[<span class="dv">1</span>] )</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>osirisRewards <span class="op">=</span> buildJobsRewards( site[<span class="dv">2</span>] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>KorolevRewards.head(<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Units</th>
+      <th>Rewards</th>
+      <th>Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>3800</td>
+      <td>K-Marks</td>
+      <td>New Mining Tools</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Korolev Scrip</td>
+      <td>New Mining Tools</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>Korolev Reputation</td>
+      <td>New Mining Tools</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>11000</td>
+      <td>K-Marks</td>
+      <td>Explosive Excavation</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8</td>
+      <td>Korolev Scrip</td>
+      <td>Explosive Excavation</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>52</td>
+      <td>Korolev Reputation</td>
+      <td>Explosive Excavation</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6900</td>
+      <td>K-Marks</td>
+      <td>Mining Bot</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>9</td>
+      <td>Korolev Scrip</td>
+      <td>Mining Bot</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>62</td>
+      <td>Korolev Reputation</td>
+      <td>Mining Bot</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>icaRewards.head(<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Units</th>
+      <th>Rewards</th>
+      <th>Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>4400</td>
+      <td>K-Marks</td>
+      <td>Water Filtration System</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>ICA Scrip</td>
+      <td>Water Filtration System</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15</td>
+      <td>ICA Reputation</td>
+      <td>Water Filtration System</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>7500</td>
+      <td>K-Marks</td>
+      <td>New Beds</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>9</td>
+      <td>ICA Scrip</td>
+      <td>New Beds</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>62</td>
+      <td>ICA Reputation</td>
+      <td>New Beds</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>13000</td>
+      <td>K-Marks</td>
+      <td>Station Defense</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>12</td>
+      <td>ICA Scrip</td>
+      <td>Station Defense</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>130</td>
+      <td>ICA Reputation</td>
+      <td>Station Defense</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>osirisRewards.head(<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Units</th>
+      <th>Rewards</th>
+      <th>Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2200</td>
+      <td>K-Marks</td>
+      <td>Lab equipment</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Osiris Scrip</td>
+      <td>Lab equipment</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>13</td>
+      <td>Osiris Reputation</td>
+      <td>Lab equipment</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>8100</td>
+      <td>K-Marks</td>
+      <td>Surveillance Center</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>8</td>
+      <td>Osiris Scrip</td>
+      <td>Surveillance Center</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>43</td>
+      <td>Osiris Reputation</td>
+      <td>Surveillance Center</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>8100</td>
+      <td>K-Marks</td>
+      <td>Gun Manufacturing</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>8</td>
+      <td>Osiris Scrip</td>
+      <td>Gun Manufacturing</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>52</td>
+      <td>Osiris Reputation</td>
+      <td>Gun Manufacturing</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Now we’ve got tidy data for all the jobs from all the Corporations and their matching rewards. Next we’ll need to clean the actual tasks which is going to be much harder since there is no consistent formatting. But, we’ll end this post with a simple question using the data we have: Which Corporation gives out the best average Kmarks?</p>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>KorolevRewards.query(<span class="st">"Rewards == 'K-Marks'"</span>).Units.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>22936.956521739132</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">round</span>(KorolevRewards.query(<span class="st">"Rewards == 'K-Marks'"</span>).Units.mean(),<span class="dv">2</span>),</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">round</span>(icaRewards.query(<span class="st">"Rewards == 'K-Marks'"</span>).Units.mean(),<span class="dv">2</span>),</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">round</span>(osirisRewards.query(<span class="st">"Rewards == 'K-Marks'"</span>).Units.mean(), <span class="dv">2</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>(22936.96, 23158.33, 21136.17)</code></pre>
+</div>
+</div>
+<p>And, the winner is <strong>ICA</strong> barely over <strong>Korolev</strong>! Suck Less <strong>Osiris</strong>!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
