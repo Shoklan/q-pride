@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-09-27">
+<meta name="description" content="What Is The Most Solid Single Category of Guns?">
+
+<title>Orgulo.us - Some Data Exploration of The Cycle - Frontier Weapons</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Orgulo.us</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">Trutles</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Some Data Exploration of The Cycle - Frontier Weapons</h1>
+                  <div>
+        <div class="description">
+          What Is The Most Solid Single Category of Guns?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">game</div>
+                <div class="quarto-category">python</div>
+                <div class="quarto-category">data</div>
+                <div class="quarto-category">science</div>
+                <div class="quarto-category">exploration</div>
+                <div class="quarto-category">cycle</div>
+                <div class="quarto-category">frontier</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 27, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lets-start-at-the-beginning" id="toc-lets-start-at-the-beginning" class="nav-link active" data-scroll-target="#lets-start-at-the-beginning">Let’s Start At the Beginning</a>
+  <ul class="collapse">
+  <li><a href="#scraping-and-cleaning-cycle-data" id="toc-scraping-and-cleaning-cycle-data" class="nav-link" data-scroll-target="#scraping-and-cleaning-cycle-data">Scraping and Cleaning Cycle Data</a></li>
+  <li><a href="#what-do-the-weapons-look-like" id="toc-what-do-the-weapons-look-like" class="nav-link" data-scroll-target="#what-do-the-weapons-look-like">What Do the Weapons Look Like?</a></li>
+  </ul></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="lets-start-at-the-beginning" class="level1">
+<h1>Let’s Start At the Beginning</h1>
+<p>Recently, I’ve been playing as much <strong>The Cycle: Frontier</strong> as I can reasonably fit into my days along with getting work and projects done. If you’re not familiar, it’s a First Person Shooter game which focuses around dropping you to a planet in a semi-persistent world with loot and other players. The <em>Station</em> has some Corporations which hand out jobs as a pretty thin attempt to get you down to the planet. While down there, other players - who are not on your team - can decide how they want to deal with you: talk to you, lie to you, kill you, help you. I’ve heard these games be called both <strong>Looter Shooters</strong> as well as <strong>Evac Shooters</strong> and I’m admittidly not the biggest fan of these names.</p>
+<p>As you build reputation with the different Corps on the <em>Station</em> you can unlock the ability to purchase weapons that each specializes in. Some of them are pretty fun and others are kind of terrible. Today we’re going to do part of the process which was inspired by <a href="https://www.datafantic.com/create-an-auto-updating-dataset-on-kaggle-with-deepnote/">this article</a> by Robert Ritz. In it, he goes over how to setup an automated Data Pipeline using <a href="https://www.kaggle.com">Kaggle</a> and <a href="https://deepnote.com">Deepnote</a> together. This part is going to be simply getting the data downloaded, cleaned and some observations about the guns in this game. I still need to do some more investigation about <em>Deepnote</em> - namely the price, utility and such before actually commiting to that part; I <em>should</em> be able to simply cut that part out and do the download/upload to <em>Kaggle</em> from one of my own servers but if it works then I’m going to use it.</p>
+<section id="scraping-and-cleaning-cycle-data" class="level2">
+<h2 class="anchored" data-anchor-id="scraping-and-cleaning-cycle-data">Scraping and Cleaning Cycle Data</h2>
+<p>To start with, if you’re following along, scraping data from the Cycle’s Wiki page is annoying. There are tables inserted inside the tables which caused quite a problem while trying to simply pull the data from the website. So, if you’re going to us this as the basis for your own tools then beware that you’ll be certain to need to do some custom work. We’ll start with the normal imports for a project like this.</p>
+<div class="cell" data-execution_count="343">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd             <span class="co"># for the data.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np              <span class="co"># for a NaN type</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># For plotting, and some customization of plots.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns           <span class="co"># For pretty plots.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix the size of the graphs</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(rc<span class="op">=</span>{<span class="st">"figure.figsize"</span>:(<span class="dv">11</span>, <span class="dv">8</span>)})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The website we’re going to be using for the data is their official wiki page - which can be found <a href="https://thecyclefrontier.wiki/wiki/Main_Page">here</a>. We’ll be pulling from the weapons page which luckily contains a table of all the guns without having to join them. Pandas allows you to read html off a website and will attempt to pull any tables it finds on the webpage. Sadly, due to the nested tables and the way the tables are tagged this simply doesn’t work here. But, you can ask <code>pd.read_html()</code> to look for an attribute and then pull the data from the page using that; it will still need to end up as a table though otherwise pandas will reject it. After doing quite a bit of exploration, I found that you can pull the total table with the attribute <code>zebra</code> as that is the only table which uses it.</p>
+<div class="cell" data-execution_count="344">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://thecyclefrontier.wiki/wiki/Weapons"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>site <span class="op">=</span> pd.read_html(url, attrs<span class="op">=</span>{<span class="st">"class"</span>:<span class="st">"zebra"</span>})[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="308">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>site.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="308">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Ammo</th>
+      <th>Faction</th>
+      <th>Buy Price</th>
+      <th>Sell Value</th>
+      <th>Rarity</th>
+      <th>Weight</th>
+      <th>Crit Multi</th>
+      <th>Damage</th>
+      <th>Pen</th>
+      <th>Mag Size</th>
+      <th>Refire Rate</th>
+      <th>RPM</th>
+      <th>Reload Time</th>
+      <th>Move Speed</th>
+      <th>Proj. Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>Advocate</td>
+      <td>AR</td>
+      <td>Medium</td>
+      <td>ICA</td>
+      <td>76000  K-Marks</td>
+      <td>22781  K-Marks</td>
+      <td>Epic</td>
+      <td>35.0</td>
+      <td>1.7</td>
+      <td>11.0</td>
+      <td>26.0</td>
+      <td>24.0</td>
+      <td>0.105</td>
+      <td>571.43</td>
+      <td>3.2</td>
+      <td>0.9</td>
+      <td>29000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>76000.0</td>
+      <td>K-Marks</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>22781.0</td>
+      <td>K-Marks</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>AR-55 Autorifle</td>
+      <td>AR</td>
+      <td>Medium</td>
+      <td>Station</td>
+      <td>1700  K-Marks</td>
+      <td>524  K-Marks</td>
+      <td>Common</td>
+      <td>35.0</td>
+      <td>1.7</td>
+      <td>12.0</td>
+      <td>10.0</td>
+      <td>22.0</td>
+      <td>0.110</td>
+      <td>545.45</td>
+      <td>2.7</td>
+      <td>0.9</td>
+      <td>28000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1700.0</td>
+      <td>K-Marks</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>You can see above that this works but the formatting is still a little messed up. Looking at the tables though, this will be an easy fix since rows which we don’t need contain lots <code>NaN</code>. If you’ve never seen this before it just means <code>Not A Number</code> and is a special value used by numpy for this. So, let’s clean the data for use. You can check a <code>Series</code> for these values using <code>.isna()</code> and then we’ll pass the opposite indexes to pull those out:</p>
+<div class="cell" data-execution_count="345">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> site[<span class="op">~</span>site.Type.isna()]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="345">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Ammo</th>
+      <th>Faction</th>
+      <th>Buy Price</th>
+      <th>Sell Value</th>
+      <th>Rarity</th>
+      <th>Weight</th>
+      <th>Crit Multi</th>
+      <th>Damage</th>
+      <th>Pen</th>
+      <th>Mag Size</th>
+      <th>Refire Rate</th>
+      <th>RPM</th>
+      <th>Reload Time</th>
+      <th>Move Speed</th>
+      <th>Proj. Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>Advocate</td>
+      <td>AR</td>
+      <td>Medium</td>
+      <td>ICA</td>
+      <td>76000  K-Marks</td>
+      <td>22781  K-Marks</td>
+      <td>Epic</td>
+      <td>35.0</td>
+      <td>1.7</td>
+      <td>11.0</td>
+      <td>26.0</td>
+      <td>24.0</td>
+      <td>0.105</td>
+      <td>571.430</td>
+      <td>3.20</td>
+      <td>0.9</td>
+      <td>29000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>AR-55 Autorifle</td>
+      <td>AR</td>
+      <td>Medium</td>
+      <td>Station</td>
+      <td>1700  K-Marks</td>
+      <td>524  K-Marks</td>
+      <td>Common</td>
+      <td>35.0</td>
+      <td>1.7</td>
+      <td>12.0</td>
+      <td>10.0</td>
+      <td>22.0</td>
+      <td>0.110</td>
+      <td>545.450</td>
+      <td>2.70</td>
+      <td>0.9</td>
+      <td>28000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+      <td>Asp Flechette Gun</td>
+      <td>SMG</td>
+      <td>Light</td>
+      <td>Osiris</td>
+      <td>54000  K-Marks</td>
+      <td>16131  K-Marks</td>
+      <td>Epic</td>
+      <td>30.0</td>
+      <td>1.5</td>
+      <td>9.0</td>
+      <td>26.0</td>
+      <td>20.0</td>
+      <td>0.095</td>
+      <td>631.580</td>
+      <td>2.50</td>
+      <td>1.0</td>
+      <td>24000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NaN</td>
+      <td>B9 Trenchgun</td>
+      <td>Shotgun</td>
+      <td>Shotgun</td>
+      <td>Station</td>
+      <td>1200  K-Marks</td>
+      <td>371  K-Marks</td>
+      <td>Common</td>
+      <td>25.0</td>
+      <td>1.2</td>
+      <td>10.0</td>
+      <td>10.0</td>
+      <td>5.0</td>
+      <td>0.950</td>
+      <td>63.158</td>
+      <td>2.40</td>
+      <td>1.0</td>
+      <td>26000</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>NaN</td>
+      <td>Basilisk</td>
+      <td>DMR</td>
+      <td>Heavy</td>
+      <td>Osiris</td>
+      <td>275000  K-Marks</td>
+      <td>82448  K-Marks</td>
+      <td>Exotic</td>
+      <td>50.0</td>
+      <td>1.6</td>
+      <td>34.0</td>
+      <td>28.0</td>
+      <td>8.0</td>
+      <td>0.500</td>
+      <td>120.000</td>
+      <td>3.85</td>
+      <td>0.8</td>
+      <td>45000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Looking much better now. Let’s quickly check the data’s types and make sure they make sense still.</p>
+<div class="cell" data-execution_count="346">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Int64Index: 26 entries, 0 to 75
+Data columns (total 18 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   Image        0 non-null      float64
+ 1   Name         26 non-null     object 
+ 2   Type         26 non-null     object 
+ 3   Ammo         26 non-null     object 
+ 4   Faction      26 non-null     object 
+ 5   Buy Price    26 non-null     object 
+ 6   Sell Value   26 non-null     object 
+ 7   Rarity       26 non-null     object 
+ 8   Weight       26 non-null     float64
+ 9   Crit Multi   26 non-null     float64
+ 10  Damage       26 non-null     float64
+ 11  Pen          26 non-null     float64
+ 12  Mag Size     26 non-null     float64
+ 13  Refire Rate  26 non-null     float64
+ 14  RPM          26 non-null     float64
+ 15  Reload Time  26 non-null     float64
+ 16  Move Speed   26 non-null     float64
+ 17  Proj. Speed  26 non-null     object 
+dtypes: float64(10), object(8)
+memory usage: 3.9+ KB</code></pre>
+</div>
+</div>
+<p>Something is wrong with the <code>Proj. Speed</code> at this point since it shouldn’t be an object but instead should be a number. Checking the values we find that there are string values in here.</p>
+<div class="cell" data-execution_count="347">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># There is a hitscan in there; how should we deal with that?</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'Proj. Speed'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="347">
+<pre><code>array(['29000', '28000', '24000', '26000', '45000', '50000', 'Hitscan',
+       '30000', '60000', '40000', '70000', '4000', '35000', '34000'],
+      dtype=object)</code></pre>
+</div>
+</div>
+<p>The value of <code>Hitscan</code> is preventing the conversion to numbers. I didn’t realize any of the guns in this game were hitscan at all. Which weapons are these?</p>
+<div class="cell" data-execution_count="348">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data[ data[<span class="st">'Proj. Speed'</span>] <span class="op">==</span> <span class="st">'Hitscan'</span> ][[<span class="st">'Name'</span>, <span class="st">'Proj. Speed'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="348">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Proj. Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>21</th>
+      <td>Gorgon</td>
+      <td>Hitscan</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>Zeus Beam</td>
+      <td>Hitscan</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Ok, so we’ll need to replace this with something that wont hurt our analysis so we’re also going to change these to <code>np.NaN</code>.</p>
+<div class="cell" data-execution_count="349">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix hitscan info:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>indx <span class="op">=</span> data[<span class="st">'Proj. Speed'</span>] <span class="op">==</span> <span class="st">'Hitscan'</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>data.loc[indx, <span class="st">'Proj. Speed'</span>] <span class="op">=</span> np.NaN</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There are some other columns - <code>Sell Value</code>, <code>Buy Price</code> as examples - which have come in as <code>object</code> so they’re being treated as strings. We need these to be numbers if we end up using them. And, after fixing the Hitscan problem we’ll need to convert that column to numbers.</p>
+<div class="cell" data-execution_count="350">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data.assign(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    Sell <span class="op">=</span> data[<span class="st">'Sell Value'</span>].<span class="bu">str</span>.replace(<span class="st">' K-Marks'</span>, <span class="st">''</span>).astype(<span class="st">'float'</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    Buy <span class="op">=</span> data[<span class="st">'Buy Price'</span>].<span class="bu">str</span>.replace(<span class="st">' K-Marks'</span>, <span class="st">''</span>).astype(<span class="st">'float'</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    DPS <span class="op">=</span> data[<span class="st">'Refire Rate'</span>] <span class="op">*</span> data[<span class="st">'Damage'</span>],</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    Faction <span class="op">=</span> data[<span class="st">'Faction'</span>].astype(<span class="st">'category'</span>),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    Velocity <span class="op">=</span> data[<span class="st">'Proj. Speed'</span>].astype(<span class="st">'float'</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data.assign(</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    perWeight <span class="op">=</span> data[<span class="st">'Sell'</span>] <span class="op">/</span> data[<span class="st">'Weight'</span>]</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co"># # This removes the legendary weapons</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># data = data.query('Faction != "Printing"')</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data.drop(labels <span class="op">=</span> [<span class="st">'Sell Value'</span>, <span class="st">'Buy Price'</span>, <span class="st">'Image'</span>, <span class="st">'Proj. Speed'</span>],axis <span class="op">=</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we’ve got data to work with!</p>
+<div class="cell" data-execution_count="351">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="351">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Ammo</th>
+      <th>Faction</th>
+      <th>Rarity</th>
+      <th>Weight</th>
+      <th>Crit Multi</th>
+      <th>Damage</th>
+      <th>Pen</th>
+      <th>Mag Size</th>
+      <th>Refire Rate</th>
+      <th>RPM</th>
+      <th>Reload Time</th>
+      <th>Move Speed</th>
+      <th>Sell</th>
+      <th>Buy</th>
+      <th>DPS</th>
+      <th>Velocity</th>
+      <th>perWeight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Advocate</td>
+      <td>AR</td>
+      <td>Medium</td>
+      <td>ICA</td>
+      <td>Epic</td>
+      <td>35.0</td>
+      <td>1.7</td>
+      <td>11.0</td>
+      <td>26.0</td>
+      <td>24.0</td>
+      <td>0.105</td>
+      <td>571.430</td>
+      <td>3.20</td>
+      <td>0.9</td>
+      <td>22781.0</td>
+      <td>76000.0</td>
+      <td>1.155</td>
+      <td>29000.0</td>
+      <td>650.885714</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR-55 Autorifle</td>
+      <td>AR</td>
+      <td>Medium</td>
+      <td>Station</td>
+      <td>Common</td>
+      <td>35.0</td>
+      <td>1.7</td>
+      <td>12.0</td>
+      <td>10.0</td>
+      <td>22.0</td>
+      <td>0.110</td>
+      <td>545.450</td>
+      <td>2.70</td>
+      <td>0.9</td>
+      <td>524.0</td>
+      <td>1700.0</td>
+      <td>1.320</td>
+      <td>28000.0</td>
+      <td>14.971429</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Asp Flechette Gun</td>
+      <td>SMG</td>
+      <td>Light</td>
+      <td>Osiris</td>
+      <td>Epic</td>
+      <td>30.0</td>
+      <td>1.5</td>
+      <td>9.0</td>
+      <td>26.0</td>
+      <td>20.0</td>
+      <td>0.095</td>
+      <td>631.580</td>
+      <td>2.50</td>
+      <td>1.0</td>
+      <td>16131.0</td>
+      <td>54000.0</td>
+      <td>0.855</td>
+      <td>24000.0</td>
+      <td>537.700000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>B9 Trenchgun</td>
+      <td>Shotgun</td>
+      <td>Shotgun</td>
+      <td>Station</td>
+      <td>Common</td>
+      <td>25.0</td>
+      <td>1.2</td>
+      <td>10.0</td>
+      <td>10.0</td>
+      <td>5.0</td>
+      <td>0.950</td>
+      <td>63.158</td>
+      <td>2.40</td>
+      <td>1.0</td>
+      <td>371.0</td>
+      <td>1200.0</td>
+      <td>9.500</td>
+      <td>26000.0</td>
+      <td>14.840000</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Basilisk</td>
+      <td>DMR</td>
+      <td>Heavy</td>
+      <td>Osiris</td>
+      <td>Exotic</td>
+      <td>50.0</td>
+      <td>1.6</td>
+      <td>34.0</td>
+      <td>28.0</td>
+      <td>8.0</td>
+      <td>0.500</td>
+      <td>120.000</td>
+      <td>3.85</td>
+      <td>0.8</td>
+      <td>82448.0</td>
+      <td>275000.0</td>
+      <td>17.000</td>
+      <td>45000.0</td>
+      <td>1648.960000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="what-do-the-weapons-look-like" class="level2">
+<h2 class="anchored" data-anchor-id="what-do-the-weapons-look-like">What Do the Weapons Look Like?</h2>
+<p>A word here about some extra cleaning which I’ve elected to do. Looking at the data, there are two more problems that should be brought up here. The first is that I’m taking Snipers out of the analysis. The reason for this is that there really are only two of them and everyone understands why they’re as powerful as they are.</p>
+<div class="cell" data-execution_count="352">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x <span class="op">=</span> data.Damage, y <span class="op">=</span> data[<span class="st">'Pen'</span>], hue <span class="op">=</span> data.Type)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"The Reason Snipers Rule"</span>, size<span class="op">=</span><span class="dv">15</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="352">
+<pre><code>Text(0.5, 1.0, 'The Reason Snipers Rule')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="2022-09-27-cycle-weapons-best-general_files/figure-html/cell-12-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<p>The second adjustment is that I’m pulling the ICA Garuntee out of the analysis because it’s the only one of its kind.</p>
+<div class="cell" data-execution_count="334">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data.query(<span class="st">'Type == "LMG"'</span>)[[<span class="st">'Name'</span>, <span class="st">'Type'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="334">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>27</th>
+      <td>ICA Guarantee</td>
+      <td>LMG</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>And, the same for the Komrad for the same reason.</p>
+<div class="cell" data-execution_count="354">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data.query(<span class="st">'Type == "Launcher"'</span>)[[<span class="st">'Name'</span>, <span class="st">'Type'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="354">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>45</th>
+      <td>KOMRAD</td>
+      <td>Launcher</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>So, let’s start with what we all care about the most: Damage.</p>
+<div class="cell" data-execution_count="382">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>data[[<span class="st">'Type'</span>, <span class="st">'Damage'</span>]].groupby(<span class="st">'Type'</span>).mean().sort_values(<span class="st">'Damage'</span>, ascending<span class="op">=</span><span class="va">False</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="382">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>DMR</th>
+      <th>Pistol</th>
+      <th>AR</th>
+      <th>SMG</th>
+      <th>Shotgun</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Damage</th>
+      <td>32.0</td>
+      <td>17.666667</td>
+      <td>11.0</td>
+      <td>9.25</td>
+      <td>9.25</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>So, DMR’s do about twice as much damage as the next category down. From this, we’d expect DMRs to be used quite a bit; what weapons are in this category?</p>
+<div class="cell" data-execution_count="383">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>data.query(<span class="st">'Type == "DMR"'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="383">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Ammo</th>
+      <th>Faction</th>
+      <th>Rarity</th>
+      <th>Weight</th>
+      <th>Crit Multi</th>
+      <th>Damage</th>
+      <th>Pen</th>
+      <th>Mag Size</th>
+      <th>Refire Rate</th>
+      <th>RPM</th>
+      <th>Reload Time</th>
+      <th>Move Speed</th>
+      <th>Sell</th>
+      <th>Buy</th>
+      <th>DPS</th>
+      <th>Velocity</th>
+      <th>perWeight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12</th>
+      <td>Basilisk</td>
+      <td>DMR</td>
+      <td>Heavy</td>
+      <td>Osiris</td>
+      <td>Exotic</td>
+      <td>50.0</td>
+      <td>1.6</td>
+      <td>34.0</td>
+      <td>28.0</td>
+      <td>8.0</td>
+      <td>0.5</td>
+      <td>120.0</td>
+      <td>3.85</td>
+      <td>0.8</td>
+      <td>82448.0</td>
+      <td>275000.0</td>
+      <td>17.0</td>
+      <td>45000.0</td>
+      <td>1648.96</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>KBR Longshot</td>
+      <td>DMR</td>
+      <td>Heavy</td>
+      <td>Korolev</td>
+      <td>Epic</td>
+      <td>50.0</td>
+      <td>1.5</td>
+      <td>35.0</td>
+      <td>26.0</td>
+      <td>12.0</td>
+      <td>0.6</td>
+      <td>100.0</td>
+      <td>3.55</td>
+      <td>0.9</td>
+      <td>29776.0</td>
+      <td>99000.0</td>
+      <td>21.0</td>
+      <td>40000.0</td>
+      <td>595.52</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Lacerator</td>
+      <td>DMR</td>
+      <td>Heavy</td>
+      <td>ICA</td>
+      <td>Rare</td>
+      <td>50.0</td>
+      <td>1.5</td>
+      <td>27.0</td>
+      <td>23.0</td>
+      <td>16.0</td>
+      <td>0.4</td>
+      <td>150.0</td>
+      <td>2.55</td>
+      <td>0.9</td>
+      <td>12203.0</td>
+      <td>41000.0</td>
+      <td>10.8</td>
+      <td>35000.0</td>
+      <td>244.06</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>All these weapons get used in my experience - and from watching others play the game. Although, the lowest tier gun in here is <code>Rare</code> so that probably helps a lot. Note that the <code>Rarity</code> of a gun informs the <code>Pen</code> for the Gun and therefore adds more damage when being fired. So, the higher the tier of <code>Rarity</code> therefore the more damage the gun can do per hit - and they have higher damage counts as well.</p>
+<p>Considering this, these guns have a limit placed on their Rate of Fire.</p>
+<div class="cell" data-execution_count="384">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>data[[<span class="st">'Type'</span>, <span class="st">'Refire Rate'</span>]].groupby(<span class="st">'Type'</span>).mean().sort_values(<span class="st">'Refire Rate'</span>, ascending<span class="op">=</span><span class="va">False</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="384">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Shotgun</th>
+      <th>DMR</th>
+      <th>Pistol</th>
+      <th>AR</th>
+      <th>SMG</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Refire Rate</th>
+      <td>0.77625</td>
+      <td>0.5</td>
+      <td>0.288333</td>
+      <td>0.1475</td>
+      <td>0.08125</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>This is a match in the order of the columns - ignoring the Shotgun Category. Shotguns have a low damage (per pellet), and a high re-fire rate. That’s obviously because the damage per pellet masks how lethal Shotguns are: See any Shattergun Montage basically.</p>
+<p>So, it looks like either this was coincidence or they’re intentionally using this to offset damage.</p>
+<div class="cell" data-execution_count="400">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x <span class="op">=</span> data.Damage, y <span class="op">=</span> data[<span class="st">'Refire Rate'</span>], hue <span class="op">=</span> data.Type)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Damage With Refire Rate"</span>, size<span class="op">=</span><span class="dv">15</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="400">
+<pre><code>Text(0.5, 1.0, 'Damage With Refire Rate')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="2022-09-27-cycle-weapons-best-general_files/figure-html/cell-19-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<p>If we check the relationship, the Damage also quite high against the constraint on the Refire Rate. These guns appear really strong in comparison to everything else - setting aside Snipers of course. But is it really? Let’s <strong>Normalize</strong> the Damage column and see if it really is that far out. If you’re not familiar with <em>Normalization</em> then this is a common process in Machine Learning where the values of a column are scaled based on the minimum and maximum values.</p>
+<div class="cell" data-execution_count="412">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> normalize(column): <span class="cf">return</span> ( column <span class="op">-</span> column.<span class="bu">min</span>()) <span class="op">/</span> (column.<span class="bu">max</span>() <span class="op">-</span> column.<span class="bu">min</span>())</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(normalize(data[<span class="st">'Refire Rate'</span>]).mean(), <span class="dv">2</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Lets save this and re-plot:</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'Norm Refire'</span>] <span class="op">=</span> <span class="bu">round</span>(normalize(data[<span class="st">'Refire Rate'</span>]), <span class="dv">2</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'Norm Damage'</span>] <span class="op">=</span> <span class="bu">round</span>(normalize(data[<span class="st">'Damage'</span>]), <span class="dv">2</span>)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Re-plot:</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x <span class="op">=</span> data[<span class="st">'Norm Damage'</span>], y <span class="op">=</span> data[<span class="st">'Norm Refire'</span>], hue <span class="op">=</span> data.Type)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Normalized Damage With Normalized Refire Rate"</span>, size<span class="op">=</span><span class="dv">15</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="412">
+<pre><code>Text(0.5, 1.0, 'Normalized Damage With Normalized Refire Rate')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="2022-09-27-cycle-weapons-best-general_files/figure-html/cell-20-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Normalizing doesn’t look to have changed anyting aside from the scale so that still looks really solid. And, If we check the <strong>Critical Multiplier</strong> - which is a stand in for <code>HeadShots</code> since I believe the Groin also counts - the reward is about average for accuracy.</p>
+<div class="cell" data-execution_count="401">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x <span class="op">=</span> data.Damage, y <span class="op">=</span> data[<span class="st">'Crit Multi'</span>], hue <span class="op">=</span> data.Type)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Damage With Critical Multiplier"</span>, size<span class="op">=</span><span class="dv">15</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="401">
+<pre><code>Text(0.5, 1.0, 'Damage With Critical Multiplier')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="2022-09-27-cycle-weapons-best-general_files/figure-html/cell-21-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="conclusions" class="level1">
+<h1>Conclusions</h1>
+<p>All in all, the DMR seems like a solid contender for best all around weapon type in the game. If you’re going in budget with a single gun then I’d recommend a DMR. We’ll see if this is till true in Season 2.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
