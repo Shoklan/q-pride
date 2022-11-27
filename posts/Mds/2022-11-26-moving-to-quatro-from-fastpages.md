@@ -2,7 +2,7 @@
 categories:
 - environment
 - process
-- migratino
+- migration
 date: '2022-11-26'
 description: This Was Not Simple.
 layout: post
@@ -14,12 +14,12 @@ toc: false
 For those unaware - or not following what Jeremy and his team produce -, Fastai also produced something called **Fastpages** which is intended to help creators in the Machine Learning Space Blog about their work. What was so useful about how this worked is that you could very easily explore a problem in a Jupyter Notebook only to clean it up and have the tooling produce a blog post: code and all. But, since it also supported other formats - such as Markdown documents, Word documents - you could really just use it as a general blogging tool as well. They made setting this all up easy so one could focus on writing and exploring instead of fighting with template engines or other tools. I have dabbled a bit with other technologies for blogging - a moment of word press, a few flask apps, and a bit of Django - but they were always about prose and not code. There was also a large amount of copying and pasting from editors to code blocks; not to mention trying to get the output from the runs showing in some meaningful way. While looking over quite a few of these I had started to consider actually writing my own just becuase there was such an annoying gap here.
 
 Thankfully, **[Fastpages was born](https://github.com/fastai/fastpages)** and it was exactly what I was looking for in a blogging platform. The original version of this blog was using fastpages and I was having good success slowly getting used to working through problems or ideas and then getting them online. Only to find out one day that it was being depreciated for a different tool: [Quarto](https://quarto.org). Quarto's purpose is about creating documents in general as opposed to simply blog posts. But, that's not a loss so long as the blogging allows me to still write Jupyter Notebooks and have them converted to blog posts. Unsurprisingly, it does do this and so and to quote the disclaimer from Fastpages:
-> Even though I created fastpages, I believe that people trying to blog with notebooks should be using Quarto. I am a believer in recommending the best tools for the job and helping people use those tools where possible. To that end, I have created this [migration guide](https://nbdev.fast.ai/tutorials/blogging.html) 153 that can help you migrate your fastpages projects to Quarto, along with other Quarto resources that might be helpful.
 
-I did a quick trial run to see how the migration would go: **it did not go**.
+> Even though I created fastpages, I believe that people trying to blog with notebooks should be using Quarto. I am a believer in recommending the best tools for the job and helping people use those tools where possible. To that end, I have created this [migration guide](https://nbdev.fast.ai/tutorials/blogging.html) 153 that can help you migrate your fastpages projects to Quarto, along with other Quarto resources that might be helpful. I did a quick trial run to see how the migration would go: **it did not go**.
 
 ## Problem 1: Quatro Does Not support Arch.
 Right from the start, this is not being built to be used across distributions. I am running Manajro linux - which is based on Arch Linux - and the install tries to install a debian package using `apt`. Not going to work here. Obviously. With this being as new as it is, I didn't expect there to be support for it on the AUR but someone did in fact go through the trouble of getting it up [there](https://aur.archlinux.org/packages/quarto-cli). But, sadly, as they note on that page:
+
 > **titaniumbones:** Getting a dependency error when trying to install; dependency deno<1.23.0 leads yay to install deno-bin from AUR (version 1.20), but it appears that deno-bin doesn't actually fulfill the dependency:
 
 > **trap000d**: There is no solution for this yet, until quarto devs manage to move to latest Deno. Either downgrade deno to 22.3... or patch quarto sources.
