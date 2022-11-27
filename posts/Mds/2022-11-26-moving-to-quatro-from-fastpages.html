@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-11-26">
+<meta name="description" content="This Was Not Simple.">
+
+<title>Orgulo.us - Migrating From Fastpages to Quarto</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Orgulo.us</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Migrating From Fastpages to Quarto</h1>
+                  <div>
+        <div class="description">
+          This Was Not Simple.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">environment</div>
+                <div class="quarto-category">process</div>
+                <div class="quarto-category">migratino</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 26, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="what-is-fastpages" class="level1">
+<h1>What is Fastpages?</h1>
+<p>For those unaware - or not following what Jeremy and his team produce -, Fastai also produced something called <strong>Fastpages</strong> which is intended to help creators in the Machine Learning Space Blog about their work. What was so useful about how this worked is that you could very easily explore a problem in a Jupyter Notebook only to clean it up and have the tooling produce a blog post: code and all. But, since it also supported other formats - such as Markdown documents, Word documents - you could really just use it as a general blogging tool as well. They made setting this all up easy so one could focus on writing and exploring instead of fighting with template engines or other tools. I have dabbled a bit with other technologies for blogging - a moment of word press, a few flask apps, and a bit of Django - but they were always about prose and not code. There was also a large amount of copying and pasting from editors to code blocks; not to mention trying to get the output from the runs showing in some meaningful way. While looking over quite a few of these I had started to consider actually writing my own just becuase there was such an annoying gap here.</p>
+<p>Thankfully, <strong><a href="https://github.com/fastai/fastpages">Fastpages was born</a></strong> and it was exactly what I was looking for in a blogging platform. The original version of this blog was using fastpages and I was having good success slowly getting used to working through problems or ideas and then getting them online. Only to find out one day that it was being depreciated for a different tool: <a href="https://quarto.org">Quarto</a>. Quarto’s purpose is about creating documents in general as opposed to simply blog posts. But, that’s not a loss so long as the blogging allows me to still write Jupyter Notebooks and have them converted to blog posts. Unsurprisingly, it does do this and so and to quote the disclaimer from Fastpages: &gt; Even though I created fastpages, I believe that people trying to blog with notebooks should be using Quarto. I am a believer in recommending the best tools for the job and helping people use those tools where possible. To that end, I have created this <a href="https://nbdev.fast.ai/tutorials/blogging.html">migration guide</a> 153 that can help you migrate your fastpages projects to Quarto, along with other Quarto resources that might be helpful.</p>
+<p>I did a quick trial run to see how the migration would go: <strong>it did not go</strong>.</p>
+<section id="problem-1-quatro-does-not-support-arch." class="level2">
+<h2 class="anchored" data-anchor-id="problem-1-quatro-does-not-support-arch.">Problem 1: Quatro Does Not support Arch.</h2>
+<p>Right from the start, this is not being built to be used across distributions. I am running Manajro linux - which is based on Arch Linux - and the install tries to install a debian package using <code>apt</code>. Not going to work here. Obviously. With this being as new as it is, I didn’t expect there to be support for it on the AUR but someone did in fact go through the trouble of getting it up <a href="https://aur.archlinux.org/packages/quarto-cli">there</a>. But, sadly, as they note on that page: &gt; <strong>titaniumbones:</strong> Getting a dependency error when trying to install; dependency deno&lt;1.23.0 leads yay to install deno-bin from AUR (version 1.20), but it appears that deno-bin doesn’t actually fulfill the dependency:</p>
+<blockquote class="blockquote">
+<p><strong>trap000d</strong>: There is no solution for this yet, until quarto devs manage to move to latest Deno. Either downgrade deno to 22.3… or patch quarto sources.</p>
+</blockquote>
+<p>The <a href="https://github.com/quarto-dev/quarto-cli/issues/1174">issue</a> has not moved in months at this point and I need this working now. These posts are - while fun - proof that I can use these technologies and I cannot wait an indeterminate number of maybe months for this blog to continue. And, Fastpages was showing some annoying behaviors - really ugly slugs for the urls - which I also needed fixed. <br> Well, I can always just setup a Debian Based Virtual Machine and post from that; so, that’s what I did.</p>
+</section>
+<section id="problem-2-i-want-to-post-about-deep-learning---which-requires-my-video-card." class="level2">
+<h2 class="anchored" data-anchor-id="problem-2-i-want-to-post-about-deep-learning---which-requires-my-video-card.">Problem 2: I Want to Post About Deep Learning - Which Requires my Video Card.</h2>
+<p>If I want to experiment and write post about more cutting edge ideas then I will need access to my Video Card in this computer. There are a few ways to work around this: 1. Just don’t do them. 2. Use a Service like Collab; Download the notebooks. 3. GPU Passthrough to the VM. 4. Build another computer just for Blogging. 5. Network sharing the same Directory.</p>
+<p><strong>Option One</strong> I included for completeness but I refuse to not post about these. <br> <strong>Option Two</strong> is passable since a Jupyter Notebook is basically just a JSON document so we could use a Cloud Service, explore and clean it up, download it and then save it to post. This is annoying and would slow down the interation process too much. Plus, I want to use my own Video Card that I have already spent money on for this. This is worst case but at least it could work. <br> <strong>Option Three</strong> is viable but risky. I have never actually done GPU passthrough and both systems would need to share the Video Card which could cause all sorts of weird issues. If I kept the Virtual Machine online and was playing a Video Game with my friends then I expect to have problems. And, that means constantly spinning the VM up and down as I need it. This is quite a lot of maintenance for writing posts. Again, this might work but with this many problems to accidentily trip over it’s risky at best and not reliable at worst. <br> <strong>Option Four</strong> is just silly; And, with Video Card prices what they are there no way I’m building a second computer just for this blog. Nope. <br></p>
+<p><strong>Option Five</strong> is what I went with. I can do all the work on my computer but save the actually outputs directly into the repository to commit and upload. This allows me to also keep data on my own computer and thus ignore the size constraints of data. It would also let me work on any computer I wanted - for example - my laptop is also Arch and also has a Video card so I could write posts from that as well. The VM could stay up as long as I wanted, I could even migrate it to other computers if need be and it would affect literally nothing. The only real maintenace will be the mounting remotely of the directory which is a very well solved problem.</p>
+</section>
+<section id="problem-3-setting-up-the-connection." class="level2">
+<h2 class="anchored" data-anchor-id="problem-3-setting-up-the-connection.">Problem 3: Setting up the Connection.</h2>
+<p>So, I have a Debian Virtual Machine now. There are some packages that I both wanted and needed for this to work: * <code>sshfs</code> to share the folders. * <code>sshd</code> to allow access remotely. * <code>vscodium</code> to write posts with: locally and remotely. * <code>xpra</code> to host remote windows. * I just like <code>vim</code>.</p>
+<p>Luckily, <code>sshfs</code> and <code>sshd</code> are installed by default so we wont need to worry about them. I ended up needing to install curl since it’s apparently not here by default; installed with <code>apt install curl</code> since this is a Debian system. So, I don’t tend to use raw <code>jupyter</code> notebooks but instead use a derivative of Visual Studio code called <code>vscodium</code>. I just happen to be comformtable with using this and it supports notebooks with a few extensions. It also has a <em>Quatro</em> extension which is useful for some of the publication parts I could use later.</p>
+<p>Always setup passwordless ssh access between systems when you setup a new system. There is a useful new way to do all of this via console and there are <a href="https://www.linuxtechi.com/passwordless-ssh-login-keys-linux/">good guides</a> already for this. One little caveat which bit me is I have quite a few of these now and so I name them when I make them. If you organize your .pub files - like I do - make sure you <strong>not move the .pub</strong> until <em>after</em> you’ve ran <code>ssh-copy-id &lt;username&gt;@&lt;ip-address&gt;</code>. If you move it before then the command doens’t find it; I tried to pass it manually but it just wouldn’t take.</p>
+<p><a href="https://www.xpra.org"><code>xpra</code></a> is a useful tool which allows for Remote Window control. It allows you to start a program as a daemon on any system, connect remotely to that system to get the remote window while it is running. If you’re familiar with X11 Forwarding then this will not be a new idea. This is simply better though since you can disconnect from the remote system at any time, go do something else and then re-attach later exactly where you were before. I use this at work often to conceptually break computers apart: this one is for Deep Learning and Gaming, this one is for Work related only, this is for Server Hosting, etc. Once it’s installed, I started the editor on the host with <code>xpra start :100 --start=codium</code> to start the daemon and connect to the editor remotely from my desktop using <code>xpra attach ssh:&lt;ip-address&gt;:100</code> to open the editor on my own workstation. Great! Now I can setup the new repository to host the files, open it via the editor on the remote system.</p>
+<p>Next I have to connect a folder locally to the VM which is easy using <code>sshfs</code>; this creates a fuse mount via an ssh tunnel to mimic the remote folder locally. You could also do this with samba but I find <code>sshfs</code> much easier and faster to setup and use. I made a directory as a mount point - <code>Blog</code> - and then mounted it via <code>sshfs blog:&lt;path-to-code&gt; Blog</code> so that I can work locally and read/write to repository.</p>
+</section>
+<section id="problem-4-the-actual-migration." class="level2">
+<h2 class="anchored" data-anchor-id="problem-4-the-actual-migration.">Problem 4: The Actual Migration.</h2>
+<p>The Document provided made this really easy; none of the steps failed me. One of my posts had an extension .MD instead of .md which caused the post to fail to convert but that’s about it. I updated the default them, built out a drafts folder for posts in the future and everything just kind of worked. I’ve been working through fixing the image paths on a few of my posts but otherwise this is really an improvement. <br> Expect more posts in the future and thanks for the new tool.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
