@@ -7,7 +7,7 @@ categories:
 - tools
 author: "Collin Mitchell"
 date: '2022-11-28'
-# layout: post
+layout: post
 format: 
   html:
     code-fold: true
