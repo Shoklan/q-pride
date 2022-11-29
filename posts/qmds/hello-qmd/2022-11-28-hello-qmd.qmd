@@ -30,11 +30,11 @@ In simpler language, Quarto is a tool to convert prose and runnable code into mo
 
 # What Really is This?
 We'll take the example from [the site](https://quarto.org/docs/get-started/hello/jupyter.html) as a base to build off of. Like an RMarkdown  or Markdown file, the Quarto Markdown file is a kind of structured formatting shorthand to generate a document. These documents are broken into a **Header**, **Prose** and **Code Chunks**:
-![Example RMarkdown](../_images/qmd/hello-quarto/summary-rmarkdown-elelemnts.png)
-![Example Notebook](../_images/qmd/hello-quarto/hello-quarto-notebook-example.png)
-![Example Notebook](../_images/qmd/hello-quarto/hello-quarto-qmd-example.png)
+![Example RMarkdown](../../_images/qmd/hello-quarto/summary-rmarkdown-elelemnts.png)
+![Example Notebook](../../_images/qmd/hello-quarto/hello-quarto-notebook-example.png)
+![Example Notebook](../../_images/qmd/hello-quarto/hello-quarto-qmd-example.png)
 
-So, if we convert the Quarto and the Notebook examples to PDFs - [Quarto PDF](../posts/_files/_pdfs/hello-quarto.pdf) and the [Notebook PDF](../posts/_files/_pdfs/hello-notebook.pdf) - then you can quickly see that the *Quarto* version is **much better formatted**. And, if you look at the example code, you can see that the code and the prose are more mixed together. This *could* be an advantage or a disadvantage depending on how you like to work; the output improvements are just superior.
+So, if we convert the Quarto and the Notebook examples to PDFs - [Quarto PDF](_pdfs/hello-quarto.pdf) and the [Notebook PDF](_pdfs/hello-notebook.pdf) - then you can quickly see that the *Quarto* version is **much better formatted**. And, if you look at the example code, you can see that the code and the prose are more mixed together. This *could* be an advantage or a disadvantage depending on how you like to work; the output improvements are just superior.
 
 A note that getting that I ended up with some issues while trying to export the Notebook PDF which you might also run into. `nbconvert` wants you to install with running this:
 ```bash
