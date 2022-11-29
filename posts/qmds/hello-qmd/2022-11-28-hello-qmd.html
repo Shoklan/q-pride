@@ -211,24 +211,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="add-this-to-your-toolbox" class="level1">
 <h1>Add This To Your Toolbox</h1>
 <p>If you’ve ever worked with the R programming language then you may have come across <strong>RMarkdown</strong>. And, if you have come across it but ended up mostly moving to Python - like I have had to - then you likely miss <code>Knitr</code> and this tooling. If you don’t know what I’m talking about then today is going to be a good day for you. We’re going to learn how to take what could of been a Jupyter Notebook and convert it to format which is similar in practice but also has excellent support for converting out of Notebooks.</p>
-<p>// If you’ve come from R and <code>Knitr</code> then you might be aware that Pandoc is what sits under RMarkdown and does the file conversion. This is a more general form of RMarkdown which continues to work with R but also now works with Python.</p>
 </section>
 <section id="what-is-quarto" class="level1">
 <h1>What is Quarto?</h1>
-<p>According to the site: &gt; Quarto® is an open-source scientific and technical publishing system built on Pandoc.</p>
+<p>According to the site: <q> Quarto® is an open-source scientific and technical publishing system built on Pandoc. </q></p>
 <p>In simpler language, Quarto is a tool to convert prose and runnable code into more accessible technical documentation: such as PDF files. As someone who is currently working on building an automated report of their Finances, this is so much better than trying to convert a Jupyter Notebook into a PDF. The real problem with that pipeline is that the conversion between the JSON formatting of the Notebook to the PDF is terrible. If you have never done that, I would recommend openning up one of your own notebooks and exporting it to a PDF just so you can see for yourself. And, the problem is that you can no real control over the formatting of the text. This is where <strong>Quarto</strong> comes in - and we’re going to use some examples on the website to show just how much better this really is.</p>
 </section>
 <section id="what-really-is-this" class="level1">
 <h1>What Really is This?</h1>
 <p>We’ll take the example from <a href="https://quarto.org/docs/get-started/hello/jupyter.html">the site</a> as a base to build off of. Like an RMarkdown or Markdown file, the Quarto Markdown file is a kind of structured formatting shorthand to generate a document. These documents are broken into a <strong>Header</strong>, <strong>Prose</strong> and <strong>Code Chunks</strong>: <img src="../../_images/qmd/hello-quarto/summary-rmarkdown-elelemnts.png" class="img-fluid" alt="Example RMarkdown"> <img src="../../_images/qmd/hello-quarto/hello-quarto-notebook-example.png" class="img-fluid" alt="Example Notebook"> <img src="../../_images/qmd/hello-quarto/hello-quarto-qmd-example.png" class="img-fluid" alt="Example Notebook"></p>
 <p>So, if we convert the Quarto and the Notebook examples to PDFs - <a href="_pdfs/hello-quarto.pdf">Quarto PDF</a> and the <a href="_pdfs/hello-notebook.pdf">Notebook PDF</a> - then you can quickly see that the <em>Quarto</em> version is <strong>much better formatted</strong>. And, if you look at the example code, you can see that the code and the prose are more mixed together. This <em>could</em> be an advantage or a disadvantage depending on how you like to work; the output improvements are just superior.</p>
-<p>A note that getting that I ended up with some issues while trying to export the Notebook PDF which you might also run into. <code>nbconvert</code> wants you to install with running this:</p>
+<p>A note that I ended up with some issues while trying to export the Notebook PDF which you might also run into. <code>nbconvert</code> wants you to install with running this:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>… but I found that wasn’t even and it still could not find pandoc. Since I’m worikng with the debian system, a simple <code>sudo apt install pandoc</code> was sufficient to solve this and export the PDF file finally.</p>
+<p>… but I found that wasn’t enough and it still could not find pandoc. Since I’m working with the debian system, a simple <code>sudo apt install pandoc</code> was sufficient to solve this and export the PDF file finally.</p>
 </section>
 <section id="some-highlights-and-idea." class="level1">
 <h1>Some highlights and Idea.</h1>
-<p>Like I said previously, if you’ve ever wanted to write up actual reports from notebooks then this is wonderful. Something like this could allow you to write an analysis, set it to run automatically and simply email them out to people. No longer would you necessarily need to rely on a Dashboard. And, one disadvantage of a dashboard is that it is not a traditional static file. This is actually an advantage if you wanted to keep a long standing static record of tracked changes - such as finances - where you would want a longstanding record saved somewhere.</p>
+<p>Like I said previously, if you’ve ever wanted to write up actual reports from notebooks then this is wonderful. Something like this could allow you to write an analysis, set it to run automatically and simply email them out to people. No longer would you necessarily need to rely on a Dashboard. And, one disadvantage of a dashboard is that it is not a traditional static file. This is actually an advantage if you wanted to keep those records of tracked changes - such as finances - where you may even require them.</p>
 <p>Another surprisingly simple and useful builtin for this is graphing. You can simply include flowcharts right into your documents and it <strong>just works</strong>! Here a flowchart from the site:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -252,224 +251,224 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div>
 <p>
-<svg width="672" height="480" viewbox="0.00 0.00 1110.87 116.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<svg width="672" height="480" viewbox="0.00 0.00 1152.00 491.13" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.03702 1.03702) rotate(0) translate(4 469.6)">
 <title>
 Ghosts
 </title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 1106.87,-112 1106.87,4 -4,4"></polygon> <!-- Banshee --> <g id="node1" class="node">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-469.6 1106.87,-469.6 1106.87,4 -4,4"></polygon> <text text-anchor="middle" x="551.44" y="-8.2" font-family="Times,serif" font-size="14.00">Spoopis</text> <!-- Banshee --> <g id="node1" class="node">
 <title>
 Banshee
 </title>
-<ellipse fill="teal" stroke="black" cx="697.37" cy="-18" rx="43.5" ry="18"></ellipse> <text text-anchor="middle" x="697.37" y="-13.8" font-family="Times,serif" font-size="14.00">Banshee</text> </g> <!-- Demon --> <g id="node2" class="node">
+<ellipse fill="teal" stroke="black" cx="697.37" cy="-97.8" rx="43.5" ry="18"></ellipse> <text text-anchor="middle" x="697.37" y="-93.6" font-family="Times,serif" font-size="14.00">Banshee</text> </g> <!-- Demon --> <g id="node2" class="node">
 <title>
 Demon
 </title>
-<ellipse fill="teal" stroke="black" cx="596.37" cy="-18" rx="39.43" ry="18"></ellipse> <text text-anchor="middle" x="596.37" y="-13.8" font-family="Times,serif" font-size="14.00">Demon</text> </g> <!-- Jinn --> <g id="node3" class="node">
+<ellipse fill="teal" stroke="black" cx="596.37" cy="-97.8" rx="39.43" ry="18"></ellipse> <text text-anchor="middle" x="596.37" y="-93.6" font-family="Times,serif" font-size="14.00">Demon</text> </g> <!-- Jinn --> <g id="node3" class="node">
 <title>
 Jinn
 </title>
-<ellipse fill="teal" stroke="black" cx="217.37" cy="-18" rx="27.27" ry="18"></ellipse> <text text-anchor="middle" x="217.37" y="-13.8" font-family="Times,serif" font-size="14.00">Jinn</text> </g> <!-- Mare --> <g id="node4" class="node">
+<ellipse fill="teal" stroke="black" cx="217.37" cy="-97.8" rx="27.27" ry="18"></ellipse> <text text-anchor="middle" x="217.37" y="-93.6" font-family="Times,serif" font-size="14.00">Jinn</text> </g> <!-- Mare --> <g id="node4" class="node">
 <title>
 Mare
 </title>
-<ellipse fill="teal" stroke="black" cx="140.37" cy="-18" rx="31.32" ry="18"></ellipse> <text text-anchor="middle" x="140.37" y="-13.8" font-family="Times,serif" font-size="14.00">Mare</text> </g> <!-- Oni --> <g id="node5" class="node">
+<ellipse fill="teal" stroke="black" cx="140.37" cy="-97.8" rx="31.32" ry="18"></ellipse> <text text-anchor="middle" x="140.37" y="-93.6" font-family="Times,serif" font-size="14.00">Mare</text> </g> <!-- Oni --> <g id="node5" class="node">
 <title>
 Oni
 </title>
-<ellipse fill="teal" stroke="black" cx="786.37" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="786.37" y="-13.8" font-family="Times,serif" font-size="14.00">Oni</text> </g> <!-- Phantom --> <g id="node6" class="node">
+<ellipse fill="teal" stroke="black" cx="786.37" cy="-97.8" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="786.37" y="-93.6" font-family="Times,serif" font-size="14.00">Oni</text> </g> <!-- Phantom --> <g id="node6" class="node">
 <title>
 Phantom
 </title>
-<ellipse fill="teal" stroke="black" cx="45.37" cy="-18" rx="45.25" ry="18"></ellipse> <text text-anchor="middle" x="45.37" y="-13.8" font-family="Times,serif" font-size="14.00">Phantom</text> </g> <!-- Poltergeist --> <g id="node7" class="node">
+<ellipse fill="teal" stroke="black" cx="45.37" cy="-97.8" rx="45.25" ry="18"></ellipse> <text text-anchor="middle" x="45.37" y="-93.6" font-family="Times,serif" font-size="14.00">Phantom</text> </g> <!-- Poltergeist --> <g id="node7" class="node">
 <title>
 Poltergeist
 </title>
-<ellipse fill="teal" stroke="black" cx="486.37" cy="-18" rx="52.19" ry="18"></ellipse> <text text-anchor="middle" x="486.37" y="-13.8" font-family="Times,serif" font-size="14.00">Poltergeist</text> </g> <!-- Revenant --> <g id="node8" class="node">
+<ellipse fill="teal" stroke="black" cx="486.37" cy="-97.8" rx="52.19" ry="18"></ellipse> <text text-anchor="middle" x="486.37" y="-93.6" font-family="Times,serif" font-size="14.00">Poltergeist</text> </g> <!-- Revenant --> <g id="node8" class="node">
 <title>
 Revenant
 </title>
-<ellipse fill="teal" stroke="black" cx="972.37" cy="-18" rx="47.51" ry="18"></ellipse> <text text-anchor="middle" x="972.37" y="-13.8" font-family="Times,serif" font-size="14.00">Revenant</text> </g> <!-- Shade --> <g id="node9" class="node">
+<ellipse fill="teal" stroke="black" cx="972.37" cy="-97.8" rx="47.51" ry="18"></ellipse> <text text-anchor="middle" x="972.37" y="-93.6" font-family="Times,serif" font-size="14.00">Revenant</text> </g> <!-- Shade --> <g id="node9" class="node">
 <title>
 Shade
 </title>
-<ellipse fill="teal" stroke="black" cx="297.37" cy="-18" rx="34.77" ry="18"></ellipse> <text text-anchor="middle" x="297.37" y="-13.8" font-family="Times,serif" font-size="14.00">Shade</text> </g> <!-- Spirit --> <g id="node10" class="node">
+<ellipse fill="teal" stroke="black" cx="297.37" cy="-97.8" rx="34.77" ry="18"></ellipse> <text text-anchor="middle" x="297.37" y="-93.6" font-family="Times,serif" font-size="14.00">Shade</text> </g> <!-- Spirit --> <g id="node10" class="node">
 <title>
 Spirit
 </title>
-<ellipse fill="teal" stroke="black" cx="1070.37" cy="-18" rx="32.5" ry="18"></ellipse> <text text-anchor="middle" x="1070.37" y="-13.8" font-family="Times,serif" font-size="14.00">Spirit</text> </g> <!-- Wraith --> <g id="node11" class="node">
+<ellipse fill="teal" stroke="black" cx="1070.37" cy="-97.8" rx="32.5" ry="18"></ellipse> <text text-anchor="middle" x="1070.37" y="-93.6" font-family="Times,serif" font-size="14.00">Spirit</text> </g> <!-- Wraith --> <g id="node11" class="node">
 <title>
 Wraith
 </title>
-<ellipse fill="teal" stroke="black" cx="869.37" cy="-18" rx="37.7" ry="18"></ellipse> <text text-anchor="middle" x="869.37" y="-13.8" font-family="Times,serif" font-size="14.00">Wraith</text> </g> <!-- Yurei --> <g id="node12" class="node">
+<ellipse fill="teal" stroke="black" cx="869.37" cy="-97.8" rx="37.7" ry="18"></ellipse> <text text-anchor="middle" x="869.37" y="-93.6" font-family="Times,serif" font-size="14.00">Wraith</text> </g> <!-- Yurei --> <g id="node12" class="node">
 <title>
 Yurei
 </title>
-<ellipse fill="teal" stroke="black" cx="383.37" cy="-18" rx="33.05" ry="18"></ellipse> <text text-anchor="middle" x="383.37" y="-13.8" font-family="Times,serif" font-size="14.00">Yurei</text> </g> <!-- Frezing Temperatures --> <g id="node13" class="node">
+<ellipse fill="teal" stroke="black" cx="383.37" cy="-97.8" rx="33.05" ry="18"></ellipse> <text text-anchor="middle" x="383.37" y="-93.6" font-family="Times,serif" font-size="14.00">Yurei</text> </g> <!-- Frezing Temperatures --> <g id="node13" class="node">
 <title>
 Frezing Temperatures
 </title>
-<ellipse fill="none" stroke="black" cx="383.37" cy="-90" rx="96.07" ry="18"></ellipse> <text text-anchor="middle" x="383.37" y="-85.8" font-family="Times,serif" font-size="14.00">Frezing Temperatures</text> </g> <!-- Frezing Temperatures&#45;&gt;Banshee --> <g id="edge1" class="edge">
+<ellipse fill="none" stroke="black" cx="383.37" cy="-391.8" rx="96.07" ry="18"></ellipse> <text text-anchor="middle" x="383.37" y="-387.6" font-family="Times,serif" font-size="14.00">Frezing Temperatures</text> </g> <!-- Frezing Temperatures&#45;&gt;Banshee --> <g id="edge1" class="edge">
 <title>
 Frezing Temperatures-&gt;Banshee
 </title>
-<path fill="none" stroke="black" d="M451.44,-77.3C504.39,-67.69 579.5,-52.94 644.37,-36 647.8,-35.11 651.32,-34.12 654.86,-33.09"></path> <polygon fill="black" stroke="black" points="656.19,-36.34 664.74,-30.09 654.16,-29.64 656.19,-36.34"></polygon> </g> <!-- Frezing Temperatures&#45;&gt;Demon --> <g id="edge2" class="edge">
+<path fill="none" stroke="black" d="M401.61,-373.84C455.1,-324.1 611.62,-178.55 672.62,-121.81"></path> <polygon fill="black" stroke="black" points="675.31,-124.1 680.25,-114.73 670.54,-118.97 675.31,-124.1"></polygon> </g> <!-- Frezing Temperatures&#45;&gt;Demon --> <g id="edge2" class="edge">
 <title>
 Frezing Temperatures-&gt;Demon
 </title>
-<path fill="none" stroke="black" d="M430.12,-74.19C462.98,-63.7 507.94,-49.21 547.37,-36 550.31,-35.02 553.34,-33.99 556.39,-32.95"></path> <polygon fill="black" stroke="black" points="557.77,-36.18 566.09,-29.62 555.49,-29.56 557.77,-36.18"></polygon> </g> <!-- Frezing Temperatures&#45;&gt;Mare --> <g id="edge3" class="edge">
+<path fill="none" stroke="black" d="M395.75,-373.84C431.72,-324.52 536.41,-181 578.52,-123.27"></path> <polygon fill="black" stroke="black" points="581.43,-125.23 584.5,-115.08 575.77,-121.1 581.43,-125.23"></polygon> </g> <!-- Frezing Temperatures&#45;&gt;Mare --> <g id="edge3" class="edge">
 <title>
 Frezing Temperatures-&gt;Mare
 </title>
-<path fill="none" stroke="black" d="M324.41,-75.78C283.79,-66.12 228.79,-51.97 181.37,-36 178.95,-35.18 176.46,-34.29 173.96,-33.36"></path> <polygon fill="black" stroke="black" points="175.03,-30.02 164.45,-29.62 172.48,-36.53 175.03,-30.02"></polygon> </g> <!-- Frezing Temperatures&#45;&gt;Phantom --> <g id="edge4" class="edge">
+<path fill="none" stroke="black" d="M369.26,-373.84C327.94,-324.19 207.16,-179.06 159.77,-122.11"></path> <polygon fill="black" stroke="black" points="162.42,-119.82 153.33,-114.37 157.04,-124.3 162.42,-119.82"></polygon> </g> <!-- Frezing Temperatures&#45;&gt;Phantom --> <g id="edge4" class="edge">
 <title>
 Frezing Temperatures-&gt;Phantom
 </title>
-<path fill="none" stroke="black" d="M315.41,-77.2C245.12,-64.82 140.16,-45.84 100.37,-36 96.71,-35.09 92.94,-34.09 89.16,-33.03"></path> <polygon fill="black" stroke="black" points="89.82,-29.57 79.24,-30.13 87.86,-36.29 89.82,-29.57"></polygon> </g> <!-- Frezing Temperatures&#45;&gt;Wraith --> <g id="edge5" class="edge">
+<path fill="none" stroke="black" d="M363.74,-373.84C305.91,-323.88 136.2,-177.27 71.16,-121.07"></path> <polygon fill="black" stroke="black" points="73.26,-118.26 63.4,-114.37 68.68,-123.56 73.26,-118.26"></polygon> </g> <!-- Frezing Temperatures&#45;&gt;Wraith --> <g id="edge5" class="edge">
 <title>
 Frezing Temperatures-&gt;Wraith
 </title>
-<path fill="none" stroke="black" d="M451.92,-77.36C464.05,-75.46 476.57,-73.59 488.37,-72 636.34,-52.06 676.91,-69.63 822.37,-36 825.4,-35.3 828.51,-34.46 831.6,-33.54"></path> <polygon fill="black" stroke="black" points="832.94,-36.78 841.37,-30.37 830.78,-30.13 832.94,-36.78"></polygon> </g> <!-- Frezing Temperatures&#45;&gt;Yurei --> <g id="edge6" class="edge">
+<path fill="none" stroke="black" d="M410.54,-374.48C494.42,-324.08 748.97,-171.14 838.13,-117.57"></path> <polygon fill="black" stroke="black" points="839.94,-120.57 846.71,-112.42 836.34,-114.57 839.94,-120.57"></polygon> </g> <!-- Frezing Temperatures&#45;&gt;Yurei --> <g id="edge6" class="edge">
 <title>
 Frezing Temperatures-&gt;Yurei
 </title>
-<path fill="none" stroke="black" d="M383.37,-71.7C383.37,-63.98 383.37,-54.71 383.37,-46.11"></path> <polygon fill="black" stroke="black" points="386.87,-46.1 383.37,-36.1 379.87,-46.1 386.87,-46.1"></polygon> </g> <!-- Fingerprints --> <g id="node14" class="node">
+<path fill="none" stroke="black" d="M383.37,-373.41C383.37,-324.52 383.37,-185.56 383.37,-126.22"></path> <polygon fill="black" stroke="black" points="386.87,-126.1 383.37,-116.1 379.87,-126.1 386.87,-126.1"></polygon> </g> <!-- Fingerprints --> <g id="node14" class="node">
 <title>
 Fingerprints
 </title>
-<ellipse fill="none" stroke="black" cx="963.37" cy="-90" rx="58.49" ry="18"></ellipse> <text text-anchor="middle" x="963.37" y="-85.8" font-family="Times,serif" font-size="14.00">Fingerprints</text> </g> <!-- Fingerprints&#45;&gt;Banshee --> <g id="edge7" class="edge">
+<ellipse fill="none" stroke="black" cx="963.37" cy="-391.8" rx="58.49" ry="18"></ellipse> <text text-anchor="middle" x="963.37" y="-387.6" font-family="Times,serif" font-size="14.00">Fingerprints</text> </g> <!-- Fingerprints&#45;&gt;Banshee --> <g id="edge7" class="edge">
 <title>
 Fingerprints-&gt;Banshee
 </title>
-<path fill="none" stroke="black" d="M919.78,-77.89C911.98,-75.92 903.94,-73.89 896.37,-72 831.54,-55.78 814.68,-54.22 750.37,-36 747.02,-35.05 743.55,-34.03 740.08,-32.98"></path> <polygon fill="black" stroke="black" points="740.93,-29.58 730.35,-29.96 738.86,-36.26 740.93,-29.58"></polygon> </g> <!-- Fingerprints&#45;&gt;Poltergeist --> <g id="edge8" class="edge">
+<path fill="none" stroke="black" d="M948.31,-374.26C903.49,-325.06 770.86,-179.47 718.75,-122.26"></path> <polygon fill="black" stroke="black" points="721.27,-119.83 711.95,-114.8 716.09,-124.55 721.27,-119.83"></polygon> </g> <!-- Fingerprints&#45;&gt;Poltergeist --> <g id="edge8" class="edge">
 <title>
 Fingerprints-&gt;Poltergeist
 </title>
-<path fill="none" stroke="black" d="M921.4,-77.36C913.15,-75.35 904.53,-73.45 896.37,-72 743.28,-44.81 701.2,-64.66 548.37,-36 543.87,-35.16 539.22,-34.15 534.58,-33.04"></path> <polygon fill="black" stroke="black" points="535.06,-29.56 524.51,-30.51 533.36,-36.34 535.06,-29.56"></polygon> </g> <!-- Fingerprints&#45;&gt;Revenant --> <g id="edge9" class="edge">
+<path fill="none" stroke="black" d="M938.4,-375.51C858.62,-326.67 609.84,-174.38 519.54,-119.11"></path> <polygon fill="black" stroke="black" points="521.17,-116 510.81,-113.76 517.52,-121.97 521.17,-116"></polygon> </g> <!-- Fingerprints&#45;&gt;Revenant --> <g id="edge9" class="edge">
 <title>
 Fingerprints-&gt;Revenant
 </title>
-<path fill="none" stroke="black" d="M965.6,-71.7C966.59,-63.98 967.78,-54.71 968.89,-46.11"></path> <polygon fill="black" stroke="black" points="972.37,-46.47 970.17,-36.1 965.43,-45.58 972.37,-46.47"></polygon> </g> <!-- Fingerprints&#45;&gt;Spirit --> <g id="edge10" class="edge">
+<path fill="none" stroke="black" d="M963.91,-373.41C965.42,-324.52 969.7,-185.56 971.53,-126.22"></path> <polygon fill="black" stroke="black" points="975.03,-126.2 971.84,-116.1 968.03,-125.99 975.03,-126.2"></polygon> </g> <!-- Fingerprints&#45;&gt;Spirit --> <g id="edge10" class="edge">
 <title>
 Fingerprints-&gt;Spirit
 </title>
-<path fill="none" stroke="black" d="M987.12,-73.46C1003.16,-62.97 1024.44,-49.05 1041.47,-37.91"></path> <polygon fill="black" stroke="black" points="1043.48,-40.77 1049.94,-32.37 1039.65,-34.92 1043.48,-40.77"></polygon> </g> <!-- Fingerprints&#45;&gt;Wraith --> <g id="edge11" class="edge">
+<path fill="none" stroke="black" d="M969.59,-373.84C987.43,-325.15 1038.9,-184.68 1060.57,-125.54"></path> <polygon fill="black" stroke="black" points="1063.99,-126.4 1064.14,-115.81 1057.41,-123.99 1063.99,-126.4"></polygon> </g> <!-- Fingerprints&#45;&gt;Wraith --> <g id="edge11" class="edge">
 <title>
 Fingerprints-&gt;Wraith
 </title>
-<path fill="none" stroke="black" d="M942.04,-73.12C928.73,-63.2 911.45,-50.34 897.09,-39.64"></path> <polygon fill="black" stroke="black" points="899.13,-36.79 889.02,-33.63 894.95,-42.41 899.13,-36.79"></polygon> </g> <!-- EMF level 5 --> <g id="node15" class="node">
+<path fill="none" stroke="black" d="M957.91,-373.84C942.24,-325.15 897.02,-184.68 877.98,-125.54"></path> <polygon fill="black" stroke="black" points="881.24,-124.25 874.85,-115.81 874.58,-126.4 881.24,-124.25"></polygon> </g> <!-- EMF level 5 --> <g id="node15" class="node">
 <title>
 EMF level 5
 </title>
-<ellipse fill="none" stroke="black" cx="556.37" cy="-90" rx="59.13" ry="18"></ellipse> <text text-anchor="middle" x="556.37" y="-85.8" font-family="Times,serif" font-size="14.00">EMF level 5</text> </g> <!-- EMF level 5&#45;&gt;Banshee --> <g id="edge12" class="edge">
+<ellipse fill="none" stroke="black" cx="556.37" cy="-391.8" rx="59.13" ry="18"></ellipse> <text text-anchor="middle" x="556.37" y="-387.6" font-family="Times,serif" font-size="14.00">EMF level 5</text> </g> <!-- EMF level 5&#45;&gt;Banshee --> <g id="edge12" class="edge">
 <title>
 EMF level 5-&gt;Banshee
 </title>
-<path fill="none" stroke="black" d="M585.93,-74.33C607.79,-63.47 637.69,-48.63 661.01,-37.05"></path> <polygon fill="black" stroke="black" points="662.84,-40.05 670.24,-32.47 659.73,-33.78 662.84,-40.05"></polygon> </g> <!-- EMF level 5&#45;&gt;Jinn --> <g id="edge13" class="edge">
+<path fill="none" stroke="black" d="M564.56,-373.84C588.12,-325.05 656.19,-184.1 684.64,-125.18"></path> <polygon fill="black" stroke="black" points="687.96,-126.34 689.16,-115.81 681.66,-123.29 687.96,-126.34"></polygon> </g> <!-- EMF level 5&#45;&gt;Jinn --> <g id="edge13" class="edge">
 <title>
 EMF level 5-&gt;Jinn
 </title>
-<path fill="none" stroke="black" d="M513.34,-77.6C505.09,-75.6 496.49,-73.63 488.37,-72 384.79,-51.16 354.42,-66.88 253.37,-36 251.44,-35.41 249.48,-34.73 247.52,-33.99"></path> <polygon fill="black" stroke="black" points="248.48,-30.6 237.91,-29.94 245.76,-37.05 248.48,-30.6"></polygon> </g> <!-- EMF level 5&#45;&gt;Oni --> <g id="edge14" class="edge">
+<path fill="none" stroke="black" d="M537.66,-374.68C480.01,-325.03 305.12,-174.38 241.14,-119.27"></path> <polygon fill="black" stroke="black" points="243.08,-116.32 233.21,-112.45 238.51,-121.62 243.08,-116.32"></polygon> </g> <!-- EMF level 5&#45;&gt;Oni --> <g id="edge14" class="edge">
 <title>
 EMF level 5-&gt;Oni
 </title>
-<path fill="none" stroke="black" d="M600.5,-77.9C648.8,-65.58 723.03,-46.1 750.37,-36 752.22,-35.32 754.1,-34.58 755.99,-33.8"></path> <polygon fill="black" stroke="black" points="757.57,-36.93 765.32,-29.69 754.75,-30.52 757.57,-36.93"></polygon> </g> <!-- EMF level 5&#45;&gt;Phantom --> <g id="edge15" class="edge">
+<path fill="none" stroke="black" d="M569.73,-373.84C608.86,-324.17 723.22,-178.97 768.05,-122.06"></path> <polygon fill="black" stroke="black" points="770.94,-124.04 774.38,-114.02 765.45,-119.71 770.94,-124.04"></polygon> </g> <!-- EMF level 5&#45;&gt;Phantom --> <g id="edge15" class="edge">
 <title>
 EMF level 5-&gt;Phantom
 </title>
-<path fill="none" stroke="black" d="M513.78,-77.3C505.41,-75.3 496.65,-73.41 488.37,-72 317.65,-42.91 270.24,-69.75 100.37,-36 96.46,-35.22 92.43,-34.27 88.41,-33.23"></path> <polygon fill="black" stroke="black" points="89.11,-29.79 78.54,-30.46 87.22,-36.53 89.11,-29.79"></polygon> </g> <!-- EMF level 5&#45;&gt;Revenant --> <g id="edge16" class="edge">
+<path fill="none" stroke="black" d="M529.62,-375.51C443.67,-326.4 174.62,-172.65 79.28,-118.18"></path> <polygon fill="black" stroke="black" points="80.77,-114.99 70.35,-113.07 77.29,-121.07 80.77,-114.99"></polygon> </g> <!-- EMF level 5&#45;&gt;Revenant --> <g id="edge16" class="edge">
 <title>
 EMF level 5-&gt;Revenant
 </title>
-<path fill="none" stroke="black" d="M599.37,-77.41C607.63,-75.42 616.24,-73.51 624.37,-72 752.93,-48.1 788.45,-63.09 916.37,-36 920.23,-35.18 924.21,-34.22 928.18,-33.18"></path> <polygon fill="black" stroke="black" points="929.27,-36.51 937.96,-30.46 927.39,-29.77 929.27,-36.51"></polygon> </g> <!-- Spirit Box --> <g id="node16" class="node">
+<path fill="none" stroke="black" d="M578.74,-375.1C648.62,-326.05 862.9,-175.64 942.33,-119.89"></path> <polygon fill="black" stroke="black" points="944.73,-122.48 950.9,-113.87 940.71,-116.75 944.73,-122.48"></polygon> </g> <!-- Spirit Box --> <g id="node16" class="node">
 <title>
 Spirit Box
 </title>
-<ellipse fill="none" stroke="black" cx="684.37" cy="-90" rx="51.03" ry="18"></ellipse> <text text-anchor="middle" x="684.37" y="-85.8" font-family="Times,serif" font-size="14.00">Spirit Box</text> </g> <!-- Spirit Box&#45;&gt;Demon --> <g id="edge17" class="edge">
+<ellipse fill="none" stroke="black" cx="684.37" cy="-391.8" rx="51.03" ry="18"></ellipse> <text text-anchor="middle" x="684.37" y="-387.6" font-family="Times,serif" font-size="14.00">Spirit Box</text> </g> <!-- Spirit Box&#45;&gt;Demon --> <g id="edge17" class="edge">
 <title>
 Spirit Box-&gt;Demon
 </title>
-<path fill="none" stroke="black" d="M664.4,-73.12C652.14,-63.36 636.29,-50.75 622.97,-40.16"></path> <polygon fill="black" stroke="black" points="625.06,-37.35 615.06,-33.86 620.71,-42.83 625.06,-37.35"></polygon> </g> <!-- Spirit Box&#45;&gt;Jinn --> <g id="edge18" class="edge">
+<path fill="none" stroke="black" d="M679.26,-373.84C664.59,-325.15 622.25,-184.68 604.43,-125.54"></path> <polygon fill="black" stroke="black" points="607.74,-124.37 601.5,-115.81 601.03,-126.39 607.74,-124.37"></polygon> </g> <!-- Spirit Box&#45;&gt;Jinn --> <g id="edge18" class="edge">
 <title>
 Spirit Box-&gt;Jinn
 </title>
-<path fill="none" stroke="black" d="M647.49,-77.43C639.91,-75.37 631.93,-73.42 624.37,-72 461.58,-41.3 413.08,-80.02 253.37,-36 251.42,-35.46 249.45,-34.83 247.48,-34.12"></path> <polygon fill="black" stroke="black" points="248.42,-30.72 237.85,-30.15 245.76,-37.2 248.42,-30.72"></polygon> </g> <!-- Spirit Box&#45;&gt;Mare --> <g id="edge19" class="edge">
+<path fill="none" stroke="black" d="M660.25,-375.72C581.05,-326.19 329.25,-168.75 245.08,-116.12"></path> <polygon fill="black" stroke="black" points="246.9,-113.13 236.56,-110.8 243.18,-119.07 246.9,-113.13"></polygon> </g> <!-- Spirit Box&#45;&gt;Mare --> <g id="edge19" class="edge">
 <title>
 Spirit Box-&gt;Mare
 </title>
-<path fill="none" stroke="black" d="M647.83,-77.42C640.15,-75.34 632.04,-73.38 624.37,-72 429.98,-36.91 373.39,-82.39 181.37,-36 178.73,-35.36 176.03,-34.57 173.34,-33.69"></path> <polygon fill="black" stroke="black" points="174.39,-30.35 163.8,-30.18 171.98,-36.92 174.39,-30.35"></polygon> </g> <!-- Spirit Box&#45;&gt;Oni --> <g id="edge20" class="edge">
+<path fill="none" stroke="black" d="M657.4,-376.32C566.1,-327.32 269.04,-167.87 171.63,-115.58"></path> <polygon fill="black" stroke="black" points="173.04,-112.36 162.57,-110.72 169.73,-118.53 173.04,-112.36"></polygon> </g> <!-- Spirit Box&#45;&gt;Oni --> <g id="edge20" class="edge">
 <title>
 Spirit Box-&gt;Oni
 </title>
-<path fill="none" stroke="black" d="M706.76,-73.64C722.29,-62.98 743.07,-48.72 759.5,-37.44"></path> <polygon fill="black" stroke="black" points="761.86,-40.07 768.12,-31.52 757.9,-34.3 761.86,-40.07"></polygon> </g> <!-- Spirit Box&#45;&gt;Poltergeist --> <g id="edge21" class="edge">
+<path fill="none" stroke="black" d="M690.3,-373.84C707.34,-325.04 756.61,-184.02 777.18,-125.13"></path> <polygon fill="black" stroke="black" points="780.57,-126.04 780.56,-115.44 773.96,-123.73 780.57,-126.04"></polygon> </g> <!-- Spirit Box&#45;&gt;Poltergeist --> <g id="edge21" class="edge">
 <title>
 Spirit Box-&gt;Poltergeist
 </title>
-<path fill="none" stroke="black" d="M649.43,-76.65C616.55,-65.02 567.15,-47.56 531.35,-34.9"></path> <polygon fill="black" stroke="black" points="532.23,-31.5 521.63,-31.47 529.89,-38.1 532.23,-31.5"></polygon> </g> <!-- Spirit Box&#45;&gt;Spirit --> <g id="edge22" class="edge">
+<path fill="none" stroke="black" d="M672.87,-373.84C639.58,-324.74 542.97,-182.26 503.49,-124.04"></path> <polygon fill="black" stroke="black" points="506.17,-121.76 497.66,-115.44 500.37,-125.69 506.17,-121.76"></polygon> </g> <!-- Spirit Box&#45;&gt;Spirit --> <g id="edge22" class="edge">
 <title>
 Spirit Box-&gt;Spirit
 </title>
-<path fill="none" stroke="black" d="M721.61,-77.51C729.1,-75.47 736.95,-73.51 744.37,-72 869.48,-46.53 905.97,-68.74 1029.37,-36 1031.7,-35.38 1034.07,-34.66 1036.43,-33.88"></path> <polygon fill="black" stroke="black" points="1037.85,-37.08 1046.03,-30.34 1035.43,-30.51 1037.85,-37.08"></polygon> </g> <!-- Spirit Box&#45;&gt;Wraith --> <g id="edge23" class="edge">
+<path fill="none" stroke="black" d="M704.85,-375.31C769.71,-326.25 970.55,-174.31 1043.52,-119.11"></path> <polygon fill="black" stroke="black" points="1045.91,-121.7 1051.77,-112.87 1041.69,-116.11 1045.91,-121.7"></polygon> </g> <!-- Spirit Box&#45;&gt;Wraith --> <g id="edge23" class="edge">
 <title>
 Spirit Box-&gt;Wraith
 </title>
-<path fill="none" stroke="black" d="M717.88,-76.32C749.81,-64.24 797.85,-46.06 831.24,-33.43"></path> <polygon fill="black" stroke="black" points="832.56,-36.67 840.67,-29.86 830.08,-30.12 832.56,-36.67"></polygon> </g> <!-- Ghost Writing --> <g id="node17" class="node">
+<path fill="none" stroke="black" d="M695.12,-373.84C726.23,-324.74 816.5,-182.26 853.38,-124.04"></path> <polygon fill="black" stroke="black" points="856.43,-125.76 858.83,-115.44 850.52,-122.02 856.43,-125.76"></polygon> </g> <!-- Ghost Writing --> <g id="node17" class="node">
 <title>
 Ghost Writing
 </title>
-<ellipse fill="none" stroke="black" cx="820.37" cy="-90" rx="66.62" ry="18"></ellipse> <text text-anchor="middle" x="820.37" y="-85.8" font-family="Times,serif" font-size="14.00">Ghost Writing</text> </g> <!-- Ghost Writing&#45;&gt;Demon --> <g id="edge24" class="edge">
+<ellipse fill="none" stroke="black" cx="820.37" cy="-391.8" rx="66.62" ry="18"></ellipse> <text text-anchor="middle" x="820.37" y="-387.6" font-family="Times,serif" font-size="14.00">Ghost Writing</text> </g> <!-- Ghost Writing&#45;&gt;Demon --> <g id="edge24" class="edge">
 <title>
 Ghost Writing-&gt;Demon
 </title>
-<path fill="none" stroke="black" d="M776.43,-76.4C740.72,-66.01 689.1,-50.65 644.37,-36 641.62,-35.1 638.78,-34.15 635.92,-33.18"></path> <polygon fill="black" stroke="black" points="636.85,-29.79 626.26,-29.83 634.56,-36.41 636.85,-29.79"></polygon> </g> <!-- Ghost Writing&#45;&gt;Oni --> <g id="edge25" class="edge">
+<path fill="none" stroke="black" d="M807.36,-373.84C769.53,-324.52 659.43,-181 615.15,-123.27"></path> <polygon fill="black" stroke="black" points="617.73,-120.89 608.87,-115.08 612.17,-125.15 617.73,-120.89"></polygon> </g> <!-- Ghost Writing&#45;&gt;Oni --> <g id="edge25" class="edge">
 <title>
 Ghost Writing-&gt;Oni
 </title>
-<path fill="none" stroke="black" d="M812.14,-72.05C808.12,-63.77 803.19,-53.62 798.72,-44.42"></path> <polygon fill="black" stroke="black" points="801.81,-42.77 794.29,-35.31 795.51,-45.83 801.81,-42.77"></polygon> </g> <!-- Ghost Writing&#45;&gt;Revenant --> <g id="edge26" class="edge">
+<path fill="none" stroke="black" d="M818.35,-373.41C812.66,-324.52 796.48,-185.56 789.57,-126.22"></path> <polygon fill="black" stroke="black" points="793.02,-125.63 788.39,-116.1 786.07,-126.44 793.02,-125.63"></polygon> </g> <!-- Ghost Writing&#45;&gt;Revenant --> <g id="edge26" class="edge">
 <title>
 Ghost Writing-&gt;Revenant
 </title>
-<path fill="none" stroke="black" d="M852.61,-74.15C876.41,-63.19 908.9,-48.23 934.03,-36.66"></path> <polygon fill="black" stroke="black" points="935.65,-39.77 943.27,-32.4 932.72,-33.41 935.65,-39.77"></polygon> </g> <!-- Ghost Writing&#45;&gt;Shade --> <g id="edge27" class="edge">
+<path fill="none" stroke="black" d="M829.2,-373.84C854.65,-324.95 928.28,-183.51 958.83,-124.81"></path> <polygon fill="black" stroke="black" points="962.01,-126.29 963.52,-115.81 955.8,-123.06 962.01,-126.29"></polygon> </g> <!-- Ghost Writing&#45;&gt;Shade --> <g id="edge27" class="edge">
 <title>
 Ghost Writing-&gt;Shade
 </title>
-<path fill="none" stroke="black" d="M772.72,-77.34C763.36,-75.33 753.59,-73.44 744.37,-72 566.69,-44.31 516.51,-76.8 341.37,-36 338.53,-35.34 335.63,-34.53 332.74,-33.63"></path> <polygon fill="black" stroke="black" points="333.65,-30.24 323.05,-30.3 331.37,-36.86 333.65,-30.24"></polygon> </g> <!-- Ghost Writing&#45;&gt;Spirit --> <g id="edge28" class="edge">
+<path fill="none" stroke="black" d="M792.62,-375.31C703.31,-325.44 423.64,-169.3 329.02,-116.47"></path> <polygon fill="black" stroke="black" points="330.64,-113.36 320.2,-111.54 327.23,-119.48 330.64,-113.36"></polygon> </g> <!-- Ghost Writing&#45;&gt;Spirit --> <g id="edge28" class="edge">
 <title>
 Ghost Writing-&gt;Spirit
 </title>
-<path fill="none" stroke="black" d="M868.77,-77.59C920.76,-65.17 999.89,-45.79 1029.37,-36 1031.66,-35.24 1033.99,-34.42 1036.33,-33.55"></path> <polygon fill="black" stroke="black" points="1037.83,-36.72 1045.88,-29.83 1035.29,-30.2 1037.83,-36.72"></polygon> </g> <!-- Ghost Writing&#45;&gt;Yurei --> <g id="edge29" class="edge">
+<path fill="none" stroke="black" d="M834.9,-373.84C877.41,-324.19 1001.66,-179.06 1050.41,-122.11"></path> <polygon fill="black" stroke="black" points="1053.19,-124.25 1057.04,-114.37 1047.88,-119.69 1053.19,-124.25"></polygon> </g> <!-- Ghost Writing&#45;&gt;Yurei --> <g id="edge29" class="edge">
 <title>
 Ghost Writing-&gt;Yurei
 </title>
-<path fill="none" stroke="black" d="M772.28,-77.42C763.05,-75.43 753.44,-73.52 744.37,-72 603.66,-48.39 563.67,-71.09 425.37,-36 422.75,-35.33 420.07,-34.54 417.4,-33.66"></path> <polygon fill="black" stroke="black" points="418.47,-30.33 407.87,-30.21 416.08,-36.91 418.47,-30.33"></polygon> </g> <!-- Ghost Orb --> <g id="node18" class="node">
+<path fill="none" stroke="black" d="M796.57,-374.89C721.97,-325.04 492.89,-171.98 412.01,-117.94"></path> <polygon fill="black" stroke="black" points="413.6,-114.79 403.34,-112.14 409.71,-120.61 413.6,-114.79"></polygon> </g> <!-- Ghost Orb --> <g id="node18" class="node">
 <title>
 Ghost Orb
 </title>
-<ellipse fill="none" stroke="black" cx="217.37" cy="-90" rx="51.58" ry="18"></ellipse> <text text-anchor="middle" x="217.37" y="-85.8" font-family="Times,serif" font-size="14.00">Ghost Orb</text> </g> <!-- Ghost Orb&#45;&gt;Jinn --> <g id="edge30" class="edge">
+<ellipse fill="none" stroke="black" cx="217.37" cy="-391.8" rx="51.58" ry="18"></ellipse> <text text-anchor="middle" x="217.37" y="-387.6" font-family="Times,serif" font-size="14.00">Ghost Orb</text> </g> <!-- Ghost Orb&#45;&gt;Jinn --> <g id="edge30" class="edge">
 <title>
 Ghost Orb-&gt;Jinn
 </title>
-<path fill="none" stroke="black" d="M217.37,-71.7C217.37,-63.98 217.37,-54.71 217.37,-46.11"></path> <polygon fill="black" stroke="black" points="220.87,-46.1 217.37,-36.1 213.87,-46.1 220.87,-46.1"></polygon> </g> <!-- Ghost Orb&#45;&gt;Mare --> <g id="edge31" class="edge">
+<path fill="none" stroke="black" d="M217.37,-373.41C217.37,-324.52 217.37,-185.56 217.37,-126.22"></path> <polygon fill="black" stroke="black" points="220.87,-126.1 217.37,-116.1 213.87,-126.1 220.87,-126.1"></polygon> </g> <!-- Ghost Orb&#45;&gt;Mare --> <g id="edge31" class="edge">
 <title>
 Ghost Orb-&gt;Mare
 </title>
-<path fill="none" stroke="black" d="M199.51,-72.76C188.97,-63.18 175.5,-50.94 164.08,-40.55"></path> <polygon fill="black" stroke="black" points="166.32,-37.85 156.56,-33.72 161.61,-43.03 166.32,-37.85"></polygon> </g> <!-- Ghost Orb&#45;&gt;Phantom --> <g id="edge32" class="edge">
+<path fill="none" stroke="black" d="M212.9,-373.84C200.06,-325.15 163.02,-184.68 147.43,-125.54"></path> <polygon fill="black" stroke="black" points="150.79,-124.59 144.86,-115.81 144.02,-126.37 150.79,-124.59"></polygon> </g> <!-- Ghost Orb&#45;&gt;Phantom --> <g id="edge32" class="edge">
 <title>
 Ghost Orb-&gt;Phantom
 </title>
-<path fill="none" stroke="black" d="M185.02,-75.83C156.75,-64.33 115.59,-47.58 85.28,-35.24"></path> <polygon fill="black" stroke="black" points="86.43,-31.93 75.85,-31.4 83.79,-38.41 86.43,-31.93"></polygon> </g> <!-- Ghost Orb&#45;&gt;Poltergeist --> <g id="edge33" class="edge">
+<path fill="none" stroke="black" d="M207.38,-373.84C178.52,-324.84 94.88,-182.85 60.45,-124.4"></path> <polygon fill="black" stroke="black" points="63.27,-122.28 55.18,-115.44 57.24,-125.84 63.27,-122.28"></polygon> </g> <!-- Ghost Orb&#45;&gt;Poltergeist --> <g id="edge33" class="edge">
 <title>
 Ghost Orb-&gt;Poltergeist
 </title>
-<path fill="none" stroke="black" d="M256.05,-78.02C263.45,-75.98 271.14,-73.89 278.37,-72 343.45,-54.97 360.3,-53.03 425.37,-36 429.38,-34.95 433.53,-33.84 437.7,-32.71"></path> <polygon fill="black" stroke="black" points="438.65,-36.08 447.37,-30.07 436.8,-29.33 438.65,-36.08"></polygon> </g> <!-- Ghost Orb&#45;&gt;Shade --> <g id="edge34" class="edge">
+<path fill="none" stroke="black" d="M232.61,-374.26C277.83,-325.18 411.43,-180.16 464.39,-122.67"></path> <polygon fill="black" stroke="black" points="467.11,-124.88 471.31,-115.15 461.96,-120.14 467.11,-124.88"></polygon> </g> <!-- Ghost Orb&#45;&gt;Shade --> <g id="edge34" class="edge">
 <title>
 Ghost Orb-&gt;Shade
 </title>
-<path fill="none" stroke="black" d="M235.53,-73.12C246.57,-63.45 260.82,-50.99 272.85,-40.46"></path> <polygon fill="black" stroke="black" points="275.16,-43.08 280.39,-33.86 270.56,-37.81 275.16,-43.08"></polygon> </g> <!-- Ghost Orb&#45;&gt;Yurei --> <g id="edge35" class="edge">
+<path fill="none" stroke="black" d="M222.02,-373.84C235.36,-325.15 273.84,-184.68 290.05,-125.54"></path> <polygon fill="black" stroke="black" points="293.45,-126.38 292.71,-115.81 286.7,-124.53 293.45,-126.38"></polygon> </g> <!-- Ghost Orb&#45;&gt;Yurei --> <g id="edge35" class="edge">
 <title>
 Ghost Orb-&gt;Yurei
 </title>
-<path fill="none" stroke="black" d="M248.99,-75.67C277.47,-63.66 319.26,-46.04 348.66,-33.64"></path> <polygon fill="black" stroke="black" points="350.26,-36.76 358.12,-29.65 347.54,-30.31 350.26,-36.76"></polygon> </g> </g>
+<path fill="none" stroke="black" d="M227.02,-373.84C254.94,-324.72 335.97,-182.18 369.05,-123.99"></path> <polygon fill="black" stroke="black" points="372.22,-125.51 374.12,-115.08 366.13,-122.05 372.22,-125.51"></polygon> </g> </g>
 </svg>
 </p>
 </div>
