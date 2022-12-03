@@ -19,6 +19,9 @@ toc: false
 
 ![Game Header Image](https://cdn.cloudflare.steamstatic.com/steam/apps/1529470/header.jpg?t=1615838798)
 
+
+> As an Ethereal Estate agent, your job is to make a mess out of a mansion and its helpless inhabitants. Never before has a ghost unleashed such devastating chaos... until now!
+
 I had quite a bit of fun with this game.
 While working on a Data Science project to try and make predictions on "What Genre Is this Game Based on it's Header Image?" I stumbled across this weird little game trying to solve an error. Looking through the sample set of games, [**Ethereal Estate**](https://store.steampowered.com/app/1529470/Ethereal_Estate/) pops out among all the other DLC headers and who knows what else these other images are supposed to inspire. The game is free and you play as a ghost - along with maybe your friend - to terrorize, ruin and throw everything within reach around: like a proper ghost should!
 

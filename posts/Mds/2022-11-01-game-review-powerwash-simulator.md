@@ -14,6 +14,7 @@ toc: false
 ---
 
 ![Powerwash Header Image](https://cdn.cloudflare.steamstatic.com/steam/apps/1290000/header.jpg?t=1666016483)
+
  > Wash away your worries with the soothing sounds of high-pressure water. Fire up your power washer and blast away every speck of dirt and grime you can find, all with the simple satisfaction of power-washing to a sparkling finish. 
 
 My friends have been playing this game and I finally picked it up. After doing some cooperative levels with them, I started into the Career Mode of the game. This is the **Story Mode** and does what you'd expect from a Single Player experience: slowly increasing difficulty through different tools, different surfaces and different buildings with different shapes. There is a story here which is silly; reach the end or spoil it with a Let's Play if you'd like but I laughed.

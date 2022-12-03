@@ -12,7 +12,8 @@ toc: false
 ---
 
 ![Journey Header Image](https://cdn.cloudflare.steamstatic.com/steam/apps/638230/header.jpg?t=1660850060) <br />
- > Explore the ancient, mysterious world of Journey as you soar above ruins and glide across sands to discover its secrets.
+
+> Explore the ancient, mysterious world of Journey as you soar above ruins and glide across sands to discover its secrets.
 
 I am again late this one but I am so grateful I found the time to play it. **Journey** is a masterpiece in design. Everything is stripped down the most basic elements of play and built out again with a simple, beutiful world guided by a nameless character. You do not know who you are; you do not know what you are; you do not know where you are. What you know is that you are in a peaceful desert which leads you on towards your next destination with nothing but what is right in front of your eyes. The controls are also simple - there is but direction, communucate and eventually fly - which means you can quickly experiment to find the almost none that exist and start your own journey. 
 

@@ -13,14 +13,12 @@ toc: false
 
 ---
 
-> Post Void is a hypnotic scramble of early first-person shooter design that values speed above all else. Keep your head full and reach the end; Kill what you can to see it mend; Get the high score or try again.
-
+![Post Void Header Image](https://cdn.cloudflare.steamstatic.com/steam/apps/1285670/header.jpg?t=1642169095)
 
 About a month ago I Steam was kind enough to recommend a rough looking LSD-inspired shooter. And, this little gem is called Post Void created by a little Developer group called YCJY Games. Looking at the videos, screenshots and description I was immediately sold:
 
 “*Post Void is a hypnotic scramble of early first-person shooter design that values speed above all else. Keep your head full and reach the end; Kill what you can to see it mend; Get the high score or try again.*”
 
-![Post Void]({{ site.baseurl }}/images/post-void-title.png "Splash for the Game")
 
 The game delivers on all of that with the classic Arcade Shooter style that I miss everytime I spin up any modern First Person Shooter and with a price tag of $2.99, there wasn’t any risk.
 

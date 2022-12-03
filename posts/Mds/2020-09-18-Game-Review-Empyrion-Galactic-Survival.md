@@ -1,6 +1,4 @@
 ---
-aliases:
-- /games/review/scifi/survival/2020/09/18/Game-Review-Empyrion-Galactic-Survival
 categories:
 - games
 - review
@@ -13,6 +11,10 @@ title: 'Game Review: Empyrion - Galactic Survival'
 toc: false
 
 ---
+
+![Empyrion - Galactic Survival Header Image](https://cdn.cloudflare.steamstatic.com/steam/apps/383120/header.jpg?t=1626770358)
+
+> Empyrion - Galactic Survival is a 3D open world space sandbox survival adventure. Build powerful ships, mighty space stations and vast planetary settlements to explore, conquer or exploit a variety of different planets and discover the mysteries of Empyrion!
 
 If you’re looking for a TL:DR: game is fun but has some challenges.
 

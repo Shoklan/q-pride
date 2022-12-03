@@ -15,6 +15,7 @@ toc: false
 ---
 
 ![Eraser Header Image](https://cdn.cloudflare.steamstatic.com/steam/apps/1819570/header.jpg?t=1640571341)
+
 > Throw your stick-figure-self at cannonballs and airplanes in an upward pursuit of the eraser! Play cooperatively online to share the journey! Who's to say whether the company will help or hinder, though...
 
 

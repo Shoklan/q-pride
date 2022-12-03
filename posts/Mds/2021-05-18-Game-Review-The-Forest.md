@@ -1,6 +1,4 @@
 ---
-aliases:
-- /games/review/survival/2021/05/18/Game-Review-The-Forest
 categories:
 - games
 - review
@@ -14,6 +12,8 @@ toc: false
 ---
 
 ![Game Header Image](https://cdn.cloudflare.steamstatic.com/steam/apps/242760/header.jpg?t=1666811027)
+
+> As the lone survivor of a passenger jet crash, you find yourself in a mysterious forest battling to stay alive against a society of cannibalistic mutants. Build, explore, survive in this terrifying first person survival horror simulator.
 
 The Forest is another game in the Survival Genre which tries to use Environmental Storytelling to push a plot. You can play with your friends or you can play alone - which definitely gives you a different experience. Alone - so I'm told - feels a lot lot a horror game where you'll fear leaving the walls of whatever you've built. With friends, it was good fun but definitely doesn't feel like a horror game: FREE BONES!
 
