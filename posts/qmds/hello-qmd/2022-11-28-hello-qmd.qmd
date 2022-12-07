@@ -12,11 +12,12 @@ format:
   html:
     code-fold: true
 toc: false
-jupyter: python3
+
 ---
 
 # Add This To Your Toolbox
-If you've ever worked with the R programming language then you may have come across **RMarkdown**. And, if you have come across it but ended up mostly moving to Python - like I have had to - then you likely miss `Knitr` and this tooling. If you don't know what I'm talking about then today is going to be a good day for you. We're going to learn how to take what could of been a Jupyter Notebook and convert it to format which is similar in practice but also has excellent support for converting out of Notebooks. 
+If you've ever worked with the R programming language then you may have come across **RMarkdown**. And, if you have come across it but ended up mostly moving to Python - like I have had to - then you likely miss `Knitr` and this tooling. If you don't know what I'm talking about then toda
+y is going to be a good day for you. We're going to learn how to take what could of been a Jupyter Notebook and convert it to format which is similar in practice but also has excellent support for converting out of Notebooks. 
 
 # What is Quarto?
 According to the site:

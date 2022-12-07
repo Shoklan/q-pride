@@ -1,0 +1,98 @@
+---
+title: "Calculating Loan Payments - Recursively"
+description: I don't need Excel
+categories:
+- finanical analyst
+- recursion
+- python
+date: '2022-12-07'
+layout: post
+toc: false
+
+---
+
+# Inspiration
+I was reviewing the classwork from the Financial Planner course to apply to the real world. Namely, I was using the calculation of the Loan Payments for a loan that I currently have. And, while working through this problem, I realized that I didn't want to calculate each payment but what I wanted was how many periods I would have left if I modifed my monthly payment to the loan.
+
+# What is the PMT Function?
+Let's step back and start from the beginning. When getting a loan, usually you ask for a specific amount and then your payments are calculated based on the **Interest Rate** and how many **Periods** you're going to be making payments over. This is why excel - and even python - calls this `PMT()` for *Payment*.
+
+## A Word on Python
+If you try to do this in python, then you'll find that there is quite a bit of old documentation around. Per the release notes, the financial fucntions which used to be in `numpy` have been moved to a different external package called [numpy-financial](https://pypi.org/project/numpy-financial/) and you can find it's documentation [here](https://numpy.org/numpy-financial/latest/index.html). This package has not changed in a while but these functions are pretty timeless so I'm not too worried about it. Anyways, you can install it with `pip install numpy-financial` or `python3 -m pip install numpy-financial`. Once done, you can run the example below:
+```{python}
+import numpy_financial as npf
+
+# No, this is not my loan; this is fake data:
+periods = 120
+AIR = .03 # Annual Interest Rate
+MIR = AIR/12
+loanAmount = 300000
+
+payment = abs(round(npf.pmt(MIR, periods, loanAmount), 2))
+```
+
+The documentation about the function points out that it is solving the equation:
+$$
+F_{v}+P_{v}(1 + rate)^{nper}+\frac{Pmt(1 + rate*when)}{rate((1 + rate)^{nper} -1)} == 0
+$$
+Where: <br />
+    - `Fv` is the **Future Value**. <br />
+    - `Pv` is the **Present Value**. <br />
+    - `rate` is the **Period Interest Rate**; monthly for us. <br />
+    - `nper` is the **Number of Periods** <br />
+    - `pmt` is the **Payment Amount**. <br />
+    - `when` is which part of the period is the payment made. <br />
+```{python}
+#| echo: false
+radius = 10
+from IPython.display import display, Markdown
+display(Markdown("""
+Since it is not made explicit, the source code for the function defaults to `when = 'end'`. That is a lot to take in but what we really care about is the result: <b>${payment}</b>
+""".format(payment = payment)))
+```
+
+# What About Adjusting It?
+So, let us say you want to modify your payment size over time. Obviously, you cannot go lower than the monthly/period of payment agreed upon but you could increase it to try and pay it off faster. You could pull this all into Excel and fill out a table of values to pull down and then plug in. Or, you could notice that this relationship is dependent on the previous state and therefore this is a perfect kind of problem for **Recursion**. If you're not familiar with *recursion* then I would actaully recommend looking it up online since it can be hard to grasp. But, the simpliest way to think about it is a function which calls itself until such time that an end case is reached - and then it sort of collapses itself to the result.
+
+Let's work through the example here. When making a payment, first the Monthly Interest Rate is multiplied by the Remaining Balance. Then, your payment is subtracted by the interest on the loan before becoming a principle. This principle is then subtracted from the remaining loan balance - thus it comes full circle.
+In formula forms:
+$$
+Interest Payment = Remaining Balance * Monthly Rate
+$$
+$$
+Principle = Payment - Interest Payment
+$$
+$$
+Remaining Balance = Remaining Balance - Principle
+$$
+This can be turned into the code below:
+```{python}
+def payOff(payment, remaining, MIR):
+    iPayment = remaining * MIR
+    principle = payment - iPayment
+    remaining -= principle
+    if remaining <= 0:
+        return 0
+    else:
+        return payOff( payment, remaining, MIR) + 1
+```
+
+And, when tested you will find it tells you the correct answer:
+```{python}
+payOff(payment, 300000, MIR)
+```
+
+# Step Back Again
+That looks like magic right now so let us step back again and examine what is going on.
+For our function, we care about each part of the formulas provided above: interest rate, remaining balance and what we're paying. Looking back, that is all we need to make the calculation for each step of us paying back the loan. Therefore, that's what our function takes as inputs. Internally, we calculate how much interest we owe, then take the interest out of our payment to get our principle. Finally, we subtract the principle from our total balance remaining.
+
+This is where the magic of recursion starts. We setup our **Return Case** - or **Edge Case** as it is sometimes also called - where if the balance after payment is totally payed off then we tell our program that *we're done so please return*. In this case, we tell it to `return 0` back to the previous call. Please hold onto that while we move on.
+
+If we look at our `else` clause, we see that if the balance is not payed of then please call ourself with the new remaining balance. But, we can see that we've got a return on the left and a `+ 1` on the right. If we think of the call to `payOff()` as a payment against the loan then the `+ 1` is simply saying *we made one payment*. And, as we make a payment and make a payment and make a payment all the way down we count each time we are making a payment. Until, we pay off the balance and that triggers an addition of all the `+ 1` - or how many times we made a payment - on the loan. If this does not make much sense then run it a few times with some print statements and do a bit of reading about *recursion*; just take solace in knowing if this makes you feel stupid that most people struggle with *recursion*.
+
+Back to what I was after initially, if we had a remaining balnce of $20000 on the loan and we wanted to see how much changing our payment from $2896.82 to $3100 will reduce the number of periods we can do that quickly:
+```{python}
+payOff(3100, 20000, MIR)
+```
+
+And, there we go! A Simple little function to quickly calculate how much faster you could pay off a loan by playing with the payment.
