@@ -1,0 +1,89 @@
+---
+title: "K-Anonymity With Python"
+description: Simple Practice
+categories:
+- python
+- technique
+- data
+- analysis
+date: '2022-12-10'
+layout: post
+toc: false
+
+---
+
+```{python}
+#| echo: false
+import pandas as pd
+```
+
+# What is K-Anonymity?
+Data Privacy is a problem which users and institutions are starting to care more about. Neither users nor companies want to reveal or be liable for some of the data and conclusions that arise from the data collected. One such popular method of trying to mitigate the problem of de-anonymizing individuals in data is **K-Anonymity**.
+
+The idea is that given observations and features in data, knowing this information should not allow one to individually identify someone from that data. Thus, *K-Anonymity* is a metric which states that data is *sufficiently anonymized to the k-1 threshold* such that given specific columns in the data there exists no such persons where their arrangement leads to less than `k` individuals in the group.
+
+We'll use the data from the Wikipedia page to illustrate this idea.
+```{python}
+url = 'https://en.wikipedia.org/wiki/K-anonymity'
+site = pd.read_html(url)
+rawData = site[0]
+rawData
+```
+Ok, so now that we have this information we can see there are **Sensitive Attributes** which should not show up in public data. So, using this data we can use one single `groupby()` call to quickly identify an individual user. Obviously, if we have your name then we should drop or **Suppress** that.
+```{python}
+rawData['Name'] = '*'
+rawData
+```
+
+But also, if I know your age and I know your religion then I can quickly identify you.
+```{python}
+rawData.groupby(['Age','Religion']).size().reset_index(name='Count')
+```
+
+
+Since we want some sort of representation of age in our analysis, we can **Generalize** the `Age` values by  binning them. Guidance on the actual bin sizes looks to be trial and error; I guess it is expected to use your own judgement in these methods. For my own guideline I'm going to take the rounded standard deviation and step down until the number of `k` threshold has been met.
+```{python}
+int(rawData['Age'].std())
+rawData['AgeGroup'] = pd.cut(rawData['Age'], bins=int(rawData['Age'].std()))
+rawData.groupby(['AgeGroup']).size().reset_index(name='Count')
+```
+.... not enough yet:
+```{python}
+rawData['AgeGroup'] = pd.cut(rawData['Age'], bins=int(rawData['Age'].std())-1)
+rawData.groupby(['AgeGroup']).size().reset_index(name='Count')
+```
+That looks good. And, if we take it in combination with another column?
+```{python}
+for col in rawData.columns.to_list():
+    if col not in ['AgeGroup', 'Age']:
+        print(rawData.groupby(['AgeGroup', col]).size().reset_index(name='Count'))
+        print()
+```
+Ok, looking at these results it is clear that Religion and Disease are problems still. This is where we would need to start asking ourselves if we had enough data and what our analysis's goals are. If we were trying to explore what features were related to these Diseases then we will need more data since no matter what we do the `No illness` will always be alone. In this instance we could drop that value:
+
+```{python}
+#| warning: false
+filteredData = rawData.loc[ ~rawData.Disease.str.contains('illness')].copy()
+filteredData.groupby(['AgeGroup', 'Disease']).size().reset_index(name='Count')
+```
+ Not quite there. So, another technique which will assist us is *generalizing* the Disease values. We'll use a substitution heirarchy to replace some values in the data with slightly less accurate values.
+```{python}
+#| warning: false
+heirarchy = {
+    "Cancer": "Body",
+    'Viral infection': 'Body',
+    'Tuberculosis': 'Chest',
+    'Heart-related': 'Chest'
+}
+
+filteredData['heirarchy'] = filteredData['Disease'].apply(lambda x: heirarchy[x] if heirarchy.get(x) else x)
+filteredData.groupby(['AgeGroup','heirarchy']).size().reset_index(name='count')
+```
+Almost there. Let's re-examine our age bins and make them one more step smaller.
+```{python}
+#| warning: false
+filteredData['AgeGroup'] = pd.cut(rawData['Age'], bins=int(rawData['Age'].std())-2)
+filteredData.groupby(['AgeGroup']).size().reset_index(name='Count')
+```
+
+And, there we go! This would be 4-anonymity with respect to Age and Disease. Finally, it is safe to consider using in a public data set or Algorithm. This is a really small dataset but this proces would be how you would anonymize larger datasets as well.
