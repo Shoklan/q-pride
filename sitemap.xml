@@ -2,182 +2,186 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Shoklan.github.io/q-pride/index.html</loc>
-    <lastmod>2022-12-07T07:24:30.599Z</lastmod>
+    <lastmod>2022-12-11T03:18:29.043Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Shoklan.github.io/q-pride/posts/qmds/2022-12-10-k-anonymity-and-data-privacy.html</loc>
+    <lastmod>2022-12-11T03:18:34.039Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/qmds/hello-qmd/2022-11-28-hello-qmd.html</loc>
-    <lastmod>2022-12-07T07:24:31.719Z</lastmod>
+    <lastmod>2022-12-11T03:18:35.039Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/qmds/2022-12-07-using-recursion-for-pmt.html</loc>
-    <lastmod>2022-12-07T07:24:35.943Z</lastmod>
+    <lastmod>2022-12-11T03:18:35.927Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-11-16-does-faker-cc-pass-luhns-algo.html</loc>
-    <lastmod>2022-12-07T07:24:36.495Z</lastmod>
+    <lastmod>2022-12-11T03:18:36.511Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2020-09-06-exploring-altair-visualization.html</loc>
-    <lastmod>2022-12-07T07:24:37.043Z</lastmod>
+    <lastmod>2022-12-11T03:18:37.019Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-11-04-cycle-jobs-part-four.html</loc>
-    <lastmod>2022-12-07T07:24:38.415Z</lastmod>
+    <lastmod>2022-12-11T03:18:38.447Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-11-02-simple-hightlight-over-exiting-plot.html</loc>
-    <lastmod>2022-12-07T07:24:39.211Z</lastmod>
+    <lastmod>2022-12-11T03:18:39.243Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-10-07-cycle-jobs-part-two.html</loc>
-    <lastmod>2022-12-07T07:24:39.907Z</lastmod>
+    <lastmod>2022-12-11T03:18:39.987Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-11-29-datatables-come-to-python.html</loc>
-    <lastmod>2022-12-07T07:24:40.463Z</lastmod>
+    <lastmod>2022-12-11T03:18:40.543Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-09-30-testing-if-interact-works-online.html</loc>
-    <lastmod>2022-12-07T07:24:40.983Z</lastmod>
+    <lastmod>2022-12-11T03:18:41.111Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-12-06-cycle-jobs-part-five.html</loc>
-    <lastmod>2022-12-07T07:24:41.463Z</lastmod>
+    <lastmod>2022-12-11T03:18:41.595Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-10-26-how-to-quickly-use-other-formats-in-python.html</loc>
-    <lastmod>2022-12-07T07:24:42.035Z</lastmod>
+    <lastmod>2022-12-11T03:18:42.095Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2021-01-18-minimal-spark-cluster-without-hadoop.html</loc>
-    <lastmod>2022-12-07T07:24:42.623Z</lastmod>
+    <lastmod>2022-12-11T03:18:42.651Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2020-09-09-fastbooks-incidentally-supports-r.html</loc>
-    <lastmod>2022-12-07T07:24:43.395Z</lastmod>
+    <lastmod>2022-12-11T03:18:43.435Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-11-10-simple-idea-using-memcached.html</loc>
-    <lastmod>2022-12-07T07:24:43.983Z</lastmod>
+    <lastmod>2022-12-11T03:18:43.983Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-09-28-cycle-jobs-part-one.html</loc>
-    <lastmod>2022-12-07T07:24:44.723Z</lastmod>
+    <lastmod>2022-12-11T03:18:44.791Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-09-08-reviewing-fastai-2022-coursework-thebeginning.html</loc>
-    <lastmod>2022-12-07T07:24:45.579Z</lastmod>
+    <lastmod>2022-12-11T03:18:45.655Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-12-01-do-we-replace-pandas.html</loc>
-    <lastmod>2022-12-07T07:24:46.067Z</lastmod>
+    <lastmod>2022-12-11T03:18:46.175Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-11-09-fp-discounted-cash-flows.html</loc>
-    <lastmod>2022-12-07T07:24:46.591Z</lastmod>
+    <lastmod>2022-12-11T03:18:46.683Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-10-19-ferrets-or-dragons.html</loc>
-    <lastmod>2022-12-07T07:24:47.207Z</lastmod>
+    <lastmod>2022-12-11T03:18:47.307Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-09-27-cycle-weapons-best-general.html</loc>
-    <lastmod>2022-12-07T07:24:47.967Z</lastmod>
+    <lastmod>2022-12-11T03:18:48.107Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-10-05-cycle-loot-values-download.html</loc>
-    <lastmod>2022-12-07T07:24:48.839Z</lastmod>
+    <lastmod>2022-12-11T03:18:48.971Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-10-14-cycle-calculate-job-values.html</loc>
-    <lastmod>2022-12-07T07:24:49.499Z</lastmod>
+    <lastmod>2022-12-11T03:18:49.671Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2020-07-09-Voices-of-the-Void.html</loc>
-    <lastmod>2022-12-07T07:24:49.935Z</lastmod>
+    <lastmod>2022-12-11T03:18:50.131Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-12-08-Challenges-For-2022.html</loc>
-    <lastmod>2022-12-07T07:24:50.459Z</lastmod>
+    <lastmod>2022-12-11T03:18:50.667Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-06-01-how-to-setup-a-dedicated-v-rising-server-on-linux.html</loc>
-    <lastmod>2022-12-07T07:24:51.007Z</lastmod>
+    <lastmod>2022-12-11T03:18:51.223Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-05-18-Game-Review-The-Forest.html</loc>
-    <lastmod>2022-12-07T07:24:51.551Z</lastmod>
+    <lastmod>2022-12-11T03:18:51.751Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-09-08-Game-Review-Pawnbarion.html</loc>
-    <lastmod>2022-12-07T07:24:52.007Z</lastmod>
+    <lastmod>2022-12-11T03:18:52.327Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-11-16-just-a-catpost.html</loc>
-    <lastmod>2022-12-07T07:24:52.403Z</lastmod>
+    <lastmod>2022-12-11T03:18:52.743Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2020-09-30-Game-Review-Post-Void.html</loc>
-    <lastmod>2022-12-07T07:24:52.859Z</lastmod>
+    <lastmod>2022-12-11T03:18:53.259Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2020-12-30-Challenges-For-2021.html</loc>
-    <lastmod>2022-12-07T07:24:53.311Z</lastmod>
+    <lastmod>2022-12-11T03:18:53.743Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-11-26-moving-to-quatro-from-fastpages.html</loc>
-    <lastmod>2022-12-07T07:24:53.963Z</lastmod>
+    <lastmod>2022-12-11T03:18:54.367Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-12-01-game-review-journey.html</loc>
-    <lastmod>2022-12-07T07:24:54.379Z</lastmod>
+    <lastmod>2022-12-11T03:18:54.791Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-02-20-Luhns-Algorithm-Credit-Card.html</loc>
-    <lastmod>2022-12-07T07:24:54.867Z</lastmod>
+    <lastmod>2022-12-11T03:18:55.335Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-11-01-game-review-powerwash-simulator.html</loc>
-    <lastmod>2022-12-07T07:24:55.275Z</lastmod>
+    <lastmod>2022-12-11T03:18:55.779Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2020-10-21-Simple-Python-Debugging-Example.html</loc>
-    <lastmod>2022-12-07T07:24:55.731Z</lastmod>
+    <lastmod>2022-12-11T03:18:56.283Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-12-08-Review-Of-2021-Challenges.html</loc>
-    <lastmod>2022-12-07T07:24:56.231Z</lastmod>
+    <lastmod>2022-12-11T03:18:56.835Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2020-10-28-The-Pulp-Mindset-Review.html</loc>
-    <lastmod>2022-12-07T07:24:56.615Z</lastmod>
+    <lastmod>2022-12-11T03:18:57.255Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-02-09-Memorandum-Of-Understanding-Blurb.html</loc>
-    <lastmod>2022-12-07T07:24:57.035Z</lastmod>
+    <lastmod>2022-12-11T03:18:57.679Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2020-09-18-Game-Review-Empyrion-Galactic-Survival.html</loc>
-    <lastmod>2022-12-07T07:24:57.555Z</lastmod>
+    <lastmod>2022-12-11T03:18:58.175Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-02-02-How-To-Make-Matching-Textures-And-Normals.html</loc>
-    <lastmod>2022-12-07T07:24:58.083Z</lastmod>
+    <lastmod>2022-12-11T03:18:58.639Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-02-04-Introduction-To-Streamlit.html</loc>
-    <lastmod>2022-12-07T07:24:58.559Z</lastmod>
+    <lastmod>2022-12-11T03:18:59.175Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-09-07-game-review-ethereal-estate.html</loc>
-    <lastmod>2022-12-07T07:24:59.059Z</lastmod>
+    <lastmod>2022-12-11T03:18:59.595Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-01-06-Game-Review-How-I-Lost-My-Eraser.html</loc>
-    <lastmod>2022-12-07T07:24:59.519Z</lastmod>
+    <lastmod>2022-12-11T03:19:00.023Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/about.html</loc>
-    <lastmod>2022-12-07T07:24:59.967Z</lastmod>
+    <lastmod>2022-12-11T03:19:00.495Z</lastmod>
   </url>
 </urlset>
