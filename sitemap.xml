@@ -2,186 +2,190 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Shoklan.github.io/q-pride/index.html</loc>
-    <lastmod>2022-12-11T03:18:29.043Z</lastmod>
+    <lastmod>2022-12-13T07:38:08.447Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/qmds/2022-12-10-k-anonymity-and-data-privacy.html</loc>
-    <lastmod>2022-12-11T03:18:34.039Z</lastmod>
+    <lastmod>2022-12-13T07:38:09.787Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/qmds/hello-qmd/2022-11-28-hello-qmd.html</loc>
-    <lastmod>2022-12-11T03:18:35.039Z</lastmod>
+    <lastmod>2022-12-13T07:38:10.975Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/qmds/2022-12-07-using-recursion-for-pmt.html</loc>
-    <lastmod>2022-12-11T03:18:35.927Z</lastmod>
+    <lastmod>2022-12-13T07:38:11.923Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Shoklan.github.io/q-pride/posts/qmds/2022-12-12-using-mermaid-for-some-fun.html</loc>
+    <lastmod>2022-12-13T07:38:12.615Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-11-16-does-faker-cc-pass-luhns-algo.html</loc>
-    <lastmod>2022-12-11T03:18:36.511Z</lastmod>
+    <lastmod>2022-12-13T07:38:13.271Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2020-09-06-exploring-altair-visualization.html</loc>
-    <lastmod>2022-12-11T03:18:37.019Z</lastmod>
+    <lastmod>2022-12-13T07:38:13.831Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-11-04-cycle-jobs-part-four.html</loc>
-    <lastmod>2022-12-11T03:18:38.447Z</lastmod>
+    <lastmod>2022-12-13T07:38:15.255Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-11-02-simple-hightlight-over-exiting-plot.html</loc>
-    <lastmod>2022-12-11T03:18:39.243Z</lastmod>
+    <lastmod>2022-12-13T07:38:16.119Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-10-07-cycle-jobs-part-two.html</loc>
-    <lastmod>2022-12-11T03:18:39.987Z</lastmod>
+    <lastmod>2022-12-13T07:38:16.871Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-11-29-datatables-come-to-python.html</loc>
-    <lastmod>2022-12-11T03:18:40.543Z</lastmod>
+    <lastmod>2022-12-13T07:38:17.487Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-09-30-testing-if-interact-works-online.html</loc>
-    <lastmod>2022-12-11T03:18:41.111Z</lastmod>
+    <lastmod>2022-12-13T07:38:18.059Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-12-06-cycle-jobs-part-five.html</loc>
-    <lastmod>2022-12-11T03:18:41.595Z</lastmod>
+    <lastmod>2022-12-13T07:38:18.583Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-10-26-how-to-quickly-use-other-formats-in-python.html</loc>
-    <lastmod>2022-12-11T03:18:42.095Z</lastmod>
+    <lastmod>2022-12-13T07:38:19.183Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2021-01-18-minimal-spark-cluster-without-hadoop.html</loc>
-    <lastmod>2022-12-11T03:18:42.651Z</lastmod>
+    <lastmod>2022-12-13T07:38:19.791Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2020-09-09-fastbooks-incidentally-supports-r.html</loc>
-    <lastmod>2022-12-11T03:18:43.435Z</lastmod>
+    <lastmod>2022-12-13T07:38:20.643Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-11-10-simple-idea-using-memcached.html</loc>
-    <lastmod>2022-12-11T03:18:43.983Z</lastmod>
+    <lastmod>2022-12-13T07:38:21.215Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-09-28-cycle-jobs-part-one.html</loc>
-    <lastmod>2022-12-11T03:18:44.791Z</lastmod>
+    <lastmod>2022-12-13T07:38:22.007Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-09-08-reviewing-fastai-2022-coursework-thebeginning.html</loc>
-    <lastmod>2022-12-11T03:18:45.655Z</lastmod>
+    <lastmod>2022-12-13T07:38:22.891Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-12-01-do-we-replace-pandas.html</loc>
-    <lastmod>2022-12-11T03:18:46.175Z</lastmod>
+    <lastmod>2022-12-13T07:38:23.375Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-11-09-fp-discounted-cash-flows.html</loc>
-    <lastmod>2022-12-11T03:18:46.683Z</lastmod>
+    <lastmod>2022-12-13T07:38:23.903Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-10-19-ferrets-or-dragons.html</loc>
-    <lastmod>2022-12-11T03:18:47.307Z</lastmod>
+    <lastmod>2022-12-13T07:38:24.551Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-09-27-cycle-weapons-best-general.html</loc>
-    <lastmod>2022-12-11T03:18:48.107Z</lastmod>
+    <lastmod>2022-12-13T07:38:25.383Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-10-05-cycle-loot-values-download.html</loc>
-    <lastmod>2022-12-11T03:18:48.971Z</lastmod>
+    <lastmod>2022-12-13T07:38:26.315Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/nbks/2022-10-14-cycle-calculate-job-values.html</loc>
-    <lastmod>2022-12-11T03:18:49.671Z</lastmod>
+    <lastmod>2022-12-13T07:38:27.051Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2020-07-09-Voices-of-the-Void.html</loc>
-    <lastmod>2022-12-11T03:18:50.131Z</lastmod>
+    <lastmod>2022-12-13T07:38:27.507Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-12-08-Challenges-For-2022.html</loc>
-    <lastmod>2022-12-11T03:18:50.667Z</lastmod>
+    <lastmod>2022-12-13T07:38:28.063Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-06-01-how-to-setup-a-dedicated-v-rising-server-on-linux.html</loc>
-    <lastmod>2022-12-11T03:18:51.223Z</lastmod>
+    <lastmod>2022-12-13T07:38:28.619Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-05-18-Game-Review-The-Forest.html</loc>
-    <lastmod>2022-12-11T03:18:51.751Z</lastmod>
+    <lastmod>2022-12-13T07:38:29.135Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-09-08-Game-Review-Pawnbarion.html</loc>
-    <lastmod>2022-12-11T03:18:52.327Z</lastmod>
+    <lastmod>2022-12-13T07:38:29.643Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-11-16-just-a-catpost.html</loc>
-    <lastmod>2022-12-11T03:18:52.743Z</lastmod>
+    <lastmod>2022-12-13T07:38:30.087Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2020-09-30-Game-Review-Post-Void.html</loc>
-    <lastmod>2022-12-11T03:18:53.259Z</lastmod>
+    <lastmod>2022-12-13T07:38:30.543Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2020-12-30-Challenges-For-2021.html</loc>
-    <lastmod>2022-12-11T03:18:53.743Z</lastmod>
+    <lastmod>2022-12-13T07:38:30.999Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-11-26-moving-to-quatro-from-fastpages.html</loc>
-    <lastmod>2022-12-11T03:18:54.367Z</lastmod>
+    <lastmod>2022-12-13T07:38:31.647Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-12-01-game-review-journey.html</loc>
-    <lastmod>2022-12-11T03:18:54.791Z</lastmod>
+    <lastmod>2022-12-13T07:38:32.167Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-02-20-Luhns-Algorithm-Credit-Card.html</loc>
-    <lastmod>2022-12-11T03:18:55.335Z</lastmod>
+    <lastmod>2022-12-13T07:38:32.763Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-11-01-game-review-powerwash-simulator.html</loc>
-    <lastmod>2022-12-11T03:18:55.779Z</lastmod>
+    <lastmod>2022-12-13T07:38:33.239Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2020-10-21-Simple-Python-Debugging-Example.html</loc>
-    <lastmod>2022-12-11T03:18:56.283Z</lastmod>
+    <lastmod>2022-12-13T07:38:33.731Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-12-08-Review-Of-2021-Challenges.html</loc>
-    <lastmod>2022-12-11T03:18:56.835Z</lastmod>
+    <lastmod>2022-12-13T07:38:34.311Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2020-10-28-The-Pulp-Mindset-Review.html</loc>
-    <lastmod>2022-12-11T03:18:57.255Z</lastmod>
+    <lastmod>2022-12-13T07:38:34.763Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-02-09-Memorandum-Of-Understanding-Blurb.html</loc>
-    <lastmod>2022-12-11T03:18:57.679Z</lastmod>
+    <lastmod>2022-12-13T07:38:35.255Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2020-09-18-Game-Review-Empyrion-Galactic-Survival.html</loc>
-    <lastmod>2022-12-11T03:18:58.175Z</lastmod>
+    <lastmod>2022-12-13T07:38:35.795Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-02-02-How-To-Make-Matching-Textures-And-Normals.html</loc>
-    <lastmod>2022-12-11T03:18:58.639Z</lastmod>
+    <lastmod>2022-12-13T07:38:36.359Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-02-04-Introduction-To-Streamlit.html</loc>
-    <lastmod>2022-12-11T03:18:59.175Z</lastmod>
+    <lastmod>2022-12-13T07:38:36.899Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2021-09-07-game-review-ethereal-estate.html</loc>
-    <lastmod>2022-12-11T03:18:59.595Z</lastmod>
+    <lastmod>2022-12-13T07:38:37.367Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/posts/Mds/2022-01-06-Game-Review-How-I-Lost-My-Eraser.html</loc>
-    <lastmod>2022-12-11T03:19:00.023Z</lastmod>
+    <lastmod>2022-12-13T07:38:37.843Z</lastmod>
   </url>
   <url>
     <loc>https://Shoklan.github.io/q-pride/about.html</loc>
-    <lastmod>2022-12-11T03:19:00.495Z</lastmod>
+    <lastmod>2022-12-13T07:38:38.263Z</lastmod>
   </url>
 </urlset>

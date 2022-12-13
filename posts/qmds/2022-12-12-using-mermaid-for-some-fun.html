@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-12-12">
+<meta name="description" content="Explore All The Tools">
+
+<title>Orgulo.us - Playing with Mermaid.js</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Orgulo.us</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Playing with Mermaid.js</h1>
+                  <div>
+        <div class="description">
+          Explore All The Tools
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">diagram</div>
+                <div class="quarto-category">tool</div>
+                <div class="quarto-category">visualize</div>
+                <div class="quarto-category">analysis</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 12, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="exchanging-pen-and-paper." class="level1">
+<h1>Exchanging Pen And Paper.</h1>
+<p>My friends and I are playing <a href="https://store.steampowered.com/app/1604030/V_Rising/">V Rising</a> on <a href="https://www.twitch.tv/shoklansenta">Sundays</a> and we’ve made it to the point where we’re working on <strong>Dark Silver</strong>.This is an end game resource which is a few levels deep into the game. And, it is also a few levels deep into the resource management of the game. We’ve had to build a new castle further into the game. While setting this, up we were discussing the best way to build a pipeline from basic resources to <strong>Dark Silver</strong>. I did quick sketch on paper but realized that - thanks to Quarto - I have some extra tooling to play with for this.</p>
+</section>
+<section id="lets-try-mermaid" class="level1">
+<h1>Let’s Try Mermaid</h1>
+<p>So, looking over some of the <a href="https://quarto.org/docs/authoring/diagrams.html#graphviz">tools</a>, I though that <strong>Mermaid</strong> looks like it would be new and useful. Like other visualization tools, there is a notation which connects the nodes and edges together. And, <em>Mermaid.js</em> no exception coming with some common shapes for representing each.</p>
+<p>Obviously, we have the normal shapes:</p>
+<pre><code>flowchart LR
+    square[This is a box]
+    rounded(This is a Rounded Edge)
+    bubble([This is a bubble])
+    boxinbox[[This is flatland]]</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+    square[This is a box]
+    rounded(This is a Rounded Edge)
+    bubble([This is a bubble])
+    boxinbox[[This is flatland]]
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>We can also add edges of the common kind as well:</p>
+<pre><code>flowchart
+    square[This is a box]
+    rounded(This is a Rounded Edge)
+    bubble([This is a bubble])
+    boxinbox[[This is flatland]]
+
+    square --&gt; rounded
+    rounded --- bubble
+    bubble -.-&gt; boxinbox
+    boxinbox ==&gt;| Insert Text for description|square</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">flowchart
+    square[This is a box]
+    rounded(This is a Rounded Edge)
+    bubble([This is a bubble])
+    boxinbox[[This is flatland]]
+
+    square --&gt; rounded
+    rounded --- bubble
+    bubble -.-&gt; boxinbox
+    boxinbox ==&gt;| Insert Text for description|square
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>You can also add classes to style the nodes which we’ll do next as we start.</p>
+</section>
+<section id="chain-up-the-resources" class="level1">
+<h1>Chain Up the Resources</h1>
+<p>In V Rising, there are the Resouces which get fed into buildings that act as ways to convert them into other resources. The buildings we’ll need for this resource pipeline are <strong>Grinders</strong> and <strong>Furnaces</strong>. So, let’s quickly style these before anything else. I will also want a node which is for the Resource being put into the building/node.</p>
+<pre><code>flowchart RL
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    grinder1[(Grinder)]:::Grinder
+
+    stone&gt; Stone]:::Resource</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">flowchart RL
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    grinder1[(Grinder)]:::Grinder
+
+    stone&gt; Stone]:::Resource
+</pre>
+<div id="mermaid-tooltip-3" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>I wanted these to be visually distinct from one another so bright resource and contrasting colors for the <em>furnace</em> and <em>grinder</em>. Now we can start working through the relationships. I like to kind of work from both sides of this and fill in the middle as I go. Let’s start with the result - <em>Dark Silver</em> - and the base resources.</p>
+<pre><code>flowchart RL
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    grinder1[(Grinder)]:::Grinder
+
+    stone&gt; Stone]:::Resource
+    darkSilver&gt; Dark Silver]:::Resource
+    copperOre&gt;     Copper Ore]:::Resource
+    silverOre&gt; Silver Ore]:::Resource</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-4">flowchart RL
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    grinder1[(Grinder)]:::Grinder
+
+    stone&gt; Stone]:::Resource
+    darkSilver&gt; Dark Silver]:::Resource
+    copperOre&gt;     Copper Ore]:::Resource
+    silverOre&gt; Silver Ore]:::Resource
+</pre>
+<div id="mermaid-tooltip-4" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>Now we just start connecting them. I liked using the dotted lines for raw resources since it adds a little extra bit showing they’re slightly different than the others:</p>
+<pre><code>flowchart TD
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    furnace2[(Furnace)]:::Furnace
+    furnace4[(Furnace)]:::Furnace
+
+    grinder1[(Grinder)]:::Grinder
+    grinder2[(Grinder)]:::Grinder
+
+    stone&gt; Stone]:::Resource
+    darkSilver&gt; Dark Silver]:::Resource
+    copperOre&gt;     Copper Ore]:::Resource
+    silverOre&gt; Silver Ore]:::Resource
+    copper&gt; Copper Ingots]:::Resource
+
+    furnace4--&gt;darkSilver
+    bones-.-&gt;grinder1
+    stone-.-&gt;grinder2
+    copperOre-.-&gt;furnace1
+    
+    furnace1--&gt;copper</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-5">flowchart RL
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    furnace2[(Furnace)]:::Furnace
+    furnace4[(Furnace)]:::Furnace
+
+    grinder1[(Grinder)]:::Grinder
+    grinder2[(Grinder)]:::Grinder
+
+    stone&gt; Stone]:::Resource
+    darkSilver&gt; Dark Silver]:::Resource
+    copperOre&gt;     Copper Ore]:::Resource
+    silverOre&gt; Silver Ore]:::Resource
+    copper&gt; Copper Ingots]:::Resource
+
+    furnace4--&gt;darkSilver
+    bones-.-&gt;grinder1
+    stone-.-&gt;grinder2
+    copperOre-.-&gt;furnace1
+    
+    furnace1--&gt;copper
+</pre>
+<div id="mermaid-tooltip-5" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>Anyways, let’s skip to the end now that you understand how these pieces go together; it’s just the same all the way to the end.</p>
+<section id="final-graph" class="level2">
+<h2 class="anchored" data-anchor-id="final-graph">Final Graph</h2>
+<pre><code>flowchart BT
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    furnace2[(Furnace)]:::Furnace
+    furnace3[(Furnace)]:::Furnace
+    furnace4[(Furnace)]:::Furnace
+    furnace5[(Furnace)]:::Furnace
+
+    grinder1[(Grinder)]:::Grinder
+    grinder2[(Grinder)]:::Grinder
+
+    darkSilver&gt; Dark Silver]:::Resource
+    copperOre&gt;     Copper Ore]:::Resource
+    silverOre&gt; Silver Ore]:::Resource
+    copper&gt; Copper Ingots]:::Resource
+    stoneDust&gt;  Stone Dust]:::Resource
+    graveDust&gt; Grave Dust]:::Resource
+    quartz&gt; Quartz]:::Resource
+    bones&gt; Bones]:::Resource
+    scourge&gt; Scourge Stone]:::Resource
+    whet&gt; Whetstones]:::Resource
+    glass&gt; Glass]:::Resource
+    stone&gt; Stone]:::Resource
+
+    stone-.-&gt;grinder2
+    grinder2--&gt;stoneDust
+
+    copperOre-.-&gt;furnace1
+    furnace1--&gt;copper
+
+    quartz-.-&gt;furnace5
+    furnace5--&gt;glass
+
+    silverOre-.-&gt;furnace4
+
+    bones-.-&gt;grinder1
+    grinder1--&gt;graveDust
+    graveDust--&gt;furnace3
+
+
+    copper--&gt;furnace2
+    stoneDust--&gt;furnace2
+    furnace2--&gt;whet
+    whet--&gt;furnace3
+
+
+    glass--&gt;furnace3
+    furnace3--&gt;scourge
+
+    scourge--&gt;furnace4
+    furnace4--&gt;darkSilver</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-6">flowchart BT
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    furnace2[(Furnace)]:::Furnace
+    furnace3[(Furnace)]:::Furnace
+    furnace4[(Furnace)]:::Furnace
+    furnace5[(Furnace)]:::Furnace
+
+    grinder1[(Grinder)]:::Grinder
+    grinder2[(Grinder)]:::Grinder
+
+    darkSilver&gt; Dark Silver]:::Resource
+    copperOre&gt;     Copper Ore]:::Resource
+    silverOre&gt; Silver Ore]:::Resource
+    copper&gt; Copper Ingots]:::Resource
+    stoneDust&gt;  Stone Dust]:::Resource
+    graveDust&gt; Grave Dust]:::Resource
+    quartz&gt; Quartz]:::Resource
+    bones&gt; Bones]:::Resource
+    scourge&gt; Scourge Stone]:::Resource
+    whet&gt; Whetstones]:::Resource
+    glass&gt; Glass]:::Resource
+    stone&gt; Stone]:::Resource
+
+    stone-.-&gt;grinder2
+    grinder2--&gt;stoneDust
+
+    copperOre-.-&gt;furnace1
+    furnace1--&gt;copper
+
+    quartz-.-&gt;furnace5
+    furnace5--&gt;glass
+
+    silverOre-.-&gt;furnace4
+
+    bones-.-&gt;grinder1
+    grinder1--&gt;graveDust
+    graveDust--&gt;furnace3
+
+
+    copper--&gt;furnace2
+    stoneDust--&gt;furnace2
+    furnace2--&gt;whet
+    whet--&gt;furnace3
+
+
+    glass--&gt;furnace3
+    furnace3--&gt;scourge
+
+    scourge--&gt;furnace4
+    furnace4--&gt;darkSilver
+</pre>
+<div id="mermaid-tooltip-6" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>Past this, we could include rates of production for each furnace and start calculating how long each edge takes and naming them. This is starting to feel like Satisfactory and this is really all I needed to share with my friends. Hopefully, you find this library as useful as I am going to.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
