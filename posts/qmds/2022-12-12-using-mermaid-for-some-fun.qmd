@@ -1,0 +1,299 @@
+---
+title: "Playing with Mermaid.js"
+description: Explore All The Tools
+categories:
+- diagram
+- tool
+- visualize
+- analysis
+date: '2022-12-12'
+layout: post
+toc: false
+
+---
+
+# Exchanging Pen And Paper.
+My friends and I are playing [V Rising](https://store.steampowered.com/app/1604030/V_Rising/) on [Sundays](https://www.twitch.tv/shoklansenta) and we've made it to the point where we're working on **Dark Silver**.This is an end game resource which is a few levels deep into the game. And, it is also a few levels deep into the resource management of the game. We've had to build a new castle further into the game. While setting this, up we were discussing the best way to build a pipeline from basic resources to **Dark Silver**. I did quick sketch on paper but realized that - thanks to Quarto - I have some extra tooling to play with for this.
+
+# Let's Try Mermaid
+So, looking over some of the [tools](https://quarto.org/docs/authoring/diagrams.html#graphviz), I though that **Mermaid** looks like it would be new and useful. Like other visualization tools, there is a notation which connects the nodes and edges together. And, *Mermaid.js* no exception coming with some common shapes for representing each.
+
+Obviously, we have the normal shapes:
+```
+flowchart LR
+    square[This is a box]
+    rounded(This is a Rounded Edge)
+    bubble([This is a bubble])
+    boxinbox[[This is flatland]]
+```
+```{mermaid}
+flowchart LR
+    square[This is a box]
+    rounded(This is a Rounded Edge)
+    bubble([This is a bubble])
+    boxinbox[[This is flatland]]
+```
+
+We can also add edges of the common kind as well:
+```
+flowchart
+    square[This is a box]
+    rounded(This is a Rounded Edge)
+    bubble([This is a bubble])
+    boxinbox[[This is flatland]]
+
+    square --> rounded
+    rounded --- bubble
+    bubble -.-> boxinbox
+    boxinbox ==>| Insert Text for description|square
+```
+```{mermaid}
+flowchart
+    square[This is a box]
+    rounded(This is a Rounded Edge)
+    bubble([This is a bubble])
+    boxinbox[[This is flatland]]
+
+    square --> rounded
+    rounded --- bubble
+    bubble -.-> boxinbox
+    boxinbox ==>| Insert Text for description|square
+```
+
+
+You can also add classes to style the nodes which we'll do next as we start.
+
+# Chain Up the Resources
+In V Rising, there are the Resouces which get fed into buildings that act as ways to convert them into other resources. The buildings we'll need for this resource pipeline are **Grinders** and **Furnaces**. So, let's quickly style these before anything else. I will also want a node which is for the Resource being put into the building/node.
+```
+flowchart RL
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    grinder1[(Grinder)]:::Grinder
+
+    stone> Stone]:::Resource
+```
+```{mermaid}
+flowchart RL
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    grinder1[(Grinder)]:::Grinder
+
+    stone> Stone]:::Resource
+```
+I wanted these to be visually distinct from one another so bright resource and contrasting colors for the *furnace* and *grinder*. Now we can start working through the relationships. I like to kind of work from both sides of this and fill in the middle as I go. Let's start with the result - *Dark Silver* - and the base resources.
+```
+flowchart RL
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    grinder1[(Grinder)]:::Grinder
+
+    stone> Stone]:::Resource
+    darkSilver> Dark Silver]:::Resource
+    copperOre>     Copper Ore]:::Resource
+    silverOre> Silver Ore]:::Resource
+```
+```{mermaid}
+flowchart RL
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    grinder1[(Grinder)]:::Grinder
+
+    stone> Stone]:::Resource
+    darkSilver> Dark Silver]:::Resource
+    copperOre>     Copper Ore]:::Resource
+    silverOre> Silver Ore]:::Resource
+```
+
+Now we just start connecting them. I liked using the dotted lines for raw resources since it adds a little extra bit showing they're slightly different than the others:
+```
+flowchart TD
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    furnace2[(Furnace)]:::Furnace
+    furnace4[(Furnace)]:::Furnace
+
+    grinder1[(Grinder)]:::Grinder
+    grinder2[(Grinder)]:::Grinder
+
+    stone> Stone]:::Resource
+    darkSilver> Dark Silver]:::Resource
+    copperOre>     Copper Ore]:::Resource
+    silverOre> Silver Ore]:::Resource
+    copper> Copper Ingots]:::Resource
+
+    furnace4-->darkSilver
+    bones-.->grinder1
+    stone-.->grinder2
+    copperOre-.->furnace1
+    
+    furnace1-->copper
+```
+```{mermaid}
+flowchart RL
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    furnace2[(Furnace)]:::Furnace
+    furnace4[(Furnace)]:::Furnace
+
+    grinder1[(Grinder)]:::Grinder
+    grinder2[(Grinder)]:::Grinder
+
+    stone> Stone]:::Resource
+    darkSilver> Dark Silver]:::Resource
+    copperOre>     Copper Ore]:::Resource
+    silverOre> Silver Ore]:::Resource
+    copper> Copper Ingots]:::Resource
+
+    furnace4-->darkSilver
+    bones-.->grinder1
+    stone-.->grinder2
+    copperOre-.->furnace1
+    
+    furnace1-->copper
+```
+
+Anyways, let's skip to the end now that you understand how these pieces go together; it's just the same all the way to the end.
+
+
+## Final Graph
+```
+flowchart BT
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    furnace2[(Furnace)]:::Furnace
+    furnace3[(Furnace)]:::Furnace
+    furnace4[(Furnace)]:::Furnace
+    furnace5[(Furnace)]:::Furnace
+
+    grinder1[(Grinder)]:::Grinder
+    grinder2[(Grinder)]:::Grinder
+
+    darkSilver> Dark Silver]:::Resource
+    copperOre>     Copper Ore]:::Resource
+    silverOre> Silver Ore]:::Resource
+    copper> Copper Ingots]:::Resource
+    stoneDust>  Stone Dust]:::Resource
+    graveDust> Grave Dust]:::Resource
+    quartz> Quartz]:::Resource
+    bones> Bones]:::Resource
+    scourge> Scourge Stone]:::Resource
+    whet> Whetstones]:::Resource
+    glass> Glass]:::Resource
+    stone> Stone]:::Resource
+
+    stone-.->grinder2
+    grinder2-->stoneDust
+
+    copperOre-.->furnace1
+    furnace1-->copper
+
+    quartz-.->furnace5
+    furnace5-->glass
+
+    silverOre-.->furnace4
+
+    bones-.->grinder1
+    grinder1-->graveDust
+    graveDust-->furnace3
+
+
+    copper-->furnace2
+    stoneDust-->furnace2
+    furnace2-->whet
+    whet-->furnace3
+
+
+    glass-->furnace3
+    furnace3-->scourge
+
+    scourge-->furnace4
+    furnace4-->darkSilver
+```
+```{mermaid}
+flowchart BT
+
+    classDef Furnace fill:#696969, color:#f9f9f9;
+    classDef Grinder fill:#b9b9b9, color:#0a0a0a;
+    classDef Resource fill:#009F4B, color:#000000;
+
+    furnace1[(Furnace)]:::Furnace
+    furnace2[(Furnace)]:::Furnace
+    furnace3[(Furnace)]:::Furnace
+    furnace4[(Furnace)]:::Furnace
+    furnace5[(Furnace)]:::Furnace
+
+    grinder1[(Grinder)]:::Grinder
+    grinder2[(Grinder)]:::Grinder
+
+    darkSilver> Dark Silver]:::Resource
+    copperOre>     Copper Ore]:::Resource
+    silverOre> Silver Ore]:::Resource
+    copper> Copper Ingots]:::Resource
+    stoneDust>  Stone Dust]:::Resource
+    graveDust> Grave Dust]:::Resource
+    quartz> Quartz]:::Resource
+    bones> Bones]:::Resource
+    scourge> Scourge Stone]:::Resource
+    whet> Whetstones]:::Resource
+    glass> Glass]:::Resource
+    stone> Stone]:::Resource
+
+    stone-.->grinder2
+    grinder2-->stoneDust
+
+    copperOre-.->furnace1
+    furnace1-->copper
+
+    quartz-.->furnace5
+    furnace5-->glass
+
+    silverOre-.->furnace4
+
+    bones-.->grinder1
+    grinder1-->graveDust
+    graveDust-->furnace3
+
+
+    copper-->furnace2
+    stoneDust-->furnace2
+    furnace2-->whet
+    whet-->furnace3
+
+
+    glass-->furnace3
+    furnace3-->scourge
+
+    scourge-->furnace4
+    furnace4-->darkSilver
+```
+
+Past this, we could include rates of production for each furnace and start calculating how long each edge takes and naming them. This is starting to feel like Satisfactory and this is really all I needed to share with my friends. Hopefully, you find this library as useful as I am going to.
