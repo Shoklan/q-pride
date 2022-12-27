@@ -36,7 +36,7 @@ At this point, I think I am somewhere around 25-30 books but I have not really b
 I will note that the hack I talked about in the previous post - using a Browser Text-To-Speech Reader - no longer works and soon after I wrote that post it stopped working. But again, I have Audiobooks on audible and extra credits. I also found a solid podcast which does readings of historical books and documents which was a nice find.
 
 # Three Streams of Income: Failed.
-My normla job is still fine for now so we'll skip to the other stuff.
+My normal job is still fine for now so we'll skip to the other stuff.
 
 ## Streaming
 I have been streaming for a while now and it's hard. I am not surprised that people fail so often at this. There is so much against being successful in this. And, I mean just making any kind of money at all let alone living off this. I did an analysis of some channels at random around the 50-100 viewer average and they really don't make that much. Granted, I can only judge based on the gifted subs and bits since I cannot see how many people actually subscribe. But, you just don't make that much. And, that assumes you can even get off the floor and have people continue to show up. Getting someone to follow your content is hard; getting them to come back is even harder. This problem is not better on Youtube either. The general idea is to funnel people from different platforms around but you would need impressions on those other platforms. No wonder content creates jump to any new platform as fast as they can; if you're the first few then you can funnel whoever is around easier.
@@ -58,7 +58,7 @@ This has much to do with forces outside my control. My plans were to move up in 
 
 # Secret Project
 The Secret Project was a Video Game.
-I really tried to get this working but it just did not really get off the ground. There were a lot of lessons learned - namely make sure that people are able to do the work before adding them to the project. Or, at least provable that they will do work and learn. I now realize exactly why companies give out tests to see people can even do work.
+I really tried to get this working but it just did not really get off the ground. There were a lot of lessons learned - namely make sure that people are able to do the work before adding them to the project. Or, at least provable that they will do work and learn. I now realize exactly why companies give out tests to see if people can even do work.
 
 Frankly, I refuse to give up on this one. As soon as I have soemthing a bit more stable, I'm going to start working on the smallest possible subset of systems necessary to do this alone. That means:
 1. Simple character models.

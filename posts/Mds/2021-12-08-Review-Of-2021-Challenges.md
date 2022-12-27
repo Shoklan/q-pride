@@ -1,6 +1,4 @@
 ---
-aliases:
-- /challenges/future/projects/2021/12/08/Review-Of-2021-Challenges
 categories:
 - projects
 - challenges
