@@ -4,7 +4,7 @@ categories:
 date: '2023-01-01'
 layout: post
 title: 'Challenges for 2023'
-description: 
+description: What To Expect This Year.
 toc: false
 ---
 
