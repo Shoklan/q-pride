@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -1587,8 +1587,8 @@ only showing top 20 rows
 <p>There is no plotting functions inside of Spark so you will need to pull the data for visualizations. Spark has a handy function <code>.toPandas()</code> which will pull the data out and convert it into a pandas data frame for usage. Please make sure when you do this to only pull the results and not the totality of the data.</p>
 <div class="cell" data-execution_count="74">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> data.select([<span class="st">'Genre'</span>, <span class="st">'Ratings'</span>, <span class="st">'Votes'</span>]).groupBy(<span class="st">'Genre'</span>).agg(</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    _mean(<span class="st">'Ratings'</span>).alias(<span class="st">"Mean"</span>),</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    _mean(<span class="st">'Votes'</span>).alias(<span class="st">'Votes'</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    sMean(<span class="st">'Ratings'</span>).alias(<span class="st">"Mean"</span>),</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    sMean(<span class="st">'Votes'</span>).alias(<span class="st">'Votes'</span>)</span>
 <span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>    ).orderBy(F.desc(<span class="st">"Mean"</span>)).toPandas()</span>
 <span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>results.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
