@@ -1,0 +1,91 @@
+---
+title: "Exploring Linear Regression in R and Python"
+description: Synthesizing Sources.
+categories:
+- machine learning
+- statistics
+- concept
+author: "Collin Mitchell"
+date: '2023-01-28'
+layout: post
+toc: false
+# engine: jupyter
+---
+
+# What is Linear Regression?
+Linear Regression is a reliable and common method of measuring the relationship between numeric variables in data. The *simplest* usage is over two numeric variables and attempts to draw a line between all the available points. This is a bit of an oversimplification since you can also do categorical variables - at least for R, anyways - but this post is about the the **How** and not the **Why**. 
+
+## Linear Regression in Python (Scikit-Learn)
+Many languages have packages to solve problems like this for us and Python is no exception. The pacakges for this in Python are `scikit-learn` and `statsmodels`. Mostly commonly, you will see `scikit-learn` so we'll talk about that first. To [install](https://scikit-learn.org/stable/install.html) it, you'll want to run `python3 -m pip install scikit-learn`.
+
+
+Most of the models you'll want to build will come standard but you'll need to use the documentation to find which one you're after. We'll be importing from `linear_model` to get `LinearRegression`:
+```{python}
+# Grab this here:
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error
+
+import seaborn as sns
+```
+
+Next we'll get the data from the the `seaborn` package since it conveniently contains common datasets - which we'll be using now:
+```{python}
+
+# Get the data for both:
+iris = sns.load_dataset('iris')
+X = iris.sepal_length
+y = iris.petal_length
+
+# Normally, you'd want to do this but I'm ignoring it for the purpose of example
+# Set the size of the split based on your needs
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.8, random_state=1111)
+```
+
+Fitting a model in `scikit-learn` is extremly easy. All you need to do is initialize the model object, fit the model using the cleaned data and then run predictions.
+```{python}
+#| output: asis
+lm = LinearRegression()
+# This is one sample so you'll need to reshape; will throw error otherwise.
+lm.fit(X.values.reshape(-1,1), y);
+```
+
+Finally, you can get the slope and the intercept of the line which is often what you'll be after; we'll need it for comparison later.
+```{python}
+#| output: asis
+intercept, slope = lm.intercept_, lm.coef_[0]
+print(f"The Slope and Intercept of the line are: Slope is {round(slope,2)} and Intercept is {round(intercept, 2)}")
+```
+
+
+## Linear Regression in R
+R is a language which is built around Statistics and as such much of the statistical tooling is built right into the default langauge. To build a Linear Model in R, one would use the `lm()` function passing using `formula notation`. If you've never seen this before, R has something called *Formula Notation* which allows you to specify a relationship in simple text and then gets parsed into meaningful input for the function. So, if we want to define a relationship between x and y then we'd say `y ~ x`. There are other choices for these as well as different functions using this notation in different ways but this is how we're going to use it here.
+
+
+Asking for a *Linear Regression Model* is as simple as:
+```{r}
+library(tidyverse)
+
+model = lm(Petal.Length ~ Sepal.Length, data = iris)
+print(model)
+summary(model)
+```
+Notice that we get the same Slope and Intercept as we did in Python. When transferring across languages, it's a good idea to use what you know to check against what is new for you.
+
+
+## Linear Regression in Python (statsmodels)
+If you're more comfortable with the R notation - like I happen to be - then using the `statsmodel` package is the way to go. This allows you to use the formula notation instead of the Object Oriented way that `scikit-learn` does. Since we're already covered the *forumula notation* then we don't have to review that; you'll want the API interface for formulas but otherwise it's the same as R.
+```{python}
+import statsmodels.formula.api as smf
+results = smf.ols('petal_length ~ sepal_length', data=iris).fit()
+results.summary()
+```
+
+I really like this output and also because you can simply pull out the parts you need using dot notation:
+```{python}
+results.params
+```
+
+# Thoughts
+Linear Regression is ubiquitous and even people who are not statistically trained can understand that the line is a kind of Trend Line for the diretion and strength of the relationship. The real concern with tools such as these is that it is very easy to come up with results without understanding why they could be incorrect. I'll go over the assumptions of a linear model in another post in the future.
+
