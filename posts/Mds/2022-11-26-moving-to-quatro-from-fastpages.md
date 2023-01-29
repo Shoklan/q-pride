@@ -7,6 +7,7 @@ date: '2022-11-26'
 description: This Was Not Simple.
 layout: post
 title: 'Migrating From Fastpages to Quarto'
+image: "../_images/headers/fastpages-to-quarto.png"
 toc: false
 ---
 
