@@ -1,0 +1,97 @@
+---
+title: "Regression Trees in R And Python"
+description: "."
+categories:
+- R
+- python
+- data
+- analysis
+- model
+date: '2023-01-31'
+layout: post
+toc: false
+---
+
+# What is a Regression Tree?
+Among the lesser known and less common types of models is called a *Regression Tree*. A **Regression Tree** is actaully misnomer since it does not in fact use Regression at all when being built but instead uses something called the **Standard Deviation Reduction**. We'll define that in a moment because even though all this is important, the ideas of this model is built around a **Decision Tree** - which requires us to step back even more.
+
+## What is a Decision Tree?
+A **Decision Tree** is usually discussed as a sort of *flow chart* based on the test data being split on a set of features. Then, there is a calculation made - usually **Entropy** - to see which split generates a better model. Once the split has been made then you get two subtrees which further tries the same thing until the model is built. A very simple pretend example is:
+```{mermaid}
+flowchart TB
+  Income[ If Income >50K]
+  Savings[Has Savings]
+  NoSavings[No Savings]
+
+  Income ==>|True|Savings
+  Income ==>|False|NoSavings
+```
+The trees are usually much larger - as we'll see in a moment. There is also a solid amount of customization which goes into a good *Decision Tree* - but that is not what we're intending to work with today. Today, we're going to look at how to make them in R and Python.
+
+
+# Regression Trees in R
+So, we'll be borrowing data from a wonderful book called **Machine Learning In R** by *Brett Lantz* which is an excellent read and reference. I strongly recommend his work since the videos and texts written by him do an excellent job of explaining these concepts. Anyways, first we get the data.
+```{r}
+# You will need these libraries:
+# install.packages(c('rpart', 'rsample', 'rpart.plot'))
+library(tidyverse)
+wines = read_csv("https://github.com/stedy/Machine-Learning-with-R-datasets/raw/master/whitewines.csv");
+```
+Once again, make sure that if you're following along that you get those packages installed. This dataset is about judging wine and - as someone who does not drink - we'll leave the judging to the judge data here.
+
+One point I would like to comment on since I'll be borrowing from the `tidyverse` here is that if you're still doing manual training/testing splits then I recommend the `rsample` package. With this, you can split the model and access each in part using the functions `testing()` and `training()` to pull them out of the object. This means you wont have to manage them separatly which is a nice to have:
+```{r}
+library(rpart)
+library(rpart.plot)
+library(rsample)
+
+splits = initial_split(wines, prop = .8)
+```
+Once we've got our split, then we can simply use the *formula notation* on our training data and check out the model:
+```{r}
+model = rpart(quality ~ ., training(splits))
+model
+```
+The final results of the splits are marked with an `*` symbol and tell us which path gets us to the best rated quality wine. If you're finding this a bit annoying to interpret then do not worry because there is a better way to represent these. These kinds of models are excellent when plotted so we'll do that instead:
+```{r}
+rpart.plot(model, digits=3, fallen.leaves = T)
+```
+There you go, the splits which end up with the best quality wines are alcohol > 11.88 and free sulfur dioxide > 11.5 for whatever that means. I hope someone reading this knows more about wine then I do and can interpret those values.
+
+# Regression Trees in Python
+Doing this in Python is a little different but we'll be back to using the `scikit-learn` package as it contains the models we'll be after. The class is the `DecisionTreeRegressor` under `sklearn.tree`:
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeRegressor
+
+data = pd.read_csv("https://github.com/stedy/Machine-Learning-with-R-datasets/raw/master/whitewines.csv")
+
+y = data.quality
+X = data.drop('quality', axis=1)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.8, random_state=421)
+
+model = DecisionTreeRegressor(random_state=421, max_depth=5)
+model.fit(X_train, y_train);
+```
+ I set the `max_depth` lower to attempt to match the R version's tree. If we try to plot the tree without then it is almost impossible to reason about. You can see this when we plot it using `plot_tree` from `sklearn.tree`:
+```{python}
+from sklearn.tree import plot_tree, export_text
+
+bigTree = DecisionTreeRegressor(random_state=421)
+bigTree.fit(X_train, y_train);
+
+plot_tree(bigTree)
+```
+
+I know what I'm looking for and I cannot make out anything of value from this tree. This is better but the text is still mostly illegible:
+```{python}
+plot_tree(model)
+```
+
+# Thoughts
+I find the python outputs to be frankily useless. Trying to fix the DPI and display is just not working in getting any meaning out of these so I definitely recommend R if you're planning on using these models. They're a bit niche and you'll have to have purely numeric data but there are plenty of problems  in the real world where that is the case. These would be a solid baseline model to start with and then try to find models which improve on it.
+
+Also, an interesting difference between the Python version and the R version is the metrics are not the same. The R version uses something called *Standard Deviation Reduction* which tries to condition the split on minimizing the Standard Deviation. But, the [Python documentations](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html#sklearn.tree.DecisionTreeRegressor) doesn't even have that as a choice but defaults to squared error instead.
