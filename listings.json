@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/qmds/2023-01-31-exploring-regression-trees-python-r.html",
       "/posts/qmds/2023-01-28-exploring-chi-squared-test.html",
       "/posts/qmds/2023-01-28-exploring-linear-regression.html",
       "/posts/nbks/2023-01-19-trying-out-fastpitch-from-nvidia.html",
