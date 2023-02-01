@@ -1,6 +1,6 @@
 ---
 title: "Binomial Test in R And Python"
-description: ""
+description: "Do Our Results Make Sense For This Distribution?"
 categories:
 - R
 - python
