@@ -47,6 +47,7 @@ logit.score(X_test, y_test)
 ```
 
 You may see some posts saying you can do a *One Hot Endcode* using the `LabelEncoder()` but with the `category` type in Pandas you shouldn't need this. This is because the **Categorical** data type is the equivalent of a **Factor** in R per the Documentation:<br/>
+
 > All values of categorical data are either in categories or np.nan. Order is defined by the order of categories, not lexical order of the values. **Internally, the data structure consists of a categories array and an integer array of codes** which point to the real value in the categories array.
 cf: [Docs](https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html)
 
