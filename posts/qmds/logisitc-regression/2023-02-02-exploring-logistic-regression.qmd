@@ -1,0 +1,109 @@
+---
+title: "Logistic Regression in Python and R"
+description: "What Now If It's Not Linear?"
+categories:
+- R
+- python
+- data
+- analysis
+- test
+date: '2023-02-02'
+layout: post
+toc: false
+---
+
+# What is Logistic Regression?
+Instead of predicting the actual values like *Linear Regression*, **Logistic Regression** predicts the probability that an outcome belongs to a specific category. Note that the default assumption for this is Binomial - meaning between two different classes. You can also select multiple classes but will require a different package which we wont be discussing today.
+
+This is a simple and common way to solve Classification problems which we'll be looking at next.
+
+## Logisitc Regression in Python
+Like most model problems, we'll be falling back to using the `sklearn` package. We'll initialize the `LogisiticRegression()` object, drop the columns we will be ignoring and then get our results:
+
+```{python}
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn import preprocessing
+
+# I got this from an online class:
+df = pd.read_csv("_data/loan.csv")
+logit = LogisticRegression()
+
+
+# Columns we care about:
+df = df[['loan_default', 'loan_amount', 'debt_to_income', 'annual_income']]
+# Split the data apart:
+X,y = df.drop('loan_default', axis=1), df.loan_default.astype('category')
+
+
+X_train, X_test, y_train, y_test = train_test_split(X,y, random_state=421)
+logit.fit(X_train, y_train);
+
+```
+... and we can check how well the model fits:
+```{python}
+logit.score(X_test, y_test)
+```
+
+You may see some posts saying you can do a *One Hot Endcode* using the `LabelEncoder()` but with the `category` type in Pandas you shouldn't need this. This is because the **Categorical** data type is the equivalent of a **Factor** in R per the Documentation:<br/>
+> All values of categorical data are either in categories or np.nan. Order is defined by the order of categories, not lexical order of the values. **Internally, the data structure consists of a categories array and an integer array of codes** which point to the real value in the categories array.
+cf: [Docs](https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html)
+
+We'll step through it anyways just to show that this ends up the same. We'll import, convert and then give ths score below:
+```{python}
+# generate encoder
+le = preprocessing.LabelEncoder();
+
+# "fit" the column to the encoder:
+le.fit(df['loan_default']);
+```
+```{python}
+# convert the column for the response:
+y_2 = le.transform(df['loan_default']);
+
+# Same split as normal:
+X_train, X_test, y_train, y_test = train_test_split(X,y_2, random_state=421)
+
+logit.fit(X_train, y_train);
+```
+
+
+And, the score:
+```{python}
+logit.score(X_test, y_test)
+```
+And, it's the same so skip it and just use categories.
+
+
+## Logistic Regression in R
+Adding to the list of reasons I like using R more, this is how simple it is.
+```{r}
+#| include: false
+library(tidyverse)
+data = readRDS('_data/loan_df.rds')
+data %>% write_csv("_data/loan.csv")
+```
+```{r}
+# install.packages(c('ISLR', 'caret'))
+library(tidyverse)
+library(caret)
+default = read_csv('_data/loan.csv')
+summary( default )
+
+
+
+default %>% head
+
+log_model <- default %>%
+    mutate(did_default=as.factor(loan_default)) %>%
+    glm(
+        did_default ~ loan_amount + debt_to_income + annual_income,
+        data = .,
+        family = binomial
+    )
+
+summary( log_model )
+```
+
+There we go! Simple and easy as always.
