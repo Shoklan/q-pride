@@ -1,5 +1,5 @@
 ---
-title: "Fisher's exact test in Python and R"
+title: "Fisher's Exact Test in Python and R"
 description: "When you need stronger guarantees."
 categories:
 - r 
