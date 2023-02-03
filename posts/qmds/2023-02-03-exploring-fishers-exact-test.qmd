@@ -1,0 +1,54 @@
+---
+title: "Fisher's exact test in Python and R"
+description: "When you need stronger guarantees."
+categories:
+- r 
+- python
+- data
+- analysis
+- test
+- experiment
+date: '2023-02-03'
+layout: post
+toc: false
+
+---
+
+# Fisher's exact test
+This is another test which is excellent for testing the **Goodness of Fit** of data but is more reliable. This is because it is in a class called **Exactness Test** which means that if the *Null Hypothesis* is true then you can be sure that your conclusions will be a false positve at most whatever the Power is: 5% in the default case. If you're not sure what that means then I would recommend doing some further reading on **Statistical Power** and **Confidence Intervals**.
+
+For us, we're trying to use this to see if there is an association between two features. If there is then we'd expect to reject the null hypothesis - which is what will happen with our play data.
+
+## Fisher's Exact Test in R
+We'll get our data from another online class which also includes the Sex along with what their preference was. We need this extra information for this test since at minimum it needs to be a 2x2 cross tabulation. That means we'll borrow the code from before with an addition:
+```{r}
+library(tidyverse)
+
+data <- read_csv("https://query.data.world/s/y5x2znfjt6gt5xr2gvg7vyhzqbgjr3", col_types = 'iff')
+
+data %>%
+    # format it as expected
+    xtabs(~ Pref + Sex, .)
+```
+In my previous post about the Chi-Squared, I skipped showing what happens when you push the formula notation into the `xtabs` function. All it really does is count the total per each category. And, now for the test:
+```{r}
+data %>%
+    # format it as expected
+    xtabs(~ Pref + Sex, .) %>%
+    # pipe into the test for the results.
+    fisher.test
+```
+Looking at this result, we can clearly say that we're rejecting the null hypothesis and therefore there is an association between the two features.
+
+## Fisher's Exact Test in Python
+Again, Python is a tad finicky with this working. And again, we're going to use the Pivot table approach which was used in the previous post about the *Chi-Squared* test:
+
+```{python}
+import pandas as pd
+import scipy as sci
+data = pd.read_csv('https://query.data.world/s/y5x2znfjt6gt5xr2gvg7vyhzqbgjr3')
+
+data['Pref'] = data.Pref.astype('category')
+sci.stats.fisher_exact( data.pivot_table(index = 'Pref', columns = 'Sex', aggfunc = len) )
+```
+If you look at the values you'll see it matches what we got for R further confirming that this was done correctly.
