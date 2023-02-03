@@ -1,0 +1,115 @@
+---
+title: "K-Nearest Neighbors in Python and R"
+description: "This is not KMeans!"
+categories:
+- r 
+- python
+- data
+- analysis
+date: ''
+layout: post
+toc: false
+
+---
+
+# What is K-Nearest Neighbors (KNN)?
+This is a supervised learning algorithm to cluster related data together to search for related groups in data. Please note that this is **not** *K-Means* and the two get commonly mixed up all the time. I'll do K-Means at some point in the future as well as how to try to remember the difference later. But, how KNN works is that you tell it how many neighbors (k) the algorithm should consider and then attempts to put the observation into one of the classes based on those accumulated probabilities. If that sounds painful then think of it like this:
+
+1. Take a single point.
+2. Check the [K] points around that point.
+3. Put it into the most commonly seen class around that point.
+4. Return that class.
+
+A forewarning that getting this working in both R and Python was surprisingly annoying for different reasons which we'll now discuss.
+
+## KNN in R
+As always, I prefer doing these Machine Learning Algorithms in R since they are easier. In this case, it still was easier but there was a problem getting it converted to the Tidyverse. We'll get our data which is going to be the Wine data we used before:
+```{r}
+library(class)
+library(tidyverse)
+library(rsample)
+# library(gmodels)
+
+data <- read_csv('https://github.com/stedy/Machine-Learning-with-R-datasets/raw/master/whitewines.csv');
+```
+
+This algorithm really only works with numeric data and if we're not careful about what numbers come into the it then we cannot trust our results. When working with numeric data in many of these Machine Learning models we'll want to normalize each column so that they're comparable. This is commonly done using this kind of function:
+```{r}
+normalize <- function(x){
+    return (x - min(x) / (max(x) - min(x)))
+}
+```
+Please note that this is not the same thing as the *Z-Score* you may have seen in Statistics. Although, if the data is all normally distributed then doing that might be better than this method.
+
+Next, thanks to the wonders of the R programming language, we can apply this to all the numeric columns aside from our response and then attach our response back at the end:
+```{r}
+cData <- map( data %>% select( -quality ), normalize) %>% # Normalize the columns
+    as_tibble %>% # convert teh list output to a tibble
+    bind_cols(data %>% select(quality)) # add the response back
+```
+
+Then we'll do our split and modeling. Notice that - unlike many Machine learning algorithms - you'll need to pass the testing into the model as well. 
+```{r}
+split <-initial_split(cData)
+
+pred <- knn(
+    train = training(split)[-12],
+    test = testing(split)[-12],
+    cl = training(split)[12] %>% as_vector, # Let's talk about this part.
+    k=5
+)
+```
+And, there we go! 
+
+### Why Did You Use `as_vector`?
+Becuase something about how tibbles interact with the `knn` function causes it to read the dimensions wrong and therefore it refuses to work. If you pass the class labels as a vector then it allows it to function fine. Just keep that in mind if you're not working in Base R like I usually do not.
+
+
+## Knn in Python
+Oh Python, how much I like you outside of statistics. This was the roughest machine learning algorithm to use so far. There are so many problems to work through so let's get started.
+```{python}
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+data = pd.read_csv('https://github.com/stedy/Machine-Learning-with-R-datasets/raw/master/whitewines.csv')
+```
+
+The first problem is that - like the R version - we'll want to standardize the inputs. This will require a function like we have needed to before. I'm not a fan of this `fit` + `transform` API in python. So, first we'll import and fit our data:
+```{python}
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler(with_mean=True, with_std=True)
+scaler.fit(data);
+```
+
+Sadly, we're not ready to do the modeling since Python is very adamant that this be encoded. And, by that I dont mean a *Categorical* as we have done in the past. If you try this:
+```{python}
+nData = pd.DataFrame(data = scaler.transform(data), columns=data.columns)
+y,X = nData.quality.astype('category'), nData.drop('quality', axis =1)
+```
+... then it will still complain and refuse to work. This funtion must not have been updated with consideration to the *category type* even existing. Which means, we'll have to use *another* function to encode the labels. We skipped past this in the other post about **Logistic Regression** but we're not able to avoid it here:
+```{python}
+# setup to encode the response variable
+from sklearn.preprocessing import LabelEncoder
+label = LabelEncoder();
+
+# normalize our data:
+nData = pd.DataFrame(data = scaler.transform(data), columns=data.columns)
+
+# encode the labels: 
+y = label.fit_transform(nData.quality)
+X = nData.drop('quality', axis = 1)
+```
+Now we can actually use the algorithm:
+```{python}
+
+from sklearn.neighbors import KNeighborsClassifier
+knn = KNeighborsClassifier()
+
+X_train, X_test, y_train, y_test = train_test_split(X,y, random_state=421)
+
+knn.fit(X_train, y_train);
+knn.score(X_test, y_test)
+```
+
+# Thoughts
+It's clear that with the advent of Deep Learning that these less common algoritms are not being maintained as well as they probably should be. And, Python's example was startling annoying to get working. Honestly, if you are limited to Python then skip it and try another machine learning algorithm - like K-Means - instead.
