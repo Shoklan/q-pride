@@ -234,7 +234,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>0.5963302752293578</code></pre>
 </div>
 </div>
-<p>You may see some posts saying you can do a <em>One Hot Endcode</em> using the <code>LabelEncoder()</code> but with the <code>category</code> type in Pandas you shouldn’t need this. This is because the <strong>Categorical</strong> data type is the equivalent of a <strong>Factor</strong> in R per the Documentation:<br> &gt; All values of categorical data are either in categories or np.nan. Order is defined by the order of categories, not lexical order of the values. <strong>Internally, the data structure consists of a categories array and an integer array of codes</strong> which point to the real value in the categories array. cf: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html">Docs</a></p>
+<p>You may see some posts saying you can do a <em>One Hot Endcode</em> using the <code>LabelEncoder()</code> but with the <code>category</code> type in Pandas you shouldn’t need this. This is because the <strong>Categorical</strong> data type is the equivalent of a <strong>Factor</strong> in R per the Documentation:<br></p>
+<blockquote class="blockquote">
+<p>All values of categorical data are either in categories or np.nan. Order is defined by the order of categories, not lexical order of the values. <strong>Internally, the data structure consists of a categories array and an integer array of codes</strong> which point to the real value in the categories array. cf: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html">Docs</a></p>
+</blockquote>
 <p>We’ll step through it anyways just to show that this ends up the same. We’ll import, convert and then give ths score below:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate encoder</span></span>

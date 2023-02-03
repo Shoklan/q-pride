@@ -2,246 +2,250 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://orgulo.us/index.html</loc>
-    <lastmod>2023-02-02T05:37:29.763Z</lastmod>
+    <lastmod>2023-02-03T04:59:05.007Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/Notes.html</loc>
-    <lastmod>2023-02-02T05:37:29.975Z</lastmod>
+    <lastmod>2023-02-03T04:59:05.219Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/about.html</loc>
-    <lastmod>2023-02-02T05:37:30.195Z</lastmod>
+    <lastmod>2023-02-03T04:59:05.499Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2020-09-09-fastbooks-incidentally-supports-r.html</loc>
-    <lastmod>2023-02-02T05:37:30.579Z</lastmod>
+    <lastmod>2023-02-03T04:59:05.947Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-09-08-reviewing-fastai-2022-coursework-thebeginning.html</loc>
-    <lastmod>2023-02-02T05:37:30.975Z</lastmod>
+    <lastmod>2023-02-03T04:59:06.383Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-09-28-cycle-jobs-part-one.html</loc>
-    <lastmod>2023-02-02T05:37:31.339Z</lastmod>
+    <lastmod>2023-02-03T04:59:06.747Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-10-14-cycle-calculate-job-values.html</loc>
-    <lastmod>2023-02-02T05:37:31.635Z</lastmod>
+    <lastmod>2023-02-03T04:59:07.079Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-12-14-first-time-pareto-plot.html</loc>
-    <lastmod>2023-02-02T05:37:31.923Z</lastmod>
+    <lastmod>2023-02-03T04:59:07.351Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2023-01-15-Exploring-Tv-Data-With-Spark-Part-2.html</loc>
-    <lastmod>2023-02-02T05:37:32.267Z</lastmod>
+    <lastmod>2023-02-03T04:59:07.703Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-11-10-simple-idea-using-memcached.html</loc>
-    <lastmod>2023-02-02T05:37:32.543Z</lastmod>
+    <lastmod>2023-02-03T04:59:07.971Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-09-27-cycle-weapons-best-general.html</loc>
-    <lastmod>2023-02-02T05:37:32.871Z</lastmod>
+    <lastmod>2023-02-03T04:59:08.339Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-09-30-testing-if-interact-works-online.html</loc>
-    <lastmod>2023-02-02T05:37:33.115Z</lastmod>
+    <lastmod>2023-02-03T04:59:08.575Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-12-24-Exploring-Tv-Data-With-Spark-Part-1.html</loc>
-    <lastmod>2023-02-02T05:37:33.551Z</lastmod>
+    <lastmod>2023-02-03T04:59:09.027Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-11-29-datatables-come-to-python.html</loc>
-    <lastmod>2023-02-02T05:37:33.811Z</lastmod>
+    <lastmod>2023-02-03T04:59:09.283Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2021-01-18-minimal-spark-cluster-without-hadoop.html</loc>
-    <lastmod>2023-02-02T05:37:34.071Z</lastmod>
+    <lastmod>2023-02-03T04:59:09.535Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-10-07-cycle-jobs-part-two.html</loc>
-    <lastmod>2023-02-02T05:37:34.387Z</lastmod>
+    <lastmod>2023-02-03T04:59:09.843Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2020-09-06-exploring-altair-visualization.html</loc>
-    <lastmod>2023-02-02T05:37:34.599Z</lastmod>
+    <lastmod>2023-02-03T04:59:10.067Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2023-01-19-trying-out-fastpitch-from-nvidia.html</loc>
-    <lastmod>2023-02-02T05:37:34.883Z</lastmod>
+    <lastmod>2023-02-03T04:59:10.351Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-12-16-valorant-color-crosshair.html</loc>
-    <lastmod>2023-02-02T05:37:35.311Z</lastmod>
+    <lastmod>2023-02-03T04:59:10.779Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-12-01-do-we-replace-pandas.html</loc>
-    <lastmod>2023-02-02T05:37:35.543Z</lastmod>
+    <lastmod>2023-02-03T04:59:11.011Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-10-05-cycle-loot-values-download.html</loc>
-    <lastmod>2023-02-02T05:37:35.967Z</lastmod>
+    <lastmod>2023-02-03T04:59:11.399Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-10-26-how-to-quickly-use-other-formats-in-python.html</loc>
-    <lastmod>2023-02-02T05:37:36.175Z</lastmod>
+    <lastmod>2023-02-03T04:59:11.619Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-11-04-cycle-jobs-part-four.html</loc>
-    <lastmod>2023-02-02T05:37:36.759Z</lastmod>
+    <lastmod>2023-02-03T04:59:12.219Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-11-09-fp-discounted-cash-flows.html</loc>
-    <lastmod>2023-02-02T05:37:36.983Z</lastmod>
+    <lastmod>2023-02-03T04:59:12.467Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-11-16-does-faker-cc-pass-luhns-algo.html</loc>
-    <lastmod>2023-02-02T05:37:37.239Z</lastmod>
+    <lastmod>2023-02-03T04:59:12.715Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-12-06-cycle-jobs-part-five.html</loc>
-    <lastmod>2023-02-02T05:37:37.467Z</lastmod>
+    <lastmod>2023-02-03T04:59:12.935Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-11-02-simple-hightlight-over-exiting-plot.html</loc>
-    <lastmod>2023-02-02T05:37:37.799Z</lastmod>
+    <lastmod>2023-02-03T04:59:13.279Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/nbks/2022-10-19-ferrets-or-dragons.html</loc>
-    <lastmod>2023-02-02T05:37:38.095Z</lastmod>
+    <lastmod>2023-02-03T04:59:13.583Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/qmds/2023-02-01-exploring-binomial-test.html</loc>
-    <lastmod>2023-02-02T05:37:38.511Z</lastmod>
+    <lastmod>2023-02-03T04:59:13.991Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/qmds/2023-01-31-exploring-regression-trees-python-r.html</loc>
-    <lastmod>2023-02-02T05:37:38.907Z</lastmod>
+    <lastmod>2023-02-03T04:59:14.399Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/qmds/2023-01-28-exploring-chi-squared-test.html</loc>
-    <lastmod>2023-02-02T05:37:39.283Z</lastmod>
+    <lastmod>2023-02-03T04:59:14.815Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/qmds/2022-12-12-using-mermaid-for-some-fun.html</loc>
-    <lastmod>2023-02-02T05:37:39.531Z</lastmod>
+    <lastmod>2023-02-03T04:59:15.075Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orgulo.us/posts/qmds/2023-02-02-exploring-knn-algorithm.html</loc>
+    <lastmod>2023-02-03T04:59:20.531Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/qmds/2022-12-10-k-anonymity-and-data-privacy.html</loc>
-    <lastmod>2023-02-02T05:37:40.103Z</lastmod>
+    <lastmod>2023-02-03T04:59:21.143Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/qmds/hello-qmd/2022-11-28-hello-qmd.html</loc>
-    <lastmod>2023-02-02T05:37:40.519Z</lastmod>
+    <lastmod>2023-02-03T04:59:21.587Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/qmds/2023-01-28-exploring-linear-regression.html</loc>
-    <lastmod>2023-02-02T05:37:40.919Z</lastmod>
+    <lastmod>2023-02-03T04:59:21.983Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/qmds/2022-12-07-using-recursion-for-pmt.html</loc>
-    <lastmod>2023-02-02T05:37:41.287Z</lastmod>
+    <lastmod>2023-02-03T04:59:22.387Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/qmds/logisitc-regression/2023-02-02-exploring-logistic-regression.html</loc>
-    <lastmod>2023-02-02T05:37:41.671Z</lastmod>
+    <lastmod>2023-02-03T04:59:22.775Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2021-02-20-Luhns-Algorithm-Credit-Card.html</loc>
-    <lastmod>2023-02-02T05:37:41.911Z</lastmod>
+    <lastmod>2023-02-03T04:59:23.003Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2020-10-21-Simple-Python-Debugging-Example.html</loc>
-    <lastmod>2023-02-02T05:37:42.123Z</lastmod>
+    <lastmod>2023-02-03T04:59:23.219Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2022-11-26-moving-to-quatro-from-fastpages.html</loc>
-    <lastmod>2023-02-02T05:37:42.391Z</lastmod>
+    <lastmod>2023-02-03T04:59:23.531Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2020-09-18-Game-Review-Empyrion-Galactic-Survival.html</loc>
-    <lastmod>2023-02-02T05:37:42.627Z</lastmod>
+    <lastmod>2023-02-03T04:59:23.767Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2021-02-04-Introduction-To-Streamlit.html</loc>
-    <lastmod>2023-02-02T05:37:42.847Z</lastmod>
+    <lastmod>2023-02-03T04:59:24.003Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2021-12-08-Review-Of-2021-Challenges.html</loc>
-    <lastmod>2023-02-02T05:37:43.087Z</lastmod>
+    <lastmod>2023-02-03T04:59:24.247Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2022-11-16-just-a-catpost.html</loc>
-    <lastmod>2023-02-02T05:37:43.271Z</lastmod>
+    <lastmod>2023-02-03T04:59:24.459Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2021-09-07-game-review-ethereal-estate.html</loc>
-    <lastmod>2023-02-02T05:37:43.479Z</lastmod>
+    <lastmod>2023-02-03T04:59:24.667Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2022-12-16-review-of-challenges-2022.html</loc>
-    <lastmod>2023-02-02T05:37:43.755Z</lastmod>
+    <lastmod>2023-02-03T04:59:24.943Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2020-12-30-Challenges-For-2021.html</loc>
-    <lastmod>2023-02-02T05:37:43.971Z</lastmod>
+    <lastmod>2023-02-03T04:59:25.187Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2023-01-01-challenges-for-2023.html</loc>
-    <lastmod>2023-02-02T05:37:44.223Z</lastmod>
+    <lastmod>2023-02-03T04:59:25.435Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2022-02-02-How-To-Make-Matching-Textures-And-Normals.html</loc>
-    <lastmod>2023-02-02T05:37:44.447Z</lastmod>
+    <lastmod>2023-02-03T04:59:25.679Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2022-12-01-game-review-journey.html</loc>
-    <lastmod>2023-02-02T05:37:44.659Z</lastmod>
+    <lastmod>2023-02-03T04:59:25.895Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2022-11-01-game-review-powerwash-simulator.html</loc>
-    <lastmod>2023-02-02T05:37:44.855Z</lastmod>
+    <lastmod>2023-02-03T04:59:26.099Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2022-06-01-how-to-setup-a-dedicated-v-rising-server-on-linux.html</loc>
-    <lastmod>2023-02-02T05:37:45.095Z</lastmod>
+    <lastmod>2023-02-03T04:59:26.335Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2023-01-01-game-review-swordship.html</loc>
-    <lastmod>2023-02-02T05:37:45.291Z</lastmod>
+    <lastmod>2023-02-03T04:59:26.559Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2020-10-28-The-Pulp-Mindset-Review.html</loc>
-    <lastmod>2023-02-02T05:37:45.475Z</lastmod>
+    <lastmod>2023-02-03T04:59:26.763Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2021-02-09-Memorandum-Of-Understanding-Blurb.html</loc>
-    <lastmod>2023-02-02T05:37:45.683Z</lastmod>
+    <lastmod>2023-02-03T04:59:26.967Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2022-01-06-Game-Review-How-I-Lost-My-Eraser.html</loc>
-    <lastmod>2023-02-02T05:37:45.911Z</lastmod>
+    <lastmod>2023-02-03T04:59:27.187Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2020-09-30-Game-Review-Post-Void.html</loc>
-    <lastmod>2023-02-02T05:37:46.123Z</lastmod>
+    <lastmod>2023-02-03T04:59:27.403Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2020-07-09-Voices-of-the-Void.html</loc>
-    <lastmod>2023-02-02T05:37:46.307Z</lastmod>
+    <lastmod>2023-02-03T04:59:27.607Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2022-09-08-Game-Review-Pawnbarion.html</loc>
-    <lastmod>2023-02-02T05:37:46.527Z</lastmod>
+    <lastmod>2023-02-03T04:59:27.827Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2021-12-08-Challenges-For-2022.html</loc>
-    <lastmod>2023-02-02T05:37:46.755Z</lastmod>
+    <lastmod>2023-02-03T04:59:28.063Z</lastmod>
   </url>
   <url>
     <loc>https://orgulo.us/posts/Mds/2021-05-18-Game-Review-The-Forest.html</loc>
-    <lastmod>2023-02-02T05:37:46.971Z</lastmod>
+    <lastmod>2023-02-03T04:59:28.287Z</lastmod>
   </url>
 </urlset>

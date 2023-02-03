@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/qmds/2023-02-02-exploring-knn-algorithm.html",
       "/posts/qmds/logisitc-regression/2023-02-02-exploring-logistic-regression.html",
       "/posts/qmds/2023-02-01-exploring-binomial-test.html",
       "/posts/qmds/2023-01-31-exploring-regression-trees-python-r.html",
