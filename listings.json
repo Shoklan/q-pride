@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/qmds/2023-02-06-exploring-shapiro-wilks-test.html",
       "/posts/qmds/2023-02-03-exploring-fishers-exact-test.html",
       "/posts/qmds/2023-02-02-exploring-knn-algorithm.html",
       "/posts/qmds/logisitc-regression/2023-02-02-exploring-logistic-regression.html",
