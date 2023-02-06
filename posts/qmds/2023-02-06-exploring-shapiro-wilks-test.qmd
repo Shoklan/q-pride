@@ -1,5 +1,5 @@
 ---
-title: "Shaprio-Wilk's Test for Normalicy in Python and R"
+title: "Shapiro-Wilk's Test for Normalicy in Python and R"
 description: "What Even Is Normal Anyway."
 categories:
 - R
