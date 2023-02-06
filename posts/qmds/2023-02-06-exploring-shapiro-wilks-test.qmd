@@ -1,0 +1,80 @@
+---
+title: "Shaprio-Wilk's Test for Normalicy in Python and R"
+description: "What Even Is Normal Anyway."
+categories:
+- R
+- python
+- data
+- experiment
+- analysis
+date: '2023-02-06'
+layout: post
+toc: false
+---
+
+# We Need Normalicy!
+Part of the assumptions that you need to confirm before using some of these tests is **Normalicy** which is a way of saying that the data follows a **Normal/Guassian Distribution**. When this is true, it looks like the Bell Curve which is posted all over when learning about Statistics and is where most time of a student's time is spent in Statistics classes. If you're reading this, then you probably already know what one is but if you don't then I'd suggest touching a Statistics 101 course; something like [Khan Academy](https://www.khanacademy.org/math/statistics-probability/modeling-distributions-of-data/more-on-normal-distributions/v/introduction-to-the-normal-distribution) or the [wikipedia](https://en.wikipedia.org/wiki/Normal_distribution) page.
+
+This test's job is to look at the data and attempt to check whether it is not normally distributed. 
+
+## Shapiro-Wilks in Python
+Again, we'll be borrowing some data from an online class I've taken in the past; this dataset is about usage based on IDE.
+
+
+```{python}
+import pandas as pd
+import scipy as sci
+
+data = pd.read_csv('https://query.data.world/s/patv4rpu4qipeb4hgggtjen7qh3vdr')
+data.info()
+```
+```{python}
+data.sample(10)
+```
+
+This test expects a single array of numeric data so we'll want to split on the IDE type since that is what we're interested in:
+```{python}
+#Don't forget to split the IDE column to separate them
+ide1 = data.query('IDE == "VStudio"')['Time']
+ide2 = data.query('IDE == "Eclipse"')['Time']
+
+w1, p1 = sci.stats.shapiro( ide1 )
+w2, p2 = sci.stats.shapiro( ide2 )
+
+print(f"Visual Studio had a W Stat of {w1:.3} (P={p1:.3E})", f"Eclipse had a W Stat of {w2:.2} ((P={p2:.3E})")
+```
+What we're looking for is if the W Stat is greater than 1.0 and if it is then we'll reject the Null Hypothesis. Here, both of them are fine so we fail to reject and grant Normalicy. While this works, I'd rather be able to do this for all numeric columns we are interested in. Then, we can include our *Normalicy Check* right in a pipeline.
+
+```{python}
+# This slash causes python to ignore the return character at the end
+# then python keeps reading the next line
+# kind of hacky way to get something looking like R pipes
+swStats = data\
+    .drop('Subject', axis=1)\
+    .groupby('IDE')\
+    .apply(lambda x: sci.stats.shapiro(x))
+
+for ide,stats in swStats.items():
+    print(f"{ide} had a W Stat of {stats[0]:.3} (P={stats[1]:.3E})", )
+
+```
+That is much better!
+
+## Shapiro-Wilks in R
+Once again, R is a wonderful language this this is easy to work with. Here is our pipeline R version with the same results:
+```{r}
+library(tidyverse)
+data <- read_csv("https://query.data.world/s/patv4rpu4qipeb4hgggtjen7qh3vdr")
+
+# skip to the pipeline!
+swState <- data %>%
+    select( IDE, Time) %>%
+    group_by(IDE) %>%
+    summarize(
+        stat = shapiro.test(Time)[['statistic']],
+        pvalue=shapiro.test(Time)[['p.value']])
+swState
+```
+
+## Conclusions
+There is some disagreements about whether you should even bother with this test since a QQPlot does the same thing but visually. I touched on the QQ Plot in another post about Apache Spark. Really, it's up to you and what your needs are but this can be included in a data pipeline and a QQplot cannot so there is at least one point in it's favor.
