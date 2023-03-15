@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2023-03-15">
+<meta name="description" content="Deeper Dive Into Measuring Metrics">
+
+<title>Orgulo.us - Review of Specificity and Sensitivity, Etc</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Orgulo.us</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Review of Specificity and Sensitivity, Etc</h1>
+                  <div>
+        <div class="description">
+          Deeper Dive Into Measuring Metrics
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">stats</div>
+                <div class="quarto-category">review</div>
+                <div class="quarto-category">concept</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 15, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="measuring-beyond-just-correct" class="level1">
+<h1>Measuring Beyond Just Correct</h1>
+<p>Working with many of these Machine Learning Algorithms can sometimes lead to false sense of confidence. Using them has become very easy with software packages so it’s important to step back sometimes and think about how to go beyond simply fitting the model. Commonly, the metric <strong>Accuracy</strong> is used to measure the success of our models and while we may have an intuitive understanding of what <em>Accuracy</em> means we should have a Mathematical understanding. When we do this, we will find out that there are other metrics around <em>Accuracy</em> which are - in some cases - even more important than Accuracy.</p>
+</section>
+<section id="so-accuracy-is" class="level1">
+<h1>So, Accuracy is…?</h1>
+<p>We will get there but before discussing it, I would like to step back into the past even further. We are going to discuss <strong>Contingency Tables</strong> since they are very often overlooked in all this. We have become so accustom to using these that we have ceased to think about them. But, a <strong>Contingency Table</strong> - or <strong>Crosstab</strong> as the R function prefers - is a table of frequencies for the observed features. With respect to Machine Learning, our <em>observed features</em> are what was predicted vs what was true. But, these are not limited to to these in any way. They can be any sort of observations such as hair color or categories of human temper. This is what was done with the <a href="https://orgulo.us/posts/qmds/2023-02-03-exploring-fishers-exact-test.html">Fisher’s Test</a> and <a href="https://orgulo.us/posts/qmds/2023-01-28-exploring-chi-squared-test.html">Pearson Chi-Squared</a> in my previous posts. We needed to convert our observations into a <em>Contingency Table</em> for the functions to successfully interpret them.</p>
+</section>
+<section id="back-to-accuracy" class="level1">
+<h1>Back to Accuracy</h1>
+<p>So, <strong>Accuracy</strong> is mathematically calculated as: <span class="math display">\[
+Acc = \frac{(TP + TN)}{(P_a + N_a)}
+\]</span> … where:<br> - <span class="math inline">\(TP\)</span> means <strong>True Positives</strong> <br> - <span class="math inline">\(TF\)</span> means <strong>True Negatives</strong><br> - <span class="math inline">\(P_a\)</span> means <strong>All Positives</strong><br> - <span class="math inline">\(N_a\)</span> means <strong>All Negatives</strong><br></p>
+<p>… which is our true predictions over the total amount of observations. This information is often displayed in the Cross Tab discussed above; you may know this often called a <strong>Confusion Matrix</strong>:</p>
+<p><img src="images/2023-03-15/simple-confusion-matrix.png" class="img-fluid"></p>
+<p>This is also the correct time to discuss Type I and Type II errors. When a prediction is incorrect, these fall into to possibilities: 1. Prediction was true but reality was false. 2. Prediction was false but reality was true. We call the first case Type I errors. We call the second case Type II errors.</p>
+<p>And, now that we have this then we can build out other metrics.</p>
+</section>
+<section id="sensitivity" class="level1">
+<h1>Sensitivity</h1>
+<p>When looking at our results, knowing the accuracy is often not enough. Sometimes we’ll want to know how accurate just the positive cases are as sometimes we care more about how often the positive cases are correctly identified. We can use the pieces from the Matrix above to get what we want: <span class="math display">\[
+Sensitivity = \frac{TP}{TP + FN}
+\]</span> <img src="images/2023-03-15/sensitivity-confusion-matrix.png" class="img-fluid"></p>
+</section>
+<section id="specificity" class="level1">
+<h1>Specificity</h1>
+<p>And, sometimes we’ll want to know how accurate just our negative cases are. And, like above, we can use the matrix to filter out the negative cases: <span class="math display">\[
+Specificity = \frac{TN}{TN + FP}
+\]</span></p>
+<p><img src="images/2023-03-15/specificity-confusion-matrix.png" class="img-fluid"></p>
+</section>
+<section id="conclusions" class="level1">
+<h1>Conclusions</h1>
+<p>There are plenty of other metircs of these kind on the <a href="https://en.wikipedia.org/wiki/Confusion_matrix">wikipedia page</a> but these are the most likely to be seen. In fact, this post is mostly a review for my own sake. I often mix these too up due to their similar names. Hopefully, I remember them this time.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/qmds/2023-03-15-deeper-dive-into-measuring-metrics.html",
       "/posts/qmds/2023-02-06-exploring-shapiro-wilks-test.html",
       "/posts/qmds/2023-02-03-exploring-fishers-exact-test.html",
       "/posts/qmds/2023-02-02-exploring-knn-algorithm.html",
