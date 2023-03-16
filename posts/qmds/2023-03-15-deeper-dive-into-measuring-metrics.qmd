@@ -7,6 +7,7 @@ date: '2023-03-15'
 description: "Deeper Dive Into Measuring Metrics"
 layout: post
 title: 'Review of Specificity and Sensitivity, Etc'
+image: "../_images/headers/confusion-matrix-header.png"
 toc: false
 ---
 
@@ -31,6 +32,12 @@ $$
 ... which is our true predictions over the total amount of observations. This information is often displayed in the Cross Tab discussed above; you may know this often called a **Confusion Matrix**:
 
 ![](images/2023-03-15/simple-confusion-matrix.png)
+
+This is also the correct time to discuss Type I and Type II errors. When a prediction is incorrect, these fall into to possibilities:
+1. Prediction was true but reality was false.
+2. Prediction was false but reality was true.
+We call the first case Type I errors.
+We call the second case Type II errors.
 
 And, now that we have this then we can build out other metrics.
 
