@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2023-08-24">
+<meta name="description" content="A Computer Can Do This Right?">
+
+<title>Orgulo.us - Making a Model To Pick My Wallpapers For Me</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Orgulo.us</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Making a Model To Pick My Wallpapers For Me</h1>
+                  <div>
+        <div class="description">
+          A Computer Can Do This Right?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">python</div>
+                <div class="quarto-category">data analysis</div>
+                <div class="quarto-category">practical use</div>
+                <div class="quarto-category">creative</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 24, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#my-desktop-is-a-destination" id="toc-my-desktop-is-a-destination" class="nav-link active" data-scroll-target="#my-desktop-is-a-destination">My Desktop Is A Destination</a>
+  <ul class="collapse">
+  <li><a href="#overview-and-folder-structure" id="toc-overview-and-folder-structure" class="nav-link" data-scroll-target="#overview-and-folder-structure">Overview and Folder Structure</a></li>
+  <li><a href="#dealing-with-the-wallhaven-api" id="toc-dealing-with-the-wallhaven-api" class="nav-link" data-scroll-target="#dealing-with-the-wallhaven-api">Dealing With the Wallhaven API</a></li>
+  <li><a href="#building-the-dataset-for-training" id="toc-building-the-dataset-for-training" class="nav-link" data-scroll-target="#building-the-dataset-for-training">Building the Dataset for Training</a></li>
+  <li><a href="#training-the-model" id="toc-training-the-model" class="nav-link" data-scroll-target="#training-the-model">Training the Model</a></li>
+  <li><a href="#future-features" id="toc-future-features" class="nav-link" data-scroll-target="#future-features">Future Features</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="my-desktop-is-a-destination" class="level1">
+<h1>My Desktop Is A Destination</h1>
+<p>There is blog post by Jeff Atwood called <a href="https://blog.codinghorror.com/your-desktop-is-not-a-destination/">Your Desktop Is Not a Destination</a> which talks about why the Desktop Wallpaper should be a reminder that you’re not using your resources properly. It’s a short post and my first time reading it I mostly disagreed since I like the aesthetics of many wallpapers. Plus, you are trading “managing pictures” for “managing windows” anyways and that is just another kind of busy work. As someone utilizing Vivaldi’s Workspaces along with Linux’s workspaces to try to organize, wasting time filling up monitor space because seeing your black Desktop makes you anxious about resource utilization is also not efficient.</p>
+<p>As I’ve gotten a bit older, I find managing the wallpapers more annoying than before but I still want new wallpapers just the same. Thankfully, with the advent of <strong>Convolutional Neural Networks</strong> and <strong>Deep Learning</strong> I should be able to teach a computer about the kinds of aesthetics I like and have the model select wallpapers for me.</p>
+<section id="overview-and-folder-structure" class="level2">
+<h2 class="anchored" data-anchor-id="overview-and-folder-structure">Overview and Folder Structure</h2>
+<p>For this project, we’ll need some structure for where everything will go. We’ll need:</p>
+<ol type="1">
+<li>A folder to contain the selected Wallpapers</li>
+<li>A folder to contain the trained on wallpapers.</li>
+<li>A folder to contain the deselected wallpapers.</li>
+<li>A folder to contain the downloaded wallpapers.</li>
+</ol>
+<p>Personally, I like to place the selected Wallpapers folder in my Dropbox that way it can be synced across multiple devices. With this setup, the selection and model building could be put on a server and done independently - which is a nice touch. You can use a different application than Dropbox if you don’t like them or distrust them and want to use something else; maybe just a simply rsync cron to all your devices should work fine as well.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[shoklan@###</span> Wallpapers]$ tree <span class="at">-d</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Desktop</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> model</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">├──</span> deselected</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">├──</span> storage</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> train</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">6</span> directories</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>My existing wallpapers are in the Desktop folder and the process will work under the <code>model</code> folder. That way I don’t have to modify what exists and can build around it instead. The folder names are self explanatory in this instance with the exception of <code>storage</code>; this is where the downloaded files are going to end up when the files are downloaded.</p>
+<p>Let’s get this setup in Python.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> BytesIO</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python pathlib is awesome</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>deselectedPath <span class="op">=</span> Path(<span class="st">'model/deselected'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>storagePath <span class="op">=</span> Path(<span class="st">'model/storage'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> (dataPath<span class="op">/</span>deselectedPath).exists(): (dataPath<span class="op">/</span>deselectedPath).mkdir()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> (dataPath<span class="op">/</span>storagePath).exists(): (dataPath<span class="op">/</span>storagePath).mkdir()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># test and collect the existing images</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>targetFiles <span class="op">=</span> <span class="bu">sorted</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">list</span>((dataPath<span class="op">/</span><span class="st">'Desktop'</span>).glob(<span class="st">'*.png'</span>)) <span class="op">+</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">list</span>((dataPath<span class="op">/</span><span class="st">'Desktop'</span>).glob(<span class="st">'*.jpg'</span>)))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>targetFiles <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>( <span class="kw">lambda</span> x: <span class="st">'Desktop/'</span><span class="op">+</span> x.parts[<span class="op">-</span><span class="dv">1</span>], targetFiles))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(targetFiles)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>41</code></pre>
+</div>
+</div>
+</section>
+<section id="dealing-with-the-wallhaven-api" class="level2">
+<h2 class="anchored" data-anchor-id="dealing-with-the-wallhaven-api">Dealing With the Wallhaven API</h2>
+<p>Now we will need a source for wallpapers with an accessible API. Personally, I really like <a href="https://wallhaven.cc">Wallhaven</a> which is what I am using at this point. Their API is <a href="https://wallhaven.cc/help/api">publicly accessible</a> as well which is nice for prototyping; please note that - like all public APIs - there is rate limiting in place and you should respect their wishes to not try to abuse the provided interface. Per the rules here, <strong>API calls are currently limited to 45 per minute.</strong> so do not be annoying and respect this. Even if you do not, then you’ll just be stopped - and then eventually get blocked.</p>
+<p>When you request images from this API without special specifications, you will always get the same set of 24 images on every request by default. While working through the API documentation to get unique results, I found that the <code>seed</code> does not appear to work so if you’re planning on using it then do not. We’ll be using pagination via the api since that will give us proper results.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>wallpaperAPI <span class="op">=</span> <span class="st">'https://wallhaven.cc/api/v1/search?'</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># My specific wallpaper requirement</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>ratio <span class="op">=</span><span class="st">'16x9'</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>qRatio <span class="op">=</span> <span class="ss">f'ratios=</span><span class="sc">{</span>ratio<span class="sc">}</span><span class="ss">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We’ll be using <code>requests</code> to download the data from the API which is a normal part of the python web work. Getting the data is as simple as:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.get(wallpaperAPI <span class="op">+</span> qRatio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The results comes back as an HTML response object which contains lots of extra useful information; nothing we are interested in aside from the JSON API results. So, we’ll want to simply pull the <code>.content</code> part of the response. Thankfully, pandas can accept the dictionary we’re going to convert it into so this is very easy. Thanks Python!</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.get(wallpaperAPI <span class="op">+</span> qRatio)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>tmp <span class="op">=</span> pd.DataFrame(json.loads(r.content)[<span class="st">'data'</span>])</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#tmp.head(10)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>tmp <span class="op">=</span> tmp.assign(</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    ratio <span class="op">=</span> tmp.ratio.astype(<span class="bu">float</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Just filtering out for columns I care about</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>tmp[[<span class="st">'id'</span>, <span class="st">'url'</span>, <span class="st">'resolution'</span>, <span class="st">'ratio'</span>, <span class="st">'file_type'</span>, <span class="st">'path'</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>id</th>
+      <th>url</th>
+      <th>resolution</th>
+      <th>ratio</th>
+      <th>file_type</th>
+      <th>path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>l8jezr</td>
+      <td>https://wallhaven.cc/w/l8jezr</td>
+      <td>1920x1080</td>
+      <td>1.78</td>
+      <td>image/png</td>
+      <td>https://w.wallhaven.cc/full/l8/wallhaven-l8jez...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>vqd7z5</td>
+      <td>https://wallhaven.cc/w/vqd7z5</td>
+      <td>1920x1080</td>
+      <td>1.78</td>
+      <td>image/png</td>
+      <td>https://w.wallhaven.cc/full/vq/wallhaven-vqd7z...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>zyd18w</td>
+      <td>https://wallhaven.cc/w/zyd18w</td>
+      <td>5120x2880</td>
+      <td>1.78</td>
+      <td>image/jpeg</td>
+      <td>https://w.wallhaven.cc/full/zy/wallhaven-zyd18...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ex6d7l</td>
+      <td>https://wallhaven.cc/w/ex6d7l</td>
+      <td>6016x3385</td>
+      <td>1.78</td>
+      <td>image/png</td>
+      <td>https://w.wallhaven.cc/full/ex/wallhaven-ex6d7...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>p97rkp</td>
+      <td>https://wallhaven.cc/w/p97rkp</td>
+      <td>6016x3384</td>
+      <td>1.78</td>
+      <td>image/png</td>
+      <td>https://w.wallhaven.cc/full/p9/wallhaven-p97rk...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>There we go! Now we will need to download and convert the images to a format which Python can understand. Collecting this data is the same as collecting the JSON API data as we have that url named <code>path</code> from the JSON results. We’re just going to write a function to deal with all this downloading and converting:</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> collectImage( url ):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Image.<span class="bu">open</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        BytesIO(requests.get(url).content))<span class="op">\</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        .convert(<span class="st">'RGB'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And, since we cannot recieve more than 24 images per request we will need to write a loop to iterate through the <code>path</code> results and download them. Per iteration, we will combine the image data and the row being iterated over to keep the data, reference and image together. At the end of the loop, all the collected data frames will be combined into a single final data frame to work with.</p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>imgs <span class="op">=</span> []</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>frames <span class="op">=</span> []</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># I lowered this for the post; it's usually 100</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">len</span>(imgs) <span class="op">&lt;</span> <span class="dv">47</span>:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> requests.get( wallpaperAPI <span class="op">+</span> qRatio <span class="op">+</span> <span class="ss">f'&amp;page=</span><span class="sc">{</span>count<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    tmp <span class="op">=</span> pd.DataFrame(json.loads(r.content)[<span class="st">'data'</span>])</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    frames <span class="op">+=</span> [tmp]</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    collection <span class="op">=</span> [ collectImage( url ) <span class="cf">for</span> _, url <span class="kw">in</span> tmp.path.items() ]</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    imgs <span class="op">=</span> imgs <span class="op">+</span> collection</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Length of the collection is </span><span class="sc">{</span><span class="bu">len</span>(imgs)<span class="sc">}</span><span class="ss">.'</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Join all the collected image data as a dataframe</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat(frames).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Length of the collection is 24.
+Length of the collection is 48.</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df.<span class="bu">id</span>.nunique(), <span class="bu">len</span>( df )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>(48, 48)</code></pre>
+</div>
+</div>
+<p>Next we will need to download them to the local file system so they can be used for modeling - which is just another for loop. Note that I am using <code>zfill</code> which is a convenient python string function to pad out numbers when converting to strings; I learned this lesson once already to make sure the sorting in the filesystem is the same as when opening the images to label them.</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># iterate through our results and export/name the images</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,r <span class="kw">in</span> df.iterrows():</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    imgs[i].save(<span class="bu">str</span>(dataPath<span class="op">/</span>storagePath<span class="op">/</span><span class="bu">str</span>(i).zfill(<span class="dv">4</span>)) <span class="op">+</span> <span class="st">'.'</span> <span class="op">+</span> r.file_type.split(<span class="st">'/'</span>)[<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="building-the-dataset-for-training" class="level2">
+<h2 class="anchored" data-anchor-id="building-the-dataset-for-training">Building the Dataset for Training</h2>
+<p>Fastai allows quite a few ways to load the images for training however I’m partial to the older method of notating a CSV files. We’ll be mixing that with the slightly newer way of loading the training information via data frame. All the different images will have the same columns so we can just create a template data frame and clone it to fill per directory.</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup versions</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> pd.DataFrame(columns<span class="op">=</span>[<span class="st">'fname'</span>, <span class="st">'label'</span>])</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># labels will be the final; downloaded is filled out by me.</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> template.copy()</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>downloaded <span class="op">=</span> template.copy()</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>removed <span class="op">=</span> template.copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We’ll start with the images to be removed.</p>
+<p>Each folder can be processed using the same pattern for the downloaded files so we will go over this once and just repeat it. The files in each folder need to be iterated over and the full paths pruned. This is because if we only use the filename when we try to use the images from the loader it will fail to find anything. Pruning the files down from the full path will give us a relative path and then when the data loader looks for the files then they <em>can</em> be found. Luckily, <code>pathlib</code> allows us to retrieve the full path as a tuple using <code>filename.parts</code> and pull off the end however much is necessary.</p>
+<p>The whole list will be sorted based on the name of the files to ensure the filesystem folder and the soon to be exported rows in the CSV match. The <code>sort</code> function allows us to set our own sort method so we’ll steal the filename off the end and feed that into <code>sort()</code>.</p>
+<p>Lastly, we can set the current wallpapers to <code>YES</code> and the deselected wallpapers to <code>NO</code> respectively when we import them.</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove wallpapers I don't care about anymore</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>removedFiles <span class="op">=</span> <span class="bu">sorted</span>(</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    [ <span class="st">'/'</span>.join(f.parts[<span class="op">-</span><span class="dv">3</span>:]) <span class="cf">for</span> f <span class="kw">in</span> (dataPath<span class="op">/</span>deselectedPath).iterdir() ],</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    key <span class="op">=</span> <span class="kw">lambda</span> x: x.split(<span class="st">'/'</span>)[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>removed[<span class="st">'fname'</span>] <span class="op">=</span> removedFiles</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>removed[<span class="st">'label'</span>] <span class="op">=</span> <span class="st">'NO'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For the downloaded files from the API, we’ll do the same thing but we will leave the <code>label</code> column blank to manually label them.</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>downloadedFiles <span class="op">=</span> <span class="bu">sorted</span>(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    [ <span class="st">'/'</span>.join(f.parts[<span class="op">-</span><span class="dv">3</span>:]) <span class="cf">for</span> f <span class="kw">in</span> (dataPath<span class="op">/</span>storagePath).iterdir() ],</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    key <span class="op">=</span> <span class="kw">lambda</span> x: x.split(<span class="st">'/'</span>)[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>downloaded[<span class="st">'fname'</span>] <span class="op">=</span> downloadedFiles</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>downloaded.to_csv(dataPath<span class="op">/</span><span class="st">'model/downloaded.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can open this CSV file however and once annotated we will pull it back in.</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>filledOut <span class="op">=</span> pd.read_csv(dataPath<span class="op">/</span><span class="st">'model/downloaded.csv'</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>filledOut.head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>fname</th>
+      <th>label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>model/storage/0000.png</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>model/storage/0001.png</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>model/storage/0002.jpeg</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>model/storage/0003.png</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>model/storage/0004.png</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>model/storage/0005.jpeg</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>model/storage/0006.jpeg</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>model/storage/0007.jpeg</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>model/storage/0008.png</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>model/storage/0009.png</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>model/storage/0010.png</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>model/storage/0011.png</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>model/storage/0012.png</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>model/storage/0013.png</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>model/storage/0014.jpeg</td>
+      <td>NO</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Everything in the directory of existing wallpapers is a <code>YES</code> we just quickly set those. And finally, we add them all together into a single collection of images and labels.</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>labels[<span class="st">'fname'</span>] <span class="op">=</span> targetFiles</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>labels[<span class="st">'label'</span>] <span class="op">=</span> <span class="st">'YES'</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>selections <span class="op">=</span> pd.concat([labels, filledOut, removed])</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>selections.label.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>YES    48
+NO     41
+Name: label, dtype: int64</code></pre>
+</div>
+</div>
+<p>Note that if there are no rows in one of these data frames then it appends empty and those <em>rows</em> do not show up; they simply get ignored since they are empty.</p>
+</section>
+<section id="training-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="training-the-model">Training the Model</h2>
+<p>We at last come to what should be the easiest part of doing all this. Thanks to all the wonderful tooling that exists now - Thanks Jeremy and community! - we can import the kind of learner we’re after and simply tell it what we want.</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastcore.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span>     <span class="co"># This is for the CNN learner.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Fastai has a smart wrapper around Pytorch’s data loader - which I’ve looked at in the past a bit - which we’ll use to tell it where the files are. Since these are very large images, some resizing needs to be done to fit all the batches onto my own GPU. If you decide to follow along then continue to scale down the images until they fit on yours; try to keep the aspect ratio the same just so it doesn’t distort it too much.</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> ImageDataLoaders.from_df(selections, dataPath, item_tfms<span class="op">=</span>Resize((<span class="dv">1080</span><span class="op">//</span><span class="dv">4</span>, <span class="dv">1920</span><span class="op">//</span><span class="dv">4</span>)), valid_pct<span class="op">=</span><span class="fl">.25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>dls.show_batch()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="2023-08-24-using-deep-learning-to-pick-my-wallpapers_files/figure-html/cell-19-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>And, now we learn.</p>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># semicolon is to suppress warnings here</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># .to_fp16() actually made this even worse then it was, somehow</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>learn.lr_find()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>SuggestedLRs(valley=0.0014454397605732083)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="2023-08-24-using-deep-learning-to-pick-my-wallpapers_files/figure-html/cell-21-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is overfitting pretty badly; will need to fix this</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Weight decay makes this even worse</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">## I ended up extending out the number of cycles since I was making solid gains to validation loss</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">12</span>, <span class="fl">.0015</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I wanted to show the training but somehow it is not printing in my setup so we’ll substitute this with some interpretation information instead.</p>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>interp <span class="op">=</span> Interpretation.from_learner(learn)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>interp.plot_top_losses(<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="2023-08-24-using-deep-learning-to-pick-my-wallpapers_files/figure-html/cell-23-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>cInterp <span class="op">=</span> ClassificationInterpretation.from_learner(learn)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>cInterp.plot_confusion_matrix()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="2023-08-24-using-deep-learning-to-pick-my-wallpapers_files/figure-html/cell-24-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>The calculated accuracy here is 60%.</p>
+<p>That means our model did a little better than random chance at picking which wallpapers I would accept. This actually is not terrible considering what I am asking of it. Most tasks these models are trained on have clear labels about what something should and should not be. Telling a cat or dog apart is easy; telling apart my taste in wallpapers is not so easy.</p>
+<p>For example, some of my wallpapers have women in them and some of them do not; some of them are quite dark and some of them are not; some of them are simply quotations and some of them are not. Some of them are anime related and some of them are not. Simply because a wallpaper has an art style which would be considered anime does not mean it gets a <code>YES</code>. Taste is a hard problem and I would be surprised if it could accurately predict mine.</p>
+<p>Also, the model is surprising more forgiving about the <code>YES</code> than the <code>No</code> which means I am likely to end up with results I did not expect. Since the purpose is to save me time finding wallpapers I might like then this is a nice bonus about this model. And, removing a wallpaper is a built into the process already so the cost of being wrong is tiny in time lost.</p>
+<p>Now all we have to do is save them model so we can use it in a script running a scheduled task.</p>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># modelName = 'prototype'</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>modelName <span class="op">=</span> <span class="st">'model-0.1'</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>learn.export(dataPath<span class="op">/</span><span class="ss">f'model/</span><span class="sc">{</span>modelName<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>nLearn <span class="op">=</span> load_learner(dataPath<span class="op">/</span><span class="ss">f'model/</span><span class="sc">{</span>modelName<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nLearn.predict(dataPath<span class="op">/</span>targetFiles[<span class="dv">0</span>])[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>YES</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is definitely a yes</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>Image.<span class="bu">open</span>(dataPath<span class="op">/</span>targetFiles[<span class="dv">0</span>]).resize((<span class="dv">1920</span><span class="op">//</span><span class="dv">4</span>, <span class="dv">1080</span><span class="op">//</span><span class="dv">4</span>), Image.ANTIALIAS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="48">
+<p><img src="2023-08-24-using-deep-learning-to-pick-my-wallpapers_files/figure-html/cell-27-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="future-features" class="level2">
+<h2 class="anchored" data-anchor-id="future-features">Future Features</h2>
+<p>While all this is nice, there are some improvements I would like in the next iteration.</p>
+<p>For one, it would be nice to shuffle the images around so that only a subset are used at any one time. This way I can slow down the rate it downloads them while still keeping most images novel for longer. If I am downloading over a hundred images every month then I will quickly end up with thousands of images and that is not what I want. Perhaps I could use the confidence of the predictions in some way to assist with pruning out images.</p>
+<p>Another is that I will need to keep a good number of confidently confirmed <code>NO</code> label images but those take up valuable space. Developing a sort of data structure or class which wraps around compressed references to the images and then extracts just the asked for images at run time. This way, I can minimize the image space used as well as continue to use them for training.</p>
+<p>Lastly, this simple model version is ok but a multi-class version which contains categories - such as car - and then filter them out immediately would be better. Changing the model might be better or worse depending on how much trouble it is to manage the different labels. We might also be able to use these to assist with labeling the image files since generic numbers and IDs will make finding images painful.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
