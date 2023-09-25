@@ -255,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>Now we have a way to visualize <em>something</em> and can start working on the <em>Drop Out</em> part of this solution. In <strong>Deep Learning</strong>, <strong>Drop Out</strong> is a method of allowing these architectures to generalize better and they do this by simply randomly setting values to <code>0</code>. We can do a quick visualization to see this:</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the neural network stuff from pytorch</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -267,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="2023-09-25-devlog-torment-01_files/figure-html/cell-4-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<p>The <code>.5</code> passed to <code>nn.Dropout</code> is saying “Please set half of the values in the tensor to 0 for me.” I have done a bit of experimentation with this value and set it to <code>.2</code> - or 20% of the values remain. However, this does not appear to affect the results much. In the future, I’ll do some proper testing and run this about 10000 times across the different drop out levels and see how much these deviate. For now, we are just making sure this idea works before considering properly fine tuning.</p>
+<p>The <code>.5</code> passed to <code>nn.Dropout</code> is saying “Please set half of the values in the tensor to 0 for me.” I have done a bit of experimentation with this value and set it to <code>.2</code> - or 20% of the values are dropped. However, this does not appear to affect the results much. In the future, I’ll do some proper testing and run this about 10000 times across the different drop out levels and see how much these deviate. For now, we are just making sure this idea works before considering properly fine tuning.</p>
 </section>
 <section id="working-out-creating-threads" class="level2">
 <h2 class="anchored" data-anchor-id="working-out-creating-threads">Working Out Creating Threads</h2>
