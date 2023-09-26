@@ -1081,8 +1081,11 @@ Name: loot, dtype: object</code></pre>
 </div>
 <p>Like the previous posts, scraping is a tedious process of matching keywords and pulling the right tables so that’s getting skipped; it’s just mostly trial and error.</p>
 <div class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>urlDataDrives <span class="op">=</span> <span class="st">'https://thecyclefrontier.wiki/wiki/Utilities#Data_Drives-0'</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>siteDrive <span class="op">=</span> pd.read_html(urlDataDrives, attrs<span class="op">=</span>{<span class="st">"class"</span>:<span class="st">"zebra"</span>})[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># game taken down</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># urlDataDrives = 'https://thecyclefrontier.wiki/wiki/Utilities#Data_Drives-0'</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># urlDataDrives = 'https://thecyclefrontier.wiki/wiki/Data_Drive'</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>urlDataDrives <span class="op">=</span> <span class="st">'https://archive.ph/zG8Q2'</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>siteDrive <span class="op">=</span> pd.read_html(urlDataDrives, attrs<span class="op">=</span>{<span class="st">"class"</span>:<span class="st">"zebra"</span>})[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We’ll use a modified version of the code we wrote before for parsing the <code>loot</code> table for this.</p>
 <div class="cell" data-execution_count="25">
@@ -1758,24 +1761,27 @@ Name: loot, dtype: object</code></pre>
 <h3 class="anchored" data-anchor-id="add-the-guns">Add the Guns</h3>
 <p>We’re going to move to getting the gun data included since we already actualy have it. This was part of another post which was done - not included in the series.</p>
 <div class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://thecyclefrontier.wiki/wiki/Weapons"</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>siteGun <span class="op">=</span> pd.read_html(url, attrs<span class="op">=</span>{<span class="st">"class"</span>:<span class="st">"zebra"</span>})[<span class="dv">0</span>]</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>gunData <span class="op">=</span> siteGun[<span class="op">~</span>siteGun.Type.isna()]</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>indx <span class="op">=</span> gunData[<span class="st">'Proj. Speed'</span>] <span class="op">==</span> <span class="st">'Hitscan'</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>gunData.loc[indx, <span class="st">'Proj. Speed'</span>] <span class="op">=</span> np.NaN</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>gunData <span class="op">=</span> gunData.assign(</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    Unit <span class="op">=</span> gunData[<span class="st">'Sell Value'</span>].<span class="bu">str</span>.replace(<span class="st">' K-Marks'</span>, <span class="st">''</span>).astype(<span class="st">'float'</span>),</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    Reward <span class="op">=</span> <span class="st">"K-Marks"</span>,</span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    Loot <span class="op">=</span> gunData[<span class="st">'Name'</span>]</span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co"># # This removes the legendary weapons</span></span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="co"># data = data.query('Faction != "Printing"')</span></span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># game taken down</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># url = "https://thecyclefrontier.wiki/wiki/Weapons"</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://archive.ph/pM11n'</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>siteGun <span class="op">=</span> pd.read_html(url, attrs<span class="op">=</span>{<span class="st">"class"</span>:<span class="st">"zebra"</span>})[<span class="dv">0</span>]</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>gunData <span class="op">=</span> siteGun[<span class="op">~</span>siteGun.Type.isna()]</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>indx <span class="op">=</span> gunData[<span class="st">'Proj. Speed'</span>] <span class="op">==</span> <span class="st">'Hitscan'</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>gunData.loc[indx, <span class="st">'Proj. Speed'</span>] <span class="op">=</span> np.NaN</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>gunData <span class="op">=</span> gunData.assign(</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    Unit <span class="op">=</span> gunData[<span class="st">'Sell Value'</span>].<span class="bu">str</span>.replace(<span class="st">' K-Marks'</span>, <span class="st">''</span>).astype(<span class="st">'float'</span>),</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>    Reward <span class="op">=</span> <span class="st">"K-Marks"</span>,</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>    Loot <span class="op">=</span> gunData[<span class="st">'Name'</span>]</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>guns <span class="op">=</span> gunData</span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>guns[[<span class="st">'Unit'</span>, <span class="st">'Reward'</span>, <span class="st">'Rarity'</span>, <span class="st">'Loot'</span>]].head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="co"># # This removes the legendary weapons</span></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="co"># data = data.query('Faction != "Printing"')</span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>guns <span class="op">=</span> gunData</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>guns[[<span class="st">'Unit'</span>, <span class="st">'Reward'</span>, <span class="st">'Rarity'</span>, <span class="st">'Loot'</span>]].head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
 
 <div>
@@ -2074,8 +2080,10 @@ Name: loot, dtype: object</code></pre>
 <h2 class="anchored" data-anchor-id="deal-with-backpacks">Deal With Backpacks</h2>
 <p>We’re going to try to fix the Backpacks, the Shields and the Helmets toegther since they’re all on the same page of the wiki. Again, this data was not part of the previous tables that we had so we’ll need to go get it.</p>
 <div class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>gearUrl <span class="op">=</span> <span class="st">'https://thecyclefrontier.wiki/wiki/Gear'</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>site <span class="op">=</span> pd.read_html(gearUrl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># game taken down:</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># gearUrl = 'https://thecyclefrontier.wiki/wiki/Gear'</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>gearUrl <span class="op">=</span> <span class="st">'https://archive.ph/qeeTm'</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>site <span class="op">=</span> pd.read_html(gearUrl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This was tricky to collect - which is only why I’m pointing out how it was done. While working out how to collect the data from the website, there was no good strategy to collect just the data that I wanted. What you will see is that I use hard coded values to pull out where each table is.</p>
 <div class="cell" data-execution_count="38">
@@ -2846,8 +2854,10 @@ Name: loot, dtype: object</code></pre>
 <section id="deal-with-ammo" class="level2">
 <h2 class="anchored" data-anchor-id="deal-with-ammo">Deal with Ammo</h2>
 <div class="cell" data-execution_count="50">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>ammoUrl <span class="op">=</span> <span class="st">"https://thecyclefrontier.wiki/wiki/Ammo"</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>ammo <span class="op">=</span> pd.read_html(ammoUrl)[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># game taken down:</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ammoUrl = "https://thecyclefrontier.wiki/wiki/Ammo"</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>ammoUrl <span class="op">=</span> <span class="st">'https://archive.ph/Xacnz'</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>ammo <span class="op">=</span> pd.read_html(ammoUrl)[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We’ve already done this before so this is simply here to show it was done. And, you add it to the pipeline just the same.</p>
 <div class="cell" data-execution_count="51">
@@ -2864,9 +2874,12 @@ Name: loot, dtype: object</code></pre>
 <h2 class="anchored" data-anchor-id="deal-with-the-heavy-mining-tool">Deal with The Heavy Mining Tool</h2>
 <p>Sadly, this tool is on its own page so we’ll need something custom again. There is a table here we can pull but it’s oriented incorrectly for our use.</p>
 <div class="cell" data-execution_count="52">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>site <span class="op">=</span> pd.read_html(<span class="st">"https://thecyclefrontier.wiki/wiki/Heavy_Mining_Tool"</span>)</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>minerData <span class="op">=</span> site[<span class="dv">0</span>]</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>minerData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># game taken down:</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># site = pd.read_html("https://thecyclefrontier.wiki/wiki/Heavy_Mining_Tool")</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>site <span class="op">=</span> pd.read_html(<span class="st">"https://archive.ph/c6QCk"</span>)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>minerData <span class="op">=</span> site[<span class="dv">0</span>]</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>minerData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="52">
 
 <div>

@@ -217,9 +217,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Our data source is still going to be the <a href="https://thecyclefrontier.wiki/wiki/Main_Page">Official Wiki</a> and we’ll be pulling from the <a href="https://thecyclefrontier.wiki/wiki/Loot"><strong>Loot Page</strong></a> - which has already started being updated for Season Two. From my previous post, the class <code>zebra</code> is still the best attribute to target to pull the data into a usable Data Frame.</p>
 <div class="cell" data-execution_count="49">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://thecyclefrontier.wiki/wiki/Loot"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>site <span class="op">=</span> pd.read_html(url, attrs<span class="op">=</span>{<span class="st">"class"</span>:<span class="st">"zebra"</span>})[<span class="dv">0</span>]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>site.head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># game taken down:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># url = "https://thecyclefrontier.wiki/wiki/Loot"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://archive.ph/HZfyf'</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>site <span class="op">=</span> pd.read_html(url, attrs<span class="op">=</span>{<span class="st">"class"</span>:<span class="st">"zebra"</span>})[<span class="dv">0</span>]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>site.head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="49">
 
 <div>
