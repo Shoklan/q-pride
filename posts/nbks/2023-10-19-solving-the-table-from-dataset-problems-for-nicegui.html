@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2023-10-20">
+<meta name="description" content="A Little Necessary Piece of Code">
+
+<title>Orgulo.us - Translating Data Frames For NiceGui</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Orgulo.us</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Translating Data Frames For NiceGui</h1>
+                  <div>
+        <div class="description">
+          A Little Necessary Piece of Code
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">python</div>
+                <div class="quarto-category">nicegui</div>
+                <div class="quarto-category">data analyst</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 20, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#nicegui-leans-towards-design" id="toc-nicegui-leans-towards-design" class="nav-link active" data-scroll-target="#nicegui-leans-towards-design">Nicegui Leans Towards Design</a>
+  <ul class="collapse">
+  <li><a href="#found-a-problem" id="toc-found-a-problem" class="nav-link" data-scroll-target="#found-a-problem">Found a Problem</a></li>
+  <li><a href="#split-apart" id="toc-split-apart" class="nav-link" data-scroll-target="#split-apart">Split Apart</a>
+  <ul class="collapse">
+  <li><a href="#now-the-rows" id="toc-now-the-rows" class="nav-link" data-scroll-target="#now-the-rows">Now the Rows</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#conclusions-and-thoughts" id="toc-conclusions-and-thoughts" class="nav-link" data-scroll-target="#conclusions-and-thoughts">Conclusions and Thoughts</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="nicegui-leans-towards-design" class="level1">
+<h1>Nicegui Leans Towards Design</h1>
+<p>Among all the wonderful little tools online, <a href="https://nicegui.io">Nicegui</a> is definitely a growing favorite. This web framework for User Application Interfaces is beautful, fast and very customizable. It comes will all the little bells and whistles: easy input fields, builtins for modifying the styles of elements on the webpage, synced inputs for color pickers or dates and fields. You basically name what you need and it comes basically right out of the box. It even uses the python’s <code>with</code> keyword to nest fields and forms in the structure of the webpage.</p>
+<section id="found-a-problem" class="level2">
+<h2 class="anchored" data-anchor-id="found-a-problem">Found a Problem</h2>
+<p>I’ve been playing around with it by trying to convert <a href="https://youtu.be/JwSS70SZdyM?si=ycm0JDC6fH1mdtiK">these 12 Data Science Applications</a> from Streamlit to Nicegui for practice and while working on the second application ran into a problem: converting a data frame to a table is not straightforward.</p>
+<p>The documentation for this shows you can add a table by bulding it out of the rows and columns:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nicegui <span class="im">import</span> ui</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> [</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'name'</span>: <span class="st">'name'</span>, <span class="st">'label'</span>: <span class="st">'Name'</span>, <span class="st">'field'</span>: <span class="st">'name'</span>, <span class="st">'required'</span>: <span class="va">True</span>},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'name'</span>: <span class="st">'age'</span>, <span class="st">'label'</span>: <span class="st">'Age'</span>, <span class="st">'field'</span>: <span class="st">'age'</span>, <span class="st">'sortable'</span>: <span class="va">True</span>},</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> [</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'id'</span>: <span class="dv">0</span>, <span class="st">'name'</span>: <span class="st">'Alice'</span>, <span class="st">'age'</span>: <span class="dv">18</span>},</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'id'</span>: <span class="dv">1</span>, <span class="st">'name'</span>: <span class="st">'Bob'</span>, <span class="st">'age'</span>: <span class="dv">21</span>},</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'id'</span>: <span class="dv">2</span>, <span class="st">'name'</span>: <span class="st">'Lionel'</span>, <span class="st">'age'</span>: <span class="dv">19</span>},</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'id'</span>: <span class="dv">3</span>, <span class="st">'name'</span>: <span class="st">'Michael'</span>, <span class="st">'age'</span>: <span class="dv">32</span>},</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'id'</span>: <span class="dv">4</span>, <span class="st">'name'</span>: <span class="st">'Julie'</span>, <span class="st">'age'</span>: <span class="dv">12</span>},</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'id'</span>: <span class="dv">5</span>, <span class="st">'name'</span>: <span class="st">'Livia'</span>, <span class="st">'age'</span>: <span class="dv">25</span>},</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'id'</span>: <span class="dv">6</span>, <span class="st">'name'</span>: <span class="st">'Carol'</span>},</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># This is where the table info comes in:</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>ui.table(columns<span class="op">=</span>nColumns, rows<span class="op">=</span>rows, row_key<span class="op">=</span><span class="st">'name'</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>ui.run()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="images/2023-10-19/simple-table-example-nicegui.png" class="img-fluid"></p>
+<p>From this functions expectations, we need the columns and the rows separated apart from one another - <strong>and</strong> as a list of dictionaries. Sadly, there is no helper function to pull a data frame apart and feed the table function. So, I’m going to do it instead since this will come up just about every time I plan to use the tables.</p>
+</section>
+<section id="split-apart" class="level2">
+<h2 class="anchored" data-anchor-id="split-apart">Split Apart</h2>
+<p>We’ll use the Iris Dataset to protoype this and pull it from <code>sklearn</code>.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> datasets</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> datasets.load_iris()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Looking at the structure of what <code>sklearn</code> calls a <code>Bunch</code>, this is a dictionary with keys containing everything we should need from this dataset:</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>iris.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>dict_keys(['data', 'target', 'frame', 'target_names', 'DESCR', 'feature_names', 'filename', 'data_module'])</code></pre>
+</div>
+</div>
+<p>First we will work on fixing the columns since this will be easier - and we’ll need them to build the rows later. Looking at what <strong>must</strong> be included for this to work, we will need: 1. The <em>Name</em> of the column. 2. The <em>Visual Label</em> of the column. 3. The <em>Field</em> of the Column.</p>
+<p>Playing around with this, the <em>Field</em> acts as a binding between the rows and the columns so it cannot be removed. The <code>Name</code> <em>can</em> be removed but it’s included in the documentation so I’m going to assume it needs it for some feature I am as yet unfamiliar with. We will need a dictionary per each column name so this calls for a list comprehension built from the <code>feature_names</code> key of our <code>Bunch</code>.</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pprint <span class="im">import</span> pprint</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> iris.feature_names</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (new) Columns, not (number)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>nColumns <span class="op">=</span> [{<span class="st">'name'</span>:l, <span class="st">'label'</span>: l.capitalize(), <span class="st">'field'</span>:l} <span class="cf">for</span> l <span class="kw">in</span> columns]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>pprint(nColumns, indent<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[ { 'field': 'sepal length (cm)',
+    'label': 'Sepal length (cm)',
+    'name': 'sepal length (cm)'},
+  { 'field': 'sepal width (cm)',
+    'label': 'Sepal width (cm)',
+    'name': 'sepal width (cm)'},
+  { 'field': 'petal length (cm)',
+    'label': 'Petal length (cm)',
+    'name': 'petal length (cm)'},
+  { 'field': 'petal width (cm)',
+    'label': 'Petal width (cm)',
+    'name': 'petal width (cm)'}]</code></pre>
+</div>
+</div>
+<section id="now-the-rows" class="level3">
+<h3 class="anchored" data-anchor-id="now-the-rows">Now the Rows</h3>
+<p>Thankfully, python gives us <a href="https://www.geeksforgeeks.org/python-dictionary-comprehension/">Dictionary Comprehensions</a> so we can quickly build the dictionaries for every row from the data we have. We will need to add these to a list since the function expects the rows in that format. One example includes an <code>id</code> column but I’m going to throw that away since I don’t care about it; you might need it for sorting which I have disabled for this code. It’s a simple add-back if we need it.</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> []</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _,row <span class="kw">in</span> <span class="bu">enumerate</span>(iris.data):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  rows.append({</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    k:v                   <span class="co"># The column name, row value pairing</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (k,v)             <span class="co"># from the tuple (colname, value)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">in</span> <span class="bu">zip</span>(columns, row)  <span class="co"># tuple up each column, value pairing</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>rows[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>{'sepal length (cm)': 5.1,
+ 'sepal width (cm)': 3.5,
+ 'petal length (cm)': 1.4,
+ 'petal width (cm)': 0.2}</code></pre>
+</div>
+</div>
+<p>Now we add it all together to get the final result:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nicegui <span class="im">import</span> ui</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> datasets</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> datasets.load_iris()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>nColumns <span class="op">=</span> [</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'name'</span>: <span class="st">'name'</span>, <span class="st">'label'</span>: <span class="st">'Name'</span>, <span class="st">'field'</span>: <span class="st">'name'</span>},</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'name'</span>: <span class="st">'age'</span>, <span class="st">'label'</span>: <span class="st">'Age'</span>, <span class="st">'field'</span>: <span class="st">'age'</span>},</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> iris.feature_names</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>nColumns <span class="op">=</span> [{<span class="st">'name'</span>:l, <span class="st">'label'</span>: l.capitalize(), <span class="st">'field'</span>:l} <span class="cf">for</span> l <span class="kw">in</span> columns]</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> []</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,row <span class="kw">in</span> <span class="bu">enumerate</span>(iris.data):</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  rows.append({k:v <span class="cf">for</span> (k,v) <span class="kw">in</span> <span class="bu">zip</span>(columns, row)})</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>ui.table(</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span>nColumns,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    rows<span class="op">=</span>rows,</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    pagination<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>ui.run()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="images/2023-10-19/fixed-table-example-nicegui.png" class="img-fluid"></p>
+<p>There is our working code so now we just need a simple function to wrap all this up; we’ll update it slightly to expect a data frame though just to make this for real world code.</p>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> pd.read_csv(<span class="st">"https://datahub.io/machine-learning/iris/r/iris.csv"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>iris.head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>sepallength</th>
+      <th>sepalwidth</th>
+      <th>petallength</th>
+      <th>petalwidth</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>1.7</td>
+      <td>0.4</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>4.6</td>
+      <td>3.4</td>
+      <td>1.4</td>
+      <td>0.3</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>4.4</td>
+      <td>2.9</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>4.9</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.1</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>5.4</td>
+      <td>3.7</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>4.8</td>
+      <td>3.4</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.1</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>4.3</td>
+      <td>3.0</td>
+      <td>1.1</td>
+      <td>0.1</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>5.8</td>
+      <td>4.0</td>
+      <td>1.2</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> df_to_nui(df):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    columns <span class="op">=</span> df.columns</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    nColumns <span class="op">=</span> [{<span class="st">'name'</span>:l, <span class="st">'label'</span>: l.capitalize(), <span class="st">'field'</span>:l} <span class="cf">for</span> l <span class="kw">in</span> columns]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> []</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> df.iterrows():</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        rows.append({</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>            k:v</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> (k,v) </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">in</span> <span class="bu">zip</span>(columns, row[<span class="dv">1</span>])</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (nColumns, rows)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And, our final working code:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nicegui <span class="im">import</span> ui</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> datasets</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> df_to_nui(df):</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    columns <span class="op">=</span> df.columns</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    nColumns <span class="op">=</span> [{<span class="st">'name'</span>:l, <span class="st">'label'</span>: l.capitalize(), <span class="st">'field'</span>:l} <span class="cf">for</span> l <span class="kw">in</span> columns]</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> []</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> df.iterrows():</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>        rows.append({k:v <span class="cf">for</span> (k,v) <span class="kw">in</span> <span class="bu">zip</span>(columns, row[<span class="dv">1</span>])})</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (nColumns, rows)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> pd.read_csv(<span class="st">"https://datahub.io/machine-learning/iris/r/iris.csv"</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>nColumns, rows <span class="op">=</span> df_to_nui(iris)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>ui.table(</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span>nColumns,</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    rows<span class="op">=</span>rows,</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    pagination<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>ui.run()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="conclusions-and-thoughts" class="level1">
+<h1>Conclusions and Thoughts</h1>
+<p>Hopefully this inspires you to try out the framework along with making using data frames easier to manage. There are some improvements to this which would be nice - such as the columns being sortable which does not work currently - but those should simply be dictionary updates per field. Maybe as I work more with all this I’ll need this feature and will update it but for now this works.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
