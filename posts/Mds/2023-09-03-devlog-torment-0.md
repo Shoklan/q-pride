@@ -7,6 +7,7 @@ date: '2023-09-03'
 layout: post
 title: 'Devlog 0: Once Upon a Torment'
 description: Starting The Journey to a Completed Game.
+image: "../_images/headers/torment-openning-post-thmb.png"
 toc: false
 ---
 
