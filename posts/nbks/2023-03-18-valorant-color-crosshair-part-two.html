@@ -240,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="working-on-the-other-maps" class="level1">
 <h1>Working On The Other Maps</h1>
 <p>Currently, I do not have a collection of all the maps but I have a solid number of them to work with. Due to Riots requirements to even install and play the game, I am not able to collect any data myself. And thus, with the permission of Alex who was kind enough to allow me to use his streams as a data source, I have to collect and label them manually leading to me missing some maps currently. We’ll get our imports and pull our data that I already had and labeled.</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="2">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -251,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>The Data Class work from the last post was fun but we’ll need something better this time around. We don’t want to only do this for a single map but in fact calculate the average over all the collected maps. Looking at our problem, we need: 1. Samples grouped by each map. 2. A function to summarize the image data.</p>
 <p>Thankfully, there is a way to easily solve the first problem: <code>groupby()</code>. This function takes a column and then creates a subgroup based on the values in that column. In our example, we’ll be grouping the filenames by the <code>map</code> name so when we collect the image data then the results will be done <em>per map</em>.</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="6">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>imageSolutions.groupby(<span class="st">'map'</span>).count().T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 
@@ -289,7 +289,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>This <em>groupby</em> object needs some kind of <strong>aggregation</strong> function - like <code>count()</code> above - to be useful. Common functions would be <code>count()</code>, <code>sum()</code> and <code>mean()</code>. Before we deal with our own custom function, we need to get the sample part working. Thankfully, this is also just as easy since pandas has a <code>sample()</code> function for this.</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="152">
+<div class="cell" data-execution_count="152">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>imageSolutions.groupby(<span class="st">'map'</span>).sample(<span class="dv">100</span>).value_counts(<span class="st">'map'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="152">
 <pre><code>map
@@ -305,7 +305,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>With the number of observations that we have then reasonable sample size of 500 images per map should work for our testing. We also don’t need the <code>menu</code>, <code>range</code> or <code>other</code> categories so we’ll also drop those.</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="7">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ignore <span class="op">=</span> [<span class="st">'Other'</span>, <span class="st">'Range'</span>, <span class="st">'Menu'</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mapSubset <span class="op">=</span> imageSolutions.groupby(<span class="st">'map'</span>).sample(<span class="dv">500</span>).query(<span class="st">"map != @ignore"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>mapSubset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -386,7 +386,7 @@ dtype: int64</code></pre>
 <section id="image-average-function" class="level2">
 <h2 class="anchored" data-anchor-id="image-average-function">Image Average Function</h2>
 <p>We already went over how to read an image but we’ll do it again. Pytorch has the function <code>read_image()</code> to read an image into a torch tensor. And, we’ll need to adjust the dimensions so we can see the images.</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="170">
+<div class="cell" data-execution_count="170">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.imshow(read_image(<span class="bu">str</span>(dataDirectory<span class="op">/</span>mapSubset.image.iloc[<span class="dv">0</span>])).moveaxis(<span class="dv">0</span>,<span class="dv">2</span>))<span class="op">;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Hi Alex!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -395,14 +395,14 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>We are going to keep using the mean since this is acceptable for our use case. Calculating this is simple enough:</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="187">
+<div class="cell" data-execution_count="187">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>read_image(<span class="bu">str</span>(dataDirectory<span class="op">/</span>mapSubset.image.iloc[<span class="dv">0</span>])).moveaxis(<span class="dv">0</span>,<span class="dv">2</span>).numpy().mean(axis<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="187">
 <pre><code>array([109.47447097,  69.39480131,  63.72558256])</code></pre>
 </div>
 </div>
 <p>Perfect. So, now we have all the pieces we need to calcuate the mean image per map.</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="200">
+<div class="cell" data-execution_count="200">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mapColors <span class="op">=</span> mapSubset.groupby(<span class="st">'map'</span>, group_keys<span class="op">=</span><span class="va">True</span>)<span class="op">\</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">apply</span>(<span class="kw">lambda</span> x:</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">tuple</span>(</span>
@@ -422,7 +422,7 @@ The Map Icebox has a mean color of (94.04369695216049, 86.80147665895062, 83.213
 </div>
 </div>
 <p>Those tuples are not of much value so we will convert them into images and show them all off.</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="272">
+<div class="cell" data-execution_count="272">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,color <span class="kw">in</span> <span class="bu">enumerate</span>(mapColors):</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    height, width, channels <span class="op">=</span> <span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">3</span></span>
@@ -449,7 +449,7 @@ The Map Icebox has a mean color of (94.04369695216049, 86.80147665895062, 83.213
 </div>
 </div>
 <p>I notice that our Icebox is not the same result as we got last time. Perhaps in another post we’ll explore the why for that. What we need to do now is take the color data and create a high contrast color as we had done before. We’ll go ahead and do this per map and we can reuse the for loop for this.</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="278">
+<div class="cell" data-execution_count="278">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> ImageEnhance</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,color <span class="kw">in</span> <span class="bu">enumerate</span>(mapColors):</span>
@@ -489,7 +489,7 @@ The Map Icebox has a mean color of (94.04369695216049, 86.80147665895062, 83.213
 </div>
 </div>
 <p>And, lastly we’ll get the RGB values for the colors in case anyone wants to try this out!</p>
-<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}" data-execution_count="281">
+<div class="cell" data-execution_count="281">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.colors <span class="im">import</span> rgb2hex</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,color <span class="kw">in</span> <span class="bu">enumerate</span>(mapColors):</span>
