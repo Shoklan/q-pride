@@ -3,8 +3,9 @@ project:
 
 website:
   title: "Orgulo.us"
-  favicon: Logo.png
+  favicon: "Logo.png"
   navbar:
+    logo: "Logo.png"
     right:
       # - about.qmd
       - icon: github
