@@ -1,6 +1,6 @@
 ---
 categories:
-- review
+- yearly review
 date: '2023-01-01'
 layout: post
 title: 'Challenges for 2023'
