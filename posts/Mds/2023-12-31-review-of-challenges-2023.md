@@ -1,7 +1,7 @@
 ---
 categories:
 - yearly review
-date: '2023-08-01'
+date: '2023-12-31'
 description: What a Rough Year
 layout: post
 title: 'Review of Challenges in 2023'
