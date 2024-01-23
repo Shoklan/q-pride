@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Mds/2024-01-23.-challenges-for-2024.html",
       "/posts/Mds/2023-12-31-review-of-challenges-2023.html",
       "/posts/nbks/2023-11-15-getting-apache-hudi-working-in-notebooks.html",
       "/posts/nbks/2023-11-14-comparison-of-polars-and-pandas.html",
