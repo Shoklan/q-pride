@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,11 +19,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,47 +49,17 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -111,7 +82,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -120,12 +97,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -135,27 +114,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Orgulo.us</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Shoklan"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -217,6 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
 <section id="picking-up-where-we-left-off" class="level1">
 <h1>Picking Up Where We Left Off</h1>
 <p>If you did not read the previous post then I would recommend reading about the <a href="https://orgulo.us/posts/nbks/2022-12-16-valorant-color-crosshair.html">inspiration</a> for the post and how we got here. In fact, I strongly recommend it since I’m going to be skipping some of the basic discussion and hopping right into getting other maps working.</p>
@@ -241,7 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="working-on-the-other-maps" class="level1">
 <h1>Working On The Other Maps</h1>
 <p>Currently, I do not have a collection of all the maps but I have a solid number of them to work with. Due to Riots requirements to even install and play the game, I am not able to collect any data myself. And thus, with the permission of Alex who was kind enough to allow me to use his streams as a data source, I have to collect and label them manually leading to me missing some maps currently. We’ll get our imports and pull our data that I already had and labeled.</p>
-<div class="cell" data-execution_count="2">
+<div id="cell-4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -252,45 +234,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>The Data Class work from the last post was fun but we’ll need something better this time around. We don’t want to only do this for a single map but in fact calculate the average over all the collected maps. Looking at our problem, we need: 1. Samples grouped by each map. 2. A function to summarize the image data.</p>
 <p>Thankfully, there is a way to easily solve the first problem: <code>groupby()</code>. This function takes a column and then creates a subgroup based on the values in that column. In our example, we’ll be grouping the filenames by the <code>map</code> name so when we collect the image data then the results will be done <em>per map</em>.</p>
-<div class="cell" data-execution_count="6">
+<div id="cell-7" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>imageSolutions.groupby(<span class="st">'map'</span>).count().T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th>map</th>
-      <th>Ascent</th>
-      <th>Bind</th>
-      <th>Breeze</th>
-      <th>Haven</th>
-      <th>Icebox</th>
-      <th>Menu</th>
-      <th>Other</th>
-      <th>Range</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>image</th>
-      <td>12766</td>
-      <td>8882</td>
-      <td>9629</td>
-      <td>10535</td>
-      <td>1985</td>
-      <td>7577</td>
-      <td>879</td>
-      <td>1025</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">map</th>
+<th data-quarto-table-cell-role="th">Ascent</th>
+<th data-quarto-table-cell-role="th">Bind</th>
+<th data-quarto-table-cell-role="th">Breeze</th>
+<th data-quarto-table-cell-role="th">Haven</th>
+<th data-quarto-table-cell-role="th">Icebox</th>
+<th data-quarto-table-cell-role="th">Menu</th>
+<th data-quarto-table-cell-role="th">Other</th>
+<th data-quarto-table-cell-role="th">Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">image</td>
+<td>12766</td>
+<td>8882</td>
+<td>9629</td>
+<td>10535</td>
+<td>1985</td>
+<td>7577</td>
+<td>879</td>
+<td>1025</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>This <em>groupby</em> object needs some kind of <strong>aggregation</strong> function - like <code>count()</code> above - to be useful. Common functions would be <code>count()</code>, <code>sum()</code> and <code>mean()</code>. Before we deal with our own custom function, we need to get the sample part working. Thankfully, this is also just as easy since pandas has a <code>sample()</code> function for this.</p>
-<div class="cell" data-execution_count="152">
+<div id="cell-9" class="cell" data-execution_count="152">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>imageSolutions.groupby(<span class="st">'map'</span>).sample(<span class="dv">100</span>).value_counts(<span class="st">'map'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="152">
 <pre><code>map
@@ -306,80 +289,81 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>With the number of observations that we have then reasonable sample size of 500 images per map should work for our testing. We also don’t need the <code>menu</code>, <code>range</code> or <code>other</code> categories so we’ll also drop those.</p>
-<div class="cell" data-execution_count="7">
+<div id="cell-11" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ignore <span class="op">=</span> [<span class="st">'Other'</span>, <span class="st">'Range'</span>, <span class="st">'Menu'</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mapSubset <span class="op">=</span> imageSolutions.groupby(<span class="st">'map'</span>).sample(<span class="dv">500</span>).query(<span class="st">"map != @ignore"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>mapSubset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>image</th>
-      <th>map</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>26270</th>
-      <td>alex26271.png</td>
-      <td>Ascent</td>
-    </tr>
-    <tr>
-      <th>41785</th>
-      <td>alex41786.png</td>
-      <td>Ascent</td>
-    </tr>
-    <tr>
-      <th>44429</th>
-      <td>alex44430.png</td>
-      <td>Ascent</td>
-    </tr>
-    <tr>
-      <th>25324</th>
-      <td>alex25325.png</td>
-      <td>Ascent</td>
-    </tr>
-    <tr>
-      <th>46256</th>
-      <td>alex46257.png</td>
-      <td>Ascent</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>293</th>
-      <td>alex00294.png</td>
-      <td>Icebox</td>
-    </tr>
-    <tr>
-      <th>744</th>
-      <td>alex00745.png</td>
-      <td>Icebox</td>
-    </tr>
-    <tr>
-      <th>1987</th>
-      <td>alex01988.png</td>
-      <td>Icebox</td>
-    </tr>
-    <tr>
-      <th>1968</th>
-      <td>alex01969.png</td>
-      <td>Icebox</td>
-    </tr>
-    <tr>
-      <th>999</th>
-      <td>alex01000.png</td>
-      <td>Icebox</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">image</th>
+<th data-quarto-table-cell-role="th">map</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">26270</td>
+<td>alex26271.png</td>
+<td>Ascent</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">41785</td>
+<td>alex41786.png</td>
+<td>Ascent</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">44429</td>
+<td>alex44430.png</td>
+<td>Ascent</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">25324</td>
+<td>alex25325.png</td>
+<td>Ascent</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">46256</td>
+<td>alex46257.png</td>
+<td>Ascent</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">293</td>
+<td>alex00294.png</td>
+<td>Icebox</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">744</td>
+<td>alex00745.png</td>
+<td>Icebox</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1987</td>
+<td>alex01988.png</td>
+<td>Icebox</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1968</td>
+<td>alex01969.png</td>
+<td>Icebox</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">999</td>
+<td>alex01000.png</td>
+<td>Icebox</td>
+</tr>
+</tbody>
 </table>
+
 <p>2500 rows × 2 columns</p>
 </div>
 </div>
@@ -387,23 +371,27 @@ dtype: int64</code></pre>
 <section id="image-average-function" class="level2">
 <h2 class="anchored" data-anchor-id="image-average-function">Image Average Function</h2>
 <p>We already went over how to read an image but we’ll do it again. Pytorch has the function <code>read_image()</code> to read an image into a torch tensor. And, we’ll need to adjust the dimensions so we can see the images.</p>
-<div class="cell" data-execution_count="170">
+<div id="cell-13" class="cell" data-execution_count="170">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.imshow(read_image(<span class="bu">str</span>(dataDirectory<span class="op">/</span>mapSubset.image.iloc[<span class="dv">0</span>])).moveaxis(<span class="dv">0</span>,<span class="dv">2</span>))<span class="op">;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Hi Alex!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-7-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>We are going to keep using the mean since this is acceptable for our use case. Calculating this is simple enough:</p>
-<div class="cell" data-execution_count="187">
+<div id="cell-15" class="cell" data-execution_count="187">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>read_image(<span class="bu">str</span>(dataDirectory<span class="op">/</span>mapSubset.image.iloc[<span class="dv">0</span>])).moveaxis(<span class="dv">0</span>,<span class="dv">2</span>).numpy().mean(axis<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="187">
 <pre><code>array([109.47447097,  69.39480131,  63.72558256])</code></pre>
 </div>
 </div>
 <p>Perfect. So, now we have all the pieces we need to calcuate the mean image per map.</p>
-<div class="cell" data-execution_count="200">
+<div id="cell-17" class="cell" data-execution_count="200">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mapColors <span class="op">=</span> mapSubset.groupby(<span class="st">'map'</span>, group_keys<span class="op">=</span><span class="va">True</span>)<span class="op">\</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">apply</span>(<span class="kw">lambda</span> x:</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">tuple</span>(</span>
@@ -423,7 +411,7 @@ The Map Icebox has a mean color of (94.04369695216049, 86.80147665895062, 83.213
 </div>
 </div>
 <p>Those tuples are not of much value so we will convert them into images and show them all off.</p>
-<div class="cell" data-execution_count="272">
+<div id="cell-19" class="cell" data-execution_count="272">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,color <span class="kw">in</span> <span class="bu">enumerate</span>(mapColors):</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    height, width, channels <span class="op">=</span> <span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">3</span></span>
@@ -434,23 +422,43 @@ The Map Icebox has a mean color of (94.04369695216049, 86.80147665895062, 83.213
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    pyplot.imshow(image_blank_new)</span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    pyplot.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-10-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-10-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-10-output-3.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-10-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-10-output-4.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-10-output-4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-10-output-5.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-10-output-5.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>I notice that our Icebox is not the same result as we got last time. Perhaps in another post we’ll explore the why for that. What we need to do now is take the color data and create a high contrast color as we had done before. We’ll go ahead and do this per map and we can reuse the for loop for this.</p>
-<div class="cell" data-execution_count="278">
+<div id="cell-21" class="cell" data-execution_count="278">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> ImageEnhance</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,color <span class="kw">in</span> <span class="bu">enumerate</span>(mapColors):</span>
@@ -474,23 +482,43 @@ The Map Icebox has a mean color of (94.04369695216049, 86.80147665895062, 83.213
 <span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    pyplot.imshow(image_blank_final)<span class="op">;</span></span>
 <span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    pyplot.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-11-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-11-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-11-output-3.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-11-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-11-output-4.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-11-output-4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-11-output-5.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-03-18-valorant-color-crosshair-part-two_files/figure-html/cell-11-output-5.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>And, lastly we’ll get the RGB values for the colors in case anyone wants to try this out!</p>
-<div class="cell" data-execution_count="281">
+<div id="cell-23" class="cell" data-execution_count="281">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.colors <span class="im">import</span> rgb2hex</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,color <span class="kw">in</span> <span class="bu">enumerate</span>(mapColors):</span>
@@ -544,9 +572,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -582,10 +624,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -595,8 +636,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -611,6 +661,238 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -651,6 +933,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

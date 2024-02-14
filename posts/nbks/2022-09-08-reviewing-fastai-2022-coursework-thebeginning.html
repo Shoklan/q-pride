@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,11 +19,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,47 +49,17 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -111,7 +82,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -120,12 +97,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
@@ -136,27 +115,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Orgulo.us</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Shoklan"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -206,6 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
 <section id="what-is-fastai" class="level1">
 <h1>What is Fastai?</h1>
 <p>If you’re not familiar with the list of frameworks and libraries that exist for Deep Learning - or even if you are - then you might not be aware of <a href="https://www.fast.ai">Fastai</a>. This is both a Deep Learning Framework built on top of Pytorch as well as an online curriculum to quickly become productive using Deep Learning for your own interests. Jeremy is a very solid teacher and I recommend taking the course if you’re interested in learning how this all works. And, I don’t mean that simply because I like the lectures but also because <a href="https://github.com/Shoklan/Youtube/tree/master/fastai2020">I’ve taken them before</a> and I’ve also built my own simple projects out of the lectures done by him - and Rachel since she’s also assisting with building the course. One really big plus for this course is that you’ll start by actually building a model and using it: in this version it will be <strong>Birds</strong> vs <strong>Forests</strong> instead of <strong>Cats</strong> vs <strong>Dogs</strong> like used to be. As Jeremy points out in the first lecture, most people don’t learn in an academic way. By that we mean they start with theory and then learn how to interact with the system. Instead, we learn a few basic ideas and then toss ourselves in to apply and learn as we go.</p>
@@ -213,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="so-what-am-i-going-to-do">So, What Am I Going to Do?</h2>
 <p>Lately, I’ve been playing a game called <a href="https://store.steampowered.com/app/868270/The_Cycle_Frontier/"><strong>The Cycle: Frontier</strong></a> which is a kind of <em>Extraction Shooter</em> game. What this means is that players are dropped into a semi-persistent server to collect items, kill creatures and even kill other players. Really, it is up to the player to decide how they interact with and play the game. But being a shooter means that there are guns - and since there are guns there are categories of guns. Since fantasy is inspired by the real world in some sense, the question I would like to ask is <strong>Knowing Models are Derived from the Real World Weapons, can we build a classifier based on real life weapons that can correctly predict Fantasy Weapons</strong>?</p>
 <p>This post, like the lectures, is not going to be about how this all works but instead is going to be a simple application and retrospective. That being said, let’s start! We’ll start with the important imports for getting this working.</p>
-<div class="cell" data-execution_count="32">
+<div id="cell-4" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> time <span class="im">import</span> sleep</span>
@@ -227,12 +209,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.widgets <span class="im">import</span> <span class="op">*</span> <span class="co"># This is required for the cleaner later.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The first three imports you should hopefully be familiar with. Everything else you should simply grant for now.</p>
-<div class="cell" data-execution_count="3">
+<div id="cell-6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a function from the notebook:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> search_images(term, max_images<span class="op">=</span><span class="dv">200</span>):</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> L(ddg_images(term, max_results<span class="op">=</span>max_images)).itemgot(<span class="st">'image'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="4">
+<div id="cell-7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>urls <span class="op">=</span> search_images(<span class="st">'assult rifle photos'</span>, max_images<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>urls[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -240,18 +222,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>So, we’re going to download an example image using the helper functions so far and make sure its working:</p>
-<div class="cell" data-execution_count="53">
+<div id="cell-9" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dest <span class="op">=</span> Path(<span class="st">'..'</span>, <span class="st">'__data'</span>, <span class="st">'example-ar-gun.png'</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>download_url(urls[<span class="dv">0</span>], dest, show_progress<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> Image.<span class="bu">open</span>(dest)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>im.to_thumb(<span class="dv">256</span>,<span class="dv">256</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="53">
-<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-5-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now let’s check for a DMR and make sure that is sane:</p>
-<div class="cell" data-execution_count="55">
+<div id="cell-11" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dmrUrls <span class="op">=</span> search_images(<span class="st">'dmr photos'</span>, max_images<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>dest <span class="op">=</span> Path(<span class="st">'..'</span>, <span class="st">'__data'</span>, <span class="st">'example-dmr-gun.png'</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>download_url(dmrUrls[<span class="dv">0</span>], dest, show_progress<span class="op">=</span><span class="va">False</span>)</span>
@@ -259,11 +245,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> Image.<span class="bu">open</span>(dest).to_thumb(<span class="dv">256</span>,<span class="dv">256</span>)</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>im</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="55">
-<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-6-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>So, now we need data from the Internet:</p>
-<div class="cell" data-execution_count="11">
+<div id="cell-13" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>searches <span class="op">=</span> <span class="st">'assault rifle'</span>,<span class="st">'dmr'</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> Path(<span class="st">'..'</span>, <span class="st">'__data'</span>, <span class="st">'ar_or_dmr'</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -279,7 +269,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>The below just checks to make sure that the downloaded images are in fact images. And, then we’re iterating though the results to remove what are failed images:</p>
-<div class="cell" data-execution_count="12">
+<div id="cell-15" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>failed <span class="op">=</span> verify_images(get_image_files(path))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>failed.<span class="bu">map</span>(Path.unlink)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(failed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -288,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>We can even check the source code using <code>??</code> and see for ourselves that is what it is doing:</p>
-<div class="cell" data-execution_count="57">
+<div id="cell-17" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>??verify_images</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Signature: verify_images(fns)
@@ -307,7 +297,7 @@ Type:      function</code></pre>
 </div>
 </div>
 <p>DataBlocks are are really good idea which is a lazy wrapper that defines how and what to do with the downloaded images in preparation for use in a model. There is more information at the docs page <a href="https://docs.fast.ai/data.block.html">here</a> where you can check out other ways to use this. For now, we’re following Jeremy’s example and just mostly running the code as is.</p>
-<div class="cell" data-execution_count="16">
+<div id="cell-19" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> DataBlock(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    blocks<span class="op">=</span>(ImageBlock, CategoryBlock), </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    get_items<span class="op">=</span>get_image_files, </span>
@@ -318,11 +308,15 @@ Type:      function</code></pre>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>dls.show_batch(max_n<span class="op">=</span><span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Looking over some of htese images, we can already tell that we’re getting images that are not what we’re after. The second image in the top row is some kind radio which is not what we want. Regardless, we’re again going to simply train the model even with that image in there since we’re following Jeremy’s advice and just going to train the model and we’ll deal with the strange Radio later.</p>
-<div class="cell" data-execution_count="17">
+<div id="cell-21" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet18, metrics<span class="op">=</span>error_rate)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -341,26 +335,25 @@ Type:      function</code></pre>
 </style>
 </div>
 <div class="cell-output cell-output-display">
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th>epoch</th>
-      <th>train_loss</th>
-      <th>valid_loss</th>
-      <th>error_rate</th>
-      <th>time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>1.135293</td>
-      <td>1.895362</td>
-      <td>0.333333</td>
-      <td>00:01</td>
-    </tr>
-  </tbody>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">error_rate</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1.135293</td>
+<td>1.895362</td>
+<td>0.333333</td>
+<td>00:01</td>
+</tr>
+</tbody>
 </table>
 </div>
 <div class="cell-output cell-output-display">
@@ -379,73 +372,72 @@ Type:      function</code></pre>
 </style>
 </div>
 <div class="cell-output cell-output-display">
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th>epoch</th>
-      <th>train_loss</th>
-      <th>valid_loss</th>
-      <th>error_rate</th>
-      <th>time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0.783494</td>
-      <td>1.115906</td>
-      <td>0.250000</td>
-      <td>00:01</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0.578771</td>
-      <td>0.935797</td>
-      <td>0.222222</td>
-      <td>00:01</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>0.455172</td>
-      <td>0.774320</td>
-      <td>0.263889</td>
-      <td>00:01</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>0.365537</td>
-      <td>0.762151</td>
-      <td>0.263889</td>
-      <td>00:01</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>0.311685</td>
-      <td>0.737330</td>
-      <td>0.277778</td>
-      <td>00:01</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>0.263628</td>
-      <td>0.734078</td>
-      <td>0.277778</td>
-      <td>00:01</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>0.224883</td>
-      <td>0.718644</td>
-      <td>0.291667</td>
-      <td>00:01</td>
-    </tr>
-  </tbody>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">error_rate</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.783494</td>
+<td>1.115906</td>
+<td>0.250000</td>
+<td>00:01</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.578771</td>
+<td>0.935797</td>
+<td>0.222222</td>
+<td>00:01</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.455172</td>
+<td>0.774320</td>
+<td>0.263889</td>
+<td>00:01</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.365537</td>
+<td>0.762151</td>
+<td>0.263889</td>
+<td>00:01</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.311685</td>
+<td>0.737330</td>
+<td>0.277778</td>
+<td>00:01</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.263628</td>
+<td>0.734078</td>
+<td>0.277778</td>
+<td>00:01</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.224883</td>
+<td>0.718644</td>
+<td>0.291667</td>
+<td>00:01</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
 <p>So, this is what training will look like. The highlights are that training was very fast but - compared to many other models trained, including Jeremy’s - this one is doing pretty terrible for a Deep Learning model. The validation loss is worse than random chance which means there are very serious problems with either out Deep Learning Architecture or the data. And, the architecture is definitely not the problem so it’s the data.</p>
-<div class="cell" data-execution_count="58">
+<div id="cell-23" class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>is_ar,_,probs <span class="op">=</span> learn.predict(PILImage.create(Path(<span class="st">'__data'</span>, <span class="st">'example-dmr-gun.png'</span>)))</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"This is a(n): </span><span class="sc">{</span>is_ar<span class="sc">}</span><span class="ss">."</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probability it's an Assult Rifle: </span><span class="sc">{</span>probs[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -472,16 +464,20 @@ Type:      function</code></pre>
 Probability it's an Assult Rifle: 0.9858</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="59">
+<div id="cell-24" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> Image.<span class="bu">open</span>(Path(<span class="st">'__data'</span>, <span class="st">'example-dmr-gun.png'</span>)).to_thumb(<span class="dv">512</span>,<span class="dv">512</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>im</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
-<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-13-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Big Oof. That’s not an Assault Rifle.</p>
 <p>Time to do some data cleaning. Thankfully, the Fastai library comes with a very useful function which takes the images from the data, checks what their loss is and then presents them to us so that we can remove or re-label them. Make sure you don’t make the same mistake as I did and correct import the widgets: <code>from fastai.vision.widgets import *</code></p>
-<div class="cell" data-execution_count="33">
+<div id="cell-27" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>cleaner <span class="op">=</span> ImageClassifierCleaner(learn)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>cleaner</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -522,17 +518,17 @@ Probability it's an Assult Rifle: 0.9858</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"c88a4d7542ec41fbacfef52f9cc2977d","version_major":2,"version_minor":0}
+{"model_id":"c88a4d7542ec41fbacfef52f9cc2977d","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
 <p>Don’t forget once you’ve actually ran and collected what changes you want made, you’ll need actually run the below code to actually make those corrections:</p>
-<div class="cell" data-execution_count="34">
+<div id="cell-29" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx <span class="kw">in</span> cleaner.delete(): cleaner.fns[idx].unlink()</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx,cat <span class="kw">in</span> cleaner.change(): shutil.move(<span class="bu">str</span>(cleaner.fns[idx]), path<span class="op">/</span>cat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>While trying to train this, I found that I was having issues unless I re-built the Data Loader so that’s what we’re doing here:</p>
-<div class="cell" data-execution_count="96">
+<div id="cell-31" class="cell" data-execution_count="96">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> DataBlock(</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    blocks<span class="op">=</span>(ImageBlock, CategoryBlock), </span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    get_items<span class="op">=</span>get_image_files, </span>
@@ -543,11 +539,15 @@ Probability it's an Assult Rifle: 0.9858</code></pre>
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>dls.show_batch(max_n<span class="op">=</span><span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-16-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Got some weird stuff again. Looks like some bikes as well as some other equipment that I don’t know. That would imply that using dmr is a bad search term for what we’re after. We’ll do one more training attempt to see how much harm those are doing and then we’ll consider correcting the search terms.</p>
-<div class="cell" data-execution_count="97">
+<div id="cell-33" class="cell" data-execution_count="97">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet18, metrics<span class="op">=</span>error_rate)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -566,26 +566,25 @@ Probability it's an Assult Rifle: 0.9858</code></pre>
 </style>
 </div>
 <div class="cell-output cell-output-display">
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th>epoch</th>
-      <th>train_loss</th>
-      <th>valid_loss</th>
-      <th>error_rate</th>
-      <th>time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>1.281920</td>
-      <td>1.533394</td>
-      <td>0.413333</td>
-      <td>00:02</td>
-    </tr>
-  </tbody>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">error_rate</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1.281920</td>
+<td>1.533394</td>
+<td>0.413333</td>
+<td>00:02</td>
+</tr>
+</tbody>
 </table>
 </div>
 <div class="cell-output cell-output-display">
@@ -604,73 +603,72 @@ Probability it's an Assult Rifle: 0.9858</code></pre>
 </style>
 </div>
 <div class="cell-output cell-output-display">
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th>epoch</th>
-      <th>train_loss</th>
-      <th>valid_loss</th>
-      <th>error_rate</th>
-      <th>time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0.869596</td>
-      <td>0.949424</td>
-      <td>0.306667</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0.667905</td>
-      <td>0.852354</td>
-      <td>0.266667</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>0.529514</td>
-      <td>0.767100</td>
-      <td>0.213333</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>0.418889</td>
-      <td>0.783195</td>
-      <td>0.213333</td>
-      <td>00:01</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>0.338373</td>
-      <td>0.754332</td>
-      <td>0.226667</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>0.277043</td>
-      <td>0.730826</td>
-      <td>0.226667</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>0.237752</td>
-      <td>0.718148</td>
-      <td>0.226667</td>
-      <td>00:02</td>
-    </tr>
-  </tbody>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">error_rate</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.869596</td>
+<td>0.949424</td>
+<td>0.306667</td>
+<td>00:02</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.667905</td>
+<td>0.852354</td>
+<td>0.266667</td>
+<td>00:02</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.529514</td>
+<td>0.767100</td>
+<td>0.213333</td>
+<td>00:02</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.418889</td>
+<td>0.783195</td>
+<td>0.213333</td>
+<td>00:01</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.338373</td>
+<td>0.754332</td>
+<td>0.226667</td>
+<td>00:02</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.277043</td>
+<td>0.730826</td>
+<td>0.226667</td>
+<td>00:02</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.237752</td>
+<td>0.718148</td>
+<td>0.226667</td>
+<td>00:02</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
 <p>Looks like our validation loss is still struggling so it’s time to update our search term from <code>dmr</code> to <code>designated marksmen rifle</code>. Speedrun time!</p>
-<div class="cell" data-execution_count="98">
+<div id="cell-35" class="cell" data-execution_count="98">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>searches <span class="op">=</span> <span class="st">'assault rifle'</span>,<span class="st">'designated marksmen rifle'</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> Path(<span class="st">'..'</span>, <span class="st">'__data'</span>, <span class="st">'ar_or_dmr_v2'</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -687,7 +685,7 @@ Probability it's an Assult Rifle: 0.9858</code></pre>
 <pre><code>(#7) [None,None,None,None,None,None,None]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="99">
+<div id="cell-36" class="cell" data-execution_count="99">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> DataBlock(</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    blocks<span class="op">=</span>(ImageBlock, CategoryBlock), </span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    get_items<span class="op">=</span>get_image_files, </span>
@@ -698,10 +696,14 @@ Probability it's an Assult Rifle: 0.9858</code></pre>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>dls.show_batch(max_n<span class="op">=</span><span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-19-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="100">
+</div>
+<div id="cell-37" class="cell" data-execution_count="100">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet18, metrics<span class="op">=</span>error_rate)</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -720,26 +722,25 @@ Probability it's an Assult Rifle: 0.9858</code></pre>
 </style>
 </div>
 <div class="cell-output cell-output-display">
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th>epoch</th>
-      <th>train_loss</th>
-      <th>valid_loss</th>
-      <th>error_rate</th>
-      <th>time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>1.279173</td>
-      <td>0.758920</td>
-      <td>0.247312</td>
-      <td>00:02</td>
-    </tr>
-  </tbody>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">error_rate</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1.279173</td>
+<td>0.758920</td>
+<td>0.247312</td>
+<td>00:02</td>
+</tr>
+</tbody>
 </table>
 </div>
 <div class="cell-output cell-output-display">
@@ -758,72 +759,71 @@ Probability it's an Assult Rifle: 0.9858</code></pre>
 </style>
 </div>
 <div class="cell-output cell-output-display">
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th>epoch</th>
-      <th>train_loss</th>
-      <th>valid_loss</th>
-      <th>error_rate</th>
-      <th>time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0.725494</td>
-      <td>0.552330</td>
-      <td>0.215054</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0.572957</td>
-      <td>0.452633</td>
-      <td>0.161290</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>0.429993</td>
-      <td>0.460270</td>
-      <td>0.172043</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>0.329015</td>
-      <td>0.517723</td>
-      <td>0.215054</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>0.260919</td>
-      <td>0.542659</td>
-      <td>0.215054</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>0.212036</td>
-      <td>0.543762</td>
-      <td>0.204301</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>0.176182</td>
-      <td>0.541302</td>
-      <td>0.215054</td>
-      <td>00:02</td>
-    </tr>
-  </tbody>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">error_rate</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.725494</td>
+<td>0.552330</td>
+<td>0.215054</td>
+<td>00:02</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.572957</td>
+<td>0.452633</td>
+<td>0.161290</td>
+<td>00:02</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.429993</td>
+<td>0.460270</td>
+<td>0.172043</td>
+<td>00:02</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.329015</td>
+<td>0.517723</td>
+<td>0.215054</td>
+<td>00:02</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.260919</td>
+<td>0.542659</td>
+<td>0.215054</td>
+<td>00:02</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.212036</td>
+<td>0.543762</td>
+<td>0.204301</td>
+<td>00:02</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.176182</td>
+<td>0.541302</td>
+<td>0.215054</td>
+<td>00:02</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
-<div class="cell" data-execution_count="102">
+<div id="cell-38" class="cell" data-execution_count="102">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>cleaner <span class="op">=</span> ImageClassifierCleaner(learn)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>cleaner</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -864,17 +864,17 @@ Probability it's an Assult Rifle: 0.9858</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"743f49d475ec4703b4d368f024f2c5a8","version_major":2,"version_minor":0}
+{"model_id":"743f49d475ec4703b4d368f024f2c5a8","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
-<div class="cell" data-execution_count="103">
+<div id="cell-39" class="cell" data-execution_count="103">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx <span class="kw">in</span> cleaner.delete(): cleaner.fns[idx].unlink()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="104">
+<div id="cell-40" class="cell" data-execution_count="104">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx,cat <span class="kw">in</span> cleaner.change(): shutil.move(<span class="bu">str</span>(cleaner.fns[idx]), path<span class="op">/</span>cat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="105">
+<div id="cell-41" class="cell" data-execution_count="105">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> DataBlock(</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    blocks<span class="op">=</span>(ImageBlock, CategoryBlock), </span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    get_items<span class="op">=</span>get_image_files, </span>
@@ -885,10 +885,14 @@ Probability it's an Assult Rifle: 0.9858</code></pre>
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>dls.show_batch(max_n<span class="op">=</span><span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-24-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="106">
+</div>
+<div id="cell-42" class="cell" data-execution_count="106">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet18, metrics<span class="op">=</span>error_rate)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -907,26 +911,25 @@ Probability it's an Assult Rifle: 0.9858</code></pre>
 </style>
 </div>
 <div class="cell-output cell-output-display">
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th>epoch</th>
-      <th>train_loss</th>
-      <th>valid_loss</th>
-      <th>error_rate</th>
-      <th>time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>1.303078</td>
-      <td>1.055721</td>
-      <td>0.304348</td>
-      <td>00:02</td>
-    </tr>
-  </tbody>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">error_rate</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1.303078</td>
+<td>1.055721</td>
+<td>0.304348</td>
+<td>00:02</td>
+</tr>
+</tbody>
 </table>
 </div>
 <div class="cell-output cell-output-display">
@@ -945,72 +948,71 @@ Probability it's an Assult Rifle: 0.9858</code></pre>
 </style>
 </div>
 <div class="cell-output cell-output-display">
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th>epoch</th>
-      <th>train_loss</th>
-      <th>valid_loss</th>
-      <th>error_rate</th>
-      <th>time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0.759311</td>
-      <td>0.487650</td>
-      <td>0.250000</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0.568219</td>
-      <td>0.461627</td>
-      <td>0.184783</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>0.444043</td>
-      <td>0.539364</td>
-      <td>0.163043</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>0.340317</td>
-      <td>0.588352</td>
-      <td>0.141304</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>0.269084</td>
-      <td>0.642941</td>
-      <td>0.152174</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>0.217371</td>
-      <td>0.619099</td>
-      <td>0.152174</td>
-      <td>00:02</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>0.183307</td>
-      <td>0.610297</td>
-      <td>0.163043</td>
-      <td>00:02</td>
-    </tr>
-  </tbody>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">error_rate</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.759311</td>
+<td>0.487650</td>
+<td>0.250000</td>
+<td>00:02</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.568219</td>
+<td>0.461627</td>
+<td>0.184783</td>
+<td>00:02</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.444043</td>
+<td>0.539364</td>
+<td>0.163043</td>
+<td>00:02</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.340317</td>
+<td>0.588352</td>
+<td>0.141304</td>
+<td>00:02</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.269084</td>
+<td>0.642941</td>
+<td>0.152174</td>
+<td>00:02</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.217371</td>
+<td>0.619099</td>
+<td>0.152174</td>
+<td>00:02</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.183307</td>
+<td>0.610297</td>
+<td>0.163043</td>
+<td>00:02</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
-<div class="cell" data-execution_count="107">
+<div id="cell-43" class="cell" data-execution_count="107">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>is_ar,_,probs <span class="op">=</span> learn.predict(PILImage.create(Path(<span class="st">'..'</span>, <span class="st">'__data'</span>, <span class="st">'example-dmr-gun.png'</span>)))</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"This is a(n): </span><span class="sc">{</span>is_ar<span class="sc">}</span><span class="ss">."</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probability it's an Assult Rifle: </span><span class="sc">{</span>probs[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1038,18 +1040,26 @@ Probability it's an Assult Rifle: 0.0029</code></pre>
 </div>
 </div>
 <p>That is much better than what we were getting. Now for the real test: <strong>Can the model tell the difference between an Assult Rifle and a DMR from the game’s wiki.</strong></p>
-<div class="cell" data-execution_count="108">
+<div id="cell-45" class="cell" data-execution_count="108">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> image <span class="kw">in</span> [PILImage.create(Path(<span class="st">'..'</span>, <span class="st">'__data'</span>, <span class="st">'cycle-dmr-gun.png'</span>)), PILImage.create(Path(<span class="st">'..'</span>, <span class="st">'__data'</span>, <span class="st">'cycle-ar-gun.png'</span>))]:</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    plt.figure()</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    plt.imshow(image)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-27-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-27-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-27-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2022-09-08-Reviewing-Fastai-2022-Coursework-TheBeginning_files/figure-html/cell-27-output-2.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="109">
+</div>
+<div id="cell-46" class="cell" data-execution_count="109">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>is_ar,_,probs <span class="op">=</span> learn.predict(PILImage.create(Path(<span class="st">'..'</span>, <span class="st">'__data'</span>, <span class="st">'cycle-dmr-gun.png'</span>)))</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"This is a(n): </span><span class="sc">{</span>is_ar<span class="sc">}</span><span class="ss">."</span>)</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probability it's an Assult Rifle: </span><span class="sc">{</span>probs[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1076,7 +1086,7 @@ Probability it's an Assult Rifle: 0.0029</code></pre>
 Probability it's an Assult Rifle: 0.9968</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="110">
+<div id="cell-47" class="cell" data-execution_count="110">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>is_ar,_,probs <span class="op">=</span> learn.predict(PILImage.create(Path(<span class="st">'..'</span>, <span class="st">'__data'</span>, <span class="st">'cycle-ar-gun.png'</span>)))</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"This is a(n): </span><span class="sc">{</span>is_ar<span class="sc">}</span><span class="ss">."</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probability it's an Assult Rifle: </span><span class="sc">{</span>probs[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1141,9 +1151,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1179,10 +1203,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1192,8 +1215,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1208,6 +1240,238 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1248,6 +1512,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

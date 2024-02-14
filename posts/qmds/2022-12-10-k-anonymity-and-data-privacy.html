@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,11 +19,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,43 +49,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -111,7 +82,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -120,8 +97,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
@@ -135,27 +114,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Orgulo.us</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Shoklan"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -203,6 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
 <section id="what-is-k-anonymity" class="level1">
 <h1>What is K-Anonymity?</h1>
 <p>Data Privacy is a problem which users and institutions are starting to care more about. Neither users nor companies want to reveal or be liable for some of the data and conclusions that arise from the data collected. One such popular method of trying to mitigate the problem of de-anonymizing individuals in data is <strong>K-Anonymity</strong>.</p>
@@ -214,136 +196,137 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>rawData <span class="op">=</span> site[<span class="dv">0</span>]</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>rawData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Height</th>
-      <th>Weight</th>
-      <th>State of domicile</th>
-      <th>Religion</th>
-      <th>Disease</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Ramsha</td>
-      <td>30</td>
-      <td>Female</td>
-      <td>165cm</td>
-      <td>72kg</td>
-      <td>Tamil Nadu</td>
-      <td>Hindu</td>
-      <td>Cancer</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Yadu</td>
-      <td>24</td>
-      <td>Female</td>
-      <td>162cm</td>
-      <td>70kg</td>
-      <td>Kerala</td>
-      <td>Hindu</td>
-      <td>Viral infection</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Salima</td>
-      <td>28</td>
-      <td>Female</td>
-      <td>170cm</td>
-      <td>68kg</td>
-      <td>Tamil Nadu</td>
-      <td>Muslim</td>
-      <td>Tuberculosis</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Sunny</td>
-      <td>27</td>
-      <td>Male</td>
-      <td>170cm</td>
-      <td>75kg</td>
-      <td>Karnataka</td>
-      <td>Parsi</td>
-      <td>No illness</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Joan</td>
-      <td>24</td>
-      <td>Female</td>
-      <td>165cm</td>
-      <td>71kg</td>
-      <td>Kerala</td>
-      <td>Christian</td>
-      <td>Heart-related</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Bahuksana</td>
-      <td>23</td>
-      <td>Male</td>
-      <td>160cm</td>
-      <td>69kg</td>
-      <td>Karnataka</td>
-      <td>Buddhist</td>
-      <td>Tuberculosis</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Rambha</td>
-      <td>19</td>
-      <td>Male</td>
-      <td>167cm</td>
-      <td>85kg</td>
-      <td>Kerala</td>
-      <td>Hindu</td>
-      <td>Cancer</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Kishor</td>
-      <td>29</td>
-      <td>Male</td>
-      <td>180cm</td>
-      <td>81kg</td>
-      <td>Karnataka</td>
-      <td>Hindu</td>
-      <td>Heart-related</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Johnson</td>
-      <td>17</td>
-      <td>Male</td>
-      <td>175cm</td>
-      <td>79kg</td>
-      <td>Kerala</td>
-      <td>Christian</td>
-      <td>Heart-related</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>John</td>
-      <td>19</td>
-      <td>Male</td>
-      <td>169cm</td>
-      <td>82kg</td>
-      <td>Kerala</td>
-      <td>Christian</td>
-      <td>Viral infection</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Gender</th>
+<th data-quarto-table-cell-role="th">Height</th>
+<th data-quarto-table-cell-role="th">Weight</th>
+<th data-quarto-table-cell-role="th">State of domicile</th>
+<th data-quarto-table-cell-role="th">Religion</th>
+<th data-quarto-table-cell-role="th">Disease</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Ramsha</td>
+<td>30</td>
+<td>Female</td>
+<td>165cm</td>
+<td>72kg</td>
+<td>Tamil Nadu</td>
+<td>Hindu</td>
+<td>Cancer</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Yadu</td>
+<td>24</td>
+<td>Female</td>
+<td>162cm</td>
+<td>70kg</td>
+<td>Kerala</td>
+<td>Hindu</td>
+<td>Viral infection</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Salima</td>
+<td>28</td>
+<td>Female</td>
+<td>170cm</td>
+<td>68kg</td>
+<td>Tamil Nadu</td>
+<td>Muslim</td>
+<td>Tuberculosis</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Sunny</td>
+<td>27</td>
+<td>Male</td>
+<td>170cm</td>
+<td>75kg</td>
+<td>Karnataka</td>
+<td>Parsi</td>
+<td>No illness</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Joan</td>
+<td>24</td>
+<td>Female</td>
+<td>165cm</td>
+<td>71kg</td>
+<td>Kerala</td>
+<td>Christian</td>
+<td>Heart-related</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Bahuksana</td>
+<td>23</td>
+<td>Male</td>
+<td>160cm</td>
+<td>69kg</td>
+<td>Karnataka</td>
+<td>Buddhist</td>
+<td>Tuberculosis</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Rambha</td>
+<td>19</td>
+<td>Male</td>
+<td>167cm</td>
+<td>85kg</td>
+<td>Kerala</td>
+<td>Hindu</td>
+<td>Cancer</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>Kishor</td>
+<td>29</td>
+<td>Male</td>
+<td>180cm</td>
+<td>81kg</td>
+<td>Karnataka</td>
+<td>Hindu</td>
+<td>Heart-related</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>Johnson</td>
+<td>17</td>
+<td>Male</td>
+<td>175cm</td>
+<td>79kg</td>
+<td>Kerala</td>
+<td>Christian</td>
+<td>Heart-related</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>John</td>
+<td>19</td>
+<td>Male</td>
+<td>169cm</td>
+<td>82kg</td>
+<td>Kerala</td>
+<td>Christian</td>
+<td>Viral infection</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -352,136 +335,137 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rawData[<span class="st">'Name'</span>] <span class="op">=</span> <span class="st">'*'</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rawData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Height</th>
-      <th>Weight</th>
-      <th>State of domicile</th>
-      <th>Religion</th>
-      <th>Disease</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>*</td>
-      <td>30</td>
-      <td>Female</td>
-      <td>165cm</td>
-      <td>72kg</td>
-      <td>Tamil Nadu</td>
-      <td>Hindu</td>
-      <td>Cancer</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>*</td>
-      <td>24</td>
-      <td>Female</td>
-      <td>162cm</td>
-      <td>70kg</td>
-      <td>Kerala</td>
-      <td>Hindu</td>
-      <td>Viral infection</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>*</td>
-      <td>28</td>
-      <td>Female</td>
-      <td>170cm</td>
-      <td>68kg</td>
-      <td>Tamil Nadu</td>
-      <td>Muslim</td>
-      <td>Tuberculosis</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>*</td>
-      <td>27</td>
-      <td>Male</td>
-      <td>170cm</td>
-      <td>75kg</td>
-      <td>Karnataka</td>
-      <td>Parsi</td>
-      <td>No illness</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>*</td>
-      <td>24</td>
-      <td>Female</td>
-      <td>165cm</td>
-      <td>71kg</td>
-      <td>Kerala</td>
-      <td>Christian</td>
-      <td>Heart-related</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>*</td>
-      <td>23</td>
-      <td>Male</td>
-      <td>160cm</td>
-      <td>69kg</td>
-      <td>Karnataka</td>
-      <td>Buddhist</td>
-      <td>Tuberculosis</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>*</td>
-      <td>19</td>
-      <td>Male</td>
-      <td>167cm</td>
-      <td>85kg</td>
-      <td>Kerala</td>
-      <td>Hindu</td>
-      <td>Cancer</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>*</td>
-      <td>29</td>
-      <td>Male</td>
-      <td>180cm</td>
-      <td>81kg</td>
-      <td>Karnataka</td>
-      <td>Hindu</td>
-      <td>Heart-related</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>*</td>
-      <td>17</td>
-      <td>Male</td>
-      <td>175cm</td>
-      <td>79kg</td>
-      <td>Kerala</td>
-      <td>Christian</td>
-      <td>Heart-related</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>*</td>
-      <td>19</td>
-      <td>Male</td>
-      <td>169cm</td>
-      <td>82kg</td>
-      <td>Kerala</td>
-      <td>Christian</td>
-      <td>Viral infection</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Gender</th>
+<th data-quarto-table-cell-role="th">Height</th>
+<th data-quarto-table-cell-role="th">Weight</th>
+<th data-quarto-table-cell-role="th">State of domicile</th>
+<th data-quarto-table-cell-role="th">Religion</th>
+<th data-quarto-table-cell-role="th">Disease</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>*</td>
+<td>30</td>
+<td>Female</td>
+<td>165cm</td>
+<td>72kg</td>
+<td>Tamil Nadu</td>
+<td>Hindu</td>
+<td>Cancer</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>*</td>
+<td>24</td>
+<td>Female</td>
+<td>162cm</td>
+<td>70kg</td>
+<td>Kerala</td>
+<td>Hindu</td>
+<td>Viral infection</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>*</td>
+<td>28</td>
+<td>Female</td>
+<td>170cm</td>
+<td>68kg</td>
+<td>Tamil Nadu</td>
+<td>Muslim</td>
+<td>Tuberculosis</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>*</td>
+<td>27</td>
+<td>Male</td>
+<td>170cm</td>
+<td>75kg</td>
+<td>Karnataka</td>
+<td>Parsi</td>
+<td>No illness</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>*</td>
+<td>24</td>
+<td>Female</td>
+<td>165cm</td>
+<td>71kg</td>
+<td>Kerala</td>
+<td>Christian</td>
+<td>Heart-related</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>*</td>
+<td>23</td>
+<td>Male</td>
+<td>160cm</td>
+<td>69kg</td>
+<td>Karnataka</td>
+<td>Buddhist</td>
+<td>Tuberculosis</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>*</td>
+<td>19</td>
+<td>Male</td>
+<td>167cm</td>
+<td>85kg</td>
+<td>Kerala</td>
+<td>Hindu</td>
+<td>Cancer</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>*</td>
+<td>29</td>
+<td>Male</td>
+<td>180cm</td>
+<td>81kg</td>
+<td>Karnataka</td>
+<td>Hindu</td>
+<td>Heart-related</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>*</td>
+<td>17</td>
+<td>Male</td>
+<td>175cm</td>
+<td>79kg</td>
+<td>Kerala</td>
+<td>Christian</td>
+<td>Heart-related</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>*</td>
+<td>19</td>
+<td>Male</td>
+<td>169cm</td>
+<td>82kg</td>
+<td>Kerala</td>
+<td>Christian</td>
+<td>Viral infection</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -489,81 +473,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rawData.groupby([<span class="st">'Age'</span>,<span class="st">'Religion'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Age</th>
-      <th>Religion</th>
-      <th>Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>17</td>
-      <td>Christian</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>19</td>
-      <td>Christian</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>19</td>
-      <td>Hindu</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>23</td>
-      <td>Buddhist</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>24</td>
-      <td>Christian</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>24</td>
-      <td>Hindu</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>27</td>
-      <td>Parsi</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>28</td>
-      <td>Muslim</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>29</td>
-      <td>Hindu</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>30</td>
-      <td>Hindu</td>
-      <td>1</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Religion</th>
+<th data-quarto-table-cell-role="th">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>17</td>
+<td>Christian</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>19</td>
+<td>Christian</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>19</td>
+<td>Hindu</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>23</td>
+<td>Buddhist</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>24</td>
+<td>Christian</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>24</td>
+<td>Hindu</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>27</td>
+<td>Parsi</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>28</td>
+<td>Muslim</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>29</td>
+<td>Hindu</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>30</td>
+<td>Hindu</td>
+<td>1</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -573,40 +558,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>rawData[<span class="st">'AgeGroup'</span>] <span class="op">=</span> pd.cut(rawData[<span class="st">'Age'</span>], bins<span class="op">=</span><span class="bu">int</span>(rawData[<span class="st">'Age'</span>].std()))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>rawData.groupby([<span class="st">'AgeGroup'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>AgeGroup</th>
-      <th>Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>(16.987, 20.25]</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>(20.25, 23.5]</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>(23.5, 26.75]</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>(26.75, 30.0]</td>
-      <td>4</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">AgeGroup</th>
+<th data-quarto-table-cell-role="th">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>(16.987, 20.25]</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>(20.25, 23.5]</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>(23.5, 26.75]</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>(26.75, 30.0]</td>
+<td>4</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -615,35 +601,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rawData[<span class="st">'AgeGroup'</span>] <span class="op">=</span> pd.cut(rawData[<span class="st">'Age'</span>], bins<span class="op">=</span><span class="bu">int</span>(rawData[<span class="st">'Age'</span>].std())<span class="op">-</span><span class="dv">1</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rawData.groupby([<span class="st">'AgeGroup'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>AgeGroup</th>
-      <th>Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>(16.987, 21.333]</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>(21.333, 25.667]</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>(25.667, 30.0]</td>
-      <td>4</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">AgeGroup</th>
+<th data-quarto-table-cell-role="th">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>(16.987, 21.333]</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>(21.333, 25.667]</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>(25.667, 30.0]</td>
+<td>4</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -777,93 +764,94 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>filteredData <span class="op">=</span> rawData.loc[ <span class="op">~</span>rawData.Disease.<span class="bu">str</span>.contains(<span class="st">'illness'</span>)].copy()</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>filteredData.groupby([<span class="st">'AgeGroup'</span>, <span class="st">'Disease'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>AgeGroup</th>
-      <th>Disease</th>
-      <th>Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>(16.987, 21.333]</td>
-      <td>Cancer</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>(16.987, 21.333]</td>
-      <td>Heart-related</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>(16.987, 21.333]</td>
-      <td>Tuberculosis</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>(16.987, 21.333]</td>
-      <td>Viral infection</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>(21.333, 25.667]</td>
-      <td>Cancer</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>(21.333, 25.667]</td>
-      <td>Heart-related</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>(21.333, 25.667]</td>
-      <td>Tuberculosis</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>(21.333, 25.667]</td>
-      <td>Viral infection</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>(25.667, 30.0]</td>
-      <td>Cancer</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>(25.667, 30.0]</td>
-      <td>Heart-related</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>(25.667, 30.0]</td>
-      <td>Tuberculosis</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>(25.667, 30.0]</td>
-      <td>Viral infection</td>
-      <td>0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">AgeGroup</th>
+<th data-quarto-table-cell-role="th">Disease</th>
+<th data-quarto-table-cell-role="th">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>(16.987, 21.333]</td>
+<td>Cancer</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>(16.987, 21.333]</td>
+<td>Heart-related</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>(16.987, 21.333]</td>
+<td>Tuberculosis</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>(16.987, 21.333]</td>
+<td>Viral infection</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>(21.333, 25.667]</td>
+<td>Cancer</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>(21.333, 25.667]</td>
+<td>Heart-related</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>(21.333, 25.667]</td>
+<td>Tuberculosis</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>(21.333, 25.667]</td>
+<td>Viral infection</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>(25.667, 30.0]</td>
+<td>Cancer</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>(25.667, 30.0]</td>
+<td>Heart-related</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>(25.667, 30.0]</td>
+<td>Tuberculosis</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>(25.667, 30.0]</td>
+<td>Viral infection</td>
+<td>0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -879,57 +867,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>filteredData[<span class="st">'heirarchy'</span>] <span class="op">=</span> filteredData[<span class="st">'Disease'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: heirarchy[x] <span class="cf">if</span> heirarchy.get(x) <span class="cf">else</span> x)</span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>filteredData.groupby([<span class="st">'AgeGroup'</span>,<span class="st">'heirarchy'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>AgeGroup</th>
-      <th>heirarchy</th>
-      <th>count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>(16.987, 21.333]</td>
-      <td>Body</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>(16.987, 21.333]</td>
-      <td>Chest</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>(21.333, 25.667]</td>
-      <td>Body</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>(21.333, 25.667]</td>
-      <td>Chest</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>(25.667, 30.0]</td>
-      <td>Body</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>(25.667, 30.0]</td>
-      <td>Chest</td>
-      <td>2</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">AgeGroup</th>
+<th data-quarto-table-cell-role="th">heirarchy</th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>(16.987, 21.333]</td>
+<td>Body</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>(16.987, 21.333]</td>
+<td>Chest</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>(21.333, 25.667]</td>
+<td>Body</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>(21.333, 25.667]</td>
+<td>Chest</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>(25.667, 30.0]</td>
+<td>Body</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>(25.667, 30.0]</td>
+<td>Chest</td>
+<td>2</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -938,30 +927,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>filteredData[<span class="st">'AgeGroup'</span>] <span class="op">=</span> pd.cut(rawData[<span class="st">'Age'</span>], bins<span class="op">=</span><span class="bu">int</span>(rawData[<span class="st">'Age'</span>].std())<span class="op">-</span><span class="dv">2</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>filteredData.groupby([<span class="st">'AgeGroup'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>AgeGroup</th>
-      <th>Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>(16.987, 23.5]</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>(23.5, 30.0]</td>
-      <td>5</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">AgeGroup</th>
+<th data-quarto-table-cell-role="th">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>(16.987, 23.5]</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>(23.5, 30.0]</td>
+<td>5</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -998,9 +988,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1036,10 +1040,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1049,8 +1052,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1065,6 +1077,238 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1105,6 +1349,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

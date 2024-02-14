@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,11 +19,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,47 +49,17 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -111,7 +82,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -120,12 +97,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -135,27 +114,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Orgulo.us</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Shoklan"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -227,11 +208,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
 <section id="polars-vs-pandas-a-brief-overview-of-common-functionality" class="level1">
 <h1>Polars Vs Pandas: A Brief Overview of Common Functionality</h1>
 <p>There has been a growing amount of buzz around a new Python Data Frame Library called <a href="https://pola-rs.github.io/polars/"><strong>Polars</strong></a>. This library is a Data Frame Library for two languages: Python and Rust. The library is primarily written in Rust but has Python bindings and you can tell as you read through the documentation’s examples. They do also outright admit this on the front page of the site. The biggest boast from the library is how much faster it is and how performant it is with respect to memory usage. This is excellent for us Python Programmers since these are known weaknesses for Python; at least when pure Python is referenced.</p>
 <p>In today’s post, I’m going to compare using these two libraries against one another for common tasks in Data Analytics.So, let’s jump right in!</p>
-<div class="cell" data-execution_count="1">
+<div id="cell-2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl <span class="co"># proper nomenclature for importing polars</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -239,7 +221,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="methods-to-create-data-frames" class="level2">
 <h2 class="anchored" data-anchor-id="methods-to-create-data-frames">Methods To Create Data Frames</h2>
 <p>The first most common operation is simply making a data frame. Surprisingly often, when working on projects one will have to convert external data into a frame for processing. Whether this is from files on your own filesystem or getting scraped web data into a usable state. We’ll generate some random data using a novel approach to data generation from <a href="https://realpython.com/polars-python/">Real Python’s Example Post</a>. This uses an improved Random Number Generator built into the numpy library; thanks for showing this off Real Python! Anyways, here is their example <em>but</em> for a lot more rows of data:</p>
-<div class="cell" data-execution_count="2">
+<div id="cell-4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rowSize <span class="op">=</span> <span class="dv">5000000</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">7</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -250,16 +232,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a> }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Both libraries have the default interface to create a data frame from a dictionary in Python:</p>
-<div class="cell" data-execution_count="3">
+<div id="cell-6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>polarBuildings <span class="op">=</span> pl.DataFrame(randomdata)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pandaBuildings <span class="op">=</span> pd.DataFrame(randomdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There are some real differences however in the function definitions between <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">pandas</a> and <a href="https://pola-rs.github.io/polars/py-polars/html/reference/dataframe/index.html#dataframe">Polars</a>. If you are careful about reading these pages then you likely will notice Polars refers to a <strong>schema</strong>. With Polars, you can elaborate what data types you expect all the columns to be instead of letting the library infer them. This is quite useful if you have pre-cleaned data or expect data structured in a specific way. Pandas does not include this ability and you will have to convert and clean up the columns after the import takes place.</p>
 <p>If we take a look at these data frames, we can already see a marked difference in presentation:</p>
-<div class="cell" data-execution_count="4">
+<div id="cell-8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>polarBuildings.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -267,57 +248,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (5, 3)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>sqft</th><th>year</th><th>building_type</th></tr><tr><td>f64</td><td>i64</td><td>str</td></tr></thead><tbody><tr><td>707.529256</td><td>1975</td><td>"Z"</td></tr><tr><td>1025.203348</td><td>2011</td><td>"X"</td></tr><tr><td>568.548657</td><td>1970</td><td>"X"</td></tr><tr><td>895.109864</td><td>1999</td><td>"Y"</td></tr><tr><td>206.532754</td><td>2011</td><td>"Y"</td></tr></tbody></table></div>
+<small>shape: (5, 3)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">building_type</th>
+</tr>
+<tr class="odd">
+<th>f64</th>
+<th>i64</th>
+<th>str</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>707.529256</td>
+<td>1975</td>
+<td>"Z"</td>
+</tr>
+<tr class="even">
+<td>1025.203348</td>
+<td>2011</td>
+<td>"X"</td>
+</tr>
+<tr class="odd">
+<td>568.548657</td>
+<td>1970</td>
+<td>"X"</td>
+</tr>
+<tr class="even">
+<td>895.109864</td>
+<td>1999</td>
+<td>"Y"</td>
+</tr>
+<tr class="odd">
+<td>206.532754</td>
+<td>2011</td>
+<td>"Y"</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="cell" data-execution_count="5">
+</div>
+<div id="cell-9" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pandaBuildings.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>sqft</th>
-      <th>year</th>
-      <th>building_type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>707.529256</td>
-      <td>1975</td>
-      <td>Z</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1025.203348</td>
-      <td>2011</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>568.548657</td>
-      <td>1970</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>895.109864</td>
-      <td>1999</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>206.532754</td>
-      <td>2011</td>
-      <td>Y</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">building_type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>707.529256</td>
+<td>1975</td>
+<td>Z</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1025.203348</td>
+<td>2011</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>568.548657</td>
+<td>1970</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>895.109864</td>
+<td>1999</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>206.532754</td>
+<td>2011</td>
+<td>Y</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -325,17 +349,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="reading-in-data-from-files" class="level3">
 <h3 class="anchored" data-anchor-id="reading-in-data-from-files">Reading in Data from Files</h3>
 <p>Both Polars and Pandas has the ability to read multiple formats across the data landscape: CSV, Arrow, JSON, etc. They both have matching function calls for this as you would expect:</p>
-<div class="cell" data-execution_count="6">
+<div id="cell-11" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Some Data I Know has problems:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://media.githubusercontent.com/media/Shoklan/public-projects/main/Data/Kaggle/AllThrillerSeriesList.csv'</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>dfl <span class="op">=</span> pl.read_csv(url)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>dfd <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="7">
+<div id="cell-12" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dfl.head(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -343,117 +366,224 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (7, 9)</small><table class="dataframe table table-sm table-striped"><thead><tr><th></th><th>Name</th><th>Year</th><th>Tv Certificate</th><th>Duration per episode</th><th>Genre</th><th>Ratings</th><th>Actor/Actress</th><th>Votes</th></tr><tr><td>i64</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>f64</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>0</td><td>"Andor"</td><td>"2022– "</td><td>"TV-14 "</td><td>" 40 min "</td><td>" Action, Adven…</td><td>8.4</td><td>" Diego Luna, K…</td><td>" 82,474"</td></tr><tr><td>1</td><td>"The Peripheral…</td><td>"2022– "</td><td>"TV-MA "</td><td>null</td><td>" Drama, Myster…</td><td>8.0</td><td>" Chloë Grace M…</td><td>" 34,768"</td></tr><tr><td>2</td><td>"The Walking De…</td><td>"2010–2022"</td><td>"TV-MA "</td><td>" 44 min "</td><td>" Drama, Horror…</td><td>8.1</td><td>" Andrew Lincol…</td><td>" 988,666"</td></tr><tr><td>3</td><td>"Criminal Minds…</td><td>"2005– "</td><td>"TV-14 "</td><td>" 42 min "</td><td>" Crime, Drama,…</td><td>8.1</td><td>" Kirsten Vangs…</td><td>" 198,262"</td></tr><tr><td>4</td><td>"Breaking Bad"</td><td>"2008–2013"</td><td>"TV-MA "</td><td>" 49 min "</td><td>" Crime, Drama,…</td><td>9.5</td><td>" Bryan Cransto…</td><td>" 1,872,005"</td></tr><tr><td>5</td><td>"Dark"</td><td>"2017–2020"</td><td>"TV-MA "</td><td>" 60 min "</td><td>" Crime, Drama,…</td><td>8.7</td><td>" Louis Hofmann…</td><td>" 384,702"</td></tr><tr><td>6</td><td>"Manifest"</td><td>"2018– "</td><td>"TV-14 "</td><td>" 43 min "</td><td>" Drama, Myster…</td><td>7.1</td><td>" Melissa Roxbu…</td><td>" 66,158"</td></tr></tbody></table></div>
+<small>shape: (7, 9)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Tv Certificate</th>
+<th data-quarto-table-cell-role="th">Duration per episode</th>
+<th data-quarto-table-cell-role="th">Genre</th>
+<th data-quarto-table-cell-role="th">Ratings</th>
+<th data-quarto-table-cell-role="th">Actor/Actress</th>
+<th data-quarto-table-cell-role="th">Votes</th>
+</tr>
+<tr class="odd">
+<th>i64</th>
+<th>str</th>
+<th>str</th>
+<th>str</th>
+<th>str</th>
+<th>str</th>
+<th>f64</th>
+<th>str</th>
+<th>str</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>"Andor"</td>
+<td>"2022– "</td>
+<td>"TV-14 "</td>
+<td>" 40 min "</td>
+<td>" Action, Adven…</td>
+<td>8.4</td>
+<td>" Diego Luna, K…</td>
+<td>" 82,474"</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>"The Peripheral…</td>
+<td>"2022– "</td>
+<td>"TV-MA "</td>
+<td>null</td>
+<td>" Drama, Myster…</td>
+<td>8.0</td>
+<td>" Chloë Grace M…</td>
+<td>" 34,768"</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>"The Walking De…</td>
+<td>"2010–2022"</td>
+<td>"TV-MA "</td>
+<td>" 44 min "</td>
+<td>" Drama, Horror…</td>
+<td>8.1</td>
+<td>" Andrew Lincol…</td>
+<td>" 988,666"</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>"Criminal Minds…</td>
+<td>"2005– "</td>
+<td>"TV-14 "</td>
+<td>" 42 min "</td>
+<td>" Crime, Drama,…</td>
+<td>8.1</td>
+<td>" Kirsten Vangs…</td>
+<td>" 198,262"</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>"Breaking Bad"</td>
+<td>"2008–2013"</td>
+<td>"TV-MA "</td>
+<td>" 49 min "</td>
+<td>" Crime, Drama,…</td>
+<td>9.5</td>
+<td>" Bryan Cransto…</td>
+<td>" 1,872,005"</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>"Dark"</td>
+<td>"2017–2020"</td>
+<td>"TV-MA "</td>
+<td>" 60 min "</td>
+<td>" Crime, Drama,…</td>
+<td>8.7</td>
+<td>" Louis Hofmann…</td>
+<td>" 384,702"</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>"Manifest"</td>
+<td>"2018– "</td>
+<td>"TV-14 "</td>
+<td>" 43 min "</td>
+<td>" Drama, Myster…</td>
+<td>7.1</td>
+<td>" Melissa Roxbu…</td>
+<td>" 66,158"</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="cell" data-execution_count="8">
+</div>
+<div id="cell-13" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dfd.head(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Unnamed: 0</th>
-      <th>Name</th>
-      <th>Year</th>
-      <th>Tv Certificate</th>
-      <th>Duration per episode</th>
-      <th>Genre</th>
-      <th>Ratings</th>
-      <th>Actor/Actress</th>
-      <th>Votes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>Andor</td>
-      <td>2022–</td>
-      <td>TV-14</td>
-      <td>40 min</td>
-      <td>Action, Adventure, Drama</td>
-      <td>8.4</td>
-      <td>Diego Luna, Kyle Soller, Stellan Skarsgård, G...</td>
-      <td>82,474</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>The Peripheral</td>
-      <td>2022–</td>
-      <td>TV-MA</td>
-      <td>NaN</td>
-      <td>Drama, Mystery, Sci-Fi</td>
-      <td>8.0</td>
-      <td>Chloë Grace Moretz, Gary Carr, Jack Reynor, J...</td>
-      <td>34,768</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>The Walking Dead</td>
-      <td>2010–2022</td>
-      <td>TV-MA</td>
-      <td>44 min</td>
-      <td>Drama, Horror, Thriller</td>
-      <td>8.1</td>
-      <td>Andrew Lincoln, Norman Reedus, Melissa McBrid...</td>
-      <td>988,666</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>Criminal Minds</td>
-      <td>2005–</td>
-      <td>TV-14</td>
-      <td>42 min</td>
-      <td>Crime, Drama, Mystery</td>
-      <td>8.1</td>
-      <td>Kirsten Vangsness, Matthew Gray Gubler, A.J. ...</td>
-      <td>198,262</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>Breaking Bad</td>
-      <td>2008–2013</td>
-      <td>TV-MA</td>
-      <td>49 min</td>
-      <td>Crime, Drama, Thriller</td>
-      <td>9.5</td>
-      <td>Bryan Cranston, Aaron Paul, Anna Gunn, Betsy ...</td>
-      <td>1,872,005</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>5</td>
-      <td>Dark</td>
-      <td>2017–2020</td>
-      <td>TV-MA</td>
-      <td>60 min</td>
-      <td>Crime, Drama, Mystery</td>
-      <td>8.7</td>
-      <td>Louis Hofmann, Karoline Eichhorn, Lisa Vicari...</td>
-      <td>384,702</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>6</td>
-      <td>Manifest</td>
-      <td>2018–</td>
-      <td>TV-14</td>
-      <td>43 min</td>
-      <td>Drama, Mystery, Sci-Fi</td>
-      <td>7.1</td>
-      <td>Melissa Roxburgh, Josh Dallas, J.R. Ramirez, ...</td>
-      <td>66,158</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Tv Certificate</th>
+<th data-quarto-table-cell-role="th">Duration per episode</th>
+<th data-quarto-table-cell-role="th">Genre</th>
+<th data-quarto-table-cell-role="th">Ratings</th>
+<th data-quarto-table-cell-role="th">Actor/Actress</th>
+<th data-quarto-table-cell-role="th">Votes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>Andor</td>
+<td>2022–</td>
+<td>TV-14</td>
+<td>40 min</td>
+<td>Action, Adventure, Drama</td>
+<td>8.4</td>
+<td>Diego Luna, Kyle Soller, Stellan Skarsgård, G...</td>
+<td>82,474</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>The Peripheral</td>
+<td>2022–</td>
+<td>TV-MA</td>
+<td>NaN</td>
+<td>Drama, Mystery, Sci-Fi</td>
+<td>8.0</td>
+<td>Chloë Grace Moretz, Gary Carr, Jack Reynor, J...</td>
+<td>34,768</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2</td>
+<td>The Walking Dead</td>
+<td>2010–2022</td>
+<td>TV-MA</td>
+<td>44 min</td>
+<td>Drama, Horror, Thriller</td>
+<td>8.1</td>
+<td>Andrew Lincoln, Norman Reedus, Melissa McBrid...</td>
+<td>988,666</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>3</td>
+<td>Criminal Minds</td>
+<td>2005–</td>
+<td>TV-14</td>
+<td>42 min</td>
+<td>Crime, Drama, Mystery</td>
+<td>8.1</td>
+<td>Kirsten Vangsness, Matthew Gray Gubler, A.J. ...</td>
+<td>198,262</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>4</td>
+<td>Breaking Bad</td>
+<td>2008–2013</td>
+<td>TV-MA</td>
+<td>49 min</td>
+<td>Crime, Drama, Thriller</td>
+<td>9.5</td>
+<td>Bryan Cranston, Aaron Paul, Anna Gunn, Betsy ...</td>
+<td>1,872,005</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>5</td>
+<td>Dark</td>
+<td>2017–2020</td>
+<td>TV-MA</td>
+<td>60 min</td>
+<td>Crime, Drama, Mystery</td>
+<td>8.7</td>
+<td>Louis Hofmann, Karoline Eichhorn, Lisa Vicari...</td>
+<td>384,702</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>6</td>
+<td>Manifest</td>
+<td>2018–</td>
+<td>TV-14</td>
+<td>43 min</td>
+<td>Drama, Mystery, Sci-Fi</td>
+<td>7.1</td>
+<td>Melissa Roxburgh, Josh Dallas, J.R. Ramirez, ...</td>
+<td>66,158</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -466,10 +596,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="data-frame-summaries" class="level2">
 <h2 class="anchored" data-anchor-id="data-frame-summaries">Data Frame Summaries</h2>
 <p>Once your data is imported, often you will want to do some quick checks making sure the data import worked and the results were sane. Both Polars and Pandas share the <code>.describe()</code> function which gives you summary statistical information about the columns:</p>
-<div class="cell" data-execution_count="9">
+<div id="cell-16" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>polarBuildings.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -477,66 +606,140 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (9, 4)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>describe</th><th>sqft</th><th>year</th><th>building_type</th></tr><tr><td>str</td><td>f64</td><td>f64</td><td>str</td></tr></thead><tbody><tr><td>"count"</td><td>5e6</td><td>5e6</td><td>"5000000"</td></tr><tr><td>"null_count"</td><td>0.0</td><td>0.0</td><td>"0"</td></tr><tr><td>"mean"</td><td>999.647777</td><td>1955.507764</td><td>null</td></tr><tr><td>"std"</td><td>999.390909</td><td>38.687521</td><td>null</td></tr><tr><td>"min"</td><td>0.000078</td><td>1889.0</td><td>"X"</td></tr><tr><td>"25%"</td><td>287.605602</td><td>1922.0</td><td>null</td></tr><tr><td>"50%"</td><td>692.846786</td><td>1956.0</td><td>null</td></tr><tr><td>"75%"</td><td>1386.66725</td><td>1989.0</td><td>null</td></tr><tr><td>"max"</td><td>15701.555622</td><td>2022.0</td><td>"Z"</td></tr></tbody></table></div>
+<small>shape: (9, 4)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">describe</th>
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">building_type</th>
+</tr>
+<tr class="odd">
+<th>str</th>
+<th>f64</th>
+<th>f64</th>
+<th>str</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>"count"</td>
+<td>5e6</td>
+<td>5e6</td>
+<td>"5000000"</td>
+</tr>
+<tr class="even">
+<td>"null_count"</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>"0"</td>
+</tr>
+<tr class="odd">
+<td>"mean"</td>
+<td>999.647777</td>
+<td>1955.507764</td>
+<td>null</td>
+</tr>
+<tr class="even">
+<td>"std"</td>
+<td>999.390909</td>
+<td>38.687521</td>
+<td>null</td>
+</tr>
+<tr class="odd">
+<td>"min"</td>
+<td>0.000078</td>
+<td>1889.0</td>
+<td>"X"</td>
+</tr>
+<tr class="even">
+<td>"25%"</td>
+<td>287.605602</td>
+<td>1922.0</td>
+<td>null</td>
+</tr>
+<tr class="odd">
+<td>"50%"</td>
+<td>692.846786</td>
+<td>1956.0</td>
+<td>null</td>
+</tr>
+<tr class="even">
+<td>"75%"</td>
+<td>1386.66725</td>
+<td>1989.0</td>
+<td>null</td>
+</tr>
+<tr class="odd">
+<td>"max"</td>
+<td>15701.555622</td>
+<td>2022.0</td>
+<td>"Z"</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
+</div>
+<div id="cell-17" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pandaBuildings.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>sqft</th>
-      <th>year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>5.000000e+06</td>
-      <td>5.000000e+06</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>9.996478e+02</td>
-      <td>1.955508e+03</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>9.993909e+02</td>
-      <td>3.868752e+01</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>7.785435e-05</td>
-      <td>1.889000e+03</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>2.876055e+02</td>
-      <td>1.922000e+03</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>6.928466e+02</td>
-      <td>1.956000e+03</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>1.386667e+03</td>
-      <td>1.989000e+03</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>1.570156e+04</td>
-      <td>2.022000e+03</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>5.000000e+06</td>
+<td>5.000000e+06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>9.996478e+02</td>
+<td>1.955508e+03</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>9.993909e+02</td>
+<td>3.868752e+01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>7.785435e-05</td>
+<td>1.889000e+03</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>2.876055e+02</td>
+<td>1.922000e+03</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>6.928466e+02</td>
+<td>1.956000e+03</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>1.386667e+03</td>
+<td>1.989000e+03</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>1.570156e+04</td>
+<td>2.022000e+03</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -545,83 +748,84 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="methods-to-slice-a-data-frame." class="level2">
 <h2 class="anchored" data-anchor-id="methods-to-slice-a-data-frame.">Methods to Slice a Data Frame.</h2>
 <p>Moving past basic information, another common operation is taking slices out of data frames. Pandas has two functions for this: <code>.loc[]</code> and <code>.iloc[]</code> respectively. One is supposed to use numerics while the other is supposed to use labels. Frankly, these are not as clearly defined as they should be. For example, you can use numeric indexes for <code>.iloc[]</code> but also a boolean array per the documentation. The problem here is that both functions allow you to use this boolean array when either one or the other should. And, all forms of slicing the rows is still a number anyways.</p>
-<div class="cell" data-execution_count="14">
+<div id="cell-19" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here is using numbers:</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>pandaBuildings.iloc[<span class="dv">1</span>:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>sqft</th>
-      <th>year</th>
-      <th>building_type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>1025.203348</td>
-      <td>2011</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>568.548657</td>
-      <td>1970</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>895.109864</td>
-      <td>1999</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>206.532754</td>
-      <td>2011</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>3383.637351</td>
-      <td>2007</td>
-      <td>Z</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>9.753627</td>
-      <td>1948</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2809.215763</td>
-      <td>1968</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>575.332756</td>
-      <td>1953</td>
-      <td>Z</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>300.534013</td>
-      <td>1928</td>
-      <td>X</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">building_type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1025.203348</td>
+<td>2011</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>568.548657</td>
+<td>1970</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>895.109864</td>
+<td>1999</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>206.532754</td>
+<td>2011</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5</td>
+<td>3383.637351</td>
+<td>2007</td>
+<td>Z</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>9.753627</td>
+<td>1948</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7</td>
+<td>2809.215763</td>
+<td>1968</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">8</td>
+<td>575.332756</td>
+<td>1953</td>
+<td>Z</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">9</td>
+<td>300.534013</td>
+<td>1928</td>
+<td>X</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="19">
+<div id="cell-20" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is still using numbers:</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>pandaBuildings.loc[<span class="dv">1</span>:<span class="dv">10</span>,<span class="st">'year'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
@@ -638,178 +842,179 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Name: year, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
+<div id="cell-21" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itertools <span class="im">import</span> repeat</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This is not really ok; binary array</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>pandaBuildings.iloc[<span class="bu">list</span>(repeat(<span class="va">False</span>,rowSize <span class="op">-</span> <span class="dv">10</span>)) <span class="op">+</span> <span class="bu">list</span>(repeat(<span class="va">True</span>, <span class="dv">10</span>))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>sqft</th>
-      <th>year</th>
-      <th>building_type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>4999990</th>
-      <td>573.107861</td>
-      <td>1940</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <th>4999991</th>
-      <td>255.946544</td>
-      <td>1995</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <th>4999992</th>
-      <td>1193.402742</td>
-      <td>1966</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>4999993</th>
-      <td>241.536200</td>
-      <td>1981</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>4999994</th>
-      <td>116.882680</td>
-      <td>2012</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>4999995</th>
-      <td>813.839454</td>
-      <td>1895</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>4999996</th>
-      <td>832.370784</td>
-      <td>1976</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>4999997</th>
-      <td>910.292342</td>
-      <td>1940</td>
-      <td>Z</td>
-    </tr>
-    <tr>
-      <th>4999998</th>
-      <td>219.078462</td>
-      <td>1946</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <th>4999999</th>
-      <td>1464.927639</td>
-      <td>1956</td>
-      <td>Y</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">building_type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999990</td>
+<td>573.107861</td>
+<td>1940</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4999991</td>
+<td>255.946544</td>
+<td>1995</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999992</td>
+<td>1193.402742</td>
+<td>1966</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4999993</td>
+<td>241.536200</td>
+<td>1981</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999994</td>
+<td>116.882680</td>
+<td>2012</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4999995</td>
+<td>813.839454</td>
+<td>1895</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999996</td>
+<td>832.370784</td>
+<td>1976</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4999997</td>
+<td>910.292342</td>
+<td>1940</td>
+<td>Z</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999998</td>
+<td>219.078462</td>
+<td>1946</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4999999</td>
+<td>1464.927639</td>
+<td>1956</td>
+<td>Y</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="21">
+<div id="cell-22" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This also works and should actually be ok</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>pandaBuildings.loc[<span class="bu">list</span>(repeat(<span class="va">False</span>,rowSize <span class="op">-</span> <span class="dv">10</span>)) <span class="op">+</span> <span class="bu">list</span>(repeat(<span class="va">True</span>, <span class="dv">10</span>))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>sqft</th>
-      <th>year</th>
-      <th>building_type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>4999990</th>
-      <td>573.107861</td>
-      <td>1940</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <th>4999991</th>
-      <td>255.946544</td>
-      <td>1995</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <th>4999992</th>
-      <td>1193.402742</td>
-      <td>1966</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>4999993</th>
-      <td>241.536200</td>
-      <td>1981</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>4999994</th>
-      <td>116.882680</td>
-      <td>2012</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>4999995</th>
-      <td>813.839454</td>
-      <td>1895</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>4999996</th>
-      <td>832.370784</td>
-      <td>1976</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <th>4999997</th>
-      <td>910.292342</td>
-      <td>1940</td>
-      <td>Z</td>
-    </tr>
-    <tr>
-      <th>4999998</th>
-      <td>219.078462</td>
-      <td>1946</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <th>4999999</th>
-      <td>1464.927639</td>
-      <td>1956</td>
-      <td>Y</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">building_type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999990</td>
+<td>573.107861</td>
+<td>1940</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4999991</td>
+<td>255.946544</td>
+<td>1995</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999992</td>
+<td>1193.402742</td>
+<td>1966</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4999993</td>
+<td>241.536200</td>
+<td>1981</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999994</td>
+<td>116.882680</td>
+<td>2012</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4999995</td>
+<td>813.839454</td>
+<td>1895</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999996</td>
+<td>832.370784</td>
+<td>1976</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4999997</td>
+<td>910.292342</td>
+<td>1940</td>
+<td>Z</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4999998</td>
+<td>219.078462</td>
+<td>1946</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4999999</td>
+<td>1464.927639</td>
+<td>1956</td>
+<td>Y</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>When working with Polars, all of this is simply a single interface which is surprisingly intelligent.</p>
-<div class="cell" data-execution_count="22">
+<div id="cell-24" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># just knows you want the rows</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>polarBuildings[<span class="dv">1</span>:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -817,14 +1022,75 @@ Name: year, dtype: int64</code></pre>
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (9, 3)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>sqft</th><th>year</th><th>building_type</th></tr><tr><td>f64</td><td>i64</td><td>str</td></tr></thead><tbody><tr><td>1025.203348</td><td>2011</td><td>"X"</td></tr><tr><td>568.548657</td><td>1970</td><td>"X"</td></tr><tr><td>895.109864</td><td>1999</td><td>"Y"</td></tr><tr><td>206.532754</td><td>2011</td><td>"Y"</td></tr><tr><td>3383.637351</td><td>2007</td><td>"Z"</td></tr><tr><td>9.753627</td><td>1948</td><td>"Y"</td></tr><tr><td>2809.215763</td><td>1968</td><td>"Y"</td></tr><tr><td>575.332756</td><td>1953</td><td>"Z"</td></tr><tr><td>300.534013</td><td>1928</td><td>"X"</td></tr></tbody></table></div>
+<small>shape: (9, 3)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">building_type</th>
+</tr>
+<tr class="odd">
+<th>f64</th>
+<th>i64</th>
+<th>str</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1025.203348</td>
+<td>2011</td>
+<td>"X"</td>
+</tr>
+<tr class="even">
+<td>568.548657</td>
+<td>1970</td>
+<td>"X"</td>
+</tr>
+<tr class="odd">
+<td>895.109864</td>
+<td>1999</td>
+<td>"Y"</td>
+</tr>
+<tr class="even">
+<td>206.532754</td>
+<td>2011</td>
+<td>"Y"</td>
+</tr>
+<tr class="odd">
+<td>3383.637351</td>
+<td>2007</td>
+<td>"Z"</td>
+</tr>
+<tr class="even">
+<td>9.753627</td>
+<td>1948</td>
+<td>"Y"</td>
+</tr>
+<tr class="odd">
+<td>2809.215763</td>
+<td>1968</td>
+<td>"Y"</td>
+</tr>
+<tr class="even">
+<td>575.332756</td>
+<td>1953</td>
+<td>"Z"</td>
+</tr>
+<tr class="odd">
+<td>300.534013</td>
+<td>1928</td>
+<td>"X"</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="cell" data-execution_count="23">
+</div>
+<div id="cell-25" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .... and, you can pass the labels as you would hope</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>polarBuildings[[<span class="st">'year'</span>, <span class="st">'sqft'</span>], <span class="dv">1</span>:<span class="dv">10</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -832,14 +1098,64 @@ Name: year, dtype: int64</code></pre>
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (9, 2)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>year</th><th>sqft</th></tr><tr><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>2011</td><td>1025.203348</td></tr><tr><td>1970</td><td>568.548657</td></tr><tr><td>1999</td><td>895.109864</td></tr><tr><td>2011</td><td>206.532754</td></tr><tr><td>2007</td><td>3383.637351</td></tr><tr><td>1948</td><td>9.753627</td></tr><tr><td>1968</td><td>2809.215763</td></tr><tr><td>1953</td><td>575.332756</td></tr><tr><td>1928</td><td>300.534013</td></tr></tbody></table></div>
+<small>shape: (9, 2)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">sqft</th>
+</tr>
+<tr class="odd">
+<th>i64</th>
+<th>f64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2011</td>
+<td>1025.203348</td>
+</tr>
+<tr class="even">
+<td>1970</td>
+<td>568.548657</td>
+</tr>
+<tr class="odd">
+<td>1999</td>
+<td>895.109864</td>
+</tr>
+<tr class="even">
+<td>2011</td>
+<td>206.532754</td>
+</tr>
+<tr class="odd">
+<td>2007</td>
+<td>3383.637351</td>
+</tr>
+<tr class="even">
+<td>1948</td>
+<td>9.753627</td>
+</tr>
+<tr class="odd">
+<td>1968</td>
+<td>2809.215763</td>
+</tr>
+<tr class="even">
+<td>1953</td>
+<td>575.332756</td>
+</tr>
+<tr class="odd">
+<td>1928</td>
+<td>300.534013</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="cell" data-execution_count="24">
+</div>
+<div id="cell-26" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ... and, we can switch the row, column order without problems!</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>polarBuildings[<span class="dv">1</span>:<span class="dv">10</span>,[<span class="st">'year'</span>, <span class="st">'sqft'</span>] ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -847,14 +1163,64 @@ Name: year, dtype: int64</code></pre>
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (9, 2)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>year</th><th>sqft</th></tr><tr><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>2011</td><td>1025.203348</td></tr><tr><td>1970</td><td>568.548657</td></tr><tr><td>1999</td><td>895.109864</td></tr><tr><td>2011</td><td>206.532754</td></tr><tr><td>2007</td><td>3383.637351</td></tr><tr><td>1948</td><td>9.753627</td></tr><tr><td>1968</td><td>2809.215763</td></tr><tr><td>1953</td><td>575.332756</td></tr><tr><td>1928</td><td>300.534013</td></tr></tbody></table></div>
+<small>shape: (9, 2)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">sqft</th>
+</tr>
+<tr class="odd">
+<th>i64</th>
+<th>f64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2011</td>
+<td>1025.203348</td>
+</tr>
+<tr class="even">
+<td>1970</td>
+<td>568.548657</td>
+</tr>
+<tr class="odd">
+<td>1999</td>
+<td>895.109864</td>
+</tr>
+<tr class="even">
+<td>2011</td>
+<td>206.532754</td>
+</tr>
+<tr class="odd">
+<td>2007</td>
+<td>3383.637351</td>
+</tr>
+<tr class="even">
+<td>1948</td>
+<td>9.753627</td>
+</tr>
+<tr class="odd">
+<td>1968</td>
+<td>2809.215763</td>
+</tr>
+<tr class="even">
+<td>1953</td>
+<td>575.332756</td>
+</tr>
+<tr class="odd">
+<td>1928</td>
+<td>300.534013</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="cell" data-execution_count="73">
+</div>
+<div id="cell-27" class="cell" data-execution_count="73">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ... and preserves the selection order as well!</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>polarBuildings[<span class="dv">1</span>:<span class="dv">10</span>,[<span class="st">'sqft'</span>, <span class="st">'year'</span>] ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="73">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -862,14 +1228,64 @@ Name: year, dtype: int64</code></pre>
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (9, 2)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>sqft</th><th>year</th></tr><tr><td>f64</td><td>i64</td></tr></thead><tbody><tr><td>1025.203348</td><td>2011</td></tr><tr><td>568.548657</td><td>1970</td></tr><tr><td>895.109864</td><td>1999</td></tr><tr><td>206.532754</td><td>2011</td></tr><tr><td>3383.637351</td><td>2007</td></tr><tr><td>9.753627</td><td>1948</td></tr><tr><td>2809.215763</td><td>1968</td></tr><tr><td>575.332756</td><td>1953</td></tr><tr><td>300.534013</td><td>1928</td></tr></tbody></table></div>
+<small>shape: (9, 2)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+</tr>
+<tr class="odd">
+<th>f64</th>
+<th>i64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1025.203348</td>
+<td>2011</td>
+</tr>
+<tr class="even">
+<td>568.548657</td>
+<td>1970</td>
+</tr>
+<tr class="odd">
+<td>895.109864</td>
+<td>1999</td>
+</tr>
+<tr class="even">
+<td>206.532754</td>
+<td>2011</td>
+</tr>
+<tr class="odd">
+<td>3383.637351</td>
+<td>2007</td>
+</tr>
+<tr class="even">
+<td>9.753627</td>
+<td>1948</td>
+</tr>
+<tr class="odd">
+<td>2809.215763</td>
+<td>1968</td>
+</tr>
+<tr class="even">
+<td>575.332756</td>
+<td>1953</td>
+</tr>
+<tr class="odd">
+<td>300.534013</td>
+<td>1928</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="cell" data-execution_count="31">
+</div>
+<div id="cell-28" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .... and we can still specify with just numbers</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>polarBuildings[<span class="dv">1</span>:<span class="dv">10</span>, <span class="dv">0</span>:<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -877,7 +1293,58 @@ Name: year, dtype: int64</code></pre>
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (9, 2)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>sqft</th><th>year</th></tr><tr><td>f64</td><td>i64</td></tr></thead><tbody><tr><td>1025.203348</td><td>2011</td></tr><tr><td>568.548657</td><td>1970</td></tr><tr><td>895.109864</td><td>1999</td></tr><tr><td>206.532754</td><td>2011</td></tr><tr><td>3383.637351</td><td>2007</td></tr><tr><td>9.753627</td><td>1948</td></tr><tr><td>2809.215763</td><td>1968</td></tr><tr><td>575.332756</td><td>1953</td></tr><tr><td>300.534013</td><td>1928</td></tr></tbody></table></div>
+<small>shape: (9, 2)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+</tr>
+<tr class="odd">
+<th>f64</th>
+<th>i64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1025.203348</td>
+<td>2011</td>
+</tr>
+<tr class="even">
+<td>568.548657</td>
+<td>1970</td>
+</tr>
+<tr class="odd">
+<td>895.109864</td>
+<td>1999</td>
+</tr>
+<tr class="even">
+<td>206.532754</td>
+<td>2011</td>
+</tr>
+<tr class="odd">
+<td>3383.637351</td>
+<td>2007</td>
+</tr>
+<tr class="even">
+<td>9.753627</td>
+<td>1948</td>
+</tr>
+<tr class="odd">
+<td>2809.215763</td>
+<td>1968</td>
+</tr>
+<tr class="even">
+<td>575.332756</td>
+<td>1953</td>
+</tr>
+<tr class="odd">
+<td>300.534013</td>
+<td>1928</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <p>This is a really big win for <em>Polars</em> as I no longer longer have to bother to the juggle between <code>.loc[]</code> and <code>.iloc[]</code>.</p>
@@ -885,66 +1352,67 @@ Name: year, dtype: int64</code></pre>
 <section id="broadcasting-values" class="level2">
 <h2 class="anchored" data-anchor-id="broadcasting-values">Broadcasting Values</h2>
 <p>An often used pattern is to create a new column and then fill it with a default value. Then, conditionally update the column based on other features in the data frame. Doing this in Pandas is very simply and efficient.</p>
-<div class="cell" data-execution_count="32">
+<div id="cell-30" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pandaBuildings[<span class="st">'turtles'</span>] <span class="op">=</span> <span class="st">'Best Animal'</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>pandaBuildings.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>sqft</th>
-      <th>year</th>
-      <th>building_type</th>
-      <th>turtles</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>707.529256</td>
-      <td>1975</td>
-      <td>Z</td>
-      <td>Best Animal</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1025.203348</td>
-      <td>2011</td>
-      <td>X</td>
-      <td>Best Animal</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>568.548657</td>
-      <td>1970</td>
-      <td>X</td>
-      <td>Best Animal</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>895.109864</td>
-      <td>1999</td>
-      <td>Y</td>
-      <td>Best Animal</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>206.532754</td>
-      <td>2011</td>
-      <td>Y</td>
-      <td>Best Animal</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">building_type</th>
+<th data-quarto-table-cell-role="th">turtles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>707.529256</td>
+<td>1975</td>
+<td>Z</td>
+<td>Best Animal</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1025.203348</td>
+<td>2011</td>
+<td>X</td>
+<td>Best Animal</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>568.548657</td>
+<td>1970</td>
+<td>X</td>
+<td>Best Animal</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>895.109864</td>
+<td>1999</td>
+<td>Y</td>
+<td>Best Animal</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>206.532754</td>
+<td>2011</td>
+<td>Y</td>
+<td>Best Animal</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Doing this in Polars? Not so simple. Sadly, we cannot simply assign a default value to a column we wish existed.</p>
-<div class="cell" data-execution_count="33">
+<div id="cell-32" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This fails</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    polarBuildings[<span class="st">'turtles'</span>] <span class="op">=</span> <span class="st">'Best Animal'</span></span>
@@ -957,10 +1425,9 @@ Use `DataFrame.with_columns`.</code></pre>
 </div>
 </div>
 <p>You can still do this with Polars but the process is strange. Basically, you need to tell Polars that this is a <strong>literal value</strong> and then name the column with an <code>.alias()</code> function call.</p>
-<div class="cell" data-execution_count="35">
+<div id="cell-34" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>polarBuildings.with_columns(pl.lit(<span class="st">'Best Animal'</span>).alias(<span class="st">'Turtles'</span>)).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -968,15 +1435,63 @@ Use `DataFrame.with_columns`.</code></pre>
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (5, 4)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>sqft</th><th>year</th><th>building_type</th><th>Turtles</th></tr><tr><td>f64</td><td>i64</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>707.529256</td><td>1975</td><td>"Z"</td><td>"Best Animal"</td></tr><tr><td>1025.203348</td><td>2011</td><td>"X"</td><td>"Best Animal"</td></tr><tr><td>568.548657</td><td>1970</td><td>"X"</td><td>"Best Animal"</td></tr><tr><td>895.109864</td><td>1999</td><td>"Y"</td><td>"Best Animal"</td></tr><tr><td>206.532754</td><td>2011</td><td>"Y"</td><td>"Best Animal"</td></tr></tbody></table></div>
+<small>shape: (5, 4)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">building_type</th>
+<th data-quarto-table-cell-role="th">Turtles</th>
+</tr>
+<tr class="odd">
+<th>f64</th>
+<th>i64</th>
+<th>str</th>
+<th>str</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>707.529256</td>
+<td>1975</td>
+<td>"Z"</td>
+<td>"Best Animal"</td>
+</tr>
+<tr class="even">
+<td>1025.203348</td>
+<td>2011</td>
+<td>"X"</td>
+<td>"Best Animal"</td>
+</tr>
+<tr class="odd">
+<td>568.548657</td>
+<td>1970</td>
+<td>"X"</td>
+<td>"Best Animal"</td>
+</tr>
+<tr class="even">
+<td>895.109864</td>
+<td>1999</td>
+<td>"Y"</td>
+<td>"Best Animal"</td>
+</tr>
+<tr class="odd">
+<td>206.532754</td>
+<td>2011</td>
+<td>"Y"</td>
+<td>"Best Animal"</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <p>Another problem with the Polars method is that this is not done in place. And, what I mean by that is that if you re-check the data frame the column we created does not exist.</p>
-<div class="cell" data-execution_count="36">
+<div id="cell-36" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This has not been changed.</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>polarBuildings.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -984,90 +1499,132 @@ Use `DataFrame.with_columns`.</code></pre>
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (5, 3)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>sqft</th><th>year</th><th>building_type</th></tr><tr><td>f64</td><td>i64</td><td>str</td></tr></thead><tbody><tr><td>707.529256</td><td>1975</td><td>"Z"</td></tr><tr><td>1025.203348</td><td>2011</td><td>"X"</td></tr><tr><td>568.548657</td><td>1970</td><td>"X"</td></tr><tr><td>895.109864</td><td>1999</td><td>"Y"</td></tr><tr><td>206.532754</td><td>2011</td><td>"Y"</td></tr></tbody></table></div>
+<small>shape: (5, 3)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">building_type</th>
+</tr>
+<tr class="odd">
+<th>f64</th>
+<th>i64</th>
+<th>str</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>707.529256</td>
+<td>1975</td>
+<td>"Z"</td>
+</tr>
+<tr class="even">
+<td>1025.203348</td>
+<td>2011</td>
+<td>"X"</td>
+</tr>
+<tr class="odd">
+<td>568.548657</td>
+<td>1970</td>
+<td>"X"</td>
+</tr>
+<tr class="even">
+<td>895.109864</td>
+<td>1999</td>
+<td>"Y"</td>
+</tr>
+<tr class="odd">
+<td>206.532754</td>
+<td>2011</td>
+<td>"Y"</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <p>If we want to keep the results then we will need to assign the results back to itself. This is somewhat frustrating since it means every time you want to do a broadcast then you’re making a new object.</p>
 <section id="filtering-and-aggregation" class="level3">
 <h3 class="anchored" data-anchor-id="filtering-and-aggregation">Filtering and Aggregation</h3>
 <p>Next on the list of common features is manipulating the data frame. The two most common forms of this are Filtering for values and aggregations such as counting or summary statistics. Polars has its own language for this: see the <a href="https://pola-rs.github.io/polars/user-guide/concepts/contexts/">documentation page</a> for more information. The language looks like a simplified SQL as applied to a data frames which there is already some support for in Pandas. Using our toy data, if we wanted any year larger than 2017 then there are a few ways to do this in pandas. Personally, I’m quite a fan of the <code>.query()</code> function so I’ll use that but approach this however you like.</p>
-<div class="cell" data-execution_count="37">
+<div id="cell-38" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>pandaBuildings.query(<span class="st">'year &gt; 2017'</span>).head(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>sqft</th>
-      <th>year</th>
-      <th>building_type</th>
-      <th>turtles</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>14</th>
-      <td>1884.250052</td>
-      <td>2018</td>
-      <td>Z</td>
-      <td>Best Animal</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>250.345347</td>
-      <td>2018</td>
-      <td>Z</td>
-      <td>Best Animal</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>1148.245259</td>
-      <td>2022</td>
-      <td>Y</td>
-      <td>Best Animal</td>
-    </tr>
-    <tr>
-      <th>58</th>
-      <td>763.546235</td>
-      <td>2019</td>
-      <td>Y</td>
-      <td>Best Animal</td>
-    </tr>
-    <tr>
-      <th>64</th>
-      <td>26.353141</td>
-      <td>2021</td>
-      <td>X</td>
-      <td>Best Animal</td>
-    </tr>
-    <tr>
-      <th>65</th>
-      <td>1085.041269</td>
-      <td>2021</td>
-      <td>Z</td>
-      <td>Best Animal</td>
-    </tr>
-    <tr>
-      <th>89</th>
-      <td>469.285667</td>
-      <td>2022</td>
-      <td>Y</td>
-      <td>Best Animal</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">building_type</th>
+<th data-quarto-table-cell-role="th">turtles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>1884.250052</td>
+<td>2018</td>
+<td>Z</td>
+<td>Best Animal</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">36</td>
+<td>250.345347</td>
+<td>2018</td>
+<td>Z</td>
+<td>Best Animal</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">46</td>
+<td>1148.245259</td>
+<td>2022</td>
+<td>Y</td>
+<td>Best Animal</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">58</td>
+<td>763.546235</td>
+<td>2019</td>
+<td>Y</td>
+<td>Best Animal</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">64</td>
+<td>26.353141</td>
+<td>2021</td>
+<td>X</td>
+<td>Best Animal</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">65</td>
+<td>1085.041269</td>
+<td>2021</td>
+<td>Z</td>
+<td>Best Animal</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">89</td>
+<td>469.285667</td>
+<td>2022</td>
+<td>Y</td>
+<td>Best Animal</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>In <em>Polars</em>, we would use the function closest to what functionality we are after: whether <code>.select()</code> or <code>.filter()</code> - or maybe <code>.group_by()</code>:</p>
-<div class="cell" data-execution_count="39">
+<div id="cell-40" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Same thing but with polars</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>polarBuildings.<span class="bu">filter</span>(pl.col(<span class="st">'year'</span>) <span class="op">&gt;</span> <span class="dv">2017</span>).head(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -1075,18 +1632,69 @@ Use `DataFrame.with_columns`.</code></pre>
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (7, 3)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>sqft</th><th>year</th><th>building_type</th></tr><tr><td>f64</td><td>i64</td><td>str</td></tr></thead><tbody><tr><td>1884.250052</td><td>2018</td><td>"Z"</td></tr><tr><td>250.345347</td><td>2018</td><td>"Z"</td></tr><tr><td>1148.245259</td><td>2022</td><td>"Y"</td></tr><tr><td>763.546235</td><td>2019</td><td>"Y"</td></tr><tr><td>26.353141</td><td>2021</td><td>"X"</td></tr><tr><td>1085.041269</td><td>2021</td><td>"Z"</td></tr><tr><td>469.285667</td><td>2022</td><td>"Y"</td></tr></tbody></table></div>
+<small>shape: (7, 3)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">building_type</th>
+</tr>
+<tr class="odd">
+<th>f64</th>
+<th>i64</th>
+<th>str</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1884.250052</td>
+<td>2018</td>
+<td>"Z"</td>
+</tr>
+<tr class="even">
+<td>250.345347</td>
+<td>2018</td>
+<td>"Z"</td>
+</tr>
+<tr class="odd">
+<td>1148.245259</td>
+<td>2022</td>
+<td>"Y"</td>
+</tr>
+<tr class="even">
+<td>763.546235</td>
+<td>2019</td>
+<td>"Y"</td>
+</tr>
+<tr class="odd">
+<td>26.353141</td>
+<td>2021</td>
+<td>"X"</td>
+</tr>
+<tr class="even">
+<td>1085.041269</td>
+<td>2021</td>
+<td>"Z"</td>
+</tr>
+<tr class="odd">
+<td>469.285667</td>
+<td>2022</td>
+<td>"Y"</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <p>There is a little more typing when using Polars here but this is more or less the same. One boast from the documentation is that Polars allows for parallel computations such as:</p>
-<div class="cell" data-execution_count="40">
+<div id="cell-42" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>polarBuildings.group_by(<span class="st">'building_type'</span>).agg([</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    pl.mean(<span class="st">'sqft'</span>),</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    pl.median(<span class="st">'year'</span>),</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    pl.count()</span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="40">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -1094,60 +1702,98 @@ Use `DataFrame.with_columns`.</code></pre>
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (3, 4)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>building_type</th><th>sqft</th><th>year</th><th>count</th></tr><tr><td>str</td><td>f64</td><td>f64</td><td>u32</td></tr></thead><tbody><tr><td>"Z"</td><td>999.42085</td><td>1956.0</td><td>1665501</td></tr><tr><td>"X"</td><td>999.225287</td><td>1956.0</td><td>1668418</td></tr><tr><td>"Y"</td><td>1000.297707</td><td>1955.0</td><td>1666081</td></tr></tbody></table></div>
+<small>shape: (3, 4)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">building_type</th>
+<th data-quarto-table-cell-role="th">sqft</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+<tr class="odd">
+<th>str</th>
+<th>f64</th>
+<th>f64</th>
+<th>u32</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>"Z"</td>
+<td>999.42085</td>
+<td>1956.0</td>
+<td>1665501</td>
+</tr>
+<tr class="even">
+<td>"X"</td>
+<td>999.225287</td>
+<td>1956.0</td>
+<td>1668418</td>
+</tr>
+<tr class="odd">
+<td>"Y"</td>
+<td>1000.297707</td>
+<td>1955.0</td>
+<td>1666081</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <p>Without profiling this code - which I am considering in another future post - we cannot really know how efficient this is. But, the readability here is solid compared to the Pandas version asking for the same information:</p>
-<div class="cell" data-execution_count="42">
+<div id="cell-44" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>pandaBuildings.groupby(<span class="st">'building_type'</span>).agg({</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'sqft'</span>:[<span class="st">'mean'</span>],</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'year'</span>:[<span class="st">'median'</span>, <span class="st">'size'</span>]})<span class="op">\</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    .rename(columns<span class="op">=</span>{<span class="st">'size'</span>:<span class="st">'count'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="42">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>sqft</th>
-      <th colspan="2" halign="left">year</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>mean</th>
-      <th>median</th>
-      <th>count</th>
-    </tr>
-    <tr>
-      <th>building_type</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>X</th>
-      <td>999.225287</td>
-      <td>1956.0</td>
-      <td>1668418</td>
-    </tr>
-    <tr>
-      <th>Y</th>
-      <td>1000.297707</td>
-      <td>1955.0</td>
-      <td>1666081</td>
-    </tr>
-    <tr>
-      <th>Z</th>
-      <td>999.420850</td>
-      <td>1956.0</td>
-      <td>1665501</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sqft</th>
+<th colspan="2" data-quarto-table-cell-role="th" data-halign="left">year</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">median</th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+<tr class="header">
+<th data-quarto-table-cell-role="th">building_type</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">X</td>
+<td>999.225287</td>
+<td>1956.0</td>
+<td>1668418</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Y</td>
+<td>1000.297707</td>
+<td>1955.0</td>
+<td>1666081</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Z</td>
+<td>999.420850</td>
+<td>1956.0</td>
+<td>1665501</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1156,13 +1802,12 @@ Use `DataFrame.with_columns`.</code></pre>
 <section id="quick-analysis-of-movie-data-using-polars" class="level2">
 <h2 class="anchored" data-anchor-id="quick-analysis-of-movie-data-using-polars">Quick Analysis of Movie Data Using Polars</h2>
 <p>Let’s try using Polars to replicate an example project which I’ve worked on before. Previously, I did some analysis work from a Kaggle dataset on Thriller Movies with Apache Spark; That post is <a href="../../posts/nbks/2022-12-24-Exploring-Tv-Data-With-Spark-Part-1.html">here</a> if you are curious.</p>
-<div class="cell" data-execution_count="51">
+<div id="cell-46" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the cleaned data from online</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>dataUrl <span class="op">=</span> <span class="st">'https://media.githubusercontent.com/media/Shoklan/public-projects/main/Data/Kaggle/AllThrillerSeriesListClean.csv'</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>movies <span class="op">=</span> pl.read_csv(dataUrl)</span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>movies.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="51">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -1170,15 +1815,98 @@ Use `DataFrame.with_columns`.</code></pre>
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (5, 9)</small><table class="dataframe table table-sm table-striped"><thead><tr><th></th><th>Name</th><th>Year</th><th>Tv Certificate</th><th>Duration per episode</th><th>Genre</th><th>Ratings</th><th>Actor/Actress</th><th>Votes</th></tr><tr><td>i64</td><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>f64</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>0</td><td>"Andor"</td><td>"2022– "</td><td>"TV-14 "</td><td>" 40 min "</td><td>" Action, Adven…</td><td>8.4</td><td>" Diego Luna, K…</td><td>" 82,474"</td></tr><tr><td>1</td><td>"The Peripheral…</td><td>"2022– "</td><td>"TV-MA "</td><td>null</td><td>" Drama, Myster…</td><td>8.0</td><td>" Chloë Grace M…</td><td>" 34,768"</td></tr><tr><td>2</td><td>"The Walking De…</td><td>"2010–2022"</td><td>"TV-MA "</td><td>" 44 min "</td><td>" Drama, Horror…</td><td>8.1</td><td>" Andrew Lincol…</td><td>" 988,666"</td></tr><tr><td>3</td><td>"Criminal Minds…</td><td>"2005– "</td><td>"TV-14 "</td><td>" 42 min "</td><td>" Crime, Drama,…</td><td>8.1</td><td>" Kirsten Vangs…</td><td>" 198,262"</td></tr><tr><td>4</td><td>"Breaking Bad"</td><td>"2008–2013"</td><td>"TV-MA "</td><td>" 49 min "</td><td>" Crime, Drama,…</td><td>9.5</td><td>" Bryan Cransto…</td><td>" 1,872,005"</td></tr></tbody></table></div>
+<small>shape: (5, 9)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Tv Certificate</th>
+<th data-quarto-table-cell-role="th">Duration per episode</th>
+<th data-quarto-table-cell-role="th">Genre</th>
+<th data-quarto-table-cell-role="th">Ratings</th>
+<th data-quarto-table-cell-role="th">Actor/Actress</th>
+<th data-quarto-table-cell-role="th">Votes</th>
+</tr>
+<tr class="odd">
+<th>i64</th>
+<th>str</th>
+<th>str</th>
+<th>str</th>
+<th>str</th>
+<th>str</th>
+<th>f64</th>
+<th>str</th>
+<th>str</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>"Andor"</td>
+<td>"2022– "</td>
+<td>"TV-14 "</td>
+<td>" 40 min "</td>
+<td>" Action, Adven…</td>
+<td>8.4</td>
+<td>" Diego Luna, K…</td>
+<td>" 82,474"</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>"The Peripheral…</td>
+<td>"2022– "</td>
+<td>"TV-MA "</td>
+<td>null</td>
+<td>" Drama, Myster…</td>
+<td>8.0</td>
+<td>" Chloë Grace M…</td>
+<td>" 34,768"</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>"The Walking De…</td>
+<td>"2010–2022"</td>
+<td>"TV-MA "</td>
+<td>" 44 min "</td>
+<td>" Drama, Horror…</td>
+<td>8.1</td>
+<td>" Andrew Lincol…</td>
+<td>" 988,666"</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>"Criminal Minds…</td>
+<td>"2005– "</td>
+<td>"TV-14 "</td>
+<td>" 42 min "</td>
+<td>" Crime, Drama,…</td>
+<td>8.1</td>
+<td>" Kirsten Vangs…</td>
+<td>" 198,262"</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>"Breaking Bad"</td>
+<td>"2008–2013"</td>
+<td>"TV-MA "</td>
+<td>" 49 min "</td>
+<td>" Crime, Drama,…</td>
+<td>9.5</td>
+<td>" Bryan Cransto…</td>
+<td>" 1,872,005"</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="cell" data-execution_count="52">
+</div>
+<div id="cell-47" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get rid of the superfluous index column</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>movies.drop_in_place(name<span class="op">=</span><span class="st">''</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>movies.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="52">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -1186,10 +1914,87 @@ Use `DataFrame.with_columns`.</code></pre>
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (5, 8)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>Name</th><th>Year</th><th>Tv Certificate</th><th>Duration per episode</th><th>Genre</th><th>Ratings</th><th>Actor/Actress</th><th>Votes</th></tr><tr><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>f64</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>"Andor"</td><td>"2022– "</td><td>"TV-14 "</td><td>" 40 min "</td><td>" Action, Adven…</td><td>8.4</td><td>" Diego Luna, K…</td><td>" 82,474"</td></tr><tr><td>"The Peripheral…</td><td>"2022– "</td><td>"TV-MA "</td><td>null</td><td>" Drama, Myster…</td><td>8.0</td><td>" Chloë Grace M…</td><td>" 34,768"</td></tr><tr><td>"The Walking De…</td><td>"2010–2022"</td><td>"TV-MA "</td><td>" 44 min "</td><td>" Drama, Horror…</td><td>8.1</td><td>" Andrew Lincol…</td><td>" 988,666"</td></tr><tr><td>"Criminal Minds…</td><td>"2005– "</td><td>"TV-14 "</td><td>" 42 min "</td><td>" Crime, Drama,…</td><td>8.1</td><td>" Kirsten Vangs…</td><td>" 198,262"</td></tr><tr><td>"Breaking Bad"</td><td>"2008–2013"</td><td>"TV-MA "</td><td>" 49 min "</td><td>" Crime, Drama,…</td><td>9.5</td><td>" Bryan Cransto…</td><td>" 1,872,005"</td></tr></tbody></table></div>
+<small>shape: (5, 8)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Tv Certificate</th>
+<th data-quarto-table-cell-role="th">Duration per episode</th>
+<th data-quarto-table-cell-role="th">Genre</th>
+<th data-quarto-table-cell-role="th">Ratings</th>
+<th data-quarto-table-cell-role="th">Actor/Actress</th>
+<th data-quarto-table-cell-role="th">Votes</th>
+</tr>
+<tr class="odd">
+<th>str</th>
+<th>str</th>
+<th>str</th>
+<th>str</th>
+<th>str</th>
+<th>f64</th>
+<th>str</th>
+<th>str</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>"Andor"</td>
+<td>"2022– "</td>
+<td>"TV-14 "</td>
+<td>" 40 min "</td>
+<td>" Action, Adven…</td>
+<td>8.4</td>
+<td>" Diego Luna, K…</td>
+<td>" 82,474"</td>
+</tr>
+<tr class="even">
+<td>"The Peripheral…</td>
+<td>"2022– "</td>
+<td>"TV-MA "</td>
+<td>null</td>
+<td>" Drama, Myster…</td>
+<td>8.0</td>
+<td>" Chloë Grace M…</td>
+<td>" 34,768"</td>
+</tr>
+<tr class="odd">
+<td>"The Walking De…</td>
+<td>"2010–2022"</td>
+<td>"TV-MA "</td>
+<td>" 44 min "</td>
+<td>" Drama, Horror…</td>
+<td>8.1</td>
+<td>" Andrew Lincol…</td>
+<td>" 988,666"</td>
+</tr>
+<tr class="even">
+<td>"Criminal Minds…</td>
+<td>"2005– "</td>
+<td>"TV-14 "</td>
+<td>" 42 min "</td>
+<td>" Crime, Drama,…</td>
+<td>8.1</td>
+<td>" Kirsten Vangs…</td>
+<td>" 198,262"</td>
+</tr>
+<tr class="odd">
+<td>"Breaking Bad"</td>
+<td>"2008–2013"</td>
+<td>"TV-MA "</td>
+<td>" 49 min "</td>
+<td>" Crime, Drama,…</td>
+<td>9.5</td>
+<td>" Bryan Cransto…</td>
+<td>" 1,872,005"</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="cell" data-execution_count="53">
+</div>
+<div id="cell-48" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up and cast year,votes for analysis</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>movies <span class="op">=</span> movies.with_columns(</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">'Year'</span>).map_elements(<span class="kw">lambda</span> x: x.split(<span class="st">'–'</span>)[<span class="dv">0</span>]),</span>
@@ -1199,7 +2004,6 @@ Use `DataFrame.with_columns`.</code></pre>
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>movies <span class="op">=</span> movies.rename({<span class="st">'Actor/Actress'</span>:<span class="st">'Actor'</span>})</span>
 <span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>movies.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="53">
-
 <div><style>
 .dataframe > thead > tr > th,
 .dataframe > tbody > tr > td {
@@ -1207,13 +2011,90 @@ Use `DataFrame.with_columns`.</code></pre>
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (5, 8)</small><table class="dataframe table table-sm table-striped"><thead><tr><th>Name</th><th>Year</th><th>Tv Certificate</th><th>Duration per episode</th><th>Genre</th><th>Ratings</th><th>Actor/Actress</th><th>Votes</th></tr><tr><td>str</td><td>str</td><td>str</td><td>str</td><td>str</td><td>f64</td><td>str</td><td>f64</td></tr></thead><tbody><tr><td>"Andor"</td><td>"2022"</td><td>"TV-14 "</td><td>" 40 min "</td><td>" Action, Adven…</td><td>8.4</td><td>" Diego Luna, K…</td><td>82474.0</td></tr><tr><td>"The Peripheral…</td><td>"2022"</td><td>"TV-MA "</td><td>null</td><td>" Drama, Myster…</td><td>8.0</td><td>" Chloë Grace M…</td><td>34768.0</td></tr><tr><td>"The Walking De…</td><td>"2010"</td><td>"TV-MA "</td><td>" 44 min "</td><td>" Drama, Horror…</td><td>8.1</td><td>" Andrew Lincol…</td><td>988666.0</td></tr><tr><td>"Criminal Minds…</td><td>"2005"</td><td>"TV-14 "</td><td>" 42 min "</td><td>" Crime, Drama,…</td><td>8.1</td><td>" Kirsten Vangs…</td><td>198262.0</td></tr><tr><td>"Breaking Bad"</td><td>"2008"</td><td>"TV-MA "</td><td>" 49 min "</td><td>" Crime, Drama,…</td><td>9.5</td><td>" Bryan Cransto…</td><td>1.872005e6</td></tr></tbody></table></div>
+<small>shape: (5, 8)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Tv Certificate</th>
+<th data-quarto-table-cell-role="th">Duration per episode</th>
+<th data-quarto-table-cell-role="th">Genre</th>
+<th data-quarto-table-cell-role="th">Ratings</th>
+<th data-quarto-table-cell-role="th">Actor/Actress</th>
+<th data-quarto-table-cell-role="th">Votes</th>
+</tr>
+<tr class="odd">
+<th>str</th>
+<th>str</th>
+<th>str</th>
+<th>str</th>
+<th>str</th>
+<th>f64</th>
+<th>str</th>
+<th>f64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>"Andor"</td>
+<td>"2022"</td>
+<td>"TV-14 "</td>
+<td>" 40 min "</td>
+<td>" Action, Adven…</td>
+<td>8.4</td>
+<td>" Diego Luna, K…</td>
+<td>82474.0</td>
+</tr>
+<tr class="even">
+<td>"The Peripheral…</td>
+<td>"2022"</td>
+<td>"TV-MA "</td>
+<td>null</td>
+<td>" Drama, Myster…</td>
+<td>8.0</td>
+<td>" Chloë Grace M…</td>
+<td>34768.0</td>
+</tr>
+<tr class="odd">
+<td>"The Walking De…</td>
+<td>"2010"</td>
+<td>"TV-MA "</td>
+<td>" 44 min "</td>
+<td>" Drama, Horror…</td>
+<td>8.1</td>
+<td>" Andrew Lincol…</td>
+<td>988666.0</td>
+</tr>
+<tr class="even">
+<td>"Criminal Minds…</td>
+<td>"2005"</td>
+<td>"TV-14 "</td>
+<td>" 42 min "</td>
+<td>" Crime, Drama,…</td>
+<td>8.1</td>
+<td>" Kirsten Vangs…</td>
+<td>198262.0</td>
+</tr>
+<tr class="odd">
+<td>"Breaking Bad"</td>
+<td>"2008"</td>
+<td>"TV-MA "</td>
+<td>" 49 min "</td>
+<td>" Crime, Drama,…</td>
+<td>9.5</td>
+<td>" Bryan Cransto…</td>
+<td>1.872005e6</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="cell" data-execution_count="56">
+</div>
+<div id="cell-49" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">'Name'</span>, <span class="st">'Genre'</span>, <span class="st">'Ratings'</span>, <span class="st">'Votes'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="68">
+<div id="cell-50" class="cell" data-execution_count="68">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>medianMovieInfo <span class="op">=</span> movies[cols].with_columns(</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">'Genre'</span>).<span class="bu">str</span>.strip_chars().<span class="bu">str</span>.split(<span class="st">', '</span>))<span class="op">\</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    .explode(<span class="st">'Genre'</span>).group_by(<span class="st">"Genre"</span>).agg(</span>
@@ -1221,7 +2102,7 @@ Use `DataFrame.with_columns`.</code></pre>
 <span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">'Votes'</span>).median())<span class="op">\</span></span>
 <span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    .sort(<span class="st">'Ratings'</span>, descending<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="69">
+<div id="cell-51" class="cell" data-execution_count="69">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>meanMovieInfo <span class="op">=</span> movies[cols].with_columns(</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">'Genre'</span>).<span class="bu">str</span>.strip_chars().<span class="bu">str</span>.split(<span class="st">', '</span>)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>).explode(<span class="st">'Genre'</span>).group_by(<span class="st">"Genre"</span>).agg(</span>
@@ -1229,7 +2110,7 @@ Use `DataFrame.with_columns`.</code></pre>
 <span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">'Votes'</span>).mean()</span>
 <span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>).sort(<span class="st">'Ratings'</span>, descending<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="74">
+<div id="cell-52" class="cell" data-execution_count="74">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">"figure.figsize"</span>] <span class="op">=</span> (<span class="dv">14</span>,<span class="dv">7</span>)<span class="op">;</span></span>
@@ -1239,10 +2120,14 @@ Use `DataFrame.with_columns`.</code></pre>
 <span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">41</span>)<span class="op">;</span></span>
 <span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>sns.barplot(dmi, x<span class="op">=</span><span class="st">'Genre'</span>, y<span class="op">=</span><span class="st">'Votes'</span>, color<span class="op">=</span><span class="st">'seagreen'</span>).set_title(<span class="st">'Median Votes Per Movie Genre'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-11-14-comparison-of-polars-and-pandas_files/figure-html/cell-35-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-11-14-comparison-of-polars-and-pandas_files/figure-html/cell-35-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="259">
+</div>
+<div id="cell-53" class="cell" data-execution_count="259">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>nmi <span class="op">=</span> meanMovieInfo.to_pandas().sort_values(<span class="st">'Votes'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">41</span>)<span class="op">;</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>sns.barplot(nmi, x<span class="op">=</span><span class="st">'Genre'</span>, y<span class="op">=</span><span class="st">'Votes'</span>, color<span class="op">=</span><span class="st">'seagreen'</span>).set_title(<span class="st">'Mean Votes Per Movie Genre'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1250,7 +2135,11 @@ Use `DataFrame.with_columns`.</code></pre>
 <pre><code>Text(0.5, 1.0, 'Mean Votes Per Movie Genre')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-11-14-comparison-of-polars-and-pandas_files/figure-html/cell-36-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-11-14-comparison-of-polars-and-pandas_files/figure-html/cell-36-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1290,9 +2179,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1328,10 +2231,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1341,8 +2243,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1357,6 +2268,238 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1397,6 +2540,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

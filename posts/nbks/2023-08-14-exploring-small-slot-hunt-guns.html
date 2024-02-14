@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,11 +19,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,47 +49,17 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -111,7 +82,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -120,12 +97,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -135,27 +114,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Orgulo.us</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Shoklan"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -220,6 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
 <section id="so-ive-been-playing" class="level1">
 <h1>So, I’ve Been Playing…</h1>
 <p>… some Hunt:Showdown recently which is a sort of mixture of Battle Royale, Extraction Shooters and gunplay somewhere closer to a Tactical Shooter than an Arcade shooter. What I can say is that the game is challenging and fun without getting too competitve. There are players which are like that but most of the games are simply fun.</p>
@@ -237,7 +219,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="lets-check-out-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="lets-check-out-the-data">Let’s Check Out The Data!</h2>
 <p>We’ll get our normal imports for this kind of work.</p>
-<div class="cell" data-execution_count="1">
+<div id="cell-5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -248,289 +230,290 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Don't forget to install openpyxl otherwise you will get an import error.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>I’m using Microsoft Excel via the Web to input the data and there is no option to simply download a CSV file. So, we’ll need to tell our function which sheet we’ll want. By default, it will use the first sheet if you do not specify but I’m using that page for some overview information and summary of insights.</p>
-<div class="cell" data-execution_count="41">
+<div id="cell-8" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_excel(dataDirectory<span class="op">/</span>filename, sheet_name<span class="op">=</span><span class="st">'Stats'</span>, na_values<span class="op">=</span><span class="st">'N/a'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Weapon</th>
-      <th>Slot</th>
-      <th>Cost</th>
-      <th>Damage</th>
-      <th>Muzzle Velocity</th>
-      <th>Falloff 10m</th>
-      <th>Falloff 25m</th>
-      <th>Falloff 50m</th>
-      <th>Falloff 75m</th>
-      <th>Ammo Type</th>
-      <th>...</th>
-      <th>Rate of Fire</th>
-      <th>Cycle Time</th>
-      <th>Spread</th>
-      <th>Sway</th>
-      <th>Vertical Recoil</th>
-      <th>Reload Speed</th>
-      <th>Melee Damage</th>
-      <th>Melee Damage Heavy</th>
-      <th>Stamina Consumption Light</th>
-      <th>Stamina Consumption Heavy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Machete</td>
-      <td>Small</td>
-      <td>18</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>90</td>
-      <td>150</td>
-      <td>10.0</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Nagant M1895</td>
-      <td>Small</td>
-      <td>24</td>
-      <td>91.0</td>
-      <td>330.0</td>
-      <td>91.0</td>
-      <td>83.0</td>
-      <td>48.0</td>
-      <td>31.0</td>
-      <td>Compact</td>
-      <td>...</td>
-      <td>21.0</td>
-      <td>1.5</td>
-      <td>40.0</td>
-      <td>128.0</td>
-      <td>4.0</td>
-      <td>12.5</td>
-      <td>13</td>
-      <td>31</td>
-      <td>NaN</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Nagant M1895</td>
-      <td>Small</td>
-      <td>74</td>
-      <td>91.0</td>
-      <td>330.0</td>
-      <td>91.0</td>
-      <td>83.0</td>
-      <td>48.0</td>
-      <td>31.0</td>
-      <td>Poison</td>
-      <td>...</td>
-      <td>21.0</td>
-      <td>1.5</td>
-      <td>40.0</td>
-      <td>128.0</td>
-      <td>4.0</td>
-      <td>12.5</td>
-      <td>13</td>
-      <td>31</td>
-      <td>NaN</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Nagant M1895</td>
-      <td>Small</td>
-      <td>84</td>
-      <td>91.0</td>
-      <td>490.0</td>
-      <td>91.0</td>
-      <td>83.0</td>
-      <td>48.0</td>
-      <td>31.0</td>
-      <td>High Velocity</td>
-      <td>...</td>
-      <td>21.0</td>
-      <td>1.5</td>
-      <td>40.0</td>
-      <td>128.0</td>
-      <td>6.0</td>
-      <td>12.5</td>
-      <td>13</td>
-      <td>31</td>
-      <td>NaN</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Hand Crossbow</td>
-      <td>Small</td>
-      <td>30</td>
-      <td>195.0</td>
-      <td>100.0</td>
-      <td>150.0</td>
-      <td>128.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Special</td>
-      <td>...</td>
-      <td>14.0</td>
-      <td>4.5</td>
-      <td>25.0</td>
-      <td>82.0</td>
-      <td>1.2</td>
-      <td>4.3</td>
-      <td>13</td>
-      <td>27</td>
-      <td>NaN</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Cadwell Conversion Pistol</td>
-      <td>Small</td>
-      <td>55</td>
-      <td>104.0</td>
-      <td>300.0</td>
-      <td>104.0</td>
-      <td>94.0</td>
-      <td>54.0</td>
-      <td>36.0</td>
-      <td>Compact</td>
-      <td>...</td>
-      <td>21.0</td>
-      <td>1.4</td>
-      <td>30.0</td>
-      <td>128.0</td>
-      <td>4.5</td>
-      <td>11.2</td>
-      <td>13</td>
-      <td>31</td>
-      <td>NaN</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Cadwell Conversion Pistol</td>
-      <td>Small</td>
-      <td>105</td>
-      <td>104.0</td>
-      <td>300.0</td>
-      <td>104.0</td>
-      <td>94.0</td>
-      <td>54.0</td>
-      <td>36.0</td>
-      <td>Dum Dum</td>
-      <td>...</td>
-      <td>21.0</td>
-      <td>1.4</td>
-      <td>30.0</td>
-      <td>128.0</td>
-      <td>4.5</td>
-      <td>11.2</td>
-      <td>13</td>
-      <td>31</td>
-      <td>NaN</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Cadwell Conversion Pistol</td>
-      <td>Small</td>
-      <td>105</td>
-      <td>104.0</td>
-      <td>270.0</td>
-      <td>104.0</td>
-      <td>104.0</td>
-      <td>71.0</td>
-      <td>46.0</td>
-      <td>Full Metal Jacket</td>
-      <td>...</td>
-      <td>21.0</td>
-      <td>1.4</td>
-      <td>30.0</td>
-      <td>128.0</td>
-      <td>4.5</td>
-      <td>11.2</td>
-      <td>13</td>
-      <td>31</td>
-      <td>NaN</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Cavalry Saber</td>
-      <td>Small</td>
-      <td>60</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>82</td>
-      <td>168</td>
-      <td>10.0</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Scottfield Model 3</td>
-      <td>Small</td>
-      <td>77</td>
-      <td>107.0</td>
-      <td>280.0</td>
-      <td>107.0</td>
-      <td>101.0</td>
-      <td>65.0</td>
-      <td>44.0</td>
-      <td>Medium</td>
-      <td>...</td>
-      <td>24.0</td>
-      <td>1.5</td>
-      <td>28.1</td>
-      <td>128.0</td>
-      <td>9.0</td>
-      <td>9.0</td>
-      <td>13</td>
-      <td>31</td>
-      <td>NaN</td>
-      <td>20</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Weapon</th>
+<th data-quarto-table-cell-role="th">Slot</th>
+<th data-quarto-table-cell-role="th">Cost</th>
+<th data-quarto-table-cell-role="th">Damage</th>
+<th data-quarto-table-cell-role="th">Muzzle Velocity</th>
+<th data-quarto-table-cell-role="th">Falloff 10m</th>
+<th data-quarto-table-cell-role="th">Falloff 25m</th>
+<th data-quarto-table-cell-role="th">Falloff 50m</th>
+<th data-quarto-table-cell-role="th">Falloff 75m</th>
+<th data-quarto-table-cell-role="th">Ammo Type</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Rate of Fire</th>
+<th data-quarto-table-cell-role="th">Cycle Time</th>
+<th data-quarto-table-cell-role="th">Spread</th>
+<th data-quarto-table-cell-role="th">Sway</th>
+<th data-quarto-table-cell-role="th">Vertical Recoil</th>
+<th data-quarto-table-cell-role="th">Reload Speed</th>
+<th data-quarto-table-cell-role="th">Melee Damage</th>
+<th data-quarto-table-cell-role="th">Melee Damage Heavy</th>
+<th data-quarto-table-cell-role="th">Stamina Consumption Light</th>
+<th data-quarto-table-cell-role="th">Stamina Consumption Heavy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Machete</td>
+<td>Small</td>
+<td>18</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>90</td>
+<td>150</td>
+<td>10.0</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Nagant M1895</td>
+<td>Small</td>
+<td>24</td>
+<td>91.0</td>
+<td>330.0</td>
+<td>91.0</td>
+<td>83.0</td>
+<td>48.0</td>
+<td>31.0</td>
+<td>Compact</td>
+<td>...</td>
+<td>21.0</td>
+<td>1.5</td>
+<td>40.0</td>
+<td>128.0</td>
+<td>4.0</td>
+<td>12.5</td>
+<td>13</td>
+<td>31</td>
+<td>NaN</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Nagant M1895</td>
+<td>Small</td>
+<td>74</td>
+<td>91.0</td>
+<td>330.0</td>
+<td>91.0</td>
+<td>83.0</td>
+<td>48.0</td>
+<td>31.0</td>
+<td>Poison</td>
+<td>...</td>
+<td>21.0</td>
+<td>1.5</td>
+<td>40.0</td>
+<td>128.0</td>
+<td>4.0</td>
+<td>12.5</td>
+<td>13</td>
+<td>31</td>
+<td>NaN</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Nagant M1895</td>
+<td>Small</td>
+<td>84</td>
+<td>91.0</td>
+<td>490.0</td>
+<td>91.0</td>
+<td>83.0</td>
+<td>48.0</td>
+<td>31.0</td>
+<td>High Velocity</td>
+<td>...</td>
+<td>21.0</td>
+<td>1.5</td>
+<td>40.0</td>
+<td>128.0</td>
+<td>6.0</td>
+<td>12.5</td>
+<td>13</td>
+<td>31</td>
+<td>NaN</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Hand Crossbow</td>
+<td>Small</td>
+<td>30</td>
+<td>195.0</td>
+<td>100.0</td>
+<td>150.0</td>
+<td>128.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Special</td>
+<td>...</td>
+<td>14.0</td>
+<td>4.5</td>
+<td>25.0</td>
+<td>82.0</td>
+<td>1.2</td>
+<td>4.3</td>
+<td>13</td>
+<td>27</td>
+<td>NaN</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Cadwell Conversion Pistol</td>
+<td>Small</td>
+<td>55</td>
+<td>104.0</td>
+<td>300.0</td>
+<td>104.0</td>
+<td>94.0</td>
+<td>54.0</td>
+<td>36.0</td>
+<td>Compact</td>
+<td>...</td>
+<td>21.0</td>
+<td>1.4</td>
+<td>30.0</td>
+<td>128.0</td>
+<td>4.5</td>
+<td>11.2</td>
+<td>13</td>
+<td>31</td>
+<td>NaN</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Cadwell Conversion Pistol</td>
+<td>Small</td>
+<td>105</td>
+<td>104.0</td>
+<td>300.0</td>
+<td>104.0</td>
+<td>94.0</td>
+<td>54.0</td>
+<td>36.0</td>
+<td>Dum Dum</td>
+<td>...</td>
+<td>21.0</td>
+<td>1.4</td>
+<td>30.0</td>
+<td>128.0</td>
+<td>4.5</td>
+<td>11.2</td>
+<td>13</td>
+<td>31</td>
+<td>NaN</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>Cadwell Conversion Pistol</td>
+<td>Small</td>
+<td>105</td>
+<td>104.0</td>
+<td>270.0</td>
+<td>104.0</td>
+<td>104.0</td>
+<td>71.0</td>
+<td>46.0</td>
+<td>Full Metal Jacket</td>
+<td>...</td>
+<td>21.0</td>
+<td>1.4</td>
+<td>30.0</td>
+<td>128.0</td>
+<td>4.5</td>
+<td>11.2</td>
+<td>13</td>
+<td>31</td>
+<td>NaN</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>Cavalry Saber</td>
+<td>Small</td>
+<td>60</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>82</td>
+<td>168</td>
+<td>10.0</td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>Scottfield Model 3</td>
+<td>Small</td>
+<td>77</td>
+<td>107.0</td>
+<td>280.0</td>
+<td>107.0</td>
+<td>101.0</td>
+<td>65.0</td>
+<td>44.0</td>
+<td>Medium</td>
+<td>...</td>
+<td>24.0</td>
+<td>1.5</td>
+<td>28.1</td>
+<td>128.0</td>
+<td>9.0</td>
+<td>9.0</td>
+<td>13</td>
+<td>31</td>
+<td>NaN</td>
+<td>20</td>
+</tr>
+</tbody>
 </table>
+
 <p>10 rows × 25 columns</p>
 </div>
 </div>
 </div>
 <p>We’ll need to do some conversions since most of the columns came in correct but we would like a few columns to be categorical type for later. This is simple and it’s been done before:</p>
-<div class="cell" data-execution_count="42">
+<div id="cell-10" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data.assign(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    Slot <span class="op">=</span> data.Slot.astype(<span class="st">'category'</span>),</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    Type <span class="op">=</span> data[<span class="st">'Ammo Type'</span>].astype(<span class="st">'category'</span>),</span>
@@ -579,19 +562,23 @@ memory usage: 12.2+ KB</code></pre>
 <section id="graphs" class="level3">
 <h3 class="anchored" data-anchor-id="graphs">GRAPHS!</h3>
 <p>Our real focus is talking about the cost of guns so what does the spread of costs look like?:</p>
-<div class="cell" data-execution_count="31">
+<div id="cell-12" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># some plot configs I like</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pal <span class="op">=</span> sns.dark_palette(<span class="st">"seagreen"</span>, n_colors<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">"figure.figsize"</span>] <span class="op">=</span> (<span class="dv">14</span>,<span class="dv">7</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="21">
+<div id="cell-13" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(data, x<span class="op">=</span><span class="st">'Cost'</span>, color<span class="op">=</span><span class="st">'seagreen'</span>).set_title(<span class="st">"Distribution of Small Slot Weapon Costs"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-08-14-exploring-small-slot-hunt-guns_files/figure-html/cell-7-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-08-14-exploring-small-slot-hunt-guns_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>There are a few outliers we’ll need to keep in mind but it’s not clear where the center is. Maybe somewhere around $150? Let’s actually calculate it out:</p>
-<div class="cell" data-execution_count="24">
+<div id="cell-15" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'The mean cost of a small slot weapon is $</span><span class="sc">{</span><span class="bu">round</span>(data.Cost.mean(), <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> and the median is $</span><span class="sc">{</span><span class="bu">round</span>(data.Cost.median(), <span class="dv">2</span>)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The mean cost of a small slot weapon is $152.47 and the median is $135.0</code></pre>
@@ -600,13 +587,17 @@ memory usage: 12.2+ KB</code></pre>
 <p>Those numbers do make sense with the graph - including the outliers which have sway to the right. Again, we’ll need to deal with those later but for now they will be overlooked.</p>
 <p>Next we will check out <em>Muzzle Velocity</em> but this requires a bit of explanation. In Hunt, different guns have different bullet speeds. When taking and shooting guns, the bullets have travel time and so you <strong>must lead moving targets</strong>. And, how much you need to lead depends on the distance to the target as well as how fast you bullet travels.</p>
 <p>Most guns in the <em>Small Slot</em> have very low <em>Muzzle Velocities</em> so hitting moving targets can be difficult. Let us figure out what what the distribution is here:</p>
-<div class="cell" data-execution_count="26">
+<div id="cell-18" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(data, x<span class="op">=</span><span class="st">'Muzzle Velocity'</span>, color<span class="op">=</span><span class="st">'seagreen'</span>).set_title(<span class="st">"Muzzle Velocity for Small Slot Guns"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-08-14-exploring-small-slot-hunt-guns_files/figure-html/cell-9-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-08-14-exploring-small-slot-hunt-guns_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="29">
+</div>
+<div id="cell-19" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'The mean muzzle velocity of a small slot weapon is </span><span class="sc">{</span><span class="bu">round</span>(data[<span class="st">"Muzzle Velocity"</span>].mean(), <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> m/s and the median is </span><span class="sc">{</span><span class="bu">round</span>(data[<span class="st">"Muzzle Velocity"</span>].median(), <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> m/s'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The mean muzzle velocity of a small slot weapon is 325.33 m/s and the median is 315.0 m/s</code></pre>
@@ -614,15 +605,19 @@ memory usage: 12.2+ KB</code></pre>
 </div>
 <p>Those are some pretty terrible muzzle velocities as we’ll see when we get to the 3 block weapons. As an example, some of the higher velocity bullets can get upwards of 800m/s. Shooting pistols in this game is very limited to close quarters: mostly.</p>
 <p>Next we’ll look at how the number of bullets in the barrel compares to how often you can shoot the gun: aka <em>Cycle Time</em>. My prediction is that the less bullets there are the faster you can them while the larger the barrel then the slower.</p>
-<div class="cell" data-execution_count="32">
+<div id="cell-21" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This isn't what I expected; looks really binary here.</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sns.jointplot(data, y<span class="op">=</span><span class="st">'Barrel Count'</span>, x<span class="op">=</span><span class="st">'Cycle Time'</span>, kind<span class="op">=</span><span class="st">'hex'</span>, color<span class="op">=</span><span class="st">'seagreen'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-08-14-exploring-small-slot-hunt-guns_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-08-14-exploring-small-slot-hunt-guns_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>I was simply wrong. Most of the values are clustered around the same area with just a few outliers. Not a lot of variety here so this is likely some kind of balancing problem. Maybe not necessarily around these two attributes but around others and these two get tuned? Let’s quickly check out what those outlier weapons are:</p>
-<div class="cell" data-execution_count="37">
+<div id="cell-23" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># These are the outliers but they're not really run more commonly than the other guns in my experience.</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Except the Dolch really; it's the stable High MMR pistol</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, weapon <span class="kw">in</span> <span class="bu">enumerate</span>(data[ (data[<span class="st">'Barrel Count'</span>] <span class="op">&gt;</span> <span class="dv">9</span>)  <span class="op">|</span> (data[<span class="st">'Cycle Time'</span>] <span class="op">&gt;</span> <span class="dv">4</span>)].Weapon.unique().tolist()):</span>
@@ -636,21 +631,29 @@ memory usage: 12.2+ KB</code></pre>
 </div>
 <p>Special ammo, Prototype ammo, a Long Ammo and a ton of Compact ammo. All of these lean into a special feature about them. Honestly, I am surprised the Uppercut is not in the list.</p>
 <p>Next, I want to check out how much variability there is in the muzzle velocity by type of ammo:</p>
-<div class="cell" data-execution_count="47">
+<div id="cell-25" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">25</span>)<span class="op">;</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sns.violinplot(data, x<span class="op">=</span><span class="st">'Type'</span>, y<span class="op">=</span><span class="st">'Muzzle Velocity'</span>, palette<span class="op">=</span>pal).set_title(<span class="st">"Spread of Velocity Per Ammo Type"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-08-14-exploring-small-slot-hunt-guns_files/figure-html/cell-13-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-08-14-exploring-small-slot-hunt-guns_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>What’s cool here is that it shows how the lower Muzzle Velocity doesn’t hurt much when running FMJ. Honestly, unless you have a reason to run a different ammo type there is little reason not to just throw some Full Metal Jackets (FMJ) on the Small Slot Guns; it is almost always a safe choice.</p>
 <p>Lastly, I just wanted to review how much damage is lost due to fall off in the <em>Small Slot</em> weapons. It took a lot of testing and a lot of bought guns but I did get that data. And, wow do these guns fall off really hard. You lose a lot of damage quickly considering how small a distance between 25 and 50 meters in this game and how many gun fights take place around this range. <img src="images/2023-08-14/35maway.png" class="img-fluid"></p>
-<div class="cell" data-execution_count="51">
+<div id="cell-27" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>pal <span class="op">=</span> sns.dark_palette(<span class="st">"seagreen"</span>, n_colors<span class="op">=</span><span class="dv">4</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="op">=</span> data.melt(id_vars<span class="op">=</span>[<span class="st">'Weapon'</span>, <span class="st">'Type'</span>], value_vars<span class="op">=</span>[<span class="st">'Falloff 75m'</span>, <span class="st">'Falloff 50m'</span>, <span class="st">'Falloff 25m'</span>, <span class="st">'Falloff 10m'</span>], value_name<span class="op">=</span><span class="st">'Falloff'</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>sns.violinplot(tmp, x<span class="op">=</span><span class="st">'variable'</span>, y<span class="op">=</span><span class="st">'Falloff'</span>, palette<span class="op">=</span>pal).set_title(<span class="st">"Distribution of Damage Over Distance"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-08-14-exploring-small-slot-hunt-guns_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-08-14-exploring-small-slot-hunt-guns_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>As you can see from the Violin Plots, the longest range to the left has a mean less than half of what the shortest range to the right. The distribution is also quite squished so most of the values end up falling to around the same amount of damage regardless of which gun you pick. This makes it clear that these guns are all terrible at longer ranges - which is what Compact is supposed to be like.</p>
@@ -659,13 +662,13 @@ memory usage: 12.2+ KB</code></pre>
 <section id="linear-model-of-the-cost-of-small-slot-guns" class="level2">
 <h2 class="anchored" data-anchor-id="linear-model-of-the-cost-of-small-slot-guns">Linear Model of the Cost of Small Slot Guns</h2>
 <p>The time has come! Let’s use a linear model to see how much different attributes affect the cost of each gun. This isn’t the first post about this so we’ll just move along to the code.</p>
-<div class="cell" data-execution_count="56">
+<div id="cell-30" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model Time!</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There are melee weapons among the Small Slot weapons which we’ll need to remove and we’ll limit the categories to the primary attributes. The fastest way to remove the melee weapons is to drop them based on the <code>Rate of Fire</code> column as I filled them out as <code>N/a</code> while filling them out. We’ll split the data apart as per normal:</p>
-<div class="cell" data-execution_count="57">
+<div id="cell-32" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lm <span class="op">=</span> LinearRegression()</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop the melee weapons:</span></span>
@@ -673,312 +676,313 @@ memory usage: 12.2+ KB</code></pre>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>Y,X <span class="op">=</span> dataDropped[<span class="st">'Cost'</span>],dataDropped[[<span class="st">'Damage'</span>, <span class="st">'Total Ammo'</span>, <span class="st">'Rate of Fire'</span>, <span class="st">'Cycle Time'</span>, <span class="st">'Type'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Since there are categorical values, we will convert them to Dummy Values. Basically, this explodes the categorical column into lots of different columns with 1 values signifying if the categorical value is present. This is easier to see rather than explain:</p>
-<div class="cell" data-execution_count="59">
+<div id="cell-34" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>Xt <span class="op">=</span> pd.get_dummies(data<span class="op">=</span>X)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>Xt.head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Damage</th>
-      <th>Total Ammo</th>
-      <th>Rate of Fire</th>
-      <th>Cycle Time</th>
-      <th>Type_Compact</th>
-      <th>Type_Dum Dum</th>
-      <th>Type_Explosive</th>
-      <th>Type_Full Metal Jacket</th>
-      <th>Type_High Velocity</th>
-      <th>Type_Incendiary</th>
-      <th>Type_Long</th>
-      <th>Type_Medium</th>
-      <th>Type_Poison</th>
-      <th>Type_Prototype</th>
-      <th>Type_Special</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>91.0</td>
-      <td>28.0</td>
-      <td>21.0</td>
-      <td>1.5</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>91.0</td>
-      <td>28.0</td>
-      <td>21.0</td>
-      <td>1.5</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>91.0</td>
-      <td>28.0</td>
-      <td>21.0</td>
-      <td>1.5</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>195.0</td>
-      <td>19.0</td>
-      <td>14.0</td>
-      <td>4.5</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>104.0</td>
-      <td>24.0</td>
-      <td>21.0</td>
-      <td>1.4</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>104.0</td>
-      <td>24.0</td>
-      <td>21.0</td>
-      <td>1.4</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>104.0</td>
-      <td>24.0</td>
-      <td>21.0</td>
-      <td>1.4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>107.0</td>
-      <td>18.0</td>
-      <td>24.0</td>
-      <td>1.5</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>107.0</td>
-      <td>18.0</td>
-      <td>24.0</td>
-      <td>1.5</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>107.0</td>
-      <td>18.0</td>
-      <td>24.0</td>
-      <td>1.5</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>110.0</td>
-      <td>18.0</td>
-      <td>22.0</td>
-      <td>1.4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>110.0</td>
-      <td>18.0</td>
-      <td>22.0</td>
-      <td>1.4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>110.0</td>
-      <td>18.0</td>
-      <td>22.0</td>
-      <td>1.4</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>110.0</td>
-      <td>18.0</td>
-      <td>22.0</td>
-      <td>1.4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>110.0</td>
-      <td>18.0</td>
-      <td>22.0</td>
-      <td>1.4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Damage</th>
+<th data-quarto-table-cell-role="th">Total Ammo</th>
+<th data-quarto-table-cell-role="th">Rate of Fire</th>
+<th data-quarto-table-cell-role="th">Cycle Time</th>
+<th data-quarto-table-cell-role="th">Type_Compact</th>
+<th data-quarto-table-cell-role="th">Type_Dum Dum</th>
+<th data-quarto-table-cell-role="th">Type_Explosive</th>
+<th data-quarto-table-cell-role="th">Type_Full Metal Jacket</th>
+<th data-quarto-table-cell-role="th">Type_High Velocity</th>
+<th data-quarto-table-cell-role="th">Type_Incendiary</th>
+<th data-quarto-table-cell-role="th">Type_Long</th>
+<th data-quarto-table-cell-role="th">Type_Medium</th>
+<th data-quarto-table-cell-role="th">Type_Poison</th>
+<th data-quarto-table-cell-role="th">Type_Prototype</th>
+<th data-quarto-table-cell-role="th">Type_Special</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>91.0</td>
+<td>28.0</td>
+<td>21.0</td>
+<td>1.5</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>91.0</td>
+<td>28.0</td>
+<td>21.0</td>
+<td>1.5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>91.0</td>
+<td>28.0</td>
+<td>21.0</td>
+<td>1.5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>195.0</td>
+<td>19.0</td>
+<td>14.0</td>
+<td>4.5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5</td>
+<td>104.0</td>
+<td>24.0</td>
+<td>21.0</td>
+<td>1.4</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>104.0</td>
+<td>24.0</td>
+<td>21.0</td>
+<td>1.4</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7</td>
+<td>104.0</td>
+<td>24.0</td>
+<td>21.0</td>
+<td>1.4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>107.0</td>
+<td>18.0</td>
+<td>24.0</td>
+<td>1.5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>107.0</td>
+<td>18.0</td>
+<td>24.0</td>
+<td>1.5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>107.0</td>
+<td>18.0</td>
+<td>24.0</td>
+<td>1.5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>110.0</td>
+<td>18.0</td>
+<td>22.0</td>
+<td>1.4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>110.0</td>
+<td>18.0</td>
+<td>22.0</td>
+<td>1.4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>110.0</td>
+<td>18.0</td>
+<td>22.0</td>
+<td>1.4</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">15</td>
+<td>110.0</td>
+<td>18.0</td>
+<td>22.0</td>
+<td>1.4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">16</td>
+<td>110.0</td>
+<td>18.0</td>
+<td>22.0</td>
+<td>1.4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Sadly, this method does enforce the training/test methodology which is normally correct but unnecessary in this example.</p>
-<div class="cell" data-execution_count="61">
+<div id="cell-36" class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># # Get dummies for categories:</span></span>
@@ -1008,7 +1012,7 @@ memory usage: 12.2+ KB</code></pre>
 </div>
 <p>Uh oh: Negative Intercept. Depending on what we’re modeling, this is not <em>necessarily</em> incorrect but in our case this does not make much sense. Something is causing serious problems for the model and it is likely the Long Ammo - specifically the Uppercut. I’m going to remove this and it’s variants so that this model actaully makes sense.</p>
 <p>I think we’re going to remove the long ammo. Negative intercepts are a problem but they’re likely due to the Long Ammo having such a strong impact on the model and try again.</p>
-<div class="cell" data-execution_count="62">
+<div id="cell-38" class="cell" data-execution_count="62">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get rid of the Uppercut</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>dataUppercutDropped <span class="op">=</span> data.loc[ <span class="op">~</span>(data.Weapon <span class="op">==</span> <span class="st">"Caldwell Conversion Uppercut"</span>)]</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop the melee weapons:</span></span>
@@ -1077,9 +1081,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1115,10 +1133,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1128,8 +1145,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1144,6 +1170,238 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1184,6 +1442,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

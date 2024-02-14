@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,11 +19,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,47 +49,17 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -111,7 +82,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -120,12 +97,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -135,27 +114,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Orgulo.us</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Shoklan"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -206,8 +187,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
 <p>This is the third post in a series about collecting, cleaning and analyzing which Jobs are worth doing in The Cycle: Frontier game. If you’ve found this post before the others I would recommend the other posts first to catch up: <a href="https://orgulo.us/game/python/data/science/exploration/cycle/frontier/2022/09/28/cycle-jobs-part-one.html">Post One</a> and <a href="https://orgulo.us/game/python/data/science/exploration/cycle/frontier/2022/10/07/cycle-jobs-part-two.html">Post Two</a>. We’ll pick up where we left off having separate datasets for the faction rewards as well as all the loot. Let’s get our imports!</p>
-<div class="cell" data-execution_count="1">
+<div id="cell-2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd             <span class="co"># for the data.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np              <span class="co"># for a NaN type</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># For plotting, and some customization of plots.</span></span>
@@ -218,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(rc<span class="op">=</span>{<span class="st">"figure.figsize"</span>:(<span class="dv">11</span>, <span class="dv">8</span>)})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There are two tasks we’ll need to adjust before we continue. The first is that our <em>Tasks</em> work was only for one faction so we’ll need to loop through each faction’s tasks and then append them all together into a single dataset; the code is included simply for observation.</p>
-<div class="cell" data-execution_count="5">
+<div id="cell-7" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> breakLoot(taskString, index<span class="op">=</span><span class="dv">0</span>):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    parts <span class="op">=</span> taskString.split(<span class="st">' '</span>, maxsplit<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
@@ -265,7 +247,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>tasks <span class="op">=</span> pd.concat([<span class="op">*</span>tasks])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The second task is that we need a single dataset for all the job rewards. We’ll definitely want to tag each so we don’t lose track of which task belongs to which Faction.</p>
-<div class="cell" data-execution_count="6">
+<div id="cell-9" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is new; stop inserting this trash:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># want the faction when we join them all:</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>korolevRewards[<span class="st">'Faction'</span>] <span class="op">=</span> <span class="st">"Korolev"</span></span>
@@ -277,510 +259,517 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Proof they're all in there:</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>allJobs.groupby(<span class="st">'Faction'</span>).take([<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th>Units</th>
-      <th>Rewards</th>
-      <th>Job</th>
-    </tr>
-    <tr>
-      <th>Faction</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>ICA</th>
-      <th>1</th>
-      <td>4400</td>
-      <td>K-Marks</td>
-      <td>Water Filtration System</td>
-    </tr>
-    <tr>
-      <th>Korolev</th>
-      <th>1</th>
-      <td>3800</td>
-      <td>K-Marks</td>
-      <td>New Mining Tools</td>
-    </tr>
-    <tr>
-      <th>Osiris</th>
-      <th>1</th>
-      <td>2200</td>
-      <td>K-Marks</td>
-      <td>Lab equipment</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Units</th>
+<th data-quarto-table-cell-role="th">Rewards</th>
+<th data-quarto-table-cell-role="th">Job</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Faction</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">ICA</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>4400</td>
+<td>K-Marks</td>
+<td>Water Filtration System</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Korolev</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>3800</td>
+<td>K-Marks</td>
+<td>New Mining Tools</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Osiris</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>2200</td>
+<td>K-Marks</td>
+<td>Lab equipment</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>For this analysis, we’re really only interested in the Kmarks so we’ll need to only pull those rows; we’ll do some work with the others later but for now just the money.</p>
-<div class="cell" data-execution_count="7">
+<div id="cell-11" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lootKMarks <span class="op">=</span> loot.query(<span class="st">'Name == "K-Marks"'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>lootKMarks.head(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Unit</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-      <th>Loot</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>150.0</td>
-      <td>K-Marks</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>570.0</td>
-      <td>K-Marks</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Cloudy Veltecite</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>854.0</td>
-      <td>K-Marks</td>
-      <td>Rare</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Clear Veltecite</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>1922.0</td>
-      <td>K-Marks</td>
-      <td>Epic</td>
-      <td>Yes x7</td>
-      <td>Yes x9</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Pure Veltecite</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>6487.0</td>
-      <td>K-Marks</td>
-      <td>Legendary</td>
-      <td>Yes x4</td>
-      <td>Yes x2</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Veltecite Heart</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>570.0</td>
-      <td>K-Marks</td>
-      <td>Uncommon</td>
-      <td>Yes x36</td>
-      <td>Yes x7</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Brittle Titan Ore</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>854.0</td>
-      <td>K-Marks</td>
-      <td>Rare</td>
-      <td>Yes x6</td>
-      <td>Yes x8</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Titan Ore</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>150.0</td>
-      <td>K-Marks</td>
-      <td>Common</td>
-      <td>Yes x46</td>
-      <td>Yes x1</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Nickel</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+<th data-quarto-table-cell-role="th">Loot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>150.0</td>
+<td>K-Marks</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>570.0</td>
+<td>K-Marks</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>No</td>
+<td>Cloudy Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">11</td>
+<td>854.0</td>
+<td>K-Marks</td>
+<td>Rare</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>No</td>
+<td>Clear Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">16</td>
+<td>1922.0</td>
+<td>K-Marks</td>
+<td>Epic</td>
+<td>Yes x7</td>
+<td>Yes x9</td>
+<td>Yes</td>
+<td>No</td>
+<td>Pure Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">21</td>
+<td>6487.0</td>
+<td>K-Marks</td>
+<td>Legendary</td>
+<td>Yes x4</td>
+<td>Yes x2</td>
+<td>Yes</td>
+<td>No</td>
+<td>Veltecite Heart</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">26</td>
+<td>570.0</td>
+<td>K-Marks</td>
+<td>Uncommon</td>
+<td>Yes x36</td>
+<td>Yes x7</td>
+<td>Yes</td>
+<td>No</td>
+<td>Brittle Titan Ore</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">31</td>
+<td>854.0</td>
+<td>K-Marks</td>
+<td>Rare</td>
+<td>Yes x6</td>
+<td>Yes x8</td>
+<td>Yes</td>
+<td>No</td>
+<td>Titan Ore</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">36</td>
+<td>150.0</td>
+<td>K-Marks</td>
+<td>Common</td>
+<td>Yes x46</td>
+<td>Yes x1</td>
+<td>Yes</td>
+<td>No</td>
+<td>Nickel</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Joins are a complicated topic which I’m not going to flesh out here. In this instance, what we want is the loot table with the Kmark value connected to the jobs table with respect to the name of the loot. And, we’ll tell Pandas to join those together below making sure that as long as it exists in the left table that it gets connected to something in the right table.</p>
-<div class="cell" data-execution_count="10">
+<div id="cell-15" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>taskLoot <span class="op">=</span> tasks.merge(lootKMarks[[<span class="st">'Loot'</span>, <span class="st">'Unit'</span>]], left_on<span class="op">=</span><span class="st">'loot'</span>, right_on<span class="op">=</span><span class="st">'Loot'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>taskLoot.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>name</th>
-      <th>count</th>
-      <th>loot</th>
-      <th>description</th>
-      <th>Loot</th>
-      <th>Unit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>New Mining Tools</td>
-      <td>2.0</td>
-      <td>Hydraulic Piston</td>
-      <td>We are producing new Mining Tools for new Pros...</td>
-      <td>Hydraulic Piston</td>
-      <td>338.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Excavator Improvements</td>
-      <td>3.0</td>
-      <td>Hydraulic Piston</td>
-      <td>The suspension on our mining excavators need i...</td>
-      <td>Hydraulic Piston</td>
-      <td>338.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>New Mining Tools</td>
-      <td>10.0</td>
-      <td>Hardened Metals</td>
-      <td>We are producing new Mining Tools for new Pros...</td>
-      <td>Hardened Metals</td>
-      <td>150.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Automated Security</td>
-      <td>16.0</td>
-      <td>Hardened Metals</td>
-      <td>We will have to build new turrets to help prot...</td>
-      <td>Hardened Metals</td>
-      <td>150.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Air Lock Upgrades</td>
-      <td>12.0</td>
-      <td>Hardened Metals</td>
-      <td>Our engineers designed a safer airlock system ...</td>
-      <td>Hardened Metals</td>
-      <td>150.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">count</th>
+<th data-quarto-table-cell-role="th">loot</th>
+<th data-quarto-table-cell-role="th">description</th>
+<th data-quarto-table-cell-role="th">Loot</th>
+<th data-quarto-table-cell-role="th">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>New Mining Tools</td>
+<td>2.0</td>
+<td>Hydraulic Piston</td>
+<td>We are producing new Mining Tools for new Pros...</td>
+<td>Hydraulic Piston</td>
+<td>338.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Excavator Improvements</td>
+<td>3.0</td>
+<td>Hydraulic Piston</td>
+<td>The suspension on our mining excavators need i...</td>
+<td>Hydraulic Piston</td>
+<td>338.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>New Mining Tools</td>
+<td>10.0</td>
+<td>Hardened Metals</td>
+<td>We are producing new Mining Tools for new Pros...</td>
+<td>Hardened Metals</td>
+<td>150.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Automated Security</td>
+<td>16.0</td>
+<td>Hardened Metals</td>
+<td>We will have to build new turrets to help prot...</td>
+<td>Hardened Metals</td>
+<td>150.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Air Lock Upgrades</td>
+<td>12.0</td>
+<td>Hardened Metals</td>
+<td>Our engineers designed a safer airlock system ...</td>
+<td>Hardened Metals</td>
+<td>150.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>We’ll now multiply the <code>count</code> of the <code>loot</code> times their values to get the <code>cost</code> per resource in the task.</p>
-<div class="cell" data-execution_count="11">
+<div id="cell-17" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>taskLoot[<span class="st">'Cost'</span>] <span class="op">=</span> taskLoot[<span class="st">'count'</span>] <span class="op">*</span> taskLoot[<span class="st">'Unit'</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>taskLoot.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>name</th>
-      <th>count</th>
-      <th>loot</th>
-      <th>description</th>
-      <th>Loot</th>
-      <th>Unit</th>
-      <th>Cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>New Mining Tools</td>
-      <td>2.0</td>
-      <td>Hydraulic Piston</td>
-      <td>We are producing new Mining Tools for new Pros...</td>
-      <td>Hydraulic Piston</td>
-      <td>338.0</td>
-      <td>676.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Excavator Improvements</td>
-      <td>3.0</td>
-      <td>Hydraulic Piston</td>
-      <td>The suspension on our mining excavators need i...</td>
-      <td>Hydraulic Piston</td>
-      <td>338.0</td>
-      <td>1014.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>New Mining Tools</td>
-      <td>10.0</td>
-      <td>Hardened Metals</td>
-      <td>We are producing new Mining Tools for new Pros...</td>
-      <td>Hardened Metals</td>
-      <td>150.0</td>
-      <td>1500.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Automated Security</td>
-      <td>16.0</td>
-      <td>Hardened Metals</td>
-      <td>We will have to build new turrets to help prot...</td>
-      <td>Hardened Metals</td>
-      <td>150.0</td>
-      <td>2400.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Air Lock Upgrades</td>
-      <td>12.0</td>
-      <td>Hardened Metals</td>
-      <td>Our engineers designed a safer airlock system ...</td>
-      <td>Hardened Metals</td>
-      <td>150.0</td>
-      <td>1800.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">count</th>
+<th data-quarto-table-cell-role="th">loot</th>
+<th data-quarto-table-cell-role="th">description</th>
+<th data-quarto-table-cell-role="th">Loot</th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>New Mining Tools</td>
+<td>2.0</td>
+<td>Hydraulic Piston</td>
+<td>We are producing new Mining Tools for new Pros...</td>
+<td>Hydraulic Piston</td>
+<td>338.0</td>
+<td>676.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Excavator Improvements</td>
+<td>3.0</td>
+<td>Hydraulic Piston</td>
+<td>The suspension on our mining excavators need i...</td>
+<td>Hydraulic Piston</td>
+<td>338.0</td>
+<td>1014.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>New Mining Tools</td>
+<td>10.0</td>
+<td>Hardened Metals</td>
+<td>We are producing new Mining Tools for new Pros...</td>
+<td>Hardened Metals</td>
+<td>150.0</td>
+<td>1500.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Automated Security</td>
+<td>16.0</td>
+<td>Hardened Metals</td>
+<td>We will have to build new turrets to help prot...</td>
+<td>Hardened Metals</td>
+<td>150.0</td>
+<td>2400.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Air Lock Upgrades</td>
+<td>12.0</td>
+<td>Hardened Metals</td>
+<td>Our engineers designed a safer airlock system ...</td>
+<td>Hardened Metals</td>
+<td>150.0</td>
+<td>1800.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Now we’ll just group by the name of the task to and take the sume of each to get the total <code>cost</code> per task.</p>
-<div class="cell" data-execution_count="12">
+<div id="cell-19" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>taskLoot[[<span class="st">'name'</span>, <span class="st">'Cost'</span>]].groupby(<span class="st">'name'</span>).<span class="bu">sum</span>().head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Cost</th>
-    </tr>
-    <tr>
-      <th>name</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>A Craving</th>
-      <td>4048.0</td>
-    </tr>
-    <tr>
-      <th>A Solution</th>
-      <td>10125.0</td>
-    </tr>
-    <tr>
-      <th>A new Energy Source</th>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>A new type of Alloy</th>
-      <td>1800.0</td>
-    </tr>
-    <tr>
-      <th>Air Lock Upgrades</th>
-      <td>3900.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Cost</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">A Craving</td>
+<td>4048.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">A Solution</td>
+<td>10125.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">A new Energy Source</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">A new type of Alloy</td>
+<td>1800.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Air Lock Upgrades</td>
+<td>3900.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>This is the first piece we’ll need to get the results we’re after; the other part is all the jobs we collected in the previous post - and brought here.</p>
-<div class="cell" data-execution_count="13">
+<div id="cell-21" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> allJobs.query(<span class="st">'Rewards == "K-Marks"'</span>).merge(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    taskLoot[[<span class="st">'name'</span>, <span class="st">'Cost'</span>]].groupby(<span class="st">'name'</span>).<span class="bu">sum</span>(), left_on<span class="op">=</span><span class="st">"Job"</span>, right_on<span class="op">=</span><span class="st">"name"</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>results.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Units</th>
-      <th>Rewards</th>
-      <th>Job</th>
-      <th>Faction</th>
-      <th>Cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>3800</td>
-      <td>K-Marks</td>
-      <td>New Mining Tools</td>
-      <td>Korolev</td>
-      <td>2176.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>11000</td>
-      <td>K-Marks</td>
-      <td>Explosive Excavation</td>
-      <td>Korolev</td>
-      <td>6836.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>6900</td>
-      <td>K-Marks</td>
-      <td>Mining Bot</td>
-      <td>Korolev</td>
-      <td>1014.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>7600</td>
-      <td>K-Marks</td>
-      <td>None of your Business</td>
-      <td>Korolev</td>
-      <td>1800.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>10000</td>
-      <td>K-Marks</td>
-      <td>Insufficient Processing Power</td>
-      <td>Korolev</td>
-      <td>3845.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Units</th>
+<th data-quarto-table-cell-role="th">Rewards</th>
+<th data-quarto-table-cell-role="th">Job</th>
+<th data-quarto-table-cell-role="th">Faction</th>
+<th data-quarto-table-cell-role="th">Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>3800</td>
+<td>K-Marks</td>
+<td>New Mining Tools</td>
+<td>Korolev</td>
+<td>2176.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>11000</td>
+<td>K-Marks</td>
+<td>Explosive Excavation</td>
+<td>Korolev</td>
+<td>6836.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>6900</td>
+<td>K-Marks</td>
+<td>Mining Bot</td>
+<td>Korolev</td>
+<td>1014.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>7600</td>
+<td>K-Marks</td>
+<td>None of your Business</td>
+<td>Korolev</td>
+<td>1800.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>10000</td>
+<td>K-Marks</td>
+<td>Insufficient Processing Power</td>
+<td>Korolev</td>
+<td>3845.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Now we have the rewards and the cost per task we can finally calculate the <strong>Balance</strong> of each job!</p>
-<div class="cell" data-execution_count="14">
+<div id="cell-23" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>results[<span class="st">'Balance'</span>] <span class="op">=</span> results[<span class="st">'Units'</span>] <span class="op">-</span> results[<span class="st">'Cost'</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>results.groupby(<span class="st">'Faction'</span>).take([<span class="dv">0</span>,<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th>Units</th>
-      <th>Rewards</th>
-      <th>Job</th>
-      <th>Cost</th>
-      <th>Balance</th>
-    </tr>
-    <tr>
-      <th>Faction</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">ICA</th>
-      <th>46</th>
-      <td>4400</td>
-      <td>K-Marks</td>
-      <td>Water Filtration System</td>
-      <td>2700.0</td>
-      <td>1700.0</td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>12000</td>
-      <td>K-Marks</td>
-      <td>Air Lock Upgrades</td>
-      <td>3900.0</td>
-      <td>8100.0</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Korolev</th>
-      <th>0</th>
-      <td>3800</td>
-      <td>K-Marks</td>
-      <td>New Mining Tools</td>
-      <td>2176.0</td>
-      <td>1624.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>7600</td>
-      <td>K-Marks</td>
-      <td>None of your Business</td>
-      <td>1800.0</td>
-      <td>5800.0</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Osiris</th>
-      <th>94</th>
-      <td>2200</td>
-      <td>K-Marks</td>
-      <td>Lab equipment</td>
-      <td>676.0</td>
-      <td>1524.0</td>
-    </tr>
-    <tr>
-      <th>97</th>
-      <td>26000</td>
-      <td>K-Marks</td>
-      <td>Cretins</td>
-      <td>6300.0</td>
-      <td>19700.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Units</th>
+<th data-quarto-table-cell-role="th">Rewards</th>
+<th data-quarto-table-cell-role="th">Job</th>
+<th data-quarto-table-cell-role="th">Cost</th>
+<th data-quarto-table-cell-role="th">Balance</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Faction</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">ICA</td>
+<td data-quarto-table-cell-role="th">46</td>
+<td>4400</td>
+<td>K-Marks</td>
+<td>Water Filtration System</td>
+<td>2700.0</td>
+<td>1700.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">49</td>
+<td>12000</td>
+<td>K-Marks</td>
+<td>Air Lock Upgrades</td>
+<td>3900.0</td>
+<td>8100.0</td>
+</tr>
+<tr class="odd">
+<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">Korolev</td>
+<td data-quarto-table-cell-role="th">0</td>
+<td>3800</td>
+<td>K-Marks</td>
+<td>New Mining Tools</td>
+<td>2176.0</td>
+<td>1624.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>7600</td>
+<td>K-Marks</td>
+<td>None of your Business</td>
+<td>1800.0</td>
+<td>5800.0</td>
+</tr>
+<tr class="odd">
+<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">Osiris</td>
+<td data-quarto-table-cell-role="th">94</td>
+<td>2200</td>
+<td>K-Marks</td>
+<td>Lab equipment</td>
+<td>676.0</td>
+<td>1524.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">97</td>
+<td>26000</td>
+<td>K-Marks</td>
+<td>Cretins</td>
+<td>6300.0</td>
+<td>19700.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -788,93 +777,95 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="conclusions---and-questions">Conclusions - and Questions!</h2>
 <p>So, now that we have the data let’s work on some questions!</p>
 <p>Given any particular faction, which task has the highest Balance?</p>
-<div class="cell" data-execution_count="15">
+<div id="cell-27" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>balanceMax <span class="op">=</span> results.Balance.<span class="bu">max</span>()</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>results.loc[results.Balance <span class="op">==</span> balanceMax]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Units</th>
-      <th>Rewards</th>
-      <th>Job</th>
-      <th>Faction</th>
-      <th>Cost</th>
-      <th>Balance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>91</th>
-      <td>227000</td>
-      <td>K-Marks</td>
-      <td>Striking Big</td>
-      <td>ICA</td>
-      <td>0.0</td>
-      <td>227000.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Units</th>
+<th data-quarto-table-cell-role="th">Rewards</th>
+<th data-quarto-table-cell-role="th">Job</th>
+<th data-quarto-table-cell-role="th">Faction</th>
+<th data-quarto-table-cell-role="th">Cost</th>
+<th data-quarto-table-cell-role="th">Balance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">91</td>
+<td>227000</td>
+<td>K-Marks</td>
+<td>Striking Big</td>
+<td>ICA</td>
+<td>0.0</td>
+<td>227000.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Looks like it is the <em>Job</em> <strong>Striking Big</strong>. What’s this job about?: &gt; Damn it! We ran out of Fuel for our Radiation Shields here on the Station. And there’s no replacement for Nanite Infused Crude Oil. You know what to do.</p>
 <p>It’s collecting Oil Cannisters! Those are worth a lot of money so it’s not a surprise that a task which wants you to collect them would also pay out so highly.</p>
 <p>What about the job that pays the least?</p>
-<div class="cell" data-execution_count="17">
+<div id="cell-31" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>balanceMin <span class="op">=</span> results.Balance.<span class="bu">min</span>()</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>results.loc[results.Balance <span class="op">==</span> balanceMin]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Units</th>
-      <th>Rewards</th>
-      <th>Job</th>
-      <th>Faction</th>
-      <th>Cost</th>
-      <th>Balance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>94</th>
-      <td>2200</td>
-      <td>K-Marks</td>
-      <td>Lab equipment</td>
-      <td>Osiris</td>
-      <td>676.0</td>
-      <td>1524.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Units</th>
+<th data-quarto-table-cell-role="th">Rewards</th>
+<th data-quarto-table-cell-role="th">Job</th>
+<th data-quarto-table-cell-role="th">Faction</th>
+<th data-quarto-table-cell-role="th">Cost</th>
+<th data-quarto-table-cell-role="th">Balance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">94</td>
+<td>2200</td>
+<td>K-Marks</td>
+<td>Lab equipment</td>
+<td>Osiris</td>
+<td>676.0</td>
+<td>1524.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Well, it our good friends <em>Osiris</em> failing the station again. That looks like a low level job from a cost and reward that low. Not really much of a surprise here.</p>
 <p>So, what about the mean balance - and how many tasks are there which reward more than that average value?</p>
-<div class="cell" data-execution_count="18">
+<div id="cell-34" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>balanceMean <span class="op">=</span> results.Balance.mean()</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f"$</span><span class="sc">{</span><span class="bu">round</span>(balanceMean, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>'$20600.89'</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="19">
+<div id="cell-35" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>( results.loc[results.Balance <span class="op">&gt;=</span> balanceMean])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>40</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
+<div id="cell-36" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How many are there per faction?</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>results.loc[</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    results.Balance <span class="op">&gt;=</span> balanceMean ]<span class="op">\</span></span>
@@ -885,70 +876,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Faction'</span>, <span class="st">'Count'</span></span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Faction</th>
-      <th>Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ICA</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Korolev</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Osiris</td>
-      <td>12</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Faction</th>
+<th data-quarto-table-cell-role="th">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>ICA</td>
+<td>14</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Korolev</td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Osiris</td>
+<td>12</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>And, unsurpisingly <em>Osiris</em> is slightly behind but they’re mostly the same.</p>
 <p>Ok, so what’s the cost of the Job that inspired all this work: <em>And Two Smoking Barrels</em>?</p>
-<div class="cell" data-execution_count="21">
+<div id="cell-39" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>results.loc[results.Job.<span class="bu">str</span>.contains(<span class="st">"Barrel"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Units</th>
-      <th>Rewards</th>
-      <th>Job</th>
-      <th>Faction</th>
-      <th>Cost</th>
-      <th>Balance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>39</th>
-      <td>19000</td>
-      <td>K-Marks</td>
-      <td>And two smoking Barrels</td>
-      <td>Korolev</td>
-      <td>0.0</td>
-      <td>19000.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Units</th>
+<th data-quarto-table-cell-role="th">Rewards</th>
+<th data-quarto-table-cell-role="th">Job</th>
+<th data-quarto-table-cell-role="th">Faction</th>
+<th data-quarto-table-cell-role="th">Cost</th>
+<th data-quarto-table-cell-role="th">Balance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">39</td>
+<td>19000</td>
+<td>K-Marks</td>
+<td>And two smoking Barrels</td>
+<td>Korolev</td>
+<td>0.0</td>
+<td>19000.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -986,9 +979,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1024,10 +1031,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1037,8 +1043,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1053,6 +1068,238 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1093,6 +1340,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

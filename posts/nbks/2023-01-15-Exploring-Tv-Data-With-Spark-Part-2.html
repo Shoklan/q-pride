@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,11 +19,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,47 +49,17 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -111,7 +82,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -120,12 +97,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -135,27 +114,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Orgulo.us</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Shoklan"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -225,11 +206,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
 <section id="moving-from-spark-to-visualizations." class="level1">
 <h1>Moving From Spark to Visualizations.</h1>
 <p>In the last post, we reviewed some data cleaning and how to use Apache spark. We’re going to move on to visualizations; while I like the data tables and numbers, when showing the conclusions to others then visualizations are the way to go. Numbers without context are meaningless and the reason they mean something to the individual making the analysis is that you have the data as context. But, those you’re showing the conclusinos too do not - and they didn’t spend hours cleaning and thinking about the data like you did.</p>
 <p>We’ll add all the cleaning from before just for that context I was talking about; I would recommending seeing the part one of this series if your curious about that process.</p>
-<div class="cell" data-execution_count="4">
+<div id="cell-5" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the schema:</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>shows <span class="op">=</span> StructType([</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    StructField(<span class="st">'Ignore'</span>, IntegerType(), <span class="va">True</span>),</span>
@@ -250,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        header<span class="op">=</span><span class="va">True</span>,</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    schema<span class="op">=</span>shows)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="5">
+<div id="cell-6" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cleanup</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data.drop(<span class="st">'Ignore'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -311,13 +293,13 @@ only showing top 10 rows
 <section id="qq-plot-of-numeric-values" class="level2">
 <h2 class="anchored" data-anchor-id="qq-plot-of-numeric-values">QQ plot of Numeric Values</h2>
 <p>A <strong>Quantile-Quantile Plot</strong> is a plot which takes the data and compares it against commonly another distribution. While it is less well known, it is most commonly used as a visual indicator of whether a dataset is Normally Distributed. Since matplotlib and seaborn don’t have this built in we’ll need to use a different library this time: statsmodels.</p>
-<div class="cell" data-execution_count="1">
+<div id="cell-9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pylab <span class="im">as</span> py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To plot the data we’ll need to pull it out of Spark and convert it to pandas; we’ve done this enough at this point. But, we’ve never used the sql api like this before. I quite like this interface since SQL queries are simply to read.</p>
-<div class="cell" data-execution_count="9">
+<div id="cell-11" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To use this, we'll need what is called a View; this is an idea from SQL</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>cData.createOrReplaceTempView(<span class="st">"TMP"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>tmp <span class="op">=</span> spark.sql(<span class="st">"SELECT Ratings,Duration,Votes FROM TMP WHERE Duration IS NOT NULL"</span>)</span>
@@ -326,87 +308,88 @@ only showing top 10 rows
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>qqData <span class="op">=</span> tmp.select([<span class="st">'Ratings'</span>, <span class="st">'nDuration'</span>, <span class="st">'Votes'</span>]).toPandas()</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>qqData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Ratings</th>
-      <th>nDuration</th>
-      <th>Votes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>8.4</td>
-      <td>40</td>
-      <td>82474</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>8.4</td>
-      <td>40</td>
-      <td>82474</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>8.4</td>
-      <td>40</td>
-      <td>82474</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>8.4</td>
-      <td>40</td>
-      <td>82474</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>8.4</td>
-      <td>40</td>
-      <td>82474</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>26228</th>
-      <td>6.4</td>
-      <td>45</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>26229</th>
-      <td>6.4</td>
-      <td>45</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>26230</th>
-      <td>6.4</td>
-      <td>45</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>26231</th>
-      <td>6.4</td>
-      <td>45</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>26232</th>
-      <td>6.4</td>
-      <td>45</td>
-      <td>25</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Ratings</th>
+<th data-quarto-table-cell-role="th">nDuration</th>
+<th data-quarto-table-cell-role="th">Votes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>8.4</td>
+<td>40</td>
+<td>82474</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>8.4</td>
+<td>40</td>
+<td>82474</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>8.4</td>
+<td>40</td>
+<td>82474</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>8.4</td>
+<td>40</td>
+<td>82474</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>8.4</td>
+<td>40</td>
+<td>82474</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">26228</td>
+<td>6.4</td>
+<td>45</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">26229</td>
+<td>6.4</td>
+<td>45</td>
+<td>25</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">26230</td>
+<td>6.4</td>
+<td>45</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">26231</td>
+<td>6.4</td>
+<td>45</td>
+<td>25</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">26232</td>
+<td>6.4</td>
+<td>45</td>
+<td>25</td>
+</tr>
+</tbody>
 </table>
+
 <p>26233 rows × 3 columns</p>
 </div>
 </div>
@@ -414,22 +397,30 @@ only showing top 10 rows
 <section id="are-ratings-normally-distributed" class="level3">
 <h3 class="anchored" data-anchor-id="are-ratings-normally-distributed">Are Ratings Normally Distributed?</h3>
 <p>Now we’ll check if the Ratings are <em>Normally Distributed</em>.</p>
-<div class="cell" data-execution_count="11">
+<div id="cell-13" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the the y=x line for comparison.</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sm.qqplot(qqData.Ratings, line <span class="op">=</span><span class="st">'45'</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#py.show()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-8-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>From the above, this is not a normally distributed dataset. When we have situations like this, it is not uncommon to try a log tranform if the data does not fit. The reason for this is that taking the logarithmic of the data maintains the underlying mathematical relationship. So, let’s try it!</p>
-<div class="cell" data-execution_count="21">
+<div id="cell-15" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">"figure.figsize"</span>] <span class="op">=</span> (<span class="dv">6</span>,<span class="dv">6</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sm.qqplot(np.log(qqData.Ratings), line <span class="op">=</span><span class="st">'45'</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-9-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Still No.&nbsp;We’ll want to avoid any model which has linear prerequisites.</p>
@@ -437,12 +428,16 @@ only showing top 10 rows
 <section id="is-duration-normally-distributed" class="level3">
 <h3 class="anchored" data-anchor-id="is-duration-normally-distributed">Is Duration Normally Distributed?</h3>
 <p>The duration of a show is very likely to not be normally distributed. The length is not random and there are very few posssible choices. But, we’re going to check anyways.</p>
-<div class="cell" data-execution_count="22">
+<div id="cell-18" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">"figure.figsize"</span>] <span class="op">=</span> (<span class="dv">6</span>,<span class="dv">6</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sm.qqplot(qqData.nDuration.astype(<span class="bu">int</span>), line <span class="op">=</span><span class="st">'45'</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>And, expected no.</p>
@@ -450,12 +445,16 @@ only showing top 10 rows
 <section id="are-votes-normally-distributed" class="level3">
 <h3 class="anchored" data-anchor-id="are-votes-normally-distributed">Are Votes Normally Distributed?</h3>
 <p>We would expect votes to be normally distributed as this is the kind of process where as you would select samples it should approach normal.</p>
-<div class="cell" data-execution_count="25">
+<div id="cell-21" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">"figure.figsize"</span>] <span class="op">=</span> (<span class="dv">6</span>,<span class="dv">6</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sm.qqplot(qqData.Votes.astype(<span class="bu">int</span>), line <span class="op">=</span><span class="st">'45'</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Still even this is not normally distributed. This is starting to get worrying because at least this would be expected to be normally distributed.</p>
@@ -464,7 +463,7 @@ only showing top 10 rows
 <section id="ridge-plot-of-genre-ratings" class="level2">
 <h2 class="anchored" data-anchor-id="ridge-plot-of-genre-ratings">Ridge Plot of Genre Ratings</h2>
 <p>Looking at the distribution of numeric variables can be useful. Normally, we could do a <em>Distribution Plot</em> or a <em>Histogram</em> to visualize this. But, I thought I would do something more interesting: a <strong>Ridge Plot</strong>. So, a <em>Ridge Plot</em> shows the distribution of values but conditioned on a category. And, we’re going to use it to check the ratings for the top categories and how they break down. First we’ll need to get our data.</p>
-<div class="cell" data-execution_count="377">
+<div id="cell-24" class="cell" data-execution_count="377">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> mean <span class="im">as</span> sMean, col</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Use results from previous post:</span></span>
@@ -475,93 +474,94 @@ only showing top 10 rows
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>results.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="377">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Genre</th>
-      <th>Mean</th>
-      <th>Votes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Biography</td>
-      <td>7.795238</td>
-      <td>33137.952381</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Music</td>
-      <td>7.475000</td>
-      <td>413.625000</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>History</td>
-      <td>7.416667</td>
-      <td>3330.541667</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Animation</td>
-      <td>7.270712</td>
-      <td>8447.388742</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Fantasy</td>
-      <td>7.231312</td>
-      <td>18573.573756</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Adventure</td>
-      <td>7.228473</td>
-      <td>8999.588235</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Crime</td>
-      <td>7.225607</td>
-      <td>15978.954034</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Comedy</td>
-      <td>7.223730</td>
-      <td>4206.774311</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Family</td>
-      <td>7.207407</td>
-      <td>635.759259</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Drama</td>
-      <td>7.203856</td>
-      <td>17351.695414</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Genre</th>
+<th data-quarto-table-cell-role="th">Mean</th>
+<th data-quarto-table-cell-role="th">Votes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Biography</td>
+<td>7.795238</td>
+<td>33137.952381</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Music</td>
+<td>7.475000</td>
+<td>413.625000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>History</td>
+<td>7.416667</td>
+<td>3330.541667</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Animation</td>
+<td>7.270712</td>
+<td>8447.388742</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Fantasy</td>
+<td>7.231312</td>
+<td>18573.573756</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Adventure</td>
+<td>7.228473</td>
+<td>8999.588235</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Crime</td>
+<td>7.225607</td>
+<td>15978.954034</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>Comedy</td>
+<td>7.223730</td>
+<td>4206.774311</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>Family</td>
+<td>7.207407</td>
+<td>635.759259</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>Drama</td>
+<td>7.203856</td>
+<td>17351.695414</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>We’ll make a new SQL View with Apache Spark to filter out the top Genres.</p>
-<div class="cell" data-execution_count="378">
+<div id="cell-26" class="cell" data-execution_count="378">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cData.createOrReplaceTempView(<span class="st">"Explore"</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Using our results, collect the categories to filter for.</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> <span class="st">','</span>.join([<span class="ss">f"'</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">'"</span> <span class="cf">for</span> x <span class="kw">in</span> results.head(<span class="dv">8</span>).Genre.tolist()])</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>ridgeSlice <span class="op">=</span> spark.sql(<span class="ss">f"SELECT Genre,Ratings FROM Explore WHERE Genre IN( </span><span class="sc">{</span> values <span class="sc">}</span><span class="ss"> )"</span>).toPandas()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="385">
+<div id="cell-27" class="cell" data-execution_count="385">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is just to stop some spam.</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span>
@@ -596,7 +596,11 @@ only showing top 10 rows
 <span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>g.<span class="bu">set</span>(yticks<span class="op">=</span>[], ylabel<span class="op">=</span><span class="st">""</span>)</span>
 <span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>g.despine(bottom<span class="op">=</span><span class="va">True</span>, left<span class="op">=</span><span class="va">True</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Music quickly stands out; people either like or dislike the show and there is little in between. Fantasy and Biography are clumped a little under 8 but mostly concentrated. The others are closer to what we’d expect from a normal distribution. Comedy, Animation and History are interesting since there is more spread among the ratings</p>
@@ -604,7 +608,7 @@ only showing top 10 rows
 <section id="jointplot" class="level2">
 <h2 class="anchored" data-anchor-id="jointplot">JointPlot</h2>
 <p>A <em>Joinplot</em> is a nicer looking scatterplot. It includes some of the same information but also you can add distibution information. Personally, I like the <em>Hexagons</em> so we’re going to use those. And, we’re going to see how the year affects the Rating over time.</p>
-<div class="cell" data-execution_count="391">
+<div id="cell-30" class="cell" data-execution_count="391">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> cData.select([<span class="st">'startYear'</span>, <span class="st">'Ratings'</span>]).toPandas()</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> results.assign(</span>
@@ -618,207 +622,213 @@ only showing top 10 rows
 </div>
 </div>
 <p>Uh oh, looks like we’ve got some more cleaning to do. Let’s look at what is affected and see how widespread this is.</p>
-<div class="cell" data-execution_count="392">
+<div id="cell-32" class="cell" data-execution_count="392">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>results.loc[ results.startYear <span class="op">==</span> <span class="st">'s2018'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="392">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>startYear</th>
-      <th>Ratings</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>24638</th>
-      <td>s2018</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>24639</th>
-      <td>s2018</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>24640</th>
-      <td>s2018</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>24641</th>
-      <td>s2018</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>24642</th>
-      <td>s2018</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>24643</th>
-      <td>s2018</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>24644</th>
-      <td>s2018</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>24645</th>
-      <td>s2018</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>24646</th>
-      <td>s2018</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>24647</th>
-      <td>s2018</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>24648</th>
-      <td>s2018</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>24649</th>
-      <td>s2018</td>
-      <td>6.1</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">startYear</th>
+<th data-quarto-table-cell-role="th">Ratings</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24638</td>
+<td>s2018</td>
+<td>6.1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">24639</td>
+<td>s2018</td>
+<td>6.1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24640</td>
+<td>s2018</td>
+<td>6.1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">24641</td>
+<td>s2018</td>
+<td>6.1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24642</td>
+<td>s2018</td>
+<td>6.1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">24643</td>
+<td>s2018</td>
+<td>6.1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24644</td>
+<td>s2018</td>
+<td>6.1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">24645</td>
+<td>s2018</td>
+<td>6.1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24646</td>
+<td>s2018</td>
+<td>6.1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">24647</td>
+<td>s2018</td>
+<td>6.1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24648</td>
+<td>s2018</td>
+<td>6.1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">24649</td>
+<td>s2018</td>
+<td>6.1</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>This might be the same movie/show which is being exploded out. We’re going to just fix it for our analysis at this point. Again, if we were getting this data from a Data Engineer then we’d want to discuss this with them to clean this upstream.</p>
-<div class="cell" data-execution_count="393">
+<div id="cell-34" class="cell" data-execution_count="393">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>results[<span class="st">'startYear'</span>] <span class="op">=</span> results.startYear.<span class="bu">str</span>.replace(<span class="st">'s2018'</span>, <span class="st">'2018'</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> results.assign(</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    Year <span class="op">=</span> results.startYear.astype(<span class="bu">int</span>)</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>results.head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="393">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>startYear</th>
-      <th>Ratings</th>
-      <th>Year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2022</td>
-      <td>8.4</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2022</td>
-      <td>8.4</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2022</td>
-      <td>8.4</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2022</td>
-      <td>8.4</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2022</td>
-      <td>8.4</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2022</td>
-      <td>8.4</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2022</td>
-      <td>8.4</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2022</td>
-      <td>8.4</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2022</td>
-      <td>8.4</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2022</td>
-      <td>8.4</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>2022</td>
-      <td>8.4</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>2022</td>
-      <td>8.4</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>2022</td>
-      <td>8.0</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>2022</td>
-      <td>8.0</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>2022</td>
-      <td>8.0</td>
-      <td>2022</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">startYear</th>
+<th data-quarto-table-cell-role="th">Ratings</th>
+<th data-quarto-table-cell-role="th">Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2022</td>
+<td>8.4</td>
+<td>2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2022</td>
+<td>8.4</td>
+<td>2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2022</td>
+<td>8.4</td>
+<td>2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2022</td>
+<td>8.4</td>
+<td>2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2022</td>
+<td>8.4</td>
+<td>2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>2022</td>
+<td>8.4</td>
+<td>2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>2022</td>
+<td>8.4</td>
+<td>2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>2022</td>
+<td>8.4</td>
+<td>2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>2022</td>
+<td>8.4</td>
+<td>2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>2022</td>
+<td>8.4</td>
+<td>2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>2022</td>
+<td>8.4</td>
+<td>2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>2022</td>
+<td>8.4</td>
+<td>2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>2022</td>
+<td>8.0</td>
+<td>2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>2022</td>
+<td>8.0</td>
+<td>2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>2022</td>
+<td>8.0</td>
+<td>2022</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>So, let’s see the Data!</p>
-<div class="cell" data-execution_count="394">
+<div id="cell-36" class="cell" data-execution_count="394">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sns.jointplot(data<span class="op">=</span>results, x<span class="op">=</span><span class="st">"Year"</span>, y<span class="op">=</span><span class="st">"Ratings"</span>, kind<span class="op">=</span><span class="st">"hex"</span>, color<span class="op">=</span><span class="st">'seagreen'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-18-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Honestly, I expected there to be a stronger relationship here. There is definitely a relationship here about the latest years beginning to fall though. If this was for some kind of report maybe it would be work breaking these into a <em>Ridge Plots</em> conditioned on the year.</p>
@@ -826,14 +836,18 @@ only showing top 10 rows
 <section id="violin-plot" class="level2">
 <h2 class="anchored" data-anchor-id="violin-plot">Violin Plot</h2>
 <p><em>Violin Plots</em> are similar to Box and Whisker plots but they also add a visual element to show the distribution. We’re going to check out whether a show being finished or not has an impact on the Ratings.</p>
-<div class="cell" data-execution_count="395">
+<div id="cell-39" class="cell" data-execution_count="395">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">"figure.figsize"</span>] <span class="op">=</span> (<span class="dv">14</span>,<span class="dv">7</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"white"</span>, rc<span class="op">=</span>{<span class="st">"axes.facecolor"</span>: (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="st">'legend.facecolor'</span>:<span class="st">'white'</span>})</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>pal <span class="op">=</span> sns.dark_palette(<span class="st">"seagreen"</span>, n_colors<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>sns.violinplot(data<span class="op">=</span>violinData, x<span class="op">=</span><span class="st">"Genre"</span>, y<span class="op">=</span><span class="st">"Ratings"</span>, split<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"isOngoing"</span>, palette<span class="op">=</span>pal)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-19-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2023-01-15-Exploring-Tv-Data-With-Spark-Part-2_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>There is something really strange going on with the <strong>Biography</strong> category. In a real analysis we’d want to dig into Biography to pull this apart more.</p>
@@ -874,9 +888,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -912,10 +940,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -925,8 +952,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -941,6 +977,238 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -981,6 +1249,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

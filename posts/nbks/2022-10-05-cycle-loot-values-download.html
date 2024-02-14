@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,11 +19,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -48,47 +49,17 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -111,7 +82,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -120,12 +97,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -135,27 +114,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Orgulo.us</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Shoklan"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Shoklan"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -206,8 +187,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
 <p>First, we’ll pull our normal libraries for working on projects like this.</p>
-<div class="cell" data-execution_count="112">
+<div id="cell-3" class="cell" data-execution_count="112">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd             <span class="co"># for the data.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np              <span class="co"># for a NaN type</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># For plotting, and some customization of plots.</span></span>
@@ -217,320 +199,322 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(rc<span class="op">=</span>{<span class="st">"figure.figsize"</span>:(<span class="dv">11</span>, <span class="dv">8</span>)})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Our data source is still going to be the <a href="https://thecyclefrontier.wiki/wiki/Main_Page">Official Wiki</a> and we’ll be pulling from the <a href="https://thecyclefrontier.wiki/wiki/Loot"><strong>Loot Page</strong></a> - which has already started being updated for Season Two. From my previous post, the class <code>zebra</code> is still the best attribute to target to pull the data into a usable Data Frame.</p>
-<div class="cell" data-execution_count="49">
+<div id="cell-5" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># game taken down:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># url = "https://thecyclefrontier.wiki/wiki/Loot"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://archive.ph/HZfyf'</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>site <span class="op">=</span> pd.read_html(url, attrs<span class="op">=</span>{<span class="st">"class"</span>:<span class="st">"zebra"</span>})[<span class="dv">0</span>]</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>site.head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="49">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Weight</th>
-      <th>K-Marks</th>
-      <th>K-Marks / Weight</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>NaN</td>
-      <td>Flawed Veltecite</td>
-      <td>Common</td>
-      <td>3.0</td>
-      <td>150  K-Marks  2  Reputation</td>
-      <td>50  K-Marks / Weight  0.67  Reputation / Weight</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>150.00</td>
-      <td>K-Marks</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2.00</td>
-      <td>Reputation</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>50.00</td>
-      <td>K-Marks / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.67</td>
-      <td>Reputation / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>NaN</td>
-      <td>Cloudy Veltecite</td>
-      <td>Uncommon</td>
-      <td>3.0</td>
-      <td>570  K-Marks  6  Reputation</td>
-      <td>190  K-Marks / Weight  2  Reputation / Weight</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>570.00</td>
-      <td>K-Marks</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>6.00</td>
-      <td>Reputation</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>190.00</td>
-      <td>K-Marks / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2.00</td>
-      <td>Reputation / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>NaN</td>
-      <td>Clear Veltecite</td>
-      <td>Rare</td>
-      <td>3.0</td>
-      <td>854  K-Marks  9  Reputation</td>
-      <td>285  K-Marks / Weight  3  Reputation / Weight</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>854.00</td>
-      <td>K-Marks</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>9.00</td>
-      <td>Reputation</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>285.00</td>
-      <td>K-Marks / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>3.00</td>
-      <td>Reputation / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Image</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Weight</th>
+<th data-quarto-table-cell-role="th">K-Marks</th>
+<th data-quarto-table-cell-role="th">K-Marks / Weight</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>NaN</td>
+<td>Flawed Veltecite</td>
+<td>Common</td>
+<td>3.0</td>
+<td>150 K-Marks 2 Reputation</td>
+<td>50 K-Marks / Weight 0.67 Reputation / Weight</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>150.00</td>
+<td>K-Marks</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2.00</td>
+<td>Reputation</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>50.00</td>
+<td>K-Marks / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.67</td>
+<td>Reputation / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>NaN</td>
+<td>Cloudy Veltecite</td>
+<td>Uncommon</td>
+<td>3.0</td>
+<td>570 K-Marks 6 Reputation</td>
+<td>190 K-Marks / Weight 2 Reputation / Weight</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>570.00</td>
+<td>K-Marks</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>6.00</td>
+<td>Reputation</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>190.00</td>
+<td>K-Marks / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>2.00</td>
+<td>Reputation / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>NaN</td>
+<td>Clear Veltecite</td>
+<td>Rare</td>
+<td>3.0</td>
+<td>854 K-Marks 9 Reputation</td>
+<td>285 K-Marks / Weight 3 Reputation / Weight</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>854.00</td>
+<td>K-Marks</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>9.00</td>
+<td>Reputation</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>285.00</td>
+<td>K-Marks / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>3.00</td>
+<td>Reputation / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Again, from previous experience, it is best to create a copy of columns that we actually need.</p>
-<div class="cell" data-execution_count="50">
+<div id="cell-7" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lootSubset <span class="op">=</span> site[[<span class="st">'Image'</span>, <span class="st">'Name'</span>, <span class="st">'Rarity'</span>, <span class="st">'Personal Quarters'</span>, <span class="st">'Campaigns'</span>, <span class="st">'Jobs'</span>, <span class="st">'Printing'</span>]].copy()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>lootSubset.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="50">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>NaN</td>
-      <td>Flawed Veltecite</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>150.00</td>
-      <td>K-Marks</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2.00</td>
-      <td>Reputation</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>50.00</td>
-      <td>K-Marks / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.67</td>
-      <td>Reputation / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Image</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>NaN</td>
+<td>Flawed Veltecite</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>150.00</td>
+<td>K-Marks</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2.00</td>
+<td>Reputation</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>50.00</td>
+<td>K-Marks / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.67</td>
+<td>Reputation / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Looking at our data, we already have a problem: the <code>Printing</code> column has columns <code>NaN</code> values insted of no. The blank values got converted to <code>NaN</code> when it was imported. While I’m sure there is a way to correct this on import, this isn’t how I’m going to do it. What I’m going to do is find the indexes which contain <code>Yes</code> and then update the other columns. You might be thinking - correctly - that we could simply find the indexes of the other values and then update those. Unfortunately, this is harder and I’ll show you what I mean.</p>
 <p>If we check the values, we’ll see there is this <code>nan</code> value which doens’t look like the normal <code>np.NaN</code> value.</p>
-<div class="cell" data-execution_count="51">
+<div id="cell-10" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lootSubset.Printing.unique(), lootSubset.Printing[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="51">
 <pre><code>(array([nan, 'Yes'], dtype=object), nan)</code></pre>
 </div>
 </div>
 <p>And, if we try to do a logical comparison with the literal value from the data it fails.</p>
-<div class="cell" data-execution_count="52">
+<div id="cell-12" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>lootSubset.Printing.iloc[:<span class="dv">5</span>] <span class="op">==</span> lootSubset.Printing[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="52">
 <pre><code>0    False
@@ -542,350 +526,354 @@ Name: Printing, dtype: bool</code></pre>
 </div>
 </div>
 <p>Here we so the problem with objects and probably the pointers underneath. We <em>could</em> fix this but it’s much easier to reverse what we’re detecting so I’m doing that instead.</p>
-<div class="cell" data-execution_count="54">
+<div id="cell-14" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># That nan value is weird; will do the opposite</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>filterIndex <span class="op">=</span> lootSubset.Printing <span class="op">==</span> <span class="st">"Yes"</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>lootSubset[<span class="op">~</span>filterIndex].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="54">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>NaN</td>
-      <td>Flawed Veltecite</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>150.00</td>
-      <td>K-Marks</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2.00</td>
-      <td>Reputation</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>50.00</td>
-      <td>K-Marks / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.67</td>
-      <td>Reputation / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Image</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>NaN</td>
+<td>Flawed Veltecite</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>150.00</td>
+<td>K-Marks</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2.00</td>
+<td>Reputation</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>50.00</td>
+<td>K-Marks / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.67</td>
+<td>Reputation / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>I’m not going to spend much time explaining this part; please see the previous posts about how this works.</p>
-<div class="cell" data-execution_count="55">
+<div id="cell-16" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct it</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>lootSubset.loc[<span class="op">~</span>filterIndex, <span class="st">"Printing"</span>] <span class="op">=</span> <span class="st">"No"</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>lootSubset.head(<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="55">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>NaN</td>
-      <td>Flawed Veltecite</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>150.00</td>
-      <td>K-Marks</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2.00</td>
-      <td>Reputation</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>50.00</td>
-      <td>K-Marks / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.67</td>
-      <td>Reputation / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>NaN</td>
-      <td>Cloudy Veltecite</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>570.00</td>
-      <td>K-Marks</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>6.00</td>
-      <td>Reputation</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>190.00</td>
-      <td>K-Marks / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Image</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>NaN</td>
+<td>Flawed Veltecite</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>150.00</td>
+<td>K-Marks</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2.00</td>
+<td>Reputation</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>50.00</td>
+<td>K-Marks / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.67</td>
+<td>Reputation / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>NaN</td>
+<td>Cloudy Veltecite</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>570.00</td>
+<td>K-Marks</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>6.00</td>
+<td>Reputation</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>190.00</td>
+<td>K-Marks / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Looking at the rows, we can see the data we’re after - the Name of the Loot - is in the <code>Name</code> column. Luckily, like the <a href="https://orgulo.us/game/python/data/science/exploration/cycle/frontier/2022/09/28/cycle-jobs-part-one.html">previous post</a> about data extraction, these are in multiples of 5 insted of 4 like before. So, we can simply borrow the same code from before and update the range.</p>
-<div class="cell" data-execution_count="56">
+<div id="cell-18" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Change range to 5 instead of 4</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    index <span class="op">=</span> <span class="bu">range</span>( <span class="dv">0</span>, <span class="bu">len</span>(lootSubset) <span class="op">-</span> <span class="dv">4</span>, <span class="dv">5</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    offset <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="57">
+<div id="cell-19" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tmp <span class="op">=</span> index[<span class="dv">0</span>] <span class="op">+</span> offset</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>lootSubset.iloc[tmp]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="57">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>150.00</td>
-      <td>K-Marks</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2.00</td>
-      <td>Reputation</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>50.00</td>
-      <td>K-Marks / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.67</td>
-      <td>Reputation / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Image</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>150.00</td>
+<td>K-Marks</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2.00</td>
+<td>Reputation</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>50.00</td>
+<td>K-Marks / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.67</td>
+<td>Reputation / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="58">
+<div id="cell-20" class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>lootSubset.iloc[index].tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="58">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>445</th>
-      <td>NaN</td>
-      <td>Hardened Metals</td>
-      <td>Common</td>
-      <td>Yes x17</td>
-      <td>Yes x2</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>450</th>
-      <td>NaN</td>
-      <td>Compound Sheets</td>
-      <td>Common</td>
-      <td>Yes x18</td>
-      <td>Yes x36</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>455</th>
-      <td>NaN</td>
-      <td>Print Resin</td>
-      <td>Uncommon</td>
-      <td>Yes x44</td>
-      <td>Yes x2</td>
-      <td>NaN</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>460</th>
-      <td>NaN</td>
-      <td>Salvaged Insulation</td>
-      <td>Common</td>
-      <td>Yes x38</td>
-      <td>Yes x30</td>
-      <td>NaN</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>465</th>
-      <td>NaN</td>
-      <td>Aluminum Scrap</td>
-      <td>Common</td>
-      <td>Yes x28</td>
-      <td>NaN</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Image</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">445</td>
+<td>NaN</td>
+<td>Hardened Metals</td>
+<td>Common</td>
+<td>Yes x17</td>
+<td>Yes x2</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">450</td>
+<td>NaN</td>
+<td>Compound Sheets</td>
+<td>Common</td>
+<td>Yes x18</td>
+<td>Yes x36</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">455</td>
+<td>NaN</td>
+<td>Print Resin</td>
+<td>Uncommon</td>
+<td>Yes x44</td>
+<td>Yes x2</td>
+<td>NaN</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">460</td>
+<td>NaN</td>
+<td>Salvaged Insulation</td>
+<td>Common</td>
+<td>Yes x38</td>
+<td>Yes x30</td>
+<td>NaN</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">465</td>
+<td>NaN</td>
+<td>Aluminum Scrap</td>
+<td>Common</td>
+<td>Yes x28</td>
+<td>NaN</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Now we’ll build the loop for the iteration like before.</p>
-<div class="cell" data-execution_count="59">
+<div id="cell-22" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this is how we'll iterate; proof it works.</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># refer the .head() call to see this is true.</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> index[:<span class="dv">3</span>]:</span>
@@ -899,950 +887,956 @@ Clear Veltecite is at index 10</code></pre>
 </div>
 </div>
 <p>Now we need a column to dump the correct values into which is going to be called <code>Loot</code>. We’ll fill these with <code>np.NaN</code> so we can repeat the same trick as the previous post.</p>
-<div class="cell" data-execution_count="60">
+<div id="cell-24" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lootSubset <span class="op">=</span> lootSubset.assign(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    Loot <span class="op">=</span> np.NaN</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>lootSubset.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-      <th>Loot</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>NaN</td>
-      <td>Flawed Veltecite</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>150.00</td>
-      <td>K-Marks</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2.00</td>
-      <td>Reputation</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>50.00</td>
-      <td>K-Marks / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.67</td>
-      <td>Reputation / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Image</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+<th data-quarto-table-cell-role="th">Loot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>NaN</td>
+<td>Flawed Veltecite</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>150.00</td>
+<td>K-Marks</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2.00</td>
+<td>Reputation</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>50.00</td>
+<td>K-Marks / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.67</td>
+<td>Reputation / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>NaN</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>So, pull the name of of the loot per subset and then update it like before.</p>
-<div class="cell" data-execution_count="61">
+<div id="cell-26" class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> index:</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Correct Loot column</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    aLoot <span class="op">=</span> lootSubset.iloc[i, <span class="dv">1</span>]</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    indexes <span class="op">=</span> i <span class="op">+</span> offset</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    lootSubset.iloc[ indexes, <span class="dv">7</span> ] <span class="op">=</span> aLoot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="62">
+<div id="cell-27" class="cell" data-execution_count="62">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lootSubset.head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="62">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-      <th>Loot</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>NaN</td>
-      <td>Flawed Veltecite</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>150.00</td>
-      <td>K-Marks</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2.00</td>
-      <td>Reputation</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>50.00</td>
-      <td>K-Marks / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.67</td>
-      <td>Reputation / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>NaN</td>
-      <td>Cloudy Veltecite</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>570.00</td>
-      <td>K-Marks</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Cloudy Veltecite</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>6.00</td>
-      <td>Reputation</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Cloudy Veltecite</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>190.00</td>
-      <td>K-Marks / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Cloudy Veltecite</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2.00</td>
-      <td>Reputation / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Cloudy Veltecite</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>NaN</td>
-      <td>Clear Veltecite</td>
-      <td>Rare</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>854.00</td>
-      <td>K-Marks</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Clear Veltecite</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>9.00</td>
-      <td>Reputation</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Clear Veltecite</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>285.00</td>
-      <td>K-Marks / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Clear Veltecite</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>3.00</td>
-      <td>Reputation / Weight</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Clear Veltecite</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Image</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+<th data-quarto-table-cell-role="th">Loot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>NaN</td>
+<td>Flawed Veltecite</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>150.00</td>
+<td>K-Marks</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2.00</td>
+<td>Reputation</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>50.00</td>
+<td>K-Marks / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.67</td>
+<td>Reputation / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>NaN</td>
+<td>Cloudy Veltecite</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>570.00</td>
+<td>K-Marks</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>Cloudy Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>6.00</td>
+<td>Reputation</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>Cloudy Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>190.00</td>
+<td>K-Marks / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>Cloudy Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>2.00</td>
+<td>Reputation / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>Cloudy Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>NaN</td>
+<td>Clear Veltecite</td>
+<td>Rare</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>854.00</td>
+<td>K-Marks</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>Clear Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>9.00</td>
+<td>Reputation</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>Clear Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>285.00</td>
+<td>K-Marks / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>Clear Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>3.00</td>
+<td>Reputation / Weight</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>No</td>
+<td>Clear Veltecite</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>If we play through the old trick of dropping the <code>Loot</code> columns now we’ll lose valuable data. So, we’ll need a new trick to keep that data. Thankfully, this is a problem I’d already solved at a previous time: we’ll simply fill the values. As a word of caution, filling values can be dangerous to an analysis so if you’re doing this then <strong>make sure it will not have a negative impact</strong>. In this instance, I’m duplicating the data so that it’s not lost at all. Even then, we’ll need to be cautious in the future about how the data is used.</p>
 <p>There are a few techniques for filling in missing values and one such technique is called <strong>Fill Forward</strong>. What this does is take the values in a column, take that value and then simply inserts it down the rows where it finds NAs. This is exactly what we’re after - but only for those specific columns.</p>
-<div class="cell" data-execution_count="63">
+<div id="cell-30" class="cell" data-execution_count="63">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fix the middle by filling down</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="op">=</span> lootSubset.iloc[:, <span class="dv">1</span>:<span class="dv">7</span>]</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>tmp <span class="op">=</span> tmp.fillna(method<span class="op">=</span><span class="st">"ffill"</span>)</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>tmp.head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="63">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Flawed Veltecite</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>K-Marks</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Reputation</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>K-Marks / Weight</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Reputation / Weight</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Cloudy Veltecite</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>K-Marks</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Reputation</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>K-Marks / Weight</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Reputation / Weight</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Clear Veltecite</td>
-      <td>Rare</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>K-Marks</td>
-      <td>Rare</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Reputation</td>
-      <td>Rare</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>K-Marks / Weight</td>
-      <td>Rare</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>Reputation / Weight</td>
-      <td>Rare</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>No</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Flawed Veltecite</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>K-Marks</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Reputation</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>K-Marks / Weight</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Reputation / Weight</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Cloudy Veltecite</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>K-Marks</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>Reputation</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>K-Marks / Weight</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>Reputation / Weight</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>Clear Veltecite</td>
+<td>Rare</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>K-Marks</td>
+<td>Rare</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>Reputation</td>
+<td>Rare</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>K-Marks / Weight</td>
+<td>Rare</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>Reputation / Weight</td>
+<td>Rare</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>Then, we’ll take these values and simply insert them into the real data frame where we want them.</p>
-<div class="cell" data-execution_count="64">
+<div id="cell-32" class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>lootSubset.iloc[:, <span class="dv">1</span>:<span class="dv">7</span>] <span class="op">=</span> tmp</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>lootSubset.head(<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="64">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-      <th>Loot</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>NaN</td>
-      <td>Flawed Veltecite</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>150.00</td>
-      <td>K-Marks</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2.00</td>
-      <td>Reputation</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>50.00</td>
-      <td>K-Marks / Weight</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.67</td>
-      <td>Reputation / Weight</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>NaN</td>
-      <td>Cloudy Veltecite</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>570.00</td>
-      <td>K-Marks</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Cloudy Veltecite</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>6.00</td>
-      <td>Reputation</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Cloudy Veltecite</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>190.00</td>
-      <td>K-Marks / Weight</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Cloudy Veltecite</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2.00</td>
-      <td>Reputation / Weight</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Cloudy Veltecite</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>NaN</td>
-      <td>Clear Veltecite</td>
-      <td>Rare</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>854.00</td>
-      <td>K-Marks</td>
-      <td>Rare</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Clear Veltecite</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>9.00</td>
-      <td>Reputation</td>
-      <td>Rare</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Clear Veltecite</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>285.00</td>
-      <td>K-Marks / Weight</td>
-      <td>Rare</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Clear Veltecite</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>3.00</td>
-      <td>Reputation / Weight</td>
-      <td>Rare</td>
-      <td>Yes x11</td>
-      <td>Yes x25</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Clear Veltecite</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Image</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+<th data-quarto-table-cell-role="th">Loot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>NaN</td>
+<td>Flawed Veltecite</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>150.00</td>
+<td>K-Marks</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2.00</td>
+<td>Reputation</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>50.00</td>
+<td>K-Marks / Weight</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.67</td>
+<td>Reputation / Weight</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>NaN</td>
+<td>Cloudy Veltecite</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>570.00</td>
+<td>K-Marks</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>No</td>
+<td>Cloudy Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>6.00</td>
+<td>Reputation</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>No</td>
+<td>Cloudy Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>190.00</td>
+<td>K-Marks / Weight</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>No</td>
+<td>Cloudy Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>2.00</td>
+<td>Reputation / Weight</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>No</td>
+<td>Cloudy Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>NaN</td>
+<td>Clear Veltecite</td>
+<td>Rare</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>854.00</td>
+<td>K-Marks</td>
+<td>Rare</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>No</td>
+<td>Clear Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>9.00</td>
+<td>Reputation</td>
+<td>Rare</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>No</td>
+<td>Clear Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>285.00</td>
+<td>K-Marks / Weight</td>
+<td>Rare</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>No</td>
+<td>Clear Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>3.00</td>
+<td>Reputation / Weight</td>
+<td>Rare</td>
+<td>Yes x11</td>
+<td>Yes x25</td>
+<td>Yes</td>
+<td>No</td>
+<td>Clear Veltecite</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>And, now we’ll pull the same trick and delete the rows with <code>np.NaN</code>.</p>
-<div class="cell" data-execution_count="65">
+<div id="cell-34" class="cell" data-execution_count="65">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cutNA <span class="op">=</span> lootSubset.Loot.isna()</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>lootData <span class="op">=</span> lootSubset[ <span class="op">~</span>cutNA ]</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>lootData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="65">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-      <th>Loot</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>150.00</td>
-      <td>K-Marks</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2.00</td>
-      <td>Reputation</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>50.00</td>
-      <td>K-Marks / Weight</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.67</td>
-      <td>Reputation / Weight</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>570.00</td>
-      <td>K-Marks</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Cloudy Veltecite</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>464</th>
-      <td>0.60</td>
-      <td>Reputation / Weight</td>
-      <td>Common</td>
-      <td>Yes x38</td>
-      <td>Yes x30</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Salvaged Insulation</td>
-    </tr>
-    <tr>
-      <th>466</th>
-      <td>506.00</td>
-      <td>K-Marks</td>
-      <td>Common</td>
-      <td>Yes x28</td>
-      <td>Yes x30</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Aluminum Scrap</td>
-    </tr>
-    <tr>
-      <th>467</th>
-      <td>5.00</td>
-      <td>Reputation</td>
-      <td>Common</td>
-      <td>Yes x28</td>
-      <td>Yes x30</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Aluminum Scrap</td>
-    </tr>
-    <tr>
-      <th>468</th>
-      <td>51.00</td>
-      <td>K-Marks / Weight</td>
-      <td>Common</td>
-      <td>Yes x28</td>
-      <td>Yes x30</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Aluminum Scrap</td>
-    </tr>
-    <tr>
-      <th>469</th>
-      <td>0.50</td>
-      <td>Reputation / Weight</td>
-      <td>Common</td>
-      <td>Yes x28</td>
-      <td>Yes x30</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Aluminum Scrap</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Image</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+<th data-quarto-table-cell-role="th">Loot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>150.00</td>
+<td>K-Marks</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2.00</td>
+<td>Reputation</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>50.00</td>
+<td>K-Marks / Weight</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.67</td>
+<td>Reputation / Weight</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>570.00</td>
+<td>K-Marks</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>No</td>
+<td>Cloudy Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">464</td>
+<td>0.60</td>
+<td>Reputation / Weight</td>
+<td>Common</td>
+<td>Yes x38</td>
+<td>Yes x30</td>
+<td>Yes</td>
+<td>No</td>
+<td>Salvaged Insulation</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">466</td>
+<td>506.00</td>
+<td>K-Marks</td>
+<td>Common</td>
+<td>Yes x28</td>
+<td>Yes x30</td>
+<td>Yes</td>
+<td>No</td>
+<td>Aluminum Scrap</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">467</td>
+<td>5.00</td>
+<td>Reputation</td>
+<td>Common</td>
+<td>Yes x28</td>
+<td>Yes x30</td>
+<td>Yes</td>
+<td>No</td>
+<td>Aluminum Scrap</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">468</td>
+<td>51.00</td>
+<td>K-Marks / Weight</td>
+<td>Common</td>
+<td>Yes x28</td>
+<td>Yes x30</td>
+<td>Yes</td>
+<td>No</td>
+<td>Aluminum Scrap</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">469</td>
+<td>0.50</td>
+<td>Reputation / Weight</td>
+<td>Common</td>
+<td>Yes x28</td>
+<td>Yes x30</td>
+<td>Yes</td>
+<td>No</td>
+<td>Aluminum Scrap</td>
+</tr>
+</tbody>
 </table>
+
 <p>376 rows × 8 columns</p>
 </div>
 </div>
 </div>
 <p>Almost there! The column name <code>Image</code> is not what that should be called so we’ll update that to <code>Unit</code> like we had in the prevous post.</p>
-<div class="cell" data-execution_count="66">
+<div id="cell-36" class="cell" data-execution_count="66">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>lootData <span class="op">=</span> lootData.rename(columns<span class="op">=</span>{<span class="st">'Image'</span>:<span class="st">'Unit'</span>})</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>lootData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="66">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Unit</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-      <th>Loot</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>150.00</td>
-      <td>K-Marks</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2.00</td>
-      <td>Reputation</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>50.00</td>
-      <td>K-Marks / Weight</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.67</td>
-      <td>Reputation / Weight</td>
-      <td>Common</td>
-      <td>Yes x11</td>
-      <td>Yes x10</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Flawed Veltecite</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>570.00</td>
-      <td>K-Marks</td>
-      <td>Uncommon</td>
-      <td>Yes x8</td>
-      <td>Yes x14</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Cloudy Veltecite</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>464</th>
-      <td>0.60</td>
-      <td>Reputation / Weight</td>
-      <td>Common</td>
-      <td>Yes x38</td>
-      <td>Yes x30</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Salvaged Insulation</td>
-    </tr>
-    <tr>
-      <th>466</th>
-      <td>506.00</td>
-      <td>K-Marks</td>
-      <td>Common</td>
-      <td>Yes x28</td>
-      <td>Yes x30</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Aluminum Scrap</td>
-    </tr>
-    <tr>
-      <th>467</th>
-      <td>5.00</td>
-      <td>Reputation</td>
-      <td>Common</td>
-      <td>Yes x28</td>
-      <td>Yes x30</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Aluminum Scrap</td>
-    </tr>
-    <tr>
-      <th>468</th>
-      <td>51.00</td>
-      <td>K-Marks / Weight</td>
-      <td>Common</td>
-      <td>Yes x28</td>
-      <td>Yes x30</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Aluminum Scrap</td>
-    </tr>
-    <tr>
-      <th>469</th>
-      <td>0.50</td>
-      <td>Reputation / Weight</td>
-      <td>Common</td>
-      <td>Yes x28</td>
-      <td>Yes x30</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Aluminum Scrap</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+<th data-quarto-table-cell-role="th">Loot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>150.00</td>
+<td>K-Marks</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2.00</td>
+<td>Reputation</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>50.00</td>
+<td>K-Marks / Weight</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.67</td>
+<td>Reputation / Weight</td>
+<td>Common</td>
+<td>Yes x11</td>
+<td>Yes x10</td>
+<td>Yes</td>
+<td>No</td>
+<td>Flawed Veltecite</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>570.00</td>
+<td>K-Marks</td>
+<td>Uncommon</td>
+<td>Yes x8</td>
+<td>Yes x14</td>
+<td>Yes</td>
+<td>No</td>
+<td>Cloudy Veltecite</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">464</td>
+<td>0.60</td>
+<td>Reputation / Weight</td>
+<td>Common</td>
+<td>Yes x38</td>
+<td>Yes x30</td>
+<td>Yes</td>
+<td>No</td>
+<td>Salvaged Insulation</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">466</td>
+<td>506.00</td>
+<td>K-Marks</td>
+<td>Common</td>
+<td>Yes x28</td>
+<td>Yes x30</td>
+<td>Yes</td>
+<td>No</td>
+<td>Aluminum Scrap</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">467</td>
+<td>5.00</td>
+<td>Reputation</td>
+<td>Common</td>
+<td>Yes x28</td>
+<td>Yes x30</td>
+<td>Yes</td>
+<td>No</td>
+<td>Aluminum Scrap</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">468</td>
+<td>51.00</td>
+<td>K-Marks / Weight</td>
+<td>Common</td>
+<td>Yes x28</td>
+<td>Yes x30</td>
+<td>Yes</td>
+<td>No</td>
+<td>Aluminum Scrap</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">469</td>
+<td>0.50</td>
+<td>Reputation / Weight</td>
+<td>Common</td>
+<td>Yes x28</td>
+<td>Yes x30</td>
+<td>Yes</td>
+<td>No</td>
+<td>Aluminum Scrap</td>
+</tr>
+</tbody>
 </table>
+
 <p>376 rows × 8 columns</p>
 </div>
 </div>
 </div>
 <p>Just one more problem I’d like to correct before we do some fun questions at the end. Pandas has also copied the idea of Categoreies from R. And, it allows us to set the order of the values as well. We’re going to use this in a minute but it’s also a nice to have.</p>
 <p>Changing the type is just as easy as you’d think:</p>
-<div class="cell" data-execution_count="67">
+<div id="cell-39" class="cell" data-execution_count="67">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>lootData.Rarity.astype(<span class="st">'category'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="67">
 <pre><code>1        Common
@@ -1861,7 +1855,7 @@ Categories (6, object): ['Common', 'Epic', 'Exotic', 'Legendary', 'Rare', 'Uncom
 </div>
 </div>
 <p>You can see that now there is a list of the possible Categories below the values: <code>Categories (6, object): ['Common', 'Epic', 'Exotic', 'Legendary', 'Rare', 'Uncommon']</code>. However, the <em>order</em> matters and so we cannot leave this how it is; <code>Uncommon</code> is clealy not <em>larger</em> in type then <code>Epic</code>. The proper way to do this would be to declare the order - which is what is next. We’ll use <code>pd.Categorical()</code> to convert them and set the order of the <em>Categories</em>.</p>
-<div class="cell" data-execution_count="80">
+<div id="cell-41" class="cell" data-execution_count="80">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>lootData[<span class="st">'Rarity'</span>] <span class="op">=</span> pd.Categorical(lootData.Rarity, categories <span class="op">=</span> [<span class="st">'Common'</span>, <span class="st">'Uncommon'</span>, <span class="st">'Rare'</span>, <span class="st">'Epic'</span>, <span class="st">'Exotic'</span>, <span class="st">'Legendary'</span>])</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>pd.Categorical(lootData.Rarity, categories <span class="op">=</span> [<span class="st">'Common'</span>, <span class="st">'Uncommon'</span>, <span class="st">'Rare'</span>, <span class="st">'Epic'</span>, <span class="st">'Exotic'</span>, <span class="st">'Legendary'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="80">
@@ -1877,7 +1871,7 @@ Categories (6, object): ['Common', 'Uncommon', 'Rare', 'Epic', 'Exotic', 'Legend
 <section id="what-are-the-best-two-items-to-sell-per-rarity" class="level2">
 <h2 class="anchored" data-anchor-id="what-are-the-best-two-items-to-sell-per-rarity">What Are The Best Two Items To Sell, Per Rarity?</h2>
 <p>This is a pretty simple ask. We just have to remember that we’re working with <a href="https://vita.had.co.nz/papers/tidy-data.pdf"><strong>Tidy Data</strong></a> and we’ll want to filter the <code>Name</code> column for K-Marks before doing anything else. Next, we’ll do a <code>groupby()</code> for the Rarity and then pull out the <code>Units</code> column since that has the values we’re after. Luckily, pandas already has a function to get the largest values <code>.largest()</code> which also works as an <em>aggregation</em> function for <code>groupby()</code>.</p>
-<div class="cell" data-execution_count="102">
+<div id="cell-47" class="cell" data-execution_count="102">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>tmp <span class="op">=</span> lootData.query(<span class="st">"Name == 'K-Marks'"</span>).groupby(<span class="st">"Rarity"</span>)[<span class="st">'Unit'</span>].nlargest(<span class="dv">2</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>tmp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="102">
@@ -1898,316 +1892,319 @@ Name: Unit, dtype: float64</code></pre>
 </div>
 </div>
 <p>So, we have our values but we don’t have any way to identify them since we cannot include the <code>Name</code> column since then it becomes a Data Frame and <code>.nlargest()</code> doesn’t work. If we look closely, the old indexes have been carried over and are included in our results so we’ll need to give ourselves access to them. We’re going to do this with <code>.reset_index()</code> since that will push those indexes into the Data Frame.</p>
-<div class="cell" data-execution_count="104">
+<div id="cell-49" class="cell" data-execution_count="104">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>tmp.reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="104">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Rarity</th>
-      <th>level_1</th>
-      <th>Unit</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Common</td>
-      <td>336</td>
-      <td>900.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Common</td>
-      <td>111</td>
-      <td>760.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Uncommon</td>
-      <td>356</td>
-      <td>3417.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Uncommon</td>
-      <td>181</td>
-      <td>1709.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Rare</td>
-      <td>371</td>
-      <td>11533.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Rare</td>
-      <td>366</td>
-      <td>5126.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Epic</td>
-      <td>121</td>
-      <td>20183.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Epic</td>
-      <td>396</td>
-      <td>17300.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Exotic</td>
-      <td>401</td>
-      <td>129746.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Exotic</td>
-      <td>106</td>
-      <td>77848.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Legendary</td>
-      <td>441</td>
-      <td>518985.0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Legendary</td>
-      <td>431</td>
-      <td>116772.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">level_1</th>
+<th data-quarto-table-cell-role="th">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Common</td>
+<td>336</td>
+<td>900.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Common</td>
+<td>111</td>
+<td>760.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Uncommon</td>
+<td>356</td>
+<td>3417.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Uncommon</td>
+<td>181</td>
+<td>1709.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Rare</td>
+<td>371</td>
+<td>11533.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Rare</td>
+<td>366</td>
+<td>5126.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Epic</td>
+<td>121</td>
+<td>20183.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>Epic</td>
+<td>396</td>
+<td>17300.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>Exotic</td>
+<td>401</td>
+<td>129746.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>Exotic</td>
+<td>106</td>
+<td>77848.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>Legendary</td>
+<td>441</td>
+<td>518985.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>Legendary</td>
+<td>431</td>
+<td>116772.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="105">
+<div id="cell-50" class="cell" data-execution_count="105">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep those index numbers</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="op">=</span> tmp.reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The index column is called <code>level_1</code> which we’re going to simply insert into the original data.</p>
-<div class="cell" data-execution_count="106">
+<div id="cell-52" class="cell" data-execution_count="106">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Best items to sell per rarity:</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>lootData.loc[ tmp[<span class="st">'level_1'</span>].tolist() ].sort_values(<span class="st">"Rarity"</span>, ascending<span class="op">=</span><span class="va">False</span>)[[<span class="st">'Unit'</span>, <span class="st">'Name'</span>, <span class="st">'Rarity'</span>, <span class="st">'Loot'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="106">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Unit</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Loot</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>441</th>
-      <td>518985.0</td>
-      <td>K-Marks</td>
-      <td>Legendary</td>
-      <td>Alpha Crusher Head</td>
-    </tr>
-    <tr>
-      <th>431</th>
-      <td>116772.0</td>
-      <td>K-Marks</td>
-      <td>Legendary</td>
-      <td>Savage Marauder Head</td>
-    </tr>
-    <tr>
-      <th>401</th>
-      <td>129746.0</td>
-      <td>K-Marks</td>
-      <td>Exotic</td>
-      <td>Alpha Crusher Heart</td>
-    </tr>
-    <tr>
-      <th>106</th>
-      <td>77848.0</td>
-      <td>K-Marks</td>
-      <td>Exotic</td>
-      <td>Progenitor Slag</td>
-    </tr>
-    <tr>
-      <th>121</th>
-      <td>20183.0</td>
-      <td>K-Marks</td>
-      <td>Epic</td>
-      <td>NiC Oil Cannister</td>
-    </tr>
-    <tr>
-      <th>396</th>
-      <td>17300.0</td>
-      <td>K-Marks</td>
-      <td>Epic</td>
-      <td>Crusher Flesh</td>
-    </tr>
-    <tr>
-      <th>371</th>
-      <td>11533.0</td>
-      <td>K-Marks</td>
-      <td>Rare</td>
-      <td>Crusher Hide</td>
-    </tr>
-    <tr>
-      <th>366</th>
-      <td>5126.0</td>
-      <td>K-Marks</td>
-      <td>Rare</td>
-      <td>Mature Rattler Eyes</td>
-    </tr>
-    <tr>
-      <th>356</th>
-      <td>3417.0</td>
-      <td>K-Marks</td>
-      <td>Uncommon</td>
-      <td>Hardened Bone Plates</td>
-    </tr>
-    <tr>
-      <th>181</th>
-      <td>1709.0</td>
-      <td>K-Marks</td>
-      <td>Uncommon</td>
-      <td>Derelict Explosives</td>
-    </tr>
-    <tr>
-      <th>336</th>
-      <td>900.0</td>
-      <td>K-Marks</td>
-      <td>Common</td>
-      <td>Toxic Glands</td>
-    </tr>
-    <tr>
-      <th>111</th>
-      <td>760.0</td>
-      <td>K-Marks</td>
-      <td>Common</td>
-      <td>Progenitor Composite</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Loot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">441</td>
+<td>518985.0</td>
+<td>K-Marks</td>
+<td>Legendary</td>
+<td>Alpha Crusher Head</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">431</td>
+<td>116772.0</td>
+<td>K-Marks</td>
+<td>Legendary</td>
+<td>Savage Marauder Head</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">401</td>
+<td>129746.0</td>
+<td>K-Marks</td>
+<td>Exotic</td>
+<td>Alpha Crusher Heart</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">106</td>
+<td>77848.0</td>
+<td>K-Marks</td>
+<td>Exotic</td>
+<td>Progenitor Slag</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">121</td>
+<td>20183.0</td>
+<td>K-Marks</td>
+<td>Epic</td>
+<td>NiC Oil Cannister</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">396</td>
+<td>17300.0</td>
+<td>K-Marks</td>
+<td>Epic</td>
+<td>Crusher Flesh</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">371</td>
+<td>11533.0</td>
+<td>K-Marks</td>
+<td>Rare</td>
+<td>Crusher Hide</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">366</td>
+<td>5126.0</td>
+<td>K-Marks</td>
+<td>Rare</td>
+<td>Mature Rattler Eyes</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">356</td>
+<td>3417.0</td>
+<td>K-Marks</td>
+<td>Uncommon</td>
+<td>Hardened Bone Plates</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">181</td>
+<td>1709.0</td>
+<td>K-Marks</td>
+<td>Uncommon</td>
+<td>Derelict Explosives</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">336</td>
+<td>900.0</td>
+<td>K-Marks</td>
+<td>Common</td>
+<td>Toxic Glands</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">111</td>
+<td>760.0</td>
+<td>K-Marks</td>
+<td>Common</td>
+<td>Progenitor Composite</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <p>There we go! Well, except that this doesn’t account for weight and what we <strong>really want</strong> is to carry the most value per weight since we’re limited in the game by the backpack size. Let’s do the same but for the <code>per weight</code> value instead.</p>
-<div class="cell" data-execution_count="108">
+<div id="cell-54" class="cell" data-execution_count="108">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>tmp <span class="op">=</span> lootData.query(<span class="st">"Name == 'K-Marks / Weight'"</span>).groupby(<span class="st">"Rarity"</span>)[<span class="st">'Unit'</span>].nlargest(<span class="dv">2</span>).reset_index()</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>lootData.loc[ tmp[<span class="st">'level_1'</span>].tolist() ].sort_values(<span class="st">"Rarity"</span>, ascending<span class="op">=</span><span class="va">False</span>)[[<span class="st">'Unit'</span>, <span class="st">'Name'</span>, <span class="st">'Rarity'</span>, <span class="st">'Loot'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="108">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Unit</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Loot</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>443</th>
-      <td>17300.0</td>
-      <td>K-Marks / Weight</td>
-      <td>Legendary</td>
-      <td>Alpha Crusher Head</td>
-    </tr>
-    <tr>
-      <th>433</th>
-      <td>5839.0</td>
-      <td>K-Marks / Weight</td>
-      <td>Legendary</td>
-      <td>Savage Marauder Head</td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>6487.0</td>
-      <td>K-Marks / Weight</td>
-      <td>Exotic</td>
-      <td>Progenitor Slag</td>
-    </tr>
-    <tr>
-      <th>403</th>
-      <td>6487.0</td>
-      <td>K-Marks / Weight</td>
-      <td>Exotic</td>
-      <td>Alpha Crusher Heart</td>
-    </tr>
-    <tr>
-      <th>123</th>
-      <td>4037.0</td>
-      <td>K-Marks / Weight</td>
-      <td>Epic</td>
-      <td>NiC Oil Cannister</td>
-    </tr>
-    <tr>
-      <th>118</th>
-      <td>3844.0</td>
-      <td>K-Marks / Weight</td>
-      <td>Epic</td>
-      <td>Letium Clot</td>
-    </tr>
-    <tr>
-      <th>373</th>
-      <td>1153.0</td>
-      <td>K-Marks / Weight</td>
-      <td>Rare</td>
-      <td>Crusher Hide</td>
-    </tr>
-    <tr>
-      <th>368</th>
-      <td>1025.0</td>
-      <td>K-Marks / Weight</td>
-      <td>Rare</td>
-      <td>Mature Rattler Eyes</td>
-    </tr>
-    <tr>
-      <th>458</th>
-      <td>570.0</td>
-      <td>K-Marks / Weight</td>
-      <td>Uncommon</td>
-      <td>Print Resin</td>
-    </tr>
-    <tr>
-      <th>358</th>
-      <td>380.0</td>
-      <td>K-Marks / Weight</td>
-      <td>Uncommon</td>
-      <td>Hardened Bone Plates</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>1000.0</td>
-      <td>K-Marks / Weight</td>
-      <td>Common</td>
-      <td>Old Currency</td>
-    </tr>
-    <tr>
-      <th>283</th>
-      <td>506.0</td>
-      <td>K-Marks / Weight</td>
-      <td>Common</td>
-      <td>Nutritional Bar</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Loot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">443</td>
+<td>17300.0</td>
+<td>K-Marks / Weight</td>
+<td>Legendary</td>
+<td>Alpha Crusher Head</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">433</td>
+<td>5839.0</td>
+<td>K-Marks / Weight</td>
+<td>Legendary</td>
+<td>Savage Marauder Head</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">108</td>
+<td>6487.0</td>
+<td>K-Marks / Weight</td>
+<td>Exotic</td>
+<td>Progenitor Slag</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">403</td>
+<td>6487.0</td>
+<td>K-Marks / Weight</td>
+<td>Exotic</td>
+<td>Alpha Crusher Heart</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">123</td>
+<td>4037.0</td>
+<td>K-Marks / Weight</td>
+<td>Epic</td>
+<td>NiC Oil Cannister</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">118</td>
+<td>3844.0</td>
+<td>K-Marks / Weight</td>
+<td>Epic</td>
+<td>Letium Clot</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">373</td>
+<td>1153.0</td>
+<td>K-Marks / Weight</td>
+<td>Rare</td>
+<td>Crusher Hide</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">368</td>
+<td>1025.0</td>
+<td>K-Marks / Weight</td>
+<td>Rare</td>
+<td>Mature Rattler Eyes</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">458</td>
+<td>570.0</td>
+<td>K-Marks / Weight</td>
+<td>Uncommon</td>
+<td>Print Resin</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">358</td>
+<td>380.0</td>
+<td>K-Marks / Weight</td>
+<td>Uncommon</td>
+<td>Hardened Bone Plates</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">148</td>
+<td>1000.0</td>
+<td>K-Marks / Weight</td>
+<td>Common</td>
+<td>Old Currency</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">283</td>
+<td>506.0</td>
+<td>K-Marks / Weight</td>
+<td>Common</td>
+<td>Nutritional Bar</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -2216,95 +2213,108 @@ Name: Unit, dtype: float64</code></pre>
 <section id="are-the-rarity-values-linear" class="level2">
 <h2 class="anchored" data-anchor-id="are-the-rarity-values-linear">Are the Rarity Values Linear?</h2>
 <p>We’ll aggregate over all the values in a category and then simply plot them.</p>
-<div class="cell" data-execution_count="113">
+<div id="cell-58" class="cell" data-execution_count="113">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>lootData.query(<span class="st">"Name == 'K-Marks'"</span>).groupby(<span class="st">"Rarity"</span>)[<span class="st">'Unit'</span>].mean().plot()</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Mean K-Marks Per Rarity"</span>, size<span class="op">=</span><span class="dv">15</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="113">
 <pre><code>Text(0.5, 1.0, 'Mean K-Marks Per Rarity')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-10-05-cycle-loot-values-download_files/figure-html/cell-27-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2022-10-05-cycle-loot-values-download_files/figure-html/cell-27-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Wait, what? This looks terrible! Everything from <code>Common</code> to <code>Epic</code> is worth nothing compared to <code>Exotic</code> and <code>Legendary</code>. Maybe we’re dealing with some outlier problems? Let’s check the <code>median</code> just in case.</p>
-<div class="cell" data-execution_count="115">
+<div id="cell-60" class="cell" data-execution_count="115">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>lootData.query(<span class="st">"Name == 'K-Marks'"</span>).groupby(<span class="st">"Rarity"</span>)[<span class="st">'Unit'</span>].median().plot()</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Median K-Marks Per Rarity"</span>, size<span class="op">=</span><span class="dv">15</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="115">
 <pre><code>Text(0.5, 1.0, 'Median K-Marks Per Rarity')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-10-05-cycle-loot-values-download_files/figure-html/cell-28-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2022-10-05-cycle-loot-values-download_files/figure-html/cell-28-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>This is even worse! <code>Legendary</code> loot is definitely being affected by outliers but <code>Exotic</code> is so far and above better than everything else. Maybe we’re looking at the wrong values? Maybe we’re making the same mistake and we need to account for the <code>per weight</code>?</p>
-<div class="cell" data-execution_count="117">
+<div id="cell-62" class="cell" data-execution_count="117">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>lootData.query(<span class="st">"Name == 'K-Marks / Weight'"</span>).groupby(<span class="st">"Rarity"</span>)[<span class="st">'Unit'</span>].median().plot()</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Median K-Marks/Weight Per Rarity"</span>, size<span class="op">=</span><span class="dv">15</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="117">
 <pre><code>Text(0.5, 1.0, 'Median K-Marks/Weight Per Rarity')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-10-05-cycle-loot-values-download_files/figure-html/cell-29-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2022-10-05-cycle-loot-values-download_files/figure-html/cell-29-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>I mean it’s better but not really. What is in this category?</p>
-<div class="cell" data-execution_count="124">
+<div id="cell-64" class="cell" data-execution_count="124">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>lootData.query(<span class="st">"Rarity == 'Exotic'"</span>).query(<span class="st">"Name == 'K-Marks'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="124">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Unit</th>
-      <th>Name</th>
-      <th>Rarity</th>
-      <th>Personal Quarters</th>
-      <th>Campaigns</th>
-      <th>Jobs</th>
-      <th>Printing</th>
-      <th>Loot</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>91</th>
-      <td>8650.0</td>
-      <td>K-Marks</td>
-      <td>Exotic</td>
-      <td>Yes x4</td>
-      <td>Yes x9</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Charged Tharis Iron Ingot</td>
-    </tr>
-    <tr>
-      <th>106</th>
-      <td>77848.0</td>
-      <td>K-Marks</td>
-      <td>Exotic</td>
-      <td>Yes x6</td>
-      <td>Yes x9</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Progenitor Slag</td>
-    </tr>
-    <tr>
-      <th>401</th>
-      <td>129746.0</td>
-      <td>K-Marks</td>
-      <td>Exotic</td>
-      <td>Yes x6</td>
-      <td>Yes x1</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Alpha Crusher Heart</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Rarity</th>
+<th data-quarto-table-cell-role="th">Personal Quarters</th>
+<th data-quarto-table-cell-role="th">Campaigns</th>
+<th data-quarto-table-cell-role="th">Jobs</th>
+<th data-quarto-table-cell-role="th">Printing</th>
+<th data-quarto-table-cell-role="th">Loot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">91</td>
+<td>8650.0</td>
+<td>K-Marks</td>
+<td>Exotic</td>
+<td>Yes x4</td>
+<td>Yes x9</td>
+<td>Yes</td>
+<td>No</td>
+<td>Charged Tharis Iron Ingot</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">106</td>
+<td>77848.0</td>
+<td>K-Marks</td>
+<td>Exotic</td>
+<td>Yes x6</td>
+<td>Yes x9</td>
+<td>Yes</td>
+<td>No</td>
+<td>Progenitor Slag</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">401</td>
+<td>129746.0</td>
+<td>K-Marks</td>
+<td>Exotic</td>
+<td>Yes x6</td>
+<td>Yes x1</td>
+<td>Yes</td>
+<td>No</td>
+<td>Alpha Crusher Heart</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -2342,9 +2352,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -2380,10 +2404,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2393,8 +2416,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2409,6 +2441,238 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -2449,6 +2713,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
