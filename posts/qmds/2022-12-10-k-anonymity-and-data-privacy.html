@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2022-12-10">
 <meta name="description" content="Simple Practice">
 
-<title>Orgulo.us - K-Anonymity With Python</title>
+<title>K-Anonymity With Python – Orgulo.us</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,8 +23,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -59,7 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -67,15 +68,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../Logo.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-89d3dce01300b0681775a15f7c3425c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,14 +106,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -123,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -135,7 +137,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -190,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Data Privacy is a problem which users and institutions are starting to care more about. Neither users nor companies want to reveal or be liable for some of the data and conclusions that arise from the data collected. One such popular method of trying to mitigate the problem of de-anonymizing individuals in data is <strong>K-Anonymity</strong>.</p>
 <p>The idea is that given observations and features in data, knowing this information should not allow one to individually identify someone from that data. Thus, <em>K-Anonymity</em> is a metric which states that data is <em>sufficiently anonymized to the k-1 threshold</em> such that given specific columns in the data there exists no such persons where their arrangement leads to less than <code>k</code> individuals in the group.</p>
 <p>We’ll use the data from the Wikipedia page to illustrate this idea.</p>
-<div class="cell" data-execution_count="2">
+<div id="1dfd8689" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://en.wikipedia.org/wiki/K-anonymity'</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>site <span class="op">=</span> pd.read_html(url)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>rawData <span class="op">=</span> site[<span class="dv">0</span>]</span>
@@ -199,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -219,8 +221,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Ramsha</td>
 <td>30</td>
 <td>Female</td>
-<td>165cm</td>
-<td>72kg</td>
+<td>165 cm</td>
+<td>72 kg</td>
 <td>Tamil Nadu</td>
 <td>Hindu</td>
 <td>Cancer</td>
@@ -230,8 +232,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Yadu</td>
 <td>24</td>
 <td>Female</td>
-<td>162cm</td>
-<td>70kg</td>
+<td>162 cm</td>
+<td>70 kg</td>
 <td>Kerala</td>
 <td>Hindu</td>
 <td>Viral infection</td>
@@ -241,8 +243,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Salima</td>
 <td>28</td>
 <td>Female</td>
-<td>170cm</td>
-<td>68kg</td>
+<td>170 cm</td>
+<td>68 kg</td>
 <td>Tamil Nadu</td>
 <td>Muslim</td>
 <td>Tuberculosis</td>
@@ -252,8 +254,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Sunny</td>
 <td>27</td>
 <td>Male</td>
-<td>170cm</td>
-<td>75kg</td>
+<td>170 cm</td>
+<td>75 kg</td>
 <td>Karnataka</td>
 <td>Parsi</td>
 <td>No illness</td>
@@ -263,8 +265,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Joan</td>
 <td>24</td>
 <td>Female</td>
-<td>165cm</td>
-<td>71kg</td>
+<td>165 cm</td>
+<td>71 kg</td>
 <td>Kerala</td>
 <td>Christian</td>
 <td>Heart-related</td>
@@ -274,8 +276,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Bahuksana</td>
 <td>23</td>
 <td>Male</td>
-<td>160cm</td>
-<td>69kg</td>
+<td>160 cm</td>
+<td>69 kg</td>
 <td>Karnataka</td>
 <td>Buddhist</td>
 <td>Tuberculosis</td>
@@ -285,8 +287,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Rambha</td>
 <td>19</td>
 <td>Male</td>
-<td>167cm</td>
-<td>85kg</td>
+<td>167 cm</td>
+<td>85 kg</td>
 <td>Kerala</td>
 <td>Hindu</td>
 <td>Cancer</td>
@@ -296,8 +298,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Kishor</td>
 <td>29</td>
 <td>Male</td>
-<td>180cm</td>
-<td>81kg</td>
+<td>180 cm</td>
+<td>81 kg</td>
 <td>Karnataka</td>
 <td>Hindu</td>
 <td>Heart-related</td>
@@ -307,8 +309,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Johnson</td>
 <td>17</td>
 <td>Male</td>
-<td>175cm</td>
-<td>79kg</td>
+<td>175 cm</td>
+<td>79 kg</td>
 <td>Kerala</td>
 <td>Christian</td>
 <td>Heart-related</td>
@@ -318,8 +320,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>John</td>
 <td>19</td>
 <td>Male</td>
-<td>169cm</td>
-<td>82kg</td>
+<td>169 cm</td>
+<td>82 kg</td>
 <td>Kerala</td>
 <td>Christian</td>
 <td>Viral infection</td>
@@ -331,14 +333,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Ok, so now that we have this information we can see there are <strong>Sensitive Attributes</strong> which should not show up in public data. So, using this data we can use one single <code>groupby()</code> call to quickly identify an individual user. Obviously, if we have your name then we should drop or <strong>Suppress</strong> that.</p>
-<div class="cell" data-execution_count="3">
+<div id="1f0ccf5e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rawData[<span class="st">'Name'</span>] <span class="op">=</span> <span class="st">'*'</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rawData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -358,8 +360,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>*</td>
 <td>30</td>
 <td>Female</td>
-<td>165cm</td>
-<td>72kg</td>
+<td>165 cm</td>
+<td>72 kg</td>
 <td>Tamil Nadu</td>
 <td>Hindu</td>
 <td>Cancer</td>
@@ -369,8 +371,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>*</td>
 <td>24</td>
 <td>Female</td>
-<td>162cm</td>
-<td>70kg</td>
+<td>162 cm</td>
+<td>70 kg</td>
 <td>Kerala</td>
 <td>Hindu</td>
 <td>Viral infection</td>
@@ -380,8 +382,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>*</td>
 <td>28</td>
 <td>Female</td>
-<td>170cm</td>
-<td>68kg</td>
+<td>170 cm</td>
+<td>68 kg</td>
 <td>Tamil Nadu</td>
 <td>Muslim</td>
 <td>Tuberculosis</td>
@@ -391,8 +393,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>*</td>
 <td>27</td>
 <td>Male</td>
-<td>170cm</td>
-<td>75kg</td>
+<td>170 cm</td>
+<td>75 kg</td>
 <td>Karnataka</td>
 <td>Parsi</td>
 <td>No illness</td>
@@ -402,8 +404,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>*</td>
 <td>24</td>
 <td>Female</td>
-<td>165cm</td>
-<td>71kg</td>
+<td>165 cm</td>
+<td>71 kg</td>
 <td>Kerala</td>
 <td>Christian</td>
 <td>Heart-related</td>
@@ -413,8 +415,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>*</td>
 <td>23</td>
 <td>Male</td>
-<td>160cm</td>
-<td>69kg</td>
+<td>160 cm</td>
+<td>69 kg</td>
 <td>Karnataka</td>
 <td>Buddhist</td>
 <td>Tuberculosis</td>
@@ -424,8 +426,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>*</td>
 <td>19</td>
 <td>Male</td>
-<td>167cm</td>
-<td>85kg</td>
+<td>167 cm</td>
+<td>85 kg</td>
 <td>Kerala</td>
 <td>Hindu</td>
 <td>Cancer</td>
@@ -435,8 +437,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>*</td>
 <td>29</td>
 <td>Male</td>
-<td>180cm</td>
-<td>81kg</td>
+<td>180 cm</td>
+<td>81 kg</td>
 <td>Karnataka</td>
 <td>Hindu</td>
 <td>Heart-related</td>
@@ -446,8 +448,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>*</td>
 <td>17</td>
 <td>Male</td>
-<td>175cm</td>
-<td>79kg</td>
+<td>175 cm</td>
+<td>79 kg</td>
 <td>Kerala</td>
 <td>Christian</td>
 <td>Heart-related</td>
@@ -457,8 +459,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>*</td>
 <td>19</td>
 <td>Male</td>
-<td>169cm</td>
-<td>82kg</td>
+<td>169 cm</td>
+<td>82 kg</td>
 <td>Kerala</td>
 <td>Christian</td>
 <td>Viral infection</td>
@@ -470,13 +472,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>But also, if I know your age and I know your religion then I can quickly identify you.</p>
-<div class="cell" data-execution_count="4">
+<div id="0a47dc07" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rawData.groupby([<span class="st">'Age'</span>,<span class="st">'Religion'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -553,15 +555,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Since we want some sort of representation of age in our analysis, we can <strong>Generalize</strong> the <code>Age</code> values by binning them. Guidance on the actual bin sizes looks to be trial and error; I guess it is expected to use your own judgement in these methods. For my own guideline I’m going to take the rounded standard deviation and step down until the number of <code>k</code> threshold has been met.</p>
-<div class="cell" data-execution_count="5">
+<div id="36b90bc5" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(rawData[<span class="st">'Age'</span>].std())</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>rawData[<span class="st">'AgeGroup'</span>] <span class="op">=</span> pd.cut(rawData[<span class="st">'Age'</span>], bins<span class="op">=</span><span class="bu">int</span>(rawData[<span class="st">'Age'</span>].std()))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>rawData.groupby([<span class="st">'AgeGroup'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/tmp/ipykernel_135547/374673683.py:3: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  rawData.groupby(['AgeGroup']).size().reset_index(name='Count')</code></pre>
+</div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -597,14 +603,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>…. not enough yet:</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rawData[<span class="st">'AgeGroup'</span>] <span class="op">=</span> pd.cut(rawData[<span class="st">'Age'</span>], bins<span class="op">=</span><span class="bu">int</span>(rawData[<span class="st">'Age'</span>].std())<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rawData.groupby([<span class="st">'AgeGroup'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="230f161e" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rawData[<span class="st">'AgeGroup'</span>] <span class="op">=</span> pd.cut(rawData[<span class="st">'Age'</span>], bins<span class="op">=</span><span class="bu">int</span>(rawData[<span class="st">'Age'</span>].std())<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>rawData.groupby([<span class="st">'AgeGroup'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/tmp/ipykernel_135547/4046394562.py:2: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  rawData.groupby(['AgeGroup']).size().reset_index(name='Count')</code></pre>
+</div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -635,11 +645,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>That looks good. And, if we take it in combination with another column?</p>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> rawData.columns.to_list():</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> col <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'AgeGroup'</span>, <span class="st">'Age'</span>]:</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(rawData.groupby([<span class="st">'AgeGroup'</span>, col]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>))</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1934e4dc" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> rawData.columns.to_list():</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> col <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'AgeGroup'</span>, <span class="st">'Age'</span>]:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(rawData.groupby([<span class="st">'AgeGroup'</span>, col]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           AgeGroup Name  Count
 0  (16.987, 21.333]    *      3
@@ -654,63 +664,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 4    (25.667, 30.0]  Female      2
 5    (25.667, 30.0]    Male      2
 
-            AgeGroup Height  Count
-0   (16.987, 21.333]  160cm      0
-1   (16.987, 21.333]  162cm      0
-2   (16.987, 21.333]  165cm      0
-3   (16.987, 21.333]  167cm      1
-4   (16.987, 21.333]  169cm      1
-5   (16.987, 21.333]  170cm      0
-6   (16.987, 21.333]  175cm      1
-7   (16.987, 21.333]  180cm      0
-8   (21.333, 25.667]  160cm      1
-9   (21.333, 25.667]  162cm      1
-10  (21.333, 25.667]  165cm      1
-11  (21.333, 25.667]  167cm      0
-12  (21.333, 25.667]  169cm      0
-13  (21.333, 25.667]  170cm      0
-14  (21.333, 25.667]  175cm      0
-15  (21.333, 25.667]  180cm      0
-16    (25.667, 30.0]  160cm      0
-17    (25.667, 30.0]  162cm      0
-18    (25.667, 30.0]  165cm      1
-19    (25.667, 30.0]  167cm      0
-20    (25.667, 30.0]  169cm      0
-21    (25.667, 30.0]  170cm      2
-22    (25.667, 30.0]  175cm      0
-23    (25.667, 30.0]  180cm      1
+            AgeGroup  Height  Count
+0   (16.987, 21.333]  160 cm      0
+1   (16.987, 21.333]  162 cm      0
+2   (16.987, 21.333]  165 cm      0
+3   (16.987, 21.333]  167 cm      1
+4   (16.987, 21.333]  169 cm      1
+5   (16.987, 21.333]  170 cm      0
+6   (16.987, 21.333]  175 cm      1
+7   (16.987, 21.333]  180 cm      0
+8   (21.333, 25.667]  160 cm      1
+9   (21.333, 25.667]  162 cm      1
+10  (21.333, 25.667]  165 cm      1
+11  (21.333, 25.667]  167 cm      0
+12  (21.333, 25.667]  169 cm      0
+13  (21.333, 25.667]  170 cm      0
+14  (21.333, 25.667]  175 cm      0
+15  (21.333, 25.667]  180 cm      0
+16    (25.667, 30.0]  160 cm      0
+17    (25.667, 30.0]  162 cm      0
+18    (25.667, 30.0]  165 cm      1
+19    (25.667, 30.0]  167 cm      0
+20    (25.667, 30.0]  169 cm      0
+21    (25.667, 30.0]  170 cm      2
+22    (25.667, 30.0]  175 cm      0
+23    (25.667, 30.0]  180 cm      1
 
             AgeGroup Weight  Count
-0   (16.987, 21.333]   68kg      0
-1   (16.987, 21.333]   69kg      0
-2   (16.987, 21.333]   70kg      0
-3   (16.987, 21.333]   71kg      0
-4   (16.987, 21.333]   72kg      0
-5   (16.987, 21.333]   75kg      0
-6   (16.987, 21.333]   79kg      1
-7   (16.987, 21.333]   81kg      0
-8   (16.987, 21.333]   82kg      1
-9   (16.987, 21.333]   85kg      1
-10  (21.333, 25.667]   68kg      0
-11  (21.333, 25.667]   69kg      1
-12  (21.333, 25.667]   70kg      1
-13  (21.333, 25.667]   71kg      1
-14  (21.333, 25.667]   72kg      0
-15  (21.333, 25.667]   75kg      0
-16  (21.333, 25.667]   79kg      0
-17  (21.333, 25.667]   81kg      0
-18  (21.333, 25.667]   82kg      0
-19  (21.333, 25.667]   85kg      0
-20    (25.667, 30.0]   68kg      1
-21    (25.667, 30.0]   69kg      0
-22    (25.667, 30.0]   70kg      0
-23    (25.667, 30.0]   71kg      0
-24    (25.667, 30.0]   72kg      1
-25    (25.667, 30.0]   75kg      1
-26    (25.667, 30.0]   79kg      0
-27    (25.667, 30.0]   81kg      1
-28    (25.667, 30.0]   82kg      0
-29    (25.667, 30.0]   85kg      0
+0   (16.987, 21.333]  68 kg      0
+1   (16.987, 21.333]  69 kg      0
+2   (16.987, 21.333]  70 kg      0
+3   (16.987, 21.333]  71 kg      0
+4   (16.987, 21.333]  72 kg      0
+5   (16.987, 21.333]  75 kg      0
+6   (16.987, 21.333]  79 kg      1
+7   (16.987, 21.333]  81 kg      0
+8   (16.987, 21.333]  82 kg      1
+9   (16.987, 21.333]  85 kg      1
+10  (21.333, 25.667]  68 kg      0
+11  (21.333, 25.667]  69 kg      1
+12  (21.333, 25.667]  70 kg      1
+13  (21.333, 25.667]  71 kg      1
+14  (21.333, 25.667]  72 kg      0
+15  (21.333, 25.667]  75 kg      0
+16  (21.333, 25.667]  79 kg      0
+17  (21.333, 25.667]  81 kg      0
+18  (21.333, 25.667]  82 kg      0
+19  (21.333, 25.667]  85 kg      0
+20    (25.667, 30.0]  68 kg      1
+21    (25.667, 30.0]  69 kg      0
+22    (25.667, 30.0]  70 kg      0
+23    (25.667, 30.0]  71 kg      0
+24    (25.667, 30.0]  72 kg      1
+25    (25.667, 30.0]  75 kg      1
+26    (25.667, 30.0]  79 kg      0
+27    (25.667, 30.0]  81 kg      1
+28    (25.667, 30.0]  82 kg      0
+29    (25.667, 30.0]  85 kg      0
 
            AgeGroup State of domicile  Count
 0  (16.987, 21.333]         Karnataka      0
@@ -758,16 +768,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 14    (25.667, 30.0]  Viral infection      0
 </code></pre>
 </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/tmp/ipykernel_135547/159031434.py:3: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  print(rawData.groupby(['AgeGroup', col]).size().reset_index(name='Count'))
+/tmp/ipykernel_135547/159031434.py:3: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  print(rawData.groupby(['AgeGroup', col]).size().reset_index(name='Count'))
+/tmp/ipykernel_135547/159031434.py:3: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  print(rawData.groupby(['AgeGroup', col]).size().reset_index(name='Count'))
+/tmp/ipykernel_135547/159031434.py:3: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  print(rawData.groupby(['AgeGroup', col]).size().reset_index(name='Count'))
+/tmp/ipykernel_135547/159031434.py:3: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  print(rawData.groupby(['AgeGroup', col]).size().reset_index(name='Count'))
+/tmp/ipykernel_135547/159031434.py:3: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  print(rawData.groupby(['AgeGroup', col]).size().reset_index(name='Count'))
+/tmp/ipykernel_135547/159031434.py:3: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  print(rawData.groupby(['AgeGroup', col]).size().reset_index(name='Count'))</code></pre>
+</div>
 </div>
 <p>Ok, looking at these results it is clear that Religion and Disease are problems still. This is where we would need to start asking ourselves if we had enough data and what our analysis’s goals are. If we were trying to explore what features were related to these Diseases then we will need more data since no matter what we do the <code>No illness</code> will always be alone. In this instance we could drop that value:</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>filteredData <span class="op">=</span> rawData.loc[ <span class="op">~</span>rawData.Disease.<span class="bu">str</span>.contains(<span class="st">'illness'</span>)].copy()</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>filteredData.groupby([<span class="st">'AgeGroup'</span>, <span class="st">'Disease'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ff1c1e80" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>filteredData <span class="op">=</span> rawData.loc[ <span class="op">~</span>rawData.Disease.<span class="bu">str</span>.contains(<span class="st">'illness'</span>)].copy()</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>filteredData.groupby([<span class="st">'AgeGroup'</span>, <span class="st">'Disease'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -856,21 +882,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Not quite there. So, another technique which will assist us is <em>generalizing</em> the Disease values. We’ll use a substitution heirarchy to replace some values in the data with slightly less accurate values.</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>heirarchy <span class="op">=</span> {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Cancer"</span>: <span class="st">"Body"</span>,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Viral infection'</span>: <span class="st">'Body'</span>,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Tuberculosis'</span>: <span class="st">'Chest'</span>,</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Heart-related'</span>: <span class="st">'Chest'</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>filteredData[<span class="st">'heirarchy'</span>] <span class="op">=</span> filteredData[<span class="st">'Disease'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: heirarchy[x] <span class="cf">if</span> heirarchy.get(x) <span class="cf">else</span> x)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>filteredData.groupby([<span class="st">'AgeGroup'</span>,<span class="st">'heirarchy'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="93d67d78" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>heirarchy <span class="op">=</span> {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Cancer"</span>: <span class="st">"Body"</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Viral infection'</span>: <span class="st">'Body'</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Tuberculosis'</span>: <span class="st">'Chest'</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Heart-related'</span>: <span class="st">'Chest'</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>filteredData[<span class="st">'heirarchy'</span>] <span class="op">=</span> filteredData[<span class="st">'Disease'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: heirarchy[x] <span class="cf">if</span> heirarchy.get(x) <span class="cf">else</span> x)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>filteredData.groupby([<span class="st">'AgeGroup'</span>,<span class="st">'heirarchy'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -923,14 +949,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Almost there. Let’s re-examine our age bins and make them one more step smaller.</p>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>filteredData[<span class="st">'AgeGroup'</span>] <span class="op">=</span> pd.cut(rawData[<span class="st">'Age'</span>], bins<span class="op">=</span><span class="bu">int</span>(rawData[<span class="st">'Age'</span>].std())<span class="op">-</span><span class="dv">2</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>filteredData.groupby([<span class="st">'AgeGroup'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="32998503" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>filteredData[<span class="st">'AgeGroup'</span>] <span class="op">=</span> pd.cut(rawData[<span class="st">'Age'</span>], bins<span class="op">=</span><span class="bu">int</span>(rawData[<span class="st">'Age'</span>].std())<span class="op">-</span><span class="dv">2</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>filteredData.groupby([<span class="st">'AgeGroup'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'Count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -962,206 +988,242 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/orgulo\.us");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1169,185 +1231,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 

@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/nbks/2025-08-06-helping-myself-with-uv-package-mananger.html",
       "/posts/nbks/2024-02-14-exploring-medium-slot-guns-in-hunt.html",
       "/posts/Mds/2024-01-23.-challenges-for-2024.html",
       "/posts/Mds/2023-12-31-review-of-challenges-2023.html",
@@ -13,15 +14,14 @@
       "/posts/nbks/2023-08-24-using-deep-learning-to-pick-my-wallpapers.html",
       "/posts/nbks/2023-08-14-exploring-small-slot-hunt-guns.html",
       "/posts/Mds/2023-08-01-Game-Review-The-Cycle-Frontier.html",
-      "/posts/Mds/2023-04-13.game-review-blacktail.html",
       "/posts/Mds/2023-04-13-game-review-abzu.html",
+      "/posts/Mds/2023-04-13.game-review-blacktail.html",
       "/posts/nbks/2023-03-18-valorant-color-crosshair-part-two.html",
       "/posts/qmds/2023-03-15-deeper-dive-into-measuring-metrics.html",
       "/posts/qmds/2023-02-06-exploring-shapiro-wilks-test.html",
       "/posts/qmds/2023-02-03-exploring-fishers-exact-test.html",
-      "/posts/qmds/logisitc-regression/2023-02-02-exploring-logistic-regression.html",
       "/posts/qmds/2023-02-02-exploring-knn-algorithm.html",
-      "/posts/qmds/2023-02-01-exploring-binomial-test.html",
+      "/posts/qmds/logisitc-regression/2023-02-02-exploring-logistic-regression.html",
       "/posts/qmds/2023-01-31-exploring-regression-trees-python-r.html",
       "/posts/qmds/2023-01-28-exploring-linear-regression.html",
       "/posts/qmds/2023-01-28-exploring-chi-squared-test.html",
@@ -76,7 +76,6 @@
       "/posts/Mds/2020-09-30-Game-Review-Post-Void.html",
       "/posts/Mds/2020-09-18-Game-Review-Empyrion-Galactic-Survival.html",
       "/posts/nbks/2020-09-09-fastbooks-incidentally-supports-r.html",
-      "/posts/nbks/2020-09-06-exploring-altair-visualization.html",
       "/posts/Mds/2020-07-09-Voices-of-the-Void.html"
     ]
   }
