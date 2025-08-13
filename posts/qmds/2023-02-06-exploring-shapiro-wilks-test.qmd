@@ -52,7 +52,7 @@ What we're looking for is if the W Stat is greater than 1.0 and if it is then we
 swStats = data\
     .drop('Subject', axis=1)\
     .groupby('IDE')\
-    .apply(lambda x: sci.stats.shapiro(x))
+    .apply(lambda x: sci.stats.shapiro(x.Time))
 
 for ide,stats in swStats.items():
     print(f"{ide} had a W Stat of {stats[0]:.3} (P={stats[1]:.3E})", )
