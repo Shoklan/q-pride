@@ -1,0 +1,22 @@
+[project]
+name = "q-pride"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "altair>=5.5.0",
+    "fastai>=2.8.2",
+    "jupyter>=1.1.1",
+    "lxml>=6.0.0",
+    "matplotlib>=3.10.5",
+    "nbformat>=5.10.4",
+    "nicegui>=2.22.1",
+    "numpy>=2.2.6",
+    "numpy-financial>=1.0.0",
+    "pandas>=2.3.1",
+    "pyspark>=4.0.0",
+    "scikit-learn>=1.7.1",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.14.5",
+]
