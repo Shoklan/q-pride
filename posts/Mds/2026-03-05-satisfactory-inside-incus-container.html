@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-08-06">
-<meta name="description" content="Managing Packages For the Blog">
+<meta name="dcterms.date" content="2026-03-05">
+<meta name="description" content="Box and Gears, Gears and Boxes">
 
-<title>Helping Myself With Package Management – Orgulo.us</title>
+<title>Setting up a Working Satisfactory Server in Incus – Orgulo.us</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -39,10 +74,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-89d3dce01300b0681775a15f7c3425c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2b348c51d13256059043f183dc0074f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -108,16 +143,13 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Helping Myself With Package Management</h1>
+      <h1 class="title">Setting up a Working Satisfactory Server in Incus</h1>
                   <div>
         <div class="description">
-          Managing Packages For the Blog
+          Box and Gears, Gears and Boxes
         </div>
       </div>
-                          <div class="quarto-categories">
-                <div class="quarto-category">python</div>
-              </div>
-                  </div>
+                </div>
   </div>
     
   
@@ -127,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 6, 2025</p>
+        <p class="date">March 5, 2026</p>
       </div>
     </div>
     
@@ -138,9 +170,7 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -148,8 +178,54 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<p>In my continued willingness to learn about Incus for personal projects, I worked out how to configure Dedicated Servers inside an Incus Container. This process should work for your own Dedicated Steam Servers so long as they are capable of running on a Linux Server. If it does depend on Windows, then I am afraid that there are no windows containers as of the time of this writing. You can refer to my previous post about working around this in V Rising using Proton if it is non-negotiable for your server.</p>
+<section id="setting-up-the-container" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-the-container">Setting Up the Container</h2>
+<p>It will be asssumed that you have installed Incus before doing anything else. My configuration is default at this point since it is a fresh installation. If you run into trouble doing that, then you’re on your own.</p>
+<p>Firstly, we will want to <a href="https://images.linuxcontainers.org">select a container image</a> to start. I am going to use Ubbuntu 24.04 since it is common and well supported by most software. You can both download and launch the container in a single command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">incus</span> launch images:ubuntu/24.04 steam-satisfactory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Incus allows us to mount an external drive for permenant storage. It might not be necessary if you are only hosting one server but being able to store all your different game servers and have the host manage back ups is solid design. A word of caution for using these external mounts: you will want to pass <code>shift=true</code> which allows the UID/GID from the host system to be passed to the container. This prevents permission issues about ownership inside the container. Therefore, if you make an account - like I am about to for steam - then you will want to set the uid/gid to match the container uid/gid.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># put this wherever you want; name it whatever you want</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir <span class="at">-p</span> /srv/steam/servers/satisfactory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>… and then we add the mount points. To do that we will need: - the container name - the disk name - <strong>disk</strong> - host mount point - container mount point - the shift for permissions</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">incus</span> config device add steam-satisfactory <span class="dt">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  games disk <span class="dt">\</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  source=/srv/steam/servers/satisfactory <span class="dt">\</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  path=/home/steam/servers/satisfactory <span class="dt">\</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  shift=true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now, there are lots of different ways to do networking configuration but <strong>macvlan</strong> worked the best for me. This option is new to me even though I am experienced with virtualization technologies. Simply put, it gives the container its own MAC and IP Address directly on the physical network but at the cost of communicating with the Host itself. If you are using this for technology stacks like Apache Spark and its slaves then avoid this option. For my single game server this is perfect:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">incus</span> config device add steam-satisfactory eth0 nic <span class="dt">\</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  nictype=macvlan <span class="dt">\</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  parent=eno1 <span class="dt">\</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  name=eth0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="inside-the-container" class="level2">
+<h2 class="anchored" data-anchor-id="inside-the-container">Inside the Container</h2>
+<p>Now that the external part is mostly completed we can proceed to login and download the server. If you have a script setup, then this is where you could copy the script in with <code>incus file push myInstallScript.sh steam-satisfactory/&lt;path-in-container&gt;</code> and run it with <code>incus exec steam-satisfactory -- &lt;path-to-script&gt;</code>. If you are doing this from scratch then you will just need to login with <code>incus exec steam-satisfactory -- bash</code>.</p>
+<p>Now that we’re inside, we need to add a bunch of remote repo’s to allow us to find steamcmd:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> install <span class="at">-y</span> software-properties-common</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">add-apt-repository</span> <span class="at">-y</span> multiverse</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">add-apt-repository</span> <span class="at">-y</span> universe</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">dpkg</span> <span class="at">--add-architecture</span> i386 <span class="co"># must have for steamcmd</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> update</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> install <span class="at">-y</span> steamcmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Many servers - including Satisfactory - will refuse to run if are root. It is also good practice not to run these servers as root because if they get compromised then the attacker already has root. Make sure that you add a distinct user for the server(s):</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">adduser</span> <span class="at">--disabled-login</span> <span class="at">--gecos</span> <span class="st">""</span> steam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is the point where the permission fix is required. Inside the container, make sure to give control of the home folder to the user you created. My steam user did not end up controllering their own home directory and I had to update that:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chown</span> <span class="at">-R</span> steam:steam /home/steam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Collect the user and group ids using <code>id</code> as the steam user for this next part. You will need to drop out of the container, navigate to where you pointed the host mount point and change the owner to match the container info:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> 1001:1001 satisfactory <span class="co"># on the host</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Hop back into the container and install the server at last:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> steam <span class="at">-H</span> /usr/games/steamcmd <span class="dt">\</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  +force_install_dir /home/steam/servers/satisfactory <span class="dt">\</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  +login anonymous <span class="dt">\</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  +app_update 1690800 validate <span class="dt">\</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  +quit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now you can navigate to the Dedicated Server folder and run <code>./FactoryServer.sh</code>. If you want, run this as a systemd unit or in a screen/tmux or something else entirely. Manage your container services however you feel comfortable.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

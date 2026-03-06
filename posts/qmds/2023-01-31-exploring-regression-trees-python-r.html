@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-89d3dce01300b0681775a15f7c3425c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2b348c51d13256059043f183dc0074f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -264,19 +264,17 @@ dbl (12): fixed acidity, volatile acidity, citric acid, residual sugar, chlo...
 node), split, n, deviance, yval
       * denotes terminal node
 
- 1) root 3918 3087.9930 5.882593  
-   2) alcohol&lt; 10.85 2453 1482.3080 5.612311  
-     4) volatile acidity&gt;=0.2525 1278  617.5814 5.357590 *
-     5) volatile acidity&lt; 0.2525 1175  691.6170 5.889362  
-      10) volatile acidity&gt;=0.2075 585  302.6906 5.724786 *
-      11) volatile acidity&lt; 0.2075 590  357.3712 6.052542  
-        22) residual sugar&lt; 10.15 423  221.4043 5.907801 *
-        23) residual sugar&gt;=10.15 167  104.6587 6.419162 *
-   3) alcohol&gt;=10.85 1465 1126.4400 6.335154  
-     6) free sulfur dioxide&lt; 11.5 94  104.9787 5.425532 *
-     7) free sulfur dioxide&gt;=11.5 1371  938.3516 6.397520  
-      14) alcohol&lt; 11.85 725  464.0000 6.200000 *
-      15) alcohol&gt;=11.85 646  414.3220 6.619195 *</code></pre>
+ 1) root 3918 3021.91900 5.866258  
+   2) alcohol&lt; 10.85 2491 1474.23800 5.606985  
+     4) volatile acidity&gt;=0.2525 1309  619.52640 5.359817  
+       8) free sulfur dioxide&lt; 17.5 195  100.99490 4.994872 *
+       9) free sulfur dioxide&gt;=17.5 1114  488.01440 5.423698 *
+     5) volatile acidity&lt; 0.2525 1182  686.18020 5.880711 *
+   3) alcohol&gt;=10.85 1427 1087.92300 6.318851  
+     6) free sulfur dioxide&lt; 11.5 94   92.42553 5.319149 *
+     7) free sulfur dioxide&gt;=11.5 1333  894.92870 6.389347  
+      14) alcohol&lt; 11.74167 655  416.74200 6.180153 *
+      15) alcohol&gt;=11.74167 678  421.83040 6.591445 *</code></pre>
 </div>
 </div>
 <p>The final results of the splits are marked with an <code>*</code> symbol and tell us which path gets us to the best rated quality wine. If you’re finding this a bit annoying to interpret then do not worry because there is a better way to represent these. These kinds of models are excellent when plotted so we’ll do that instead:</p>

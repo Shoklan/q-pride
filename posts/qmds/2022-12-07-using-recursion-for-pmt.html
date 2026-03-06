@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-89d3dce01300b0681775a15f7c3425c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2b348c51d13256059043f183dc0074f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -222,7 +222,7 @@ window.Quarto = {
 <section id="a-word-on-python" class="level2">
 <h2 class="anchored" data-anchor-id="a-word-on-python">A Word on Python</h2>
 <p>If you try to do this in python, then you’ll find that there is quite a bit of old documentation around. Per the release notes, the financial fucntions which used to be in <code>numpy</code> have been moved to a different external package called <a href="https://pypi.org/project/numpy-financial/">numpy-financial</a> and you can find it’s documentation <a href="https://numpy.org/numpy-financial/latest/index.html">here</a>. This package has not changed in a while but these functions are pretty timeless so I’m not too worried about it. Anyways, you can install it with <code>pip install numpy-financial</code> or <code>python3 -m pip install numpy-financial</code>. Once done, you can run the example below:</p>
-<div id="3bf7579f" class="cell" data-execution_count="1">
+<div id="e349c706" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy_financial <span class="im">as</span> npf</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># No, this is not my loan; this is fake data:</span></span>
@@ -236,7 +236,7 @@ window.Quarto = {
 <p>The documentation about the function points out that it is solving the equation: <span class="math display">\[
 F_{v}+P_{v}(1 + rate)^{nper}+\frac{Pmt(1 + rate*when)}{rate((1 + rate)^{nper} -1)} == 0
 \]</span> Where: <br> - <code>Fv</code> is the <strong>Future Value</strong>. <br> - <code>Pv</code> is the <strong>Present Value</strong>. <br> - <code>rate</code> is the <strong>Period Interest Rate</strong>; monthly for us. <br> - <code>nper</code> is the <strong>Number of Periods</strong> <br> - <code>pmt</code> is the <strong>Payment Amount</strong>. <br> - <code>when</code> is which part of the period is the payment made. <br></p>
-<div id="a1dd937d" class="cell" data-execution_count="2">
+<div id="ea952d3d" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>Since it is not made explicit, the source code for the function defaults to <code>when = 'end'</code>. That is a lot to take in but what we really care about is the result: <b>$2896.82</b></p>
 </div>
@@ -253,7 +253,7 @@ Principle = Payment - Interest Payment
 \]</span> <span class="math display">\[
 Remaining Balance = Remaining Balance - Principle
 \]</span> This can be turned into the code below:</p>
-<div id="dfd0872e" class="cell" data-execution_count="3">
+<div id="4a20a1d5" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> payOff(payment, remaining, MIR):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    iPayment <span class="op">=</span> remaining <span class="op">*</span> MIR</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    principle <span class="op">=</span> payment <span class="op">-</span> iPayment</span>
@@ -264,7 +264,7 @@ Remaining Balance = Remaining Balance - Principle
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> payOff( payment, remaining, MIR) <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And, when tested you will find it tells you the correct answer:</p>
-<div id="93974d47" class="cell" data-execution_count="4">
+<div id="8b684ce3" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>payOff(payment, <span class="dv">300000</span>, MIR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>120</code></pre>
@@ -277,7 +277,7 @@ Remaining Balance = Remaining Balance - Principle
 <p>This is where the magic of recursion starts. We setup our <strong>Return Case</strong> - or <strong>Edge Case</strong> as it is sometimes also called - where if the balance after payment is totally payed off then we tell our program that <em>we’re done so please return</em>. In this case, we tell it to <code>return 0</code> back to the previous call. Please hold onto that while we move on.</p>
 <p>If we look at our <code>else</code> clause, we see that if the balance is not payed of then please call ourself with the new remaining balance. But, we can see that we’ve got a return on the left and a <code>+ 1</code> on the right. If we think of the call to <code>payOff()</code> as a payment against the loan then the <code>+ 1</code> is simply saying <em>we made one payment</em>. And, as we make a payment and make a payment and make a payment all the way down we count each time we are making a payment. Until, we pay off the balance and that triggers an addition of all the <code>+ 1</code> - or how many times we made a payment - on the loan. If this does not make much sense then run it a few times with some print statements and do a bit of reading about <em>recursion</em>; just take solace in knowing if this makes you feel stupid that most people struggle with <em>recursion</em>.</p>
 <p>Back to what I was after initially, if we had a remaining balnce of $20000 on the loan and we wanted to see how much changing our payment from $2896.82 to $3100 will reduce the number of periods we can do that quickly:</p>
-<div id="6e55a5ee" class="cell" data-execution_count="5">
+<div id="7b8e1f68" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>payOff(<span class="dv">3100</span>, <span class="dv">20000</span>, MIR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>6</code></pre>
