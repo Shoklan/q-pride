@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
+export R_LIBS_USER="$PROJECT_DIR/$(rv library)"
+export QUARTO_PYTHON="$PROJECT_DIR/.venv/bin/python"
+exec quarto "$@"
